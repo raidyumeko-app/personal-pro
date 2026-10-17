@@ -39,15 +39,23 @@ Ainda pendentes: validação visual em navegador, fluxo real de confirmação/re
 
 ## Biblioteca de exercícios
 
-Na ficha do aluno, toque em **Adicionar** na seção **Treino Atual**. A biblioteca contém 60 nomes de exercícios, distribuídos em 10 grupos: Peito, Costas, Ombros, Bíceps, Tríceps, Quadríceps, Posteriores e glúteos, Panturrilhas, Abdômen e core e Cardio.
+Na ficha do aluno, toque em **Adicionar** na seção **Treino Atual**.
 
-- Busca por nome sem diferenciar maiúsculas, minúsculas ou acentos.
-- Filtro por grupo muscular, combinado com a busca.
-- Seleção de um exercício ou digitação de um nome personalizado.
-- Campos para séries/repetições ou duração, carga/intensidade e descanso em segundos.
-- Botão **Adicionar à ficha**, com o exercício salvo junto aos demais dados do aluno.
-- Séries e carga não preenchidas ficam como **A definir**; o personal pode editar depois. Exercícios de cardio aceitam descanso zero.
-- O catálogo contém nomes e grupos; não inclui vídeos nem montagem automática de treinos.
+- **180 exercícios em português**, organizados por grupo muscular.
+- **Catálogo ampliado com 876 exercícios**, importado do Free Exercise DB. É uma coleção separada e pode conter equivalentes dos exercícios em português; não representa 1.056 exercícios distintos.
+- No catálogo ampliado, nomes e instruções permanecem no inglês original; grupos, equipamentos e níveis estão em português. Há imagens em 873 registros e instruções em 871. Os demais mostram apenas os dados disponíveis.
+- Busca sem diferenciar acentos ou maiúsculas. Termos comuns em português, como supino, agachamento e remada, também encontram nomes correspondentes em inglês.
+- Filtros por grupo e equipamento; resultados exibidos em lotes de 40. Ao selecionar uma entrada ampliada, aparecem imagens, nível e instruções disponíveis.
+- Os dados do catálogo são servidos pelo próprio aplicativo em `exercise-library.json`. Fotos dependem de internet e são carregadas do commit fixo do projeto original.
+- **Séries (vezes), repetições ou duração, carga ou intensidade e descanso em segundos** são campos independentes, editáveis ao adicionar e ao editar um exercício da ficha.
+- São aceitos valores como 3 séries, 8–12 repetições, 20 kg e 90 segundos. Duração e intensidade podem ser descritas em texto. Descanso aceita zero a 3.600 segundos.
+- Prescrições antigas, como `3x12` ou `15 min`, continuam funcionando. A edição preserva os dados e registra a carga anterior quando ela muda; o timer é redefinido para o descanso atualizado.
+- É possível cadastrar um exercício personalizado. Valores não definidos ficam como **A definir**; não há prescrição automática de séries ou carga.
+- A ficha salva os quatro campos junto aos dados do aluno no Supabase; o texto de treino para WhatsApp mantém séries, repetições e carga.
+
+Fonte e licença: [Free Exercise DB](https://github.com/yuhonas/free-exercise-db), Unlicense (domínio público). Proveniência, commit e licença completa em `THIRD_PARTY_NOTICES.md`. Não foram adicionados vídeos ou serviços pagos.
+
+Validação desta alteração: `node --test tests/*.test.cjs`. Cobre adicionar/editar os quatro campos, compatibilidade com fichas antigas, busca, filtros, paginação, detalhes ilustrados, exercício próprio, descanso zero e o fluxo de registros manuais.
 
 ## Modelo comercial do Personal Pro
 
