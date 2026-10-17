@@ -57,6 +57,21 @@ Fonte e licença: [Free Exercise DB](https://github.com/yuhonas/free-exercise-db
 
 Validação desta alteração: `node --test tests/*.test.cjs`. Cobre adicionar/editar os quatro campos, compatibilidade com fichas antigas, busca, filtros, paginação, detalhes ilustrados, exercício próprio, descanso zero e o fluxo de registros manuais.
 
+## PDF da ficha para o aluno
+
+Na ficha do aluno, em **Treino Atual**, toque em **PDF do treino**. A ficha deve conter pelo menos um exercício.
+
+- O PDF A4 inclui nome do aluno, personal, estúdio (quando preenchido), data e tabela com exercício, séries, repetições/tempo, carga/intensidade e descanso.
+- Usa os valores atuais da ficha e interpreta os treinos antigos no formato `3x12`. Preserva duração de cardio e descanso zero.
+- Tabelas longas recebem páginas adicionais com cabeçalho e numeração. Campos extensos quebram linha.
+- **Baixar PDF** salva o arquivo `treino-nome-do-aluno.pdf`.
+- **Compartilhar PDF** aparece quando o navegador oferece compartilhamento de arquivos. O personal escolhe o WhatsApp e a conversa do aluno na tela do aparelho. O aplicativo não seleciona o destinatário nem envia automaticamente.
+- No computador ou sem compartilhamento nativo, baixe o arquivo e anexe na conversa do WhatsApp. **Mandar treino** continua enviando o treino como texto.
+- A geração acontece no aparelho. Notas internas, finanças e medidas não são incluídas. O arquivo não é enviado a um serviço de geração de PDF nem fica hospedado em link público.
+- A biblioteca jsPDF 4.2.1 está incluída em `vendor/`, com licença MIT, e é carregada somente ao gerar o PDF. Não depende de CDN e não há serviço pago novo.
+
+Verificação: `node --test tests/*.test.cjs`. Os testes cobrem o PDF real, acentos, formato legado, paginação, campos longos, download e compartilhamento simulado, cancelamento e nova tentativa após falha. PDFs de teste foram renderizados e conferidos visualmente. O seletor real de compartilhamento/WhatsApp varia por navegador e aparelho; não foi enviado arquivo a um aluno durante os testes.
+
 ## Modelo comercial do Personal Pro
 
 Regras definidas pelo proprietário em 17/10/2026. Esta seção trata do pagamento do usuário ao proprietário pelo uso do aplicativo.
