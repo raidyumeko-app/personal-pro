@@ -113,3 +113,34 @@ if(html.includes('const exerciseLibrary=')) {
  assert.ok(nodes(tree).filter(n=>n.type==='button'&&n.props?.['aria-label']?.startsWith('Selecionar ')).every(n=>text(n).length>0));
  console.log('PASS: 180 Portuguese exercises; 876 extended exercises; search/filter/pagination; illustrated instructions; add/edit independent series/repetitions/load/rest; previous load; legacy 3x12 and duration compatibility; custom exercise; zero rest; cancel.');
 }
+
+async function verifyPDFControls() {
+ const findButton=label=>nodes(tree).find(n=>n.type==='button'&&text(n).trim()===label);
+ let resolvePDF, receivedStudent, downloaded=0, shared=0;
+ const artifact={blob:{type:'application/pdf'},fileName:'treino-aluno.pdf'};
+ ctx.window={PersonalProPDF:{
+  prepare(student){receivedStudent=student;return new Promise(resolve=>{resolvePDF=resolve})},
+  download(file){assert.equal(file,artifact);downloaded++},
+  canShare:()=>true,
+  share:async file=>{assert.equal(file,artifact);shared++}
+ }};
+ let pending=findButton('PDF do treino').props.onClick();tree=render();
+ assert.ok(text(tree).includes('Preparando sua ficha'));
+ assert.equal(receivedStudent.workout[0].load,'25 kg','Export uses the latest student prescription');
+ resolvePDF(artifact);await pending;tree=render();
+ assert.ok(findButton('Baixar PDF'));assert.ok(findButton('Compartilhar PDF'));
+ findButton('Baixar PDF').props.onClick();assert.equal(downloaded,1);
+ await findButton('Compartilhar PDF').props.onClick();assert.equal(shared,1);
+ nodes(tree).find(n=>n.props?.['aria-label']==='Fechar PDF').props.onClick();tree=render();
+ pending=findButton('PDF do treino').props.onClick();tree=render();
+ nodes(tree).find(n=>n.props?.['aria-label']==='Fechar PDF').props.onClick();
+ resolvePDF(artifact);await pending;tree=render();
+ assert.ok(!nodes(tree).some(n=>n.props?.role==='dialog'&&n.props['aria-label']==='PDF do treino'),'Canceling ignores a stale generation result');
+ ctx.window.PersonalProPDF.prepare=async()=>{throw new Error('Sem conexão')};
+ await findButton('PDF do treino').props.onClick();tree=render();
+ assert.ok(text(tree).includes('Sem conexão'));assert.ok(findButton('Tentar novamente'));
+ ctx.window.PersonalProPDF.prepare=async()=>artifact;
+ await findButton('Tentar novamente').props.onClick();tree=render();assert.ok(findButton('Baixar PDF'));
+ console.log('PASS: PDF dialog loading/ready/error/retry; latest prescription exported; download/share buttons; cancel during generation.');
+}
+verifyPDFControls().catch(error=>{console.error(error);process.exitCode=1});
