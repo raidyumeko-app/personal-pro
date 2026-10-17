@@ -43,10 +43,10 @@ Na ficha do aluno, toque em **Adicionar** na seção **Treino Atual**.
 
 - **180 exercícios em português**, organizados por grupo muscular.
 - **Catálogo ampliado com 876 exercícios**, importado do Free Exercise DB. É uma coleção separada e pode conter equivalentes dos exercícios em português; não representa 1.056 exercícios distintos.
-- No catálogo ampliado, nomes e instruções permanecem no inglês original; grupos, equipamentos e níveis estão em português. Há imagens em 873 registros e instruções em 871. Os demais mostram apenas os dados disponíveis.
+- No catálogo ampliado, os nomes permanecem no inglês original; instruções de execução, grupos, equipamentos e níveis estão em português. Há imagens em 873 registros e instruções em 871. Os demais mostram apenas os dados disponíveis.
 - Busca sem diferenciar acentos ou maiúsculas. Termos comuns em português, como supino, agachamento e remada, também encontram nomes correspondentes em inglês.
 - Filtros por grupo e equipamento; resultados exibidos em lotes de 40. Ao selecionar uma entrada ampliada, aparecem imagens, nível e instruções disponíveis.
-- Os dados do catálogo são servidos pelo próprio aplicativo em `exercise-library.json`. Fotos dependem de internet e são carregadas do commit fixo do projeto original.
+- Os dados originais do catálogo são servidos pelo próprio aplicativo em `exercise-library.json`; as instruções em português ficam em `exercise-instructions.pt.json`, associadas pelo ID. Os nomes e demais dados originais não são alterados. Fotos dependem de internet e são carregadas do commit fixo do projeto original.
 - **Séries (vezes), repetições ou duração, carga ou intensidade e descanso em segundos** são campos independentes, editáveis ao adicionar e ao editar um exercício da ficha.
 - São aceitos valores como 3 séries, 8–12 repetições, 20 kg e 90 segundos. Duração e intensidade podem ser descritas em texto. Descanso aceita zero a 3.600 segundos.
 - Prescrições antigas, como `3x12` ou `15 min`, continuam funcionando. A edição preserva os dados e registra a carga anterior quando ela muda; o timer é redefinido para o descanso atualizado.
@@ -54,6 +54,8 @@ Na ficha do aluno, toque em **Adicionar** na seção **Treino Atual**.
 - A ficha salva os quatro campos junto aos dados do aluno no Supabase; o texto de treino para WhatsApp mantém séries, repetições e carga.
 
 Fonte e licença: [Free Exercise DB](https://github.com/yuhonas/free-exercise-db), Unlicense (domínio público). Proveniência, commit e licença completa em `THIRD_PARTY_NOTICES.md`. Não foram adicionados vídeos ou serviços pagos.
+
+As instruções foram traduzidas localmente, com tradução automática OPUS-MT e ajustes pontuais de terminologia. Não houve revisão profissional integral das 3.736 instruções não vazias. A tradução preserva a quantidade e a sequência de passos, os números e as negações conferidas. O carregamento rejeita traduções ausentes ou incompletas. O catálogo funciona igualmente na demonstração e nas contas reais, sem serviço de tradução em tempo de uso.
 
 Validação desta alteração: `node --test tests/*.test.cjs`. Cobre adicionar/editar os quatro campos, compatibilidade com fichas antigas, busca, filtros, paginação, detalhes ilustrados, exercício próprio, descanso zero e o fluxo de registros manuais.
 
