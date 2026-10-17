@@ -37,6 +37,18 @@ Ainda pendentes: validação visual em navegador, fluxo real de confirmação/re
 - O código demonstrativo do portal e a função de copiar links fictícios foram removidos. A versão anterior permanece no histórico do GitHub.
 - Não há monitoramento automático do aluno nem confirmação enviada diretamente por ele.
 
+## Biblioteca de exercícios
+
+Na ficha do aluno, toque em **Adicionar** na seção **Treino Atual**. A biblioteca contém 60 nomes de exercícios, distribuídos em 10 grupos: Peito, Costas, Ombros, Bíceps, Tríceps, Quadríceps, Posteriores e glúteos, Panturrilhas, Abdômen e core e Cardio.
+
+- Busca por nome sem diferenciar maiúsculas, minúsculas ou acentos.
+- Filtro por grupo muscular, combinado com a busca.
+- Seleção de um exercício ou digitação de um nome personalizado.
+- Campos para séries/repetições ou duração, carga/intensidade e descanso em segundos.
+- Botão **Adicionar à ficha**, com o exercício salvo junto aos demais dados do aluno.
+- Séries e carga não preenchidas ficam como **A definir**; o personal pode editar depois. Exercícios de cardio aceitam descanso zero.
+- O catálogo contém nomes e grupos; não inclui vídeos nem montagem automática de treinos.
+
 ## Modelo comercial do Personal Pro
 
 Regras definidas pelo proprietário em 17/10/2026. Esta seção trata do pagamento do usuário ao proprietário pelo uso do aplicativo.
