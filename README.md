@@ -27,6 +27,16 @@ Ao definir a URL de produção, configurar Site URL e Redirect URLs no Supabase 
 
 Ainda pendentes: validação visual em navegador, fluxo real de confirmação/recuperação por e-mail, gravação autenticada pelo navegador e testes de produção. Os testes simulados e de PostgreSQL não substituem o fluxo completo.
 
+## Fluxo do personal e do aluno nesta versão
+
+- O personal cadastra os alunos, monta as fichas e compartilha o texto do treino pelo WhatsApp.
+- Não há portal, login ou link individual do aluno nesta versão. O aluno não precisa acessar outro aplicativo.
+- A presença/conclusão é registrada manualmente pelo personal: na tela Hoje, pelo botão “Marcar treino de hoje”; na ficha, pela data e pelo botão “Marcar treino”.
+- O mesmo dia não é duplicado. Datas inválidas ou futuras são rejeitadas.
+- Os registros são salvos na conta do personal com os demais dados dos alunos. Os textos do painel se referem a registros feitos pelo personal, não a check-ins automáticos do aluno.
+- O código demonstrativo do portal e a função de copiar links fictícios foram removidos. A versão anterior permanece no histórico do GitHub.
+- Não há monitoramento automático do aluno nem confirmação enviada diretamente por ele.
+
 ## Modelo comercial do Personal Pro
 
 Regras definidas pelo proprietário em 17/10/2026. Esta seção trata do pagamento do usuário ao proprietário pelo uso do aplicativo.
@@ -46,4 +56,4 @@ As regras acima documentam o modelo comercial desejado. O aplicativo atual ainda
 
 ## Limitações existentes
 
-Google Auth não está configurado no aplicativo. Assinatura é uma simulação visual sem processamento de pagamentos. Links `seualuno.com` e visão do aluno são demonstrações; não são um portal externo publicado. Não há fila offline nem resolução de edição simultânea entre dispositivos: prevalece o último estado completo salvo.
+Google Auth não está configurado no aplicativo. Assinatura é uma simulação visual sem processamento de pagamentos. O acompanhamento do aluno é manual, feito pelo personal; não há portal do aluno nesta versão. Não há fila offline nem resolução de edição simultânea entre dispositivos: prevalece o último estado completo salvo.
