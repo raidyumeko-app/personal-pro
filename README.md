@@ -72,6 +72,17 @@ Na ficha do aluno, em **Treino Atual**, toque em **PDF do treino**. A ficha deve
 
 Verificação: `node --test tests/*.test.cjs`. Os testes cobrem o PDF real, acentos, formato legado, paginação, campos longos, download e compartilhamento simulado, cancelamento e nova tentativa após falha. PDFs de teste foram renderizados e conferidos visualmente. O seletor real de compartilhamento/WhatsApp varia por navegador e aparelho; não foi enviado arquivo a um aluno durante os testes.
 
+## Demonstração e conta real
+
+- **Abrir demonstração** usa somente dados de exemplo. O aviso permanece visível durante essa experiência.
+- Ao entrar em uma conta real, inclusive gratuita, a demonstração é encerrada e o aviso desaparece.
+- O status Pro é restaurado a partir de `user.app_metadata.personal_pro_subscription`, retornado pelo endpoint autenticado `/auth/v1/user`. O contrato usa `status: active` e `current_period_end` em ISO 8601 no futuro. Apenas infraestrutura administrativa/servidor deve definir esse metadado após validar o pagamento.
+- Perfil, `user_metadata`, cliques e armazenamento local não concedem assinatura Pro. Assinatura vencida, cancelada ou com validade inválida não é reconhecida como ativa.
+- Assinante ativo não recebe a opção/aviso de demonstração dentro da conta. Ao sair, o status em memória é limpo para não passar à conta seguinte.
+- O botão **Assinar R$ 19,90** não simula mais uma ativação. O checkout e o servidor que confirma pagamentos e atualiza esse status ainda precisam ser integrados. Este ajuste cobre a apresentação do estado, não implementa cobrança ou autorização de recursos pagos no backend.
+
+Validação: `node --test tests/*.test.cjs`, incluindo login/restauração com assinatura ativa simulada no retorno da API, saída da demonstração, troca de conta e rejeição de metadados editáveis. Não foi executado um pagamento real.
+
 ## Modelo comercial do Personal Pro
 
 Regras definidas pelo proprietário em 17/10/2026. Esta seção trata do pagamento do usuário ao proprietário pelo uso do aplicativo.
@@ -87,8 +98,8 @@ Regras definidas pelo proprietário em 17/10/2026. Esta seção trata do pagamen
 
 ### Estado da implementação
 
-As regras acima documentam o modelo comercial desejado. O aplicativo atual ainda não processa pagamentos nem implementa o popup de indicação, a atribuição de amigos indicados, a confirmação de pagamento deles, o crédito dos dias extras ou a exibição de anúncios. O botão de assinatura atual é uma simulação visual.
+As regras acima documentam o modelo comercial desejado. O aplicativo atual ainda não processa pagamentos nem implementa o popup de indicação, a atribuição de amigos indicados, a confirmação de pagamento deles, o crédito dos dias extras ou a exibição de anúncios. O botão de assinatura informa que o pagamento ainda está indisponível e não ativa o plano.
 
 ## Limitações existentes
 
-Google Auth não está configurado no aplicativo. Assinatura é uma simulação visual sem processamento de pagamentos. O acompanhamento do aluno é manual, feito pelo personal; não há portal do aluno nesta versão. Não há fila offline nem resolução de edição simultânea entre dispositivos: prevalece o último estado completo salvo.
+Google Auth não está configurado no aplicativo. Não há processamento de pagamentos; o botão de assinatura não ativa o plano. O acompanhamento do aluno é manual, feito pelo personal; não há portal do aluno nesta versão. Não há fila offline nem resolução de edição simultânea entre dispositivos: prevalece o último estado completo salvo.
