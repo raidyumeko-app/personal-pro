@@ -6,7 +6,7 @@ Aplicativo estático com React 18.3.1 compilado no HTML. O arquivo original forn
 
 Sirva esta pasta por HTTP. Na Vercel, use o projeto existente `personal-pro`, framework Other e sem comando de build. `vercel.json` define publicação estática da raiz.
 
-Projeto Vercel autorizado: `prj_l2RIDJjV3XPwzumbndGzGwrx5s67`, time `team_B1cC85U00FbgdctDH2EcjyVu`. A publicação e o vínculo Git ainda precisam ser concluídos e testados.
+Projeto Vercel autorizado: `prj_l2RIDJjV3XPwzumbndGzGwrx5s67`, time `team_B1cC85U00FbgdctDH2EcjyVu`. Publicado em https://personal-pro-liart.vercel.app a partir da branch main, commit c14097dde63ecf923a6537cc901f22d32ed65e10. Deploy dpl_F9ksHtBYowndc5TdkNw1yXmKKVkf, estado READY. A página inicial e cloud.js responderam HTTP 200 sem autenticação Vercel e são idênticos aos arquivos do repositório. A publicação foi feita pela API com fonte GitHub; o vínculo de atualizações automáticas por push ainda requer confirmação.
 
 ## Supabase existente
 
