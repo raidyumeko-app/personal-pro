@@ -27,6 +27,23 @@ Ao definir a URL de produção, configurar Site URL e Redirect URLs no Supabase 
 
 Ainda pendentes: validação visual em navegador, fluxo real de confirmação/recuperação por e-mail, gravação autenticada pelo navegador e testes de produção. Os testes simulados e de PostgreSQL não substituem o fluxo completo.
 
+## Modelo comercial do Personal Pro
+
+Regras definidas pelo proprietário em 17/10/2026. Esta seção trata do pagamento do usuário ao proprietário pelo uso do aplicativo.
+
+- **Período gratuito:** os primeiros 30 dias são grátis.
+- **Assinatura:** depois do período gratuito, R$ 19,90 por mês. O usuário também pode assinar antes de terminar o período gratuito.
+- **Continuidade sem assinatura:** no 31º dia o aplicativo não bloqueia o uso; quem não optar por pagar continua utilizando com anúncios.
+- **Programa de indicação:** ao assinar, o usuário vê um popup “Indique um amigo”.
+- **Condição da recompensa:** indicar ou cadastrar um amigo não basta. O usuário que indicou recebe o benefício quando esse amigo também pagar pelo aplicativo.
+- **Recompensa:** cada indicação que cumprir a condição concede 3 dias grátis de uso ao assinante que indicou, adiando sua próxima cobrança em 3 dias.
+- **Exemplo:** uma indicação recompensada estende o intervalo até a próxima cobrança de 30 para 33 dias.
+- **Limite mensal:** no máximo 5 indicações recompensadas, equivalentes a 15 dias extras por mês.
+
+### Estado da implementação
+
+As regras acima documentam o modelo comercial desejado. O aplicativo atual ainda não processa pagamentos nem implementa o popup de indicação, a atribuição de amigos indicados, a confirmação de pagamento deles, o crédito dos dias extras ou a exibição de anúncios. O botão de assinatura atual é uma simulação visual.
+
 ## Limitações existentes
 
 Google Auth não está configurado no aplicativo. Assinatura é uma simulação visual sem processamento de pagamentos. Links `seualuno.com` e visão do aluno são demonstrações; não são um portal externo publicado. Não há fila offline nem resolução de edição simultânea entre dispositivos: prevalece o último estado completo salvo.
