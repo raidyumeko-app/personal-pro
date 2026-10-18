@@ -46,7 +46,7 @@ async function main(){
  click('Enviar texto');assert.ok(messages[0].startsWith('https://wa.me/'));const message=decodeURIComponent(messages[0].split('text=')[1]);for(const day of ['A','B','C'])assert.ok(message.includes('TREINO '+day));assert.ok(message.includes('Controlar a descida e pausar.'));
  // Preview feature is not hidden behind creation of an account.
  ctx.window.PersonalProPDF={prepare:async student=>({blob:{},fileName:'test.pdf',student}),canShare:()=>false};
- await click('Ver PDF');tree=render();assert.ok(button('Visualizar PDF'));assert.ok(button('Baixar PDF'));
+ await click('Ver PDF');tree=render();assert.ok(button('Gerar ficha'));await click('Gerar ficha');tree=render();assert.ok(button('Visualizar PDF'));assert.ok(button('Baixar PDF'));
  clickAria('Fechar PDF');clickAria('Fechar ficha');
  ctx.rv.push({id:'model-one',name:'Modelo de teste',desc:'Modelo sem apagar dados',color:'#176b52',exercises:[{name:'Novo exercício do modelo',sets:'3x8',load:'5 kg'}]});
  const beforeModel=current()[1].workout.map(ex=>ex.id);
