@@ -7,3 +7,6 @@ test('rejeita prescricao nutricional individual',()=>assert.equal(evidence.valid
 test('rejeita exercicio que exige liberacao',()=>assert.equal(evidence.validateEntry({...base,medicalClearanceRequired:true}).ok,false));
 test('permite registro revisado com referencia',()=>assert.equal(evidence.validateEntry(base).ok,true));
 test('filtra registros nao aprovados',()=>assert.equal(evidence.publishable([base,{...base,reviewedBy:null}]).length,1));
+
+test('bloqueia registro sem aprovacao editorial',()=>assert.equal(evidence.validateEntry({...base,status:'draft'}).ok,false));
+test('bloqueia registro sem justificativa tecnica',()=>assert.equal(evidence.validateEntry({...base,evidenceNotes:''}).ok,false));
