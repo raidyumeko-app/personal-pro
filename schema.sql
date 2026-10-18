@@ -5,8 +5,9 @@ create table public.personal_pro_accounts (
  updated_at timestamptz not null default now()
 );
 alter table public.personal_pro_accounts enable row level security;
-revoke all on public.personal_pro_accounts from anon;
-grant select, insert, update, delete on public.personal_pro_accounts to authenticated;
+revoke all on public.personal_pro_accounts from anon, public;
+revoke delete, truncate, references, trigger on public.personal_pro_accounts from authenticated;
+grant select, insert, update on public.personal_pro_accounts to authenticated;
 create policy own_account on public.personal_pro_accounts for all to authenticated
  using ((select auth.uid()) = user_id)
  with check ((select auth.uid()) = user_id);
