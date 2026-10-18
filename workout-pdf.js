@@ -168,7 +168,7 @@
     const doc=new root.jspdf.jsPDF({unit:'mm',format:'a5',compress:true});
     const left=12,width=124,bottom=190;let y=0;
     const text=(value,x,baseline,size=12,bold=false)=>{doc.setFont('helvetica',bold?'bold':'normal');doc.setFontSize(size);doc.setTextColor(24,52,42);doc.text(clean(value),x,baseline)};
-    function page(first=false){if(!first)doc.addPage();doc.setFillColor(24,63,49);doc.rect(0,0,148,23,'F');doc.setTextColor(255,255,255);doc.setFont('helvetica','bold');doc.setFontSize(12);doc.text('PERSONAL PRO',left,13);y=32;if(!first){text(student.name,left,y,10,true);y+=8}}
+    function page(first=false){if(!first)doc.addPage();doc.setFillColor(24,63,49);doc.rect(0,0,148,23,'F');doc.setTextColor(255,255,255);doc.setFont('helvetica','bold');doc.setFontSize(12);doc.text('PERSONAL PRO',left,13);y=32;if(!first){doc.setFont('helvetica','bold');doc.setFontSize(10);const headerLines=doc.splitTextToSize(clean(student.name),width);text(headerLines[0]||'Aluno',left,y,10,true);y+=8}}
     function para(value,size=12,bold=false){doc.setFont('helvetica',bold?'bold':'normal');doc.setFontSize(size);for(const line of doc.splitTextToSize(clean(value),width)){if(y+6>bottom)page();text(line,left,y,size,bold);y+=size*.48}y+=3}
     page(true);para('Ficha de treino',21,true);para(student.name,17,true);para('Personal: '+(coach.name||'Personal'),11);if(coach.studio)para(coach.studio,11);para(date.toLocaleDateString('pt-BR'),10);y+=3;
     for(const day of ['A','B','C']){
@@ -205,9 +205,9 @@
     const jobs = [], entries = new Map(), downloads = new Map();
     let missing = 0,missingInstructions=0;
     for (const exercise of student.workout) {
-      const source = byId.get(exercise.sourceId || options.exerciseSources?.[exercise.name]) || byName.get(exercise.name);
+      const source = byId.get(options.exerciseSources?.[exercise.name] || exercise.sourceId) || byName.get(exercise.name);
       if(options.includeInstructions){const steps=translations[source?.id];if(Array.isArray(steps)&&steps.length)instructions.set(exercise.name,steps);else missingInstructions++}
-      const urls = options.illustrated ? (source?.images?.slice(0, 2) || []) : [];
+      const urls = options.illustrated ? (source?.images?.filter((_,index)=>!['Plank','Incline_Push-Up'].includes(source.id)||index===1).slice(0, 2) || []) : [];
       if (!urls.length) { if(options.illustrated)missing++; continue; }
       entries.set(exercise.name, urls);
       for (const url of urls) if (!downloads.has(url)) {
