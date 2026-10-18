@@ -27,6 +27,11 @@
   function guidance(exercise, options) {
     return [...(technique(exercise)?['Técnica: '+technique(exercise)]:[]),...(exercise.notes?['Orientações: '+exercise.notes]:[]),...(exercise.alternatives?.length?['Substituições: '+exercise.alternatives.join('; ')]:[]),...(options.includeInstructions?(options.instructions?.get(exercise.name)?.map((step,index)=>'Execução '+(index+1)+': '+step)||['Instruções de execução indisponíveis nesta fonte.']):[])];
   }
+  function drawCoachLogo(doc,coach,x,y,width,height){
+    const logo=coach.pdfLogo;
+    if(typeof logo!=='string'||logo.length>500000||!/^data:image\/(jpeg|png);base64,/.test(logo))return;
+    try{const image=doc.getImageProperties(logo),scale=Math.min(width/image.width,height/image.height),w=image.width*scale,h=image.height*scale;doc.setFillColor(255,255,255);doc.roundedRect(x-1,y-1,width+2,height+2,1,1,'F');doc.addImage(logo,image.fileType||'JPEG',x+(width-w)/2,y+(height-h)/2,w,h)}catch(_){}
+  }
   function makeDocument(student, coach = {}, date = new Date(), options = {}) {
     if (!Array.isArray(student?.workout) || !student.workout.length)
       throw new Error('Adicione exercícios à ficha antes de gerar o PDF.');
@@ -61,10 +66,11 @@
       doc.setFillColor(24, 63, 49); doc.rect(0, 0, 210, first ? 33 : 23, 'F');
       doc.setFillColor(177, 224, 195); doc.rect(left, first ? 27 : 18, 20, 1.4, 'F');
       text('PERSONAL PRO', left, 12, 9, true, [177, 224, 195]);
+      if(first)drawCoachLogo(doc,coach,169,7,26,17);
       text(first ? 'Ficha de treino' : 'Ficha de treino - continuação', left, first ? 23 : 17, first ? 21 : 11, true, [255, 255, 255]);
       y = first ? 43 : 32;
       if (first) {
-        for (const [label, value] of [['ALUNO', name], ['PERSONAL', professional], ...(studio ? [['LOCAL', studio]] : [])]) {
+        for (const [label, value] of [['ALUNO', name], ['PERSONAL', professional], ...(studio ? [['LOCAL', studio]] : []),...((coach.pdfContact??coach.whatsapp) ? [['CONTATO',clean(coach.pdfContact??coach.whatsapp)]] : [])]) {
           text(label, left, y, 8, true, [97, 108, 120]); y += 5;
           for (const line of lines(value, width, label === 'ALUNO' ? 15 : 10)) {
             if (y > bottom - 23) { startPage(false); y += 5; }
@@ -168,12 +174,12 @@
     const doc=new root.jspdf.jsPDF({unit:'mm',format:'a5',compress:true});
     const left=12,width=124,bottom=190;let y=0;
     const text=(value,x,baseline,size=12,bold=false)=>{doc.setFont('helvetica',bold?'bold':'normal');doc.setFontSize(size);doc.setTextColor(24,52,42);doc.text(clean(value),x,baseline)};
-    function page(first=false){if(!first)doc.addPage();doc.setFillColor(24,63,49);doc.rect(0,0,148,23,'F');doc.setTextColor(255,255,255);doc.setFont('helvetica','bold');doc.setFontSize(12);doc.text('PERSONAL PRO',left,13);y=32;if(!first){doc.setFont('helvetica','bold');doc.setFontSize(10);const headerLines=doc.splitTextToSize(clean(student.name),width);text(headerLines[0]||'Aluno',left,y,10,true);y+=8}}
+    function page(first=false){if(!first)doc.addPage();doc.setFillColor(24,63,49);doc.rect(0,0,148,23,'F');doc.setTextColor(255,255,255);doc.setFont('helvetica','bold');doc.setFontSize(12);doc.text('PERSONAL PRO',left,13);if(first)drawCoachLogo(doc,coach,109,5,26,13);y=32;if(!first){doc.setFont('helvetica','bold');doc.setFontSize(10);const headerLines=doc.splitTextToSize(clean(student.name),width);text(headerLines[0]||'Aluno',left,y,10,true);y+=8}}
     function para(value,size=12,bold=false){doc.setFont('helvetica',bold?'bold':'normal');doc.setFontSize(size);for(const line of doc.splitTextToSize(clean(value),width)){if(y+6>bottom)page();text(line,left,y,size,bold);y+=size*.48}y+=3}
-    page(true);para('Ficha de treino',21,true);para(student.name,17,true);para('Personal: '+(coach.name||'Personal'),11);if(coach.studio)para(coach.studio,11);para(date.toLocaleDateString('pt-BR'),10);y+=3;
+    page(true);para('Ficha de treino',21,true);para(student.name,17,true);para('Personal: '+(coach.name||'Personal'),11);if(coach.studio)para(coach.studio,11);if(coach.pdfContact??coach.whatsapp)para('Contato: '+(coach.pdfContact??coach.whatsapp),11);para(date.toLocaleDateString('pt-BR'),10);y+=3;
     for(const day of ['A','B','C']){
       const exercises=student.workout.filter(ex=>dayOf(ex)===day);if(!exercises.length)continue;
-      if(y+35>bottom)page();para(dayLabel(student,day),13,true);
+      if(y+60>bottom)page();para(dayLabel(student,day),13,true);
       exercises.forEach((exercise,index)=>{
         if(y+45>bottom)page();para((index+1)+'. '+exercise.name,15,true);
         const [series,reps]=dose(exercise);
