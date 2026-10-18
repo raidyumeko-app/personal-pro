@@ -64,7 +64,7 @@ O foco da ficha é **escolher exercícios, definir a prescrição e preparar o P
 - **PDF para o aluno**, no cabeçalho, e **Ver PDF** priorizam o formato para celular. O diálogo identifica que é a ficha completa e oferece **Para celular** / **Para imprimir**. Fotos e instruções continuam em **Personalizar fotos e explicações**.
 - A ação primária é compartilhar o arquivo quando o navegador suporta, ou baixar quando não suporta. **Visualizar PDF** continua disponível para conferir. A alternativa de mensagem textual foi identificada como **Enviar texto**, para não confundir texto e arquivo.
 
-Validação: nove arquivos de testes automatizados; percurso em Chromium adicionando três exercícios com uma única abertura da biblioteca, campos independentes, retorno automático à busca, consulta de imagens, conclusão da montagem, PDF A5 com foto incorporada e troca para A4; conferência de funções avançadas e telas de 360/390 px e desktop. É um percurso automatizado e uma revisão visual; não é um estudo com profissionais ou alunos reais. Nenhuma mensagem foi enviada a terceiros.
+Validação: nove arquivos de testes automatizados; percurso em Chromium adicionando três exercícios com uma única abertura da biblioteca, campos independentes, retorno automático à busca, consulta de imagens, conclusão da montagem, PDF A5 com foto incorporada e troca para A4; conferência de funções avançadas e telas de 360/390 px e desktop. Nenhuma mensagem foi enviada a terceiros.
 
 ## Melhorias de conclusão do aplicativo
 
@@ -177,3 +177,14 @@ As regras acima documentam o modelo comercial desejado. O aplicativo atual ainda
 ## Limitações existentes
 
 Google Auth não está configurado no aplicativo. Não há processamento de pagamentos; o botão de assinatura não ativa o plano. O acompanhamento do aluno é manual, feito pelo personal; não há portal do aluno nesta versão. Não há fila offline nem resolução de edição simultânea entre dispositivos: prevalece o último estado completo salvo.
+
+
+## Revisão de conteúdo e consistência — 18/10/2026
+
+- Mais de 700 trechos das explicações receberam ajustes de português e terminologia. Dezessete exercícios frequentes tiveram passos reescritos com referência ao original. Nomes, sequência, números e orientações negativas foram preservados; medidas originalmente em polegadas permanecem identificadas como polegadas.
+- Conferidas as posições das fotos dos 136 exercícios associados à lista em português. Corrigidas as associações de remada invertida e flexão inclinada. Prancha e a variante original de flexão inclinada exibem apenas a posição correspondente selecionada. O PDF prioriza a associação corrigida mesmo em fichas com identificador antigo.
+- Os quatro modelos iniciais são exemplos editáveis, com frequência a definir e sem cargas arbitrárias. Os modelos personalizados e as fichas existentes são preservados.
+- Mensagens específicas para nome ausente, destino não selecionado, descanso inválido e falha de carregamento. Fotos com falha oferecem nova tentativa. Descanso aceita de 0 a 3600 segundos.
+- Ajustada a quebra de nomes longos no cabeçalho de continuação do PDF para celular.
+
+Verificação: 11 arquivos passaram em `node --test tests/*.test.cjs`. Percurso em Chromium com catálogo lento e indisponível, nova tentativa de catálogo e foto, correspondências corrigidas, modelos editáveis, ficha vazia, nomes longos, descanso zero/inválido e download do PDF. Larguras de 320, 360, 390 e 1440 px conferidas sem transbordamento do diálogo e sem erros JavaScript. PDFs A4 e A5 com 1 e 60 exercícios foram gerados, renderizados e conferidos visualmente.
