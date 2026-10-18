@@ -21,7 +21,7 @@
     }).catch(error => { libraryPromise = null; throw error; });
     return libraryPromise;
   }
-  function makeDocument(student, coach = {}, date = new Date()) {
+  function makeDocument(student, coach = {}, date = new Date(), options = {}) {
     if (!Array.isArray(student?.workout) || !student.workout.length)
       throw new Error('Adicione exercícios à ficha antes de gerar o PDF.');
     const doc = new root.jspdf.jsPDF({ unit: 'mm', format: 'a4', compress: true });
@@ -92,7 +92,11 @@
       const wrapped = cells.map((value, i) => lines(value, columns[i] - (i === 0 ? 2 : padding * 2), 9.5, i === 1));
       const count = Math.max(...wrapped.map(value => value.length));
       const rowHeight = count * lineHeight + padding * 2;
-      if (y + rowHeight > bottom && rowHeight < bottom - 57) startPage(false);
+      const noteHeight = exercise.notes ? lines('Orientações: ' + exercise.notes, width - 8, 9).length * 4.7 + 3 : 0;
+      const mediaHeight = options.illustrated ? ((options.photos?.get(exercise.name)||[]).length ? 60 : 12) : 0;
+      const blockHeight = rowHeight + noteHeight + mediaHeight;
+      if (blockHeight < bottom - 57 && y + blockHeight > bottom) startPage(false);
+      else if (y + rowHeight > bottom && rowHeight < bottom - 57) startPage(false);
       let offset = 0;
       while (offset < count) {
         let available = Math.floor((bottom - y - padding * 2) / lineHeight);
@@ -109,6 +113,39 @@
         y += height; offset += take;
         if (offset < count) startPage(false);
       }
+      if (exercise.notes) {
+        const noteLines = lines('Orientações: ' + exercise.notes, width - 8, 9);
+        for (const line of noteLines) {
+          if (y + 8 > bottom) startPage(false);
+          text(line, left + 4, y + 5, 9, false, [42, 86, 66]); y += 4.7;
+        }
+        y += 3;
+      }
+      if (options.illustrated) {
+        const photos = options.photos?.get(exercise.name) || [];
+        if (y + (photos.length ? 65 : 12) > bottom) {
+          startPage(false);
+          for (const line of lines(exercise.name + ' - fotos', width - 8, 9, true)) {
+            text(line, left + 4, y + 5, 9, true); y += 5;
+          }
+          y += 3;
+        }
+        if (photos.length) {
+          photos.forEach((bytes, position) => {
+            const boxX = left + position * 91 + 3;
+            try {
+              const image = doc.getImageProperties(bytes);
+              const scale = Math.min(85 / image.width, 50 / image.height);
+              const w = image.width * scale, h = image.height * scale;
+              doc.addImage(bytes, 'JPEG', boxX + (85 - w) / 2, y + (50 - h) / 2, w, h);
+              text('Posição ' + (position + 1), boxX, y + 55, 8, false, [97, 108, 120]);
+            } catch (_) { text('Foto indisponível.', boxX, y + 15, 9); }
+          });
+          y += 60;
+        } else {
+          text('Foto não disponível para esta variação.', left + 4, y + 6, 8, false, [97, 108, 120]); y += 12;
+        }
+      }
     });
     const total = doc.getNumberOfPages();
     for (let page = 1; page <= total; page++) {
@@ -119,11 +156,65 @@
     doc.setProperties({ title: 'Treino de ' + name, author: professional, subject: 'Ficha de treino - Personal Pro', creator: 'Personal Pro' });
     return doc;
   }
-  async function prepare(student, coach) {
+  async function loadPhotos(student, options) {
+    const photos = new Map(), warnings = [];
+    let catalog;
+    try {
+      const response = await root.fetch('/exercise-library.json', {signal: root.AbortSignal.timeout(15000)});
+      if (!response.ok) throw new Error('catalog');
+      catalog = await response.json();
+      if (!Array.isArray(catalog)) throw new Error('catalog');
+    } catch (_) {
+      return {photos, warnings:['Não foi possível carregar as fotos. A ficha foi gerada com as orientações e os campos do treino.']};
+    }
+    const byId = new Map(catalog.map(item => [item.id, item]));
+    const byName = new Map(catalog.map(item => [item.name, item]));
+    const jobs = [], entries = new Map(), downloads = new Map();
+    let missing = 0;
+    for (const exercise of student.workout) {
+      const source = byId.get(exercise.sourceId || options.exerciseSources?.[exercise.name]) || byName.get(exercise.name);
+      const urls = source?.images?.slice(0, 2) || [];
+      if (!urls.length) { missing++; continue; }
+      entries.set(exercise.name, urls);
+      for (const url of urls) if (!downloads.has(url)) {
+        downloads.set(url, null);
+        jobs.push(async () => {
+          try {
+            const parsed = new URL(url);
+            if (parsed.hostname !== 'raw.githubusercontent.com' || !parsed.pathname.startsWith('/yuhonas/free-exercise-db/')) throw new Error('source');
+            const response = await root.fetch(url, {signal:root.AbortSignal.timeout(10000),referrerPolicy:'no-referrer'});
+            if (!response.ok) throw new Error('photo');
+            const bytes = new Uint8Array(await response.arrayBuffer());
+            if (bytes.length > 3000000 || bytes[0] !== 255 || bytes[1] !== 216) throw new Error('JPEG');
+            // Validate before layout, so a failed image has a visible warning.
+            const probe = new root.jspdf.jsPDF(); probe.getImageProperties(bytes);
+            downloads.set(url, bytes);
+          } catch (_) { downloads.set(url, null); }
+        });
+      }
+    }
+    let cursor = 0;
+    await Promise.all(Array.from({length:Math.min(4,jobs.length)},async () => {
+      while (cursor < jobs.length) await jobs[cursor++]();
+    }));
+    let failed = 0;
+    for (const [name, urls] of entries) {
+      const loaded = urls.map(url => downloads.get(url));
+      failed += loaded.filter(value => !value).length;
+      photos.set(name, loaded.some(Boolean) ? loaded : []);
+    }
+    if (missing) warnings.push(missing + ' exercício(s) sem foto nesta fonte.');
+    if (failed) warnings.push(failed + ' foto(s) não carregada(s). As demais informações foram mantidas.');
+    return {photos, warnings};
+  }
+  async function prepare(student, coach, options = {}) {
     await loadLibrary();
-    const doc = makeDocument(student, coach);
+    if (!Array.isArray(student?.workout) || !student.workout.length)
+      throw new Error('Adicione exercícios à ficha antes de gerar o PDF.');
+    const media = options.illustrated ? await loadPhotos(student, options) : {photos:new Map(),warnings:[]};
+    const doc = makeDocument(student, coach, new Date(), {...options, photos:media.photos});
     const slug = clean(student.name).normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').toLowerCase().slice(0, 80) || 'aluno';
-    return { blob: doc.output('blob'), fileName: 'treino-' + slug + '.pdf' };
+    return { blob: doc.output('blob'), fileName: 'treino-' + slug + (options.illustrated ? '-ilustrado' : '') + '.pdf', warnings:media.warnings };
   }
   function download(artifact) {
     const url = root.URL.createObjectURL(artifact.blob), anchor = root.document.createElement('a');
