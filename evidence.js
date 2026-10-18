@@ -18,8 +18,22 @@
     if(entry.category==="exercise"&&entry.medicalClearanceRequired===true)reasons.push("Requer avaliacao individual");
     return {ok:reasons.length===0,reasons};
   }
+  function evaluateSuggestion(entry,context){
+    const result=validateEntry(entry);
+    const reasons=result.reasons.slice();
+    if(!context||typeof context!=="object")reasons.push("Contexto do aluno ausente");
+    else{
+      if(context.professionalReview!==true)reasons.push("Revisao do personal obrigatoria");
+      if(context.reportedPain===true||context.reportedInjury===true)reasons.push("Dor ou lesao relatada: requer avaliacao individual");
+      if(context.medicalRestriction===true)reasons.push("Restricao de saude: nao sugerir automaticamente");
+      if(context.ageGroup!=="adult")reasons.push("Regra limitada a adultos");
+      if(context.equipment&&Array.isArray(entry?.requiredEquipment)&&entry.requiredEquipment.some(item=>!context.equipment.includes(item)))reasons.push("Equipamento indisponivel");
+    }
+    return {allowed:reasons.length===0,reasons,sourceLinks:Array.isArray(entry?.sourceIds)?entry.sourceIds.filter(id=>byId[id]).map(id=>({title:byId[id].title,url:byId[id].url})):[]};
+  }
+  function listSuggestions(entries,context){return (Array.isArray(entries)?entries:[]).map(entry=>({entry,assessment:evaluateSuggestion(entry,context)})).filter(item=>item.assessment.allowed)}
   function publishable(entries){return (Array.isArray(entries)?entries:[]).filter(e=>validateEntry(e).ok)}
-  const api=Object.freeze({sources,validateEntry,publishable});
+  const api=Object.freeze({sources,validateEntry,publishable,evaluateSuggestion,listSuggestions});
   root.PersonalProEvidence=api;
   if(typeof module!=="undefined"&&module.exports)module.exports=api;
 })(typeof window!=="undefined"?window:globalThis);
