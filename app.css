@@ -244,3 +244,66 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 
 /* Student hub: prominent navigation cards, not long inline forms. */
 .pp-record-section-card,.pp-student-workout-card{min-width:0;border-radius:16px;padding:15px;background:var(--surface);border:1px solid var(--border)}.pp-record-section-card h3{font-size:15px;font-weight:800;margin:0 0 8px}.pp-record-section-card p{font-size:12px;line-height:1.45;color:var(--text-dim);margin:0 0 10px;overflow-wrap:anywhere}.pp-record-section-card button{min-height:44px;width:100%;white-space:normal}.pp-record-section-card small{display:block;margin:6px 0;font-size:11px}.pp-student-workout-card{margin-bottom:10px}.pp-student-workout-card button{min-height:48px}@media(min-width:700px){.pp-record-section-cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* Personal Pro 2.0 — visual refinement, preserving current flows and branding.
+   The new student execution experience is a separate development milestone. */
+:root {
+  --pp2-radius: 20px;
+  --pp2-shadow: 0 12px 32px rgba(20,55,42,.065);
+}
+.pp-page-title {font-size:clamp(24px,5vw,30px);letter-spacing:-.045em;line-height:1.18}
+.pp-intro {max-width:62ch}
+.pp-mobile-quick-actions {
+  border-radius:var(--pp2-radius);
+  padding:clamp(14px,3vw,20px);
+  box-shadow:var(--pp2-shadow);
+}
+.pp-mobile-quick-grid {gap:11px}
+.pp-mobile-quick-grid button {
+  position:relative;
+  min-height:116px;
+  border-radius:17px;
+  padding:16px;
+  background:linear-gradient(145deg,var(--surface) 5%,var(--surface-2) 100%);
+  box-shadow:0 3px 12px rgba(20,55,42,.035);
+}
+.pp-mobile-quick-grid button:hover {border-color:#91b5a1;box-shadow:0 8px 20px rgba(20,55,42,.09)}
+.pp-quick-card-icon {width:42px;height:42px;border-radius:13px}
+.pp-quick-card-content {gap:8px}
+.pp-quick-card-content strong {font-size:15px}
+.pp-quick-card-content small {font-size:12px}
+.pp-record-section-card,.pp-student-workout-card {
+  border-radius:var(--pp2-radius);
+  padding:18px;
+  box-shadow:var(--pp2-shadow);
+}
+.pp-record-section-card {align-content:start}
+.pp-record-section-card h3 {font-size:16px}
+.pp-record-section-card p {font-size:13px;line-height:1.55}
+.pp-record-section-card button {margin-top:auto}
+.pp-workspace-dialog .pp-training-card,.pp-focused-area {
+  border-radius:var(--pp2-radius);
+  box-shadow:var(--pp2-shadow);
+}
+.pp-exercise-card {border-radius:18px;box-shadow:var(--pp2-shadow)}
+.pp-exercise-title h4 {line-height:1.4}
+.pp-day {min-height:62px;transition:border-color .15s ease,background-color .15s ease}
+.pp-day:focus-visible,.pp-mobile-quick-grid button:focus-visible {outline:3px solid #247657;outline-offset:3px}
+.pp-primary,.pp-secondary {min-height:46px}
+@media(max-width:420px) {
+  .pp-record-section-cards {grid-template-columns:1fr}
+  .pp-record-section-card {padding:16px}
+  .pp-mobile-quick-grid button {min-height:108px;padding:13px}
+  .pp-quick-card-content strong {font-size:14px}
+  .pp-quick-card-content small {font-size:11px}
+  .pp-workout-actions {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pp-workout-actions button:first-child {grid-column:1/-1}
+  .pp-focused-area {padding:16px}
+}
+@media(min-width:760px) {
+  .pp-mobile-quick-grid {grid-template-columns:repeat(4,minmax(0,1fr))}
+  .pp-record-section-cards {grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(prefers-reduced-motion:reduce) {
+  .pp-day,.pp-mobile-quick-grid button {transition:none}
+}
