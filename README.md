@@ -202,3 +202,21 @@ Disponíveis também na demonstração:
 6. **Organizar e revisar ficha → Identidade do profissional no PDF** configura nome, estúdio, contato e logo. PNG, JPEG e WebP de até 3 MB são processados localmente e reduzidos para armazenamento no perfil. O contato e o logo aparecem em A4 e no formato para celular. A logo pode ser removida; URLs externas não são carregadas como logo.
 
 Verificação: 12 arquivos de testes automatizados, percurso em Chromium das seis ferramentas, conferência de telas de 320/390/1440 px e PDFs A4/A5 renderizados com identidade do profissional. Não foram adicionados serviços pagos.
+
+
+## Contratação, agenda e contato do profissional
+
+Na ficha do aluno, **Atendimentos presenciais → Contratação, pacote e horários**:
+
+- Adicione uma contratação, escolha pacote de aulas ou acompanhamento semanal e preencha início, quantidade (quando houver), valor e pagamento. A validade é opcional.
+- Adicione dias da semana com horário, duração e local digitado livremente. Cada linha repete semanalmente; horários incompletos não geram atendimentos. A programação aparece na aba Hoje e pode ser consultada por data. Locais podem variar por dia.
+- Alterações na ficha usam o salvamento automático da conta já existente, incluindo a cópia local pendente em caso de falha. Não é necessário um botão de salvar contratação. A demonstração mantém alterações somente na sessão. Os dados novos usam campos JSON dentro do aluno, sem nova tabela ou projeto.
+- **Aulas, remarcações e correções** permite confirmar presença, registrar falta, cancelar, desfazer um registro ou remarcar uma única ocorrência. Falta e cancelamento só descontam quando o profissional marcar essa opção. Aulas futuras não podem ser confirmadas nem descontadas; cancelamento futuro sem desconto é permitido. A mesma ocorrência não desconta duas vezes. Sem saldo, é possível renovar ou registrar a presença sem desconto.
+- A remarcação mantém uma chave de ocorrência estável, não consome aulas e não altera o restante da recorrência. A correção devolve o saldo correspondente. Os registros preservam contratação, data, horário, local e histórico de mudanças.
+- **Novo pacote / renovação** preserva contratações, valores e registros anteriores e copia horários ativos para revisão. Se houver contratações sobrepostas, a válida com início mais recente define a programação recorrente; não há migração automática de saldo entre pacotes. Horários podem continuar previstos após esgotar o saldo, com aviso para regularizar a contratação.
+- Conflitos são destacados na programação selecionada e nas próximas quatro semanas. O intervalo entre atendimentos considera a duração e apresenta os locais; não usa mapas nem estima trânsito.
+- Alertas indicam pacote próximo do fim (até 20% ou três aulas, o menor dos dois), esgotamento, validade nos próximos sete dias ou encerrada e pagamentos de contratação pendentes. Financeiro mostra valores cadastrados dos pacotes/semanais e seu histórico, separados do controle mensal anterior. O valor semanal não gera recebimentos ou cobranças recorrentes automaticamente.
+- O afastamento usa as datas das aulas presenciais confirmadas. Sem confirmações, usa o início da contratação para indicar ausência de registro, sem inventar presença. **Contato feito hoje** registra a ação e sugere novo lembrete em sete dias, editável. Retorno, renovação e lembrete de aula têm mensagens editáveis; o profissional escolhe se envia pelo WhatsApp. Abrir a conversa não significa que o contato foi realizado.
+- Registros gerais de treino continuam separados das aulas presenciais. Treinar sozinho não desconta pacote. O saldo ou a validade do pacote não bloqueiam nem alteram a ficha de treino.
+
+Verificação: `node --test tests/*.test.cjs` (13 arquivos). A suíte de agenda cobre recorrência, locais, confirmação idempotente, falta/cancelamento com e sem desconto, correção, saldo esgotado, remarcação individual, conflito, renovação, validade semanal e lembretes. Percurso em Chromium preencheu a ficha com o adaptador de conta simulado, observou salvamento automático, recarregou e restaurou os dados, conferiu agenda/financeiro e as telas de 320/390/1440 px, sem erros de execução. A camada de persistência existente permanece coberta por seus testes de gravação, restauração, fila e recuperação.
