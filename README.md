@@ -1,12 +1,12 @@
 # Personal Pro
 
-Aplicativo estático com React 18.3.1 compilado no HTML. O arquivo original fornecido foi `Personal-Pro.zip`; não há projeto-fonte JSX ou etapa de compilação. Os estilos originais foram preservados.
+Aplicativo estático com React 18.3.1 compilado no HTML. O arquivo original fornecido foi `Personal-Pro.zip`; não há projeto-fonte JSX ou etapa de compilação. A interface usa tema claro em `app.css`, com cartões brancos e verde nos destaques.
 
 ## Executar e publicar
 
 Sirva esta pasta por HTTP. Na Vercel, use o projeto existente `personal-pro`, framework Other e sem comando de build. `vercel.json` define publicação estática da raiz.
 
-Projeto Vercel autorizado: `prj_l2RIDJjV3XPwzumbndGzGwrx5s67`, time `team_B1cC85U00FbgdctDH2EcjyVu`. Publicado em https://personal-pro-liart.vercel.app a partir da branch main, commit c14097dde63ecf923a6537cc901f22d32ed65e10. Deploy dpl_F9ksHtBYowndc5TdkNw1yXmKKVkf, estado READY. A página inicial e cloud.js responderam HTTP 200 sem autenticação Vercel e são idênticos aos arquivos do repositório. A publicação foi feita pela API com fonte GitHub; o vínculo de atualizações automáticas por push foi confirmado: o commit de documentação 09ef2413c7440be3b49c3670ddc49b11d0829b7c gerou automaticamente o deploy de produção dpl_3popbXpKp9crgoSaVyGwUSCFAMdC, estado READY.
+Projeto Vercel existente: `prj_l2RIDJjV3XPwzumbndGzGwrx5s67`, time `team_B1cC85U00FbgdctDH2EcjyVu`. Produção: https://personal-pro-liart.vercel.app. A branch `main` do repositório GitHub está conectada à publicação automática na Vercel.
 
 ## Supabase existente
 
@@ -23,7 +23,7 @@ Ao definir a URL de produção, configurar Site URL e Redirect URLs no Supabase 
 - `node tests/cloud.test.cjs`: sintaxe JavaScript, login, gravação completa, restauração, ordem das gravações, erro e nova tentativa, logout, credenciais inválidas, confirmação e recuperação com efeitos duplicados do React. API simulada.
 - PostgreSQL real: inserir, ler e atualizar como proprietário; preservar exercícios aninhados; bloquear leitura, atualização e inserção de outra conta. Testes revertidos com BEGIN/ROLLBACK; nenhum usuário ou registro de teste permaneceu.
 - API HTTP real: Auth settings 200, e-mail habilitado e confirmação obrigatória; acesso anônimo à tabela bloqueado com 401.
-- Assessor de segurança do Supabase: nenhum alerta. Comparação dos estilos: idênticos ao original.
+- Assessor de segurança do Supabase: nenhum alerta. O tema claro substitui a paleta escura; os fluxos existentes foram mantidos.
 
 Ainda pendentes: validação visual em navegador, fluxo real de confirmação/recuperação por e-mail, gravação autenticada pelo navegador e testes de produção. Os testes simulados e de PostgreSQL não substituem o fluxo completo.
 
@@ -37,9 +37,25 @@ Ainda pendentes: validação visual em navegador, fluxo real de confirmação/re
 - O código demonstrativo do portal e a função de copiar links fictícios foram removidos. A versão anterior permanece no histórico do GitHub.
 - Não há monitoramento automático do aluno nem confirmação enviada diretamente por ele.
 
+## Tema claro e montagem de treinos
+
+- Fundo claro, cartões brancos, texto escuro e verde nos botões principais; avatares em tons suaves.
+- A biblioteca tem acesso próprio na aba **Biblioteca**, com busca, filtros, fotos e explicações. Também abre pelo botão **Adicionar exercício da biblioteca**, dentro da ficha.
+- O editor de treino aparece no início da ficha, seguido pelos dados de avaliação e anotações que já existiam.
+- Cada aluno pode ter **Treino A, B e C**. Exercícios antigos, sem o campo `day`, aparecem em A; nenhum registro antigo precisa ser apagado ou regravado para isso.
+- Cada cartão identifica séries, repetições/tempo, carga e descanso, com botões **Editar**, **Remover** e setas para mudar a ordem dentro do treino selecionado.
+- **Duplicar treino** acrescenta uma cópia ao dia escolhido. **Duplicar ficha** acrescenta os três treinos à ficha de outro aluno. A cópia recebe IDs novos e não leva histórico de carga do aluno de origem; o destino mantém os exercícios e os demais dados que já possuía.
+- Os modelos também são acrescentados ao treino selecionado, preservando os exercícios existentes.
+- Na biblioteca, é possível escolher o aluno e o treino de destino para adicionar exercícios sem procurar primeiro a ficha.
+- **Salvar treino**, **Ver PDF** e **Enviar treino** ficam agrupados. Contas reais mantêm o salvamento automático e oferecem confirmação manual de gravação. Na demonstração, salvar conserva o estado somente durante aquela experiência e informa isso ao usuário.
+- O PDF e a mensagem de WhatsApp separam A/B/C. O diálogo de PDF permite visualizar, baixar e compartilhar onde o navegador suporta arquivos.
+- Os dados A/B/C são armazenados no JSON de exercícios já existente. Não há alteração de schema, perda de registros ou migração destrutiva.
+
+Validação: `node --test tests/*.test.cjs`; testes do tema em Chromium, fluxo demonstrativo com catálogo em português, reordenação, cópia A/B, edição e download de PDF real, em 360/390 px e desktop, sem erros JavaScript. A aparência da tela e a renderização do PDF foram conferidas. O salvamento autenticado continua coberto com API simulada; esta alteração não executou cadastro ou cobrança real.
+
 ## Biblioteca de exercícios
 
-Na ficha do aluno, toque em **Adicionar** na seção **Treino Atual**.
+Abra a aba **Biblioteca** ou, na ficha do aluno, toque em **Adicionar exercício da biblioteca** na seção **Treino Atual**.
 
 - **180 exercícios em português**, organizados por grupo muscular.
 - **Catálogo ampliado com 876 exercícios**, importado do Free Exercise DB. É uma coleção separada e pode conter equivalentes dos exercícios em português; não representa 1.056 exercícios distintos.
@@ -61,11 +77,11 @@ Validação desta alteração: `node --test tests/*.test.cjs`. Cobre adicionar/e
 
 ## PDF da ficha para o aluno
 
-Na ficha do aluno, em **Treino Atual**, toque em **PDF do treino**. A ficha deve conter pelo menos um exercício.
+Na ficha do aluno, em **Treino Atual**, toque em **Ver PDF**. A ficha deve conter pelo menos um exercício.
 
 - O PDF A4 inclui nome do aluno, personal, estúdio (quando preenchido), data e tabela com exercício, séries, repetições/tempo, carga/intensidade e descanso.
 - Usa os valores atuais da ficha e interpreta os treinos antigos no formato `3x12`. Preserva duração de cardio e descanso zero.
-- Tabelas longas recebem páginas adicionais com cabeçalho e numeração. Campos extensos quebram linha.
+- O PDF organiza os exercícios por Treino A/B/C. Tabelas longas recebem páginas adicionais com cabeçalho e numeração. Campos extensos quebram linha.
 - **Baixar PDF** salva o arquivo `treino-nome-do-aluno.pdf`.
 - **Compartilhar PDF** aparece quando o navegador oferece compartilhamento de arquivos. O personal escolhe o WhatsApp e a conversa do aluno na tela do aparelho. O aplicativo não seleciona o destinatário nem envia automaticamente.
 - No computador ou sem compartilhamento nativo, baixe o arquivo e anexe na conversa do WhatsApp. **Mandar treino** continua enviando o treino como texto.
