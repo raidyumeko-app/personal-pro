@@ -43,7 +43,7 @@ async function main(){
  click('Duplicar ficha');set('Copiar ficha para aluno','two');click('Confirmar cópia');
  assert.equal(current()[1].workout.length,1+current()[0].workout.length);assert.equal(current()[1].notes,'Preservar esta nota');assert.ok(current()[1].workout.some(n=>n.id==='keep'));assert.ok(current()[1].workout.filter(n=>n.id!=='keep').every(n=>!n.lastLoad&&!n.loadHistory));
  const ids=current().flatMap(n=>n.workout.map(ex=>ex.id));assert.equal(new Set(ids).size,ids.length,'Copied exercises have unique IDs');
- click('Enviar treino');assert.ok(messages[0].startsWith('https://wa.me/'));const message=decodeURIComponent(messages[0].split('text=')[1]);for(const day of ['A','B','C'])assert.ok(message.includes('TREINO '+day));assert.ok(message.includes('Controlar a descida e pausar.'));
+ click('Enviar texto');assert.ok(messages[0].startsWith('https://wa.me/'));const message=decodeURIComponent(messages[0].split('text=')[1]);for(const day of ['A','B','C'])assert.ok(message.includes('TREINO '+day));assert.ok(message.includes('Controlar a descida e pausar.'));
  // Preview feature is not hidden behind creation of an account.
  ctx.window.PersonalProPDF={prepare:async student=>({blob:{},fileName:'test.pdf',student}),canShare:()=>false};
  await click('Ver PDF');tree=render();assert.ok(button('Visualizar PDF'));assert.ok(button('Baixar PDF'));
