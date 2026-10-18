@@ -324,3 +324,12 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 .pp-session-set button{min-width:116px;min-height:46px}
 .pp-session-error{font-size:13px;color:var(--red);font-weight:700}
 @media(max-width:360px){.pp-session-preview{padding:12px}.pp-session-set{grid-template-columns:1fr}.pp-session-set button{width:100%}}
+
+/* Full demo tour: same navigation and data model as the trainer app. */
+.pp-demo-tour{display:grid;gap:12px;padding:18px;border-radius:20px;background:linear-gradient(135deg,rgba(216,255,47,.14),var(--surface));border:1px solid rgba(216,255,47,.38)}
+.pp-demo-tour>strong{font-size:17px;font-weight:850;line-height:1.35}
+.pp-demo-tour>p{font-size:13px;line-height:1.55;color:var(--text-dim)}
+.pp-demo-tour-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.pp-demo-tour-grid button{min-height:48px;padding:10px 8px;white-space:normal;text-align:center}
+.pp-demo-tour-grid button:first-child{grid-column:1/-1}
+@media(max-width:350px){.pp-demo-tour{padding:12px}.pp-demo-tour-grid{grid-template-columns:1fr}.pp-demo-tour-grid button:first-child{grid-column:auto}}
