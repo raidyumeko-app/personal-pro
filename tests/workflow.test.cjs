@@ -51,7 +51,8 @@ console.log('PASS: Today action; duplicate-safe manual recording; disabled confi
 if(html.includes('const exerciseLibrary=')) {
  assert.equal(vm.runInContext('exerciseLibrary.length',ctx),180);
  const find=(role,label)=>nodes(tree).find(n=>n.type===role&&n.props?.['aria-label']===label);
- const clickLabel=label=>{const el=nodes(tree).find(n=>n.type==='button'&&text(n).trim()===label);assert.ok(el,label);el.props.onClick();tree=render();};
+ const openTraining=nodes(tree).find(n=>n.type==='button'&&text(n)==='Abrir treino');assert.ok(openTraining);openTraining.props.onClick();tree=render();
+const clickLabel=label=>{const el=nodes(tree).find(n=>n.type==='button'&&text(n).trim()===label);assert.ok(el,label);el.props.onClick();tree=render();};
  const set=(label,value)=>{const el=nodes(tree).find(n=>n.props?.['aria-label']===label);assert.ok(el,label);el.props.onChange({target:{value}});tree=render();};
  clickLabel('Adicionar exercício da biblioteca');
  assert.ok(text(tree).includes('Biblioteca de exercícios'));
