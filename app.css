@@ -150,3 +150,39 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 
 .pp-student-list { grid-template-columns: minmax(0,1fr); }
 .pp-student-list > button { min-width: 0; overflow: hidden; }
+/* Completion: resilient editing, planning and accessible controls. */
+.pp-account-tools { display:flex; flex-wrap:wrap; align-items:center; gap:8px; padding:12px 16px; border-bottom:1px solid var(--border); background:#fff; }
+.pp-account-tools button { font-size:11px; padding:8px 10px; }
+.pp-sync { width:100%; font-size:12px; line-height:1.5; color:#38604b; }
+.pp-sync.pending { color:#8a3e16; font-weight:700; }
+.pp-panel, .pp-guide, .pp-recovery { border:1px solid var(--border); border-radius:14px; background:#f5f9f6; padding:13px; margin:12px 0 16px; font-size:13px; }
+.pp-panel summary, .pp-alternatives summary { min-height:44px; cursor:pointer; font-weight:700; padding:9px 0; }
+.pp-panel > *+*, .pp-recovery > *+* { margin-top:10px; }
+.pp-panel input:not([type="checkbox"]), .pp-panel select, .pp-panel textarea, .pp-training-fields input, .pp-training-fields select, .pp-training-fields textarea, .pp-model-editor input, .pp-model-editor select, .pp-model-editor textarea { width:100%; min-width:0; min-height:44px; padding:10px; border:1px solid #b9cfc2; border-radius:10px; background:white; color:var(--text); font-size:14px; }
+.pp-training-fields { display:grid; gap:12px; }
+.pp-training-fields textarea { min-height:80px; resize:vertical; }
+.pp-guide, .pp-recovery { margin:12px 16px; }
+.pp-guide h2 { font-size:18px; font-weight:800; margin-bottom:8px; }
+.pp-guide p { line-height:1.6; }
+.pp-guide .pp-workout-tools { margin:14px 0 0; }
+.pp-undo { position:fixed; z-index:95; bottom:12px; left:50%; transform:translateX(-50%); width: min(94vw,540px); display:flex; flex-wrap:wrap; align-items:center; gap:8px; padding:13px; background:#fff; border:2px solid #176b52; box-shadow:0 6px 28px #153c2a30; border-radius:16px; }
+.pp-undo p { width:100%; overflow-wrap:anywhere; font-size:12px; }
+.pp-weekdays { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+.pp-weekdays legend { margin-bottom:10px; }
+.pp-weekdays label { min-height:44px; display:flex; align-items:center; gap:8px; }
+.pp-weekdays input { width:22px; height:22px; accent-color:#176b52; }
+.pp-technique { padding:9px 11px; margin:10px 0; background:#e6effb; color:#244f79; border-radius:9px; font-size:12px; font-weight:700; overflow-wrap:anywhere; }
+.pp-alternatives { font-size:12px; margin:10px 0; }
+.pp-alternatives ul { list-style:disc; padding-left:20px; line-height:1.8; }
+.pp-load-graph svg { display:block; width:100%; max-height:180px; }
+.pp-version-preview { max-height:240px; overflow:auto; line-height:1.7; overflow-wrap:anywhere; }
+.pp-modal-wrap { position:fixed; inset:0; z-index:75; display:flex; align-items:center; justify-content:center; padding:12px; }
+.pp-modal-shade { position:absolute; inset:0; background:#0009; }
+.pp-model-editor { position:relative; display:grid; gap:14px; width:100%; max-width:600px; max-height:92dvh; overflow-y:auto; background:white; border-radius:20px; padding:20px; overscroll-behavior:contain; }
+.pp-model-editor h3 { font-size:20px; font-weight:800; }
+:focus-visible { outline:3px solid #277e5d; outline-offset:3px; }
+@media(max-width:600px) { button, summary { touch-action:manipulation; } .pp-panel input:not([type="checkbox"]), .pp-panel select, .pp-panel textarea, .pp-training-fields input, .pp-training-fields select, .pp-training-fields textarea { font-size:16px; } }
+.pp-student-summary > div:last-child { min-width:0; }
+.pp-student-summary h2, [aria-label="Aplicar modelo de treino"] h3, .pp-model-editor h3 { overflow-wrap:anywhere; }
+.pp-recovery summary { min-height:44px; font-weight:700; cursor:pointer; }
+.pp-guide[aria-label] { scroll-margin-top:70px; }
