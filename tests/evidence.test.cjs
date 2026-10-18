@@ -1,5 +1,5 @@
 const test=require('node:test');const assert=require('node:assert/strict');const evidence=require('../evidence.js');
-const base={id:'e1',title:'Exercicio',category:'exercise',sourceIds:['acsm-2026'],reviewedBy:'Profissional responsavel',reviewedAt:'2026-10-18'};
+const base={id:'e1',title:'Exercicio',category:'exercise',sourceIds:['acsm-2026'],reviewedBy:'Profissional responsavel',reviewedAt:'2026-10-18',status:'approved',evidenceNotes:'Referencia verificada, aplicabilidade sujeita a revisao'};
 test('exige referencia rastreavel',()=>assert.equal(evidence.validateEntry({...base,sourceIds:['inexistente']}).ok,false));
 test('exige revisao profissional',()=>assert.equal(evidence.validateEntry({...base,reviewedBy:null}).ok,false));
 test('rejeita video sem licenca comercial',()=>assert.equal(evidence.validateEntry({...base,category:'video',videoUrl:'https://example.org/v.mp4'}).ok,false));
