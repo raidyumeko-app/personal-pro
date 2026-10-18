@@ -53,6 +53,16 @@ Ainda pendentes: validação visual em navegador, fluxo real de confirmação/re
 
 Validação: `node --test tests/*.test.cjs`; testes do tema em Chromium, fluxo demonstrativo com catálogo em português, reordenação, cópia A/B, edição e download de PDF real, em 360/390 px e desktop, sem erros JavaScript. A aparência da tela e a renderização do PDF foram conferidas. O salvamento autenticado continua coberto com API simulada; esta alteração não executou cadastro ou cobrança real.
 
+## Modelos pessoais, revisão e busca de alunos
+
+- **Salvar como modelo**, na ficha, permite guardar a ficha completa A/B/C ou somente o treino selecionado. Nome obrigatório (até 80 caracteres), descrição opcional (até 240). Os modelos ficam em `profile.workoutTemplates` e aparecem antes dos modelos prontos na aba **Modelos**. Nomes repetidos entre modelos pessoais são recusados sem sobrescrever.
+- Um modelo salva apenas a prescrição dos exercícios: nomes, divisão A/B/C, séries, repetições, carga, descanso, fonte da foto e orientações. Dados pessoais, registros de presença e histórico de cargas não são copiados. Modificações posteriores na ficha de origem não alteram o modelo.
+- Aplicar ficha completa preserva A/B/C. Para modelos de um dia ou modelos prontos, escolha **Treino de destino do modelo**. Os exercícios são acrescentados, com IDs novos, preservando os anteriores no destino. Depois é possível ajustar qualquer prescrição.
+- **Revisão do treino** mostra a última alteração e permite definir **Próxima revisão**. A data sinaliza revisão agendada, hoje ou pendente na ficha e na lista de alunos. **Marcar treino revisado** registra a revisão e limpa o agendamento anterior; a próxima data pode ser definida em seguida. Não há envio de notificações.
+- A última alteração é registrada ao modificar os exercícios, a ordem ou aplicar/copiar modelos/fichas. Fichas antigas sem registro não recebem uma data presumida. Datas de revisão ficam junto ao aluno (`workoutReviewDate`, `workoutReviewedAt`, `workoutUpdatedAt`).
+- A busca da aba **Alunos** ignora acentos e espaços extras, aceita partes do nome em qualquer ordem, mostra a contagem, informa ausência de resultados e permite **Limpar busca**.
+- Todos esses fluxos funcionam na demonstração, com duração restrita à experiência demonstrativa. Contas autenticadas usam o salvamento existente, sem alterações de esquema.
+
 ## Favoritos, orientações e evolução
 
 - A estrela em cada exercício adiciona/remove um favorito. **Ver favoritos** filtra o catálogo; a mesma fonte é reconhecida entre os catálogos português/ampliado. Favoritos ficam no perfil da conta (`profile.favoriteExercises`), usando o salvamento existente. Na demonstração, duram apenas a sessão demonstrativa.
