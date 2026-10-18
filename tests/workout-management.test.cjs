@@ -1,0 +1,54 @@
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
+const html=fs.readFileSync(path.join(__dirname,'../index.html'),'utf8');
+const code=html.slice(html.indexOf('const exerciseLibrary='),html.indexOf('cd.createRoot('));
+const students=[{id:'one',name:'Aluno Um',initials:'AU',color:'#D8FF2F',streak:0,monthlyFreq:'0/12',lastCheckinDays:0,todayStatus:'pending',doneOn:[],whatsapp:'5511999999999',goal:'Força',limitation:'Nenhuma',height:'170',notes:'Nota privada do aluno um',planValue:100,planStatus:'pago',weightHistory:[],measures:{},workout:[{id:'a1',name:'Supino antigo',sets:'3x12',load:'10 kg',rest:60},{id:'b1',name:'Remada no treino B',sets:'4x8',load:'10 kg',rest:90,day:'B'},{id:'a2',name:'Flexão antiga',sets:'3x10',load:'Peso corporal',rest:45}]},{id:'two',name:'Aluno Dois',initials:'AD',color:'#D8FF2F',streak:0,monthlyFreq:'0/12',lastCheckinDays:0,todayStatus:'pending',doneOn:[],whatsapp:'5511888888888',goal:'Condicionamento',limitation:'Nenhuma',height:'170',notes:'Preservar esta nota',planValue:200,planStatus:'pendente',weightHistory:[],measures:{},workout:[{id:'keep',name:'Exercício já existente',sets:'1x10',load:'2 kg',rest:30,day:'C'}]}];
+const states=[],refs=[],saved=[],messages=[];let stateIndex=0,refIndex=0,studentState;
+const ctx={console,Date,Set,JSON,Object,Array,Number,String,Math,tv:students,rv:[],navigator:{},setTimeout:fn=>fn(),window:{open:url=>messages.push(url)},PersonalProCloud:{save:async(profile,list)=>saved.push(structuredClone(list))},R:{useState(initial){const i=stateIndex++;if(!(i in states)){states[i]=i===0?'app':typeof initial==='function'?initial():initial;if(Array.isArray(states[i])){states[i]=structuredClone(students);studentState=i}}return[states[i],value=>{states[i]=typeof value==='function'?value(states[i]):value}]},useRef(initial){return refs[refIndex++]||=( {current:initial})},useEffect(){}},a:(type,props,key)=>({type,props,key}),c:(type,props,key)=>({type,props,key})};
+for(const match of code.matchAll(/\b(?:a|c)\(([A-Za-z_$][\w$]*),/g))if(!(match[1] in ctx))ctx[match[1]]=match[1];
+vm.createContext(ctx);vm.runInContext(code,ctx);
+const render=()=>{stateIndex=refIndex=0;return ctx.ua()};
+const nodes=tree=>{const all=[];function walk(n){if(!n||typeof n!=='object')return;if(Array.isArray(n)){n.forEach(walk);return}all.push(n);walk(n.props?.children)}walk(tree);return all};
+const text=n=>typeof n==='string'||typeof n==='number'?String(n):Array.isArray(n)?n.map(text).join(''):text(n?.props?.children||'');
+let tree=render();
+const find=label=>nodes(tree).find(n=>n.props?.['aria-label']===label);
+const button=label=>nodes(tree).find(n=>n.type==='button'&&text(n).trim()===label);
+const click=label=>{const node=button(label);assert.ok(node,label);assert.ok(!node.props.disabled,label+' enabled');const result=node.props.onClick();tree=render();return result};
+const clickAria=label=>{const node=find(label);assert.ok(node,label);assert.ok(!node.props.disabled,label+' enabled');node.props.onClick();tree=render()};
+const set=(label,value)=>{const node=find(label);assert.ok(node,label);node.props.onChange({target:{value}});tree=render()};
+const cards=()=>nodes(tree).filter(n=>n.props?.['data-workout-card']);
+const current=()=>states[studentState];
+const openStudent=name=>{clickAria('Aba Alunos');const node=nodes(tree).find(n=>n.type==='button'&&text(n).includes(name));assert.ok(node,name);node.props.onClick();tree=render()};
+async function main(){
+ clickAria('Aba Biblioteca');assert.ok(text(tree).includes('Biblioteca de exercícios'));
+ assert.ok(button('Adicionar à ficha').props.disabled);
+ clickAria('Selecionar Supino reto com barra');set('Aluno de destino','one');set('Treino de destino','C');set('Séries (vezes)','5');set('Repetições ou duração','6');set('Carga ou intensidade','15 kg');set('Descanso em segundos','120');click('Adicionar à ficha');
+ assert.equal(current()[0].workout.at(-1).day,'C');assert.equal(current()[0].workout.at(-1).sets,'5x6');
+ openStudent('Aluno Um');assert.equal(cards().length,2,'Old workouts appear in A');
+ clickAria('Mover Supino antigo para baixo');assert.deepEqual(cards().map(n=>n.props['data-workout-card']),['a2','a1']);
+ assert.equal(current()[0].workout.find(n=>n.id==='b1').day,'B');
+ clickAria('Mover Supino antigo para cima');assert.deepEqual(cards().map(n=>n.props['data-workout-card']),['a1','a2']);
+ assert.ok(find('Mover Supino antigo para cima').props.disabled);
+ let tab=nodes(tree).find(n=>n.props?.role==='tab'&&text(n).startsWith('Treino B'));tab.props.onClick();tree=render();assert.equal(cards().length,1);
+ click('Editar');set('Carga ou intensidade','22 kg');set('Descanso em segundos','75');click('Salvar');
+ assert.equal(current()[0].workout.find(n=>n.id==='b1').load,'22 kg');assert.equal(current()[0].workout.find(n=>n.id==='a1').load,'10 kg');
+ await click('Salvar treino');tree=render();assert.equal(saved.length,1);assert.equal(saved[0][0].workout.find(n=>n.day==='B').rest,75);assert.ok(saved[0][0].workout.some(n=>n.day==='C'));
+ click('Duplicar treino');set('Copiar para treino','C');click('Confirmar cópia');assert.equal(cards().length,2,'Existing C exercise remains beside copied B');
+ const copied=current()[0].workout.find(n=>n.day==='C'&&n.name==='Remada no treino B');assert.ok(copied.id!=='b1');assert.ok(!copied.lastLoad);
+ click('Duplicar ficha');set('Copiar ficha para aluno','two');click('Confirmar cópia');
+ assert.equal(current()[1].workout.length,1+current()[0].workout.length);assert.equal(current()[1].notes,'Preservar esta nota');assert.ok(current()[1].workout.some(n=>n.id==='keep'));assert.ok(current()[1].workout.filter(n=>n.id!=='keep').every(n=>!n.lastLoad));
+ const ids=current().flatMap(n=>n.workout.map(ex=>ex.id));assert.equal(new Set(ids).size,ids.length,'Copied exercises have unique IDs');
+ click('Enviar treino');assert.ok(messages[0].startsWith('https://wa.me/'));const message=decodeURIComponent(messages[0].split('text=')[1]);for(const day of ['A','B','C'])assert.ok(message.includes('TREINO '+day));
+ // Preview feature is not hidden behind creation of an account.
+ ctx.window.PersonalProPDF={prepare:async student=>({blob:{},fileName:'test.pdf',student}),canShare:()=>false};
+ await click('Ver PDF');tree=render();assert.ok(button('Visualizar PDF'));assert.ok(button('Baixar PDF'));
+ clickAria('Fechar PDF');clickAria('Fechar ficha');
+ ctx.rv.push({id:'model-one',name:'Modelo de teste',desc:'Modelo sem apagar dados',color:'#176b52',exercises:[{name:'Novo exercício do modelo',sets:'3x8',load:'5 kg'}]});
+ const beforeModel=current()[1].workout.map(ex=>ex.id);
+ clickAria('Aba Modelos');const modelButton=nodes(tree).find(n=>n.type==='button'&&text(n).includes('Modelo de teste'));assert.ok(modelButton);modelButton.props.onClick();tree=render();click('Aluno Dois');
+ assert.ok(beforeModel.every(id=>current()[1].workout.some(ex=>ex.id===id)),'Applying models preserves existing workout');
+ assert.ok(current()[1].workout.some(ex=>ex.name==='Novo exercício do modelo'&&ex.day==='C'));
+ // Same functionality is available with sample data, and save is clear about demo scope.
+ states[0]='login';tree=render();click('Abrir demonstração');openStudent('Aluno Um');await click('Salvar treino');tree=render();assert.equal(saved.length,1);assert.ok(text(tree).includes('salvo nesta demonstração'));
+ console.log('PASS: global library; selected student/day; legacy A; A/B/C filtering; reorder boundaries; independent editing; saved day metadata; non-destructive day/sheet copies; unique IDs; grouped WhatsApp; PDF preview controls; demo save.');
+}
+main().catch(error=>{console.error(error);process.exitCode=1});
