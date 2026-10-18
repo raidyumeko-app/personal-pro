@@ -21,9 +21,16 @@
     }).catch(error => { libraryPromise = null; throw error; });
     return libraryPromise;
   }
+  const dayOf = exercise => ['A','B','C'].includes(exercise.day) ? exercise.day : 'A';
+  const technique = exercise => exercise.technique && exercise.technique !== 'Tradicional' ? exercise.technique + (exercise.block ? ' - ' + exercise.block : '') : '';
+  const dayLabel = (student, day) => 'TREINO ' + day + ((student.workoutWeekdays?.[day]||[]).length ? ' | '+student.workoutWeekdays[day].map(index=>['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'][index]).join(', ') : '') + (student.workoutDurations?.[day] ? ' | '+student.workoutDurations[day]+' min planejados' : '');
+  function guidance(exercise, options) {
+    return [...(technique(exercise)?['Técnica: '+technique(exercise)]:[]),...(exercise.notes?['Orientações: '+exercise.notes]:[]),...(exercise.alternatives?.length?['Substituições: '+exercise.alternatives.join('; ')]:[]),...(options.includeInstructions?(options.instructions?.get(exercise.name)?.map((step,index)=>'Execução '+(index+1)+': '+step)||['Instruções de execução indisponíveis nesta fonte.']):[])];
+  }
   function makeDocument(student, coach = {}, date = new Date(), options = {}) {
     if (!Array.isArray(student?.workout) || !student.workout.length)
       throw new Error('Adicione exercícios à ficha antes de gerar o PDF.');
+    if(options.mobile) return makeMobileDocument(student,coach,date,options);
     const doc = new root.jspdf.jsPDF({ unit: 'mm', format: 'a4', compress: true });
     const name = clean(student.name) || 'Aluno';
     const professional = clean(coach.name) || 'Personal';
@@ -82,7 +89,7 @@
       if (previousDay !== dayOf(exercise)) {
         if (y + 25 > bottom) startPage(false);
         doc.setFillColor(232, 244, 236); doc.rect(left, y, width, 9, 'F');
-        text('TREINO ' + dayOf(exercise), left + 3, y + 6, 9, true, [23, 107, 82]);
+        text(dayLabel(student,dayOf(exercise)), left + 3, y + 6, 9, true, [23, 107, 82]);
         y += 9; previousDay = dayOf(exercise); dayIndex=0;
       }
       const [series, repetitions] = dose(exercise);
@@ -92,7 +99,8 @@
       const wrapped = cells.map((value, i) => lines(value, columns[i] - (i === 0 ? 2 : padding * 2), 9.5, i === 1));
       const count = Math.max(...wrapped.map(value => value.length));
       const rowHeight = count * lineHeight + padding * 2;
-      const noteHeight = exercise.notes ? lines('Orientações: ' + exercise.notes, width - 8, 9).length * 4.7 + 3 : 0;
+      const detailText = guidance(exercise,options).join('\n');
+      const noteHeight = detailText ? lines(detailText, width - 8, 9).length * 4.7 + 3 : 0;
       const mediaHeight = options.illustrated ? ((options.photos?.get(exercise.name)||[]).length ? 60 : 12) : 0;
       const blockHeight = rowHeight + noteHeight + mediaHeight;
       if (blockHeight < bottom - 57 && y + blockHeight > bottom) startPage(false);
@@ -113,8 +121,8 @@
         y += height; offset += take;
         if (offset < count) startPage(false);
       }
-      if (exercise.notes) {
-        const noteLines = lines('Orientações: ' + exercise.notes, width - 8, 9);
+      if (detailText) {
+        const noteLines = lines(detailText, width - 8, 9);
         for (const line of noteLines) {
           if (y + 8 > bottom) startPage(false);
           text(line, left + 4, y + 5, 9, false, [42, 86, 66]); y += 4.7;
@@ -123,7 +131,7 @@
       }
       if (options.illustrated) {
         const photos = options.photos?.get(exercise.name) || [];
-        if (y + (photos.length ? 65 : 12) > bottom) {
+        if (y + (photos.length ? 60 : 12) > bottom) {
           startPage(false);
           for (const line of lines(exercise.name + ' - fotos', width - 8, 9, true)) {
             text(line, left + 4, y + 5, 9, true); y += 5;
@@ -156,8 +164,31 @@
     doc.setProperties({ title: 'Treino de ' + name, author: professional, subject: 'Ficha de treino - Personal Pro', creator: 'Personal Pro' });
     return doc;
   }
+  function makeMobileDocument(student,coach,date,options) {
+    const doc=new root.jspdf.jsPDF({unit:'mm',format:'a5',compress:true});
+    const left=12,width=124,bottom=190;let y=0;
+    const text=(value,x,baseline,size=12,bold=false)=>{doc.setFont('helvetica',bold?'bold':'normal');doc.setFontSize(size);doc.setTextColor(24,52,42);doc.text(clean(value),x,baseline)};
+    function page(first=false){if(!first)doc.addPage();doc.setFillColor(24,63,49);doc.rect(0,0,148,23,'F');doc.setTextColor(255,255,255);doc.setFont('helvetica','bold');doc.setFontSize(12);doc.text('PERSONAL PRO',left,13);y=32;if(!first){text(student.name,left,y,10,true);y+=8}}
+    function para(value,size=12,bold=false){doc.setFont('helvetica',bold?'bold':'normal');doc.setFontSize(size);for(const line of doc.splitTextToSize(clean(value),width)){if(y+6>bottom)page();text(line,left,y,size,bold);y+=size*.48}y+=3}
+    page(true);para('Ficha de treino',21,true);para(student.name,17,true);para('Personal: '+(coach.name||'Personal'),11);if(coach.studio)para(coach.studio,11);para(date.toLocaleDateString('pt-BR'),10);y+=3;
+    for(const day of ['A','B','C']){
+      const exercises=student.workout.filter(ex=>dayOf(ex)===day);if(!exercises.length)continue;
+      if(y+35>bottom)page();para(dayLabel(student,day),13,true);
+      exercises.forEach((exercise,index)=>{
+        if(y+45>bottom)page();para((index+1)+'. '+exercise.name,15,true);
+        const [series,reps]=dose(exercise);
+        para('Séries: '+(series||'-')+'  |  Repetições / tempo: '+(reps||'-'),12);
+        para('Carga: '+(exercise.load||'-'),12);para('Descanso: '+(exercise.rest??'-')+' s',12);
+        for(const detail of guidance(exercise,options))para(detail,12);
+        if(options.illustrated){const photos=options.photos?.get(exercise.name)||[];if(photos.length){if(y+49>bottom){page();para(exercise.name+' - fotos',13,true)}photos.forEach((bytes,position)=>{try{const props=doc.getImageProperties(bytes),scale=Math.min(58/props.width,39/props.height),w=props.width*scale,h=props.height*scale;doc.addImage(bytes,'JPEG',left+position*63+(58-w)/2,y,w,h);text('Posição '+(position+1),left+position*63,y+43,9)}catch{text('Foto indisponível',left+position*63,y+12,9)}});y+=49}else para('Foto não disponível para esta variação.',10)}
+        if(y+5>bottom)page();doc.setDrawColor(210,224,215);doc.line(left,y,left+width,y);y+=9;
+      });
+    }
+    const total=doc.getNumberOfPages();for(let i=1;i<=total;i++){doc.setPage(i);text(i+' / '+total,122,201,9)}
+    doc.setProperties({title:'Treino de '+clean(student.name),author:clean(coach.name)||'Personal',subject:'Ficha para celular - Personal Pro',creator:'Personal Pro'});return doc;
+  }
   async function loadPhotos(student, options) {
-    const photos = new Map(), warnings = [];
+    const photos = new Map(), instructions = new Map(), warnings = [];
     let catalog;
     try {
       const response = await root.fetch('/exercise-library.json', {signal: root.AbortSignal.timeout(15000)});
@@ -165,16 +196,19 @@
       catalog = await response.json();
       if (!Array.isArray(catalog)) throw new Error('catalog');
     } catch (_) {
-      return {photos, warnings:['Não foi possível carregar as fotos. A ficha foi gerada com as orientações e os campos do treino.']};
+      return {photos,instructions, warnings:['Não foi possível carregar a biblioteca. A ficha foi gerada com suas orientações e os campos do treino.']};
     }
+    let translations={};
+    if(options.includeInstructions)try{const response=await root.fetch('/exercise-instructions.pt.json',{signal:root.AbortSignal.timeout(15000)});if(!response.ok)throw Error();translations=await response.json()}catch{warnings.push('As instruções de execução não puderam ser carregadas.')}
     const byId = new Map(catalog.map(item => [item.id, item]));
     const byName = new Map(catalog.map(item => [item.name, item]));
     const jobs = [], entries = new Map(), downloads = new Map();
-    let missing = 0;
+    let missing = 0,missingInstructions=0;
     for (const exercise of student.workout) {
       const source = byId.get(exercise.sourceId || options.exerciseSources?.[exercise.name]) || byName.get(exercise.name);
-      const urls = source?.images?.slice(0, 2) || [];
-      if (!urls.length) { missing++; continue; }
+      if(options.includeInstructions){const steps=translations[source?.id];if(Array.isArray(steps)&&steps.length)instructions.set(exercise.name,steps);else missingInstructions++}
+      const urls = options.illustrated ? (source?.images?.slice(0, 2) || []) : [];
+      if (!urls.length) { if(options.illustrated)missing++; continue; }
       entries.set(exercise.name, urls);
       for (const url of urls) if (!downloads.has(url)) {
         downloads.set(url, null);
@@ -205,16 +239,17 @@
     }
     if (missing) warnings.push(missing + ' exercício(s) sem foto nesta fonte.');
     if (failed) warnings.push(failed + ' foto(s) não carregada(s). As demais informações foram mantidas.');
-    return {photos, warnings};
+    if(missingInstructions)warnings.push(missingInstructions+' exercício(s) sem instruções disponíveis.');
+    return {photos,instructions, warnings};
   }
   async function prepare(student, coach, options = {}) {
     await loadLibrary();
     if (!Array.isArray(student?.workout) || !student.workout.length)
       throw new Error('Adicione exercícios à ficha antes de gerar o PDF.');
-    const media = options.illustrated ? await loadPhotos(student, options) : {photos:new Map(),warnings:[]};
-    const doc = makeDocument(student, coach, new Date(), {...options, photos:media.photos});
+    const media = (options.illustrated||options.includeInstructions) ? await loadPhotos(student, options) : {photos:new Map(),instructions:new Map(),warnings:[]};
+    const doc = makeDocument(student, coach, new Date(), {...options, photos:media.photos,instructions:media.instructions});
     const slug = clean(student.name).normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').toLowerCase().slice(0, 80) || 'aluno';
-    return { blob: doc.output('blob'), fileName: 'treino-' + slug + (options.illustrated ? '-ilustrado' : '') + '.pdf', warnings:media.warnings };
+    return { blob: doc.output('blob'), fileName: 'treino-' + slug + (options.mobile ? '-celular' : '') + (options.illustrated ? '-ilustrado' : '') + '.pdf', warnings:media.warnings };
   }
   function download(artifact) {
     const url = root.URL.createObjectURL(artifact.blob), anchor = root.document.createElement('a');
