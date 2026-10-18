@@ -6,6 +6,15 @@
   let refreshPromise;
   let writeQueue = Promise.resolve();
   let recoveryPromise;
+  let latestDraftId=null;
+  let syncState = {status:'idle', message:'Pronto'}, sequence=0;
+  const listeners = new Set();
+  const announce = (status,message) => {syncState={status,message};for(const listener of listeners)listener(syncState)};
+  const draftKey = owner => 'personal-pro-draft:'+owner;
+  const readDraft = owner => {try{const draft=JSON.parse(localStorage.getItem(draftKey(owner))||'null');return draft&&draft.owner===owner&&typeof draft.id==='string'&&draft.profile&&typeof draft.profile==='object'&&Array.isArray(draft.students)?draft:null}catch{return null}};
+  const storeDraft = draft => {try{localStorage.setItem(draftKey(draft.owner),JSON.stringify(draft));return true}catch{return false}};
+  const removeDraft = (owner,id) => {try{const draft=readDraft(owner);if(!id||draft?.id===id)localStorage.removeItem(draftKey(owner))}catch{}};
+
   try { session = JSON.parse(sessionStorage.getItem('personal-pro-session') || 'null'); } catch {}
   const remember = data => {
     session = data?.access_token ? {...data, expires_at: data.expires_at || Date.now()/1000 + data.expires_in} : null;
@@ -31,9 +40,15 @@
   async function load() {
     const user = await request('/auth/v1/user', {}, true);
     const rows = await request('/rest/v1/personal_pro_accounts?user_id=eq.'+encodeURIComponent(user.id)+'&select=profile,students', {}, true);
-    return {user, profile:rows[0]?.profile || {name:'',whatsapp:'',studio:''},students:rows[0]?.students || []};
+    const pending=readDraft(user.id);announce(pending?'recovery':'saved',pending?'Há uma cópia local pendente para revisar.':'Salvo na sua conta');
+    return {user, profile:rows[0]?.profile || {name:'',whatsapp:'',studio:''},students:rows[0]?.students || [],pendingDraft:readDraft(user.id)};
   }
   window.PersonalProCloud = {
+    getSyncState: () => syncState,
+    subscribeSync(listener) {listeners.add(listener);listener(syncState);return()=>listeners.delete(listener)},
+    getDraft() {return session?.user?.id?readDraft(session.user.id):null},
+    clearDraft() {if(session?.user?.id)removeDraft(session.user.id);announce('saved','Dados da conta mantidos')},
+    retry() {const draft=this.getDraft();return draft?this.save(draft.profile,draft.students):Promise.resolve()},
     async signIn(email,password) {
       remember(await request('/auth/v1/token?grant_type=password',{method:'POST',body:JSON.stringify({email,password})}));
       return load();
@@ -49,18 +64,23 @@
     save(profile, students) {
       if (!session?.user?.id) return Promise.reject(new Error('Sessão ausente. Entre novamente.'));
       const owner = session.user.id;
+      const draft={owner,id:Date.now()+'-'+(++sequence),at:new Date().toISOString(),profile:JSON.parse(JSON.stringify(profile)),students:JSON.parse(JSON.stringify(students))};
+      latestDraftId=draft.id;
+      const persisted=storeDraft(draft);
+      announce('saving',persisted?'Salvando…':'Salvando… cópia local indisponível neste navegador.');
       const body = JSON.stringify({user_id:owner,profile,students,updated_at:new Date().toISOString()});
       const operation = writeQueue.catch(()=>{}).then(()=>{
         if (session?.user?.id !== owner) throw new Error('A conta mudou antes de salvar.');
         return request('/rest/v1/personal_pro_accounts?on_conflict=user_id',{method:'POST',headers:{Prefer:'resolution=merge-duplicates,return=representation'},body},true);
       });
-      writeQueue = operation;
-      return operation;
+      const tracked=operation.then(result=>{removeDraft(owner,draft.id);if(latestDraftId===draft.id&&!readDraft(owner))announce('saved','Salvo na sua conta');return result}).catch(error=>{if(session?.user?.id===owner)announce('pending',persisted?'Não sincronizado. Cópia local preservada; tente novamente.':'Não foi possível salvar. Mantenha esta aba aberta e exporte uma cópia.');throw error});
+      writeQueue = tracked;
+      return tracked;
     },
     async signOut() {
       await writeQueue.catch(()=>{});
       if (session) await request('/auth/v1/logout',{method:'POST'},true);
-      remember(null);
+      remember(null);announce('idle','Sessão encerrada');
     },
     async updatePassword(password) { return request('/auth/v1/user',{method:'PUT',body:JSON.stringify({password})},true); },
     acceptRecovery() {
@@ -76,4 +96,8 @@
       })();
     }
   };
+  // Only drafts created in this running session are retried automatically.
+  // A draft found at login is offered for review by the app before recovery.
+  let retrying=false;
+  window.addEventListener?.('online',async()=>{if(retrying||syncState.status!=='pending'||!session?.user?.id)return;retrying=true;try{await window.PersonalProCloud.retry()}catch{}finally{retrying=false}});
 })();
