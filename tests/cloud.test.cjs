@@ -32,11 +32,11 @@ const token={user,access_token:'test-token',refresh_token:'test-refresh',expires
  assert.equal(await t.api.restore(),null);
  await assert.rejects(t.api.save({},[]),/Sessão ausente/);
  assert.equal((await t.api.signIn('test@example.invalid','not-a-real-password')).user.id,user.id);
- const students=[{id:'a1',name:'Aluno',notes:'Notas',doneOn:['2026-10-17'],planValue:99,workout:[{id:'w1',name:'Agachamento',sets:'3x12',load:'20kg'}]}];
- await t.api.save({name:'Coach'},students);
+ const students=[{id:'a1',name:'Aluno',notes:'Notas',doneOn:['2026-10-17'],planValue:99,workout:[{id:'w1',name:'Agachamento',sets:'3x12',load:'20kg',notes:'Carga leve',loadHistory:[{load:'15kg',at:'2026-10-16T12:00:00Z'},{load:'20kg',at:'2026-10-17T12:00:00Z'}]}]}];
+ await t.api.save({name:'Coach',favoriteExercises:['Barbell_Squat']},students);
  assert.deepEqual(saved.students,students);
  assert.equal(saved.user_id,user.id);
- assert.equal((await t.api.restore()).profile.name,'Coach');
+ assert.equal((await t.api.restore()).profile.name,'Coach');assert.equal((await t.api.restore()).profile.favoriteExercises[0],'Barbell_Squat');assert.equal((await t.api.restore()).students[0].workout[0].loadHistory.length,2);
  await Promise.all([t.api.save({name:'Primeiro'},students),t.api.save({name:'Último'},students)]);
  assert.equal(saved.profile.name,'Último');
  assert.ok(t.calls.filter(c=>c.url.includes('/personal_pro_accounts')).every(c=>c.options.headers.Authorization==='Bearer test-token'));
