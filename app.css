@@ -207,3 +207,4 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 .pp-dose-inputs > label { display:flex; flex-direction:column; justify-content:space-between; gap:7px; }
 .pp-dose-inputs input { min-width:0; }
 .pp-workout-options { margin:0 0 14px; padding:4px 12px; }
+.pp-model-example { padding:12px; border-radius:12px; background:#edf5f0; color:#28543f; font-size:12px; line-height:1.6; margin-top:12px; }
