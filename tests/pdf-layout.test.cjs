@@ -1,0 +1,9 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),jspdf=require('../vendor/jspdf-4.2.1.umd.min.js');
+const env={jspdf};vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../workout-pdf.js'),'utf8'),{window:env});
+const name=('Sobrenome '.repeat(40)).trim(),privateText='INFORMACAO_INTERNA_NAO_EXPORTAR';
+const exercise=index=>({name:'Exercício '+index+' com descrição extensa para conferir a quebra de linha no documento',series:'3',repetitions:'8–12',load:'20 kg',rest:index%2?60:0,notes:'Executar de maneira controlada. '.repeat(5),day:['A','B','C'][index%3]});
+for(const mobile of [false,true])for(const length of [1,60]){
+ const student={name,notes:privateText,planValue:privateText,workout:Array.from({length},(_,i)=>exercise(i+1))};const doc=env.PersonalProPDF.makeDocument(student,{name:'Profissional com nome para identificação'},new Date(2026,9,17),{mobile});const pages=doc.internal.pages,text=pages.flat().join('\n');assert.ok(text.includes('Exercício '+length));assert.ok(!text.includes(privateText));assert.ok(Math.abs(doc.internal.pageSize.getWidth()-(mobile?148:210))<1);if(length===60)assert.ok(doc.getNumberOfPages()>3);if(mobile&&doc.getNumberOfPages()>1)assert.ok(!pages[2].join('\n').includes(name),'Continuation header must wrap/truncate long names');for(let i=1;i<=doc.getNumberOfPages();i++)assert.ok(pages[i].join('\n').includes(i+' / '+doc.getNumberOfPages()));
+ if(process.env.PERSONAL_PRO_PDF_REVIEW_DIR){fs.mkdirSync(process.env.PERSONAL_PRO_PDF_REVIEW_DIR,{recursive:true});fs.writeFileSync(path.join(process.env.PERSONAL_PRO_PDF_REVIEW_DIR,(mobile?'mobile':'a4')+'-'+length+'-exercises.pdf'),Buffer.from(doc.output('arraybuffer')))}
+}
+console.log('PASS PDF layout: A4 and A5; 1 and 60 exercises; long student names and notes; multiline titles; zero rest; all final exercises/page numbers retained; private fields excluded; bounded continuation headers.');
