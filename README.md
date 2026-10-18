@@ -47,11 +47,24 @@ Ainda pendentes: validação visual em navegador, fluxo real de confirmação/re
 - **Duplicar treino** acrescenta uma cópia ao dia escolhido. **Duplicar ficha** acrescenta os três treinos à ficha de outro aluno. A cópia recebe IDs novos e não leva histórico de carga do aluno de origem; o destino mantém os exercícios e os demais dados que já possuía.
 - Os modelos também são acrescentados ao treino selecionado, preservando os exercícios existentes.
 - Na biblioteca, é possível escolher o aluno e o treino de destino para adicionar exercícios sem procurar primeiro a ficha.
-- **Salvar treino**, **Ver PDF** e **Enviar treino** ficam agrupados. Contas reais mantêm o salvamento automático e oferecem confirmação manual de gravação. Na demonstração, salvar conserva o estado somente durante aquela experiência e informa isso ao usuário.
+- **Salvar treino**, **Ver PDF** e **Enviar texto** ficam agrupados. Contas reais mantêm o salvamento automático e oferecem confirmação manual de gravação. Na demonstração, salvar conserva o estado somente durante aquela experiência e informa isso ao usuário.
 - O PDF e a mensagem de WhatsApp separam A/B/C. O diálogo de PDF permite visualizar, baixar e compartilhar onde o navegador suporta arquivos.
 - Os dados A/B/C são armazenados no JSON de exercícios já existente. Não há alteração de schema, perda de registros ou migração destrutiva.
 
 Validação: `node --test tests/*.test.cjs`; testes do tema em Chromium, fluxo demonstrativo com catálogo em português, reordenação, cópia A/B, edição e download de PDF real, em 360/390 px e desktop, sem erros JavaScript. A aparência da tela e a renderização do PDF foram conferidas. O salvamento autenticado continua coberto com API simulada; esta alteração não executou cadastro ou cobrança real.
+
+## Refinamento do caminho principal
+
+O foco da ficha é **escolher exercícios, definir a prescrição e preparar o PDF para o aluno**.
+
+- A biblioteca tem dois passos: escolher movimento e prescrever. Depois de escolher, os resultados dão lugar aos quatro campos essenciais, dispostos em duas colunas. É possível trocar de exercício ou criar um personalizado.
+- Ao adicionar dentro da ficha, a biblioteca permanece aberta e a busca recebe foco para o próximo exercício. **Concluir montagem** aparece na etapa de busca, fecha a biblioteca e devolve o foco ao PDF; a prescrição em andamento continua exigindo **Adicionar à ficha**, evitando que concluir pareça salvar um rascunho não adicionado.
+- Fotos e explicações ficam em **Ver fotos e explicações de execução**. Observações, técnicas e substituições são opcionais e ficam recolhidas durante a inclusão. A exploração da biblioteca sem aluno selecionado continua abrindo a execução.
+- Duplicação, modelos, plano semanal, versões, revisão e arquivamento estão reunidos em **Organizar e revisar ficha**, perto das ações principais, sem ocupar a tela com todos os controles abertos.
+- **PDF para o aluno**, no cabeçalho, e **Ver PDF** priorizam o formato para celular. O diálogo identifica que é a ficha completa e oferece **Para celular** / **Para imprimir**. Fotos e instruções continuam em **Personalizar fotos e explicações**.
+- A ação primária é compartilhar o arquivo quando o navegador suporta, ou baixar quando não suporta. **Visualizar PDF** continua disponível para conferir. A alternativa de mensagem textual foi identificada como **Enviar texto**, para não confundir texto e arquivo.
+
+Validação: nove arquivos de testes automatizados; percurso em Chromium adicionando três exercícios com uma única abertura da biblioteca, campos independentes, retorno automático à busca, consulta de imagens, conclusão da montagem, PDF A5 com foto incorporada e troca para A4; conferência de funções avançadas e telas de 360/390 px e desktop. É um percurso automatizado e uma revisão visual; não é um estudo com profissionais ou alunos reais. Nenhuma mensagem foi enviada a terceiros.
 
 ## Melhorias de conclusão do aplicativo
 
