@@ -17,7 +17,7 @@
   }
   document.addEventListener('keydown',event=>{
     const dialog=lastDialog;if(!dialog)return;
-    if(event.key==='Escape'){const close=[...dialog.querySelectorAll('button')].find(button=>/^(fechar|cancelar)/i.test(button.getAttribute('aria-label')||button.textContent.trim()));if(close){event.preventDefault();close.click()}return}
+    if(event.key==='Escape'){const close=[...dialog.querySelectorAll('button')].find(button=>/^(fechar|cancelar|voltar)/i.test(button.getAttribute('aria-label')||button.textContent.trim()));if(close){event.preventDefault();close.click()}return}
     if(event.key!=='Tab')return;
     const controls=focusables(dialog);if(!controls.length){event.preventDefault();return}
     const first=controls[0],last=controls.at(-1),active=document.activeElement;
