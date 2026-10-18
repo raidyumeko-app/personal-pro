@@ -1,0 +1,28 @@
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
+const html=fs.readFileSync(path.join(__dirname,'../index.html'),'utf8');
+const code=html.slice(html.indexOf('const exerciseLibrary='),html.indexOf('cd.createRoot('));
+const students=[{id:'one',name:'Aluno Úm',initials:'AU',color:'#D8FF2F',streak:0,monthlyFreq:'0/12',lastCheckinDays:0,todayStatus:'pending',doneOn:[],whatsapp:'5511999999999',goal:'Força',limitation:'Nenhuma',height:'170',notes:'Nota privada do aluno um',planValue:100,planStatus:'pago',weightHistory:[],measures:{},workout:[{id:'a1',name:'Supino antigo',sets:'3x12',load:'10 kg',rest:60},{id:'b1',name:'Remada no treino B',sets:'4x8',load:'10 kg',rest:90,day:'B'},{id:'a2',name:'Flexão antiga',sets:'3x10',load:'Peso corporal',rest:45}]},{id:'two',name:'Aluno Dois',initials:'AD',color:'#D8FF2F',streak:0,monthlyFreq:'0/12',lastCheckinDays:0,todayStatus:'pending',doneOn:[],whatsapp:'5511888888888',goal:'Condicionamento',limitation:'Nenhuma',height:'170',notes:'Preservar esta nota',planValue:200,planStatus:'pendente',weightHistory:[],measures:{},workout:[{id:'keep',name:'Exercício já existente',sets:'1x10',load:'2 kg',rest:30,day:'C'}]}];
+const states=[],refs=[],saved=[],messages=[];let stateIndex=0,refIndex=0,studentState;
+const ctx={console,Date,Set,JSON,Object,Array,Number,String,Math,tv:students,rv:[],navigator:{},setTimeout:fn=>fn(),window:{open:url=>messages.push(url)},PersonalProCloud:{save:async(profile,list)=>saved.push(structuredClone(list))},R:{useState(initial){const i=stateIndex++;if(!(i in states)){states[i]=i===0?'app':typeof initial==='function'?initial():initial;if(Array.isArray(states[i])){states[i]=structuredClone(students);studentState=i}}return[states[i],value=>{states[i]=typeof value==='function'?value(states[i]):value}]},useRef(initial){return refs[refIndex++]||=( {current:initial})},useEffect(){}},a:(type,props,key)=>({type,props,key}),c:(type,props,key)=>({type,props,key})};
+for(const match of code.matchAll(/\b(?:a|c)\(([A-Za-z_$][\w$]*),/g))if(!(match[1] in ctx))ctx[match[1]]=match[1];
+vm.createContext(ctx);vm.runInContext(code,ctx);
+const render=()=>{stateIndex=refIndex=0;return ctx.ua()};
+const nodes=tree=>{const all=[];function walk(n){if(!n||typeof n!=='object')return;if(Array.isArray(n)){n.forEach(walk);return}all.push(n);walk(n.props?.children)}walk(tree);return all};
+const text=n=>typeof n==='string'||typeof n==='number'?String(n):Array.isArray(n)?n.map(text).join(''):text(n?.props?.children||'');
+let tree=render();
+const find=label=>nodes(tree).find(n=>n.props?.['aria-label']===label);
+const button=label=>nodes(tree).find(n=>n.type==='button'&&text(n).trim()===label);
+const click=label=>{const node=button(label);assert.ok(node,label);assert.ok(!node.props.disabled,label+' enabled');const result=node.props.onClick();tree=render();return result};
+const clickAria=label=>{if(label==='Fechar ficha'&&!find(label)&&find('Voltar à ficha')){find('Voltar à ficha').props.onClick();tree=render()}const node=find(label);assert.ok(node,label);assert.ok(!node.props.disabled,label+' enabled');node.props.onClick();tree=render()};
+const set=(label,value)=>{const node=find(label);assert.ok(node,label);node.props.onChange({target:{value}});tree=render()};
+const exercisesForDayForTest=(workout,day)=>workout.filter(ex=>(ex.day||'A')===day);
+const cards=()=>nodes(tree).filter(n=>n.props?.['data-workout-card']);
+const current=()=>states[studentState];
+const openStudent=name=>{clickAria('Aba Alunos');const node=nodes(tree).find(n=>n.type==='button'&&text(n).includes(name));assert.ok(node,name);node.props.onClick();tree=render();if(button('Abrir treino'))click('Abrir treino')};
+
+clickAria('Aba Alunos');const recordButton=nodes(tree).find(n=>n.type==='button'&&text(n).includes('Aluno Úm'));recordButton.props.onClick();tree=render();
+assert.ok(find('Ficha do aluno'));assert.ok(button('Abrir treino'));assert.equal(cards().length,0,'Training cards stay out of the student record');assert.ok(!button('Adicionar exercício da biblioteca'));
+const original=JSON.stringify(current()[0].workout);click('Abrir treino');assert.ok(find('Treino do aluno'));assert.ok(find('Voltar à ficha'));assert.equal(cards().length,2);assert.ok(!button('Abrir treino'));assert.ok(!find('Resumo do treino'));
+click('Editar');set('Carga ou intensidade','18 kg');click('Salvar');assert.equal(current()[0].workout[0].load,'18 kg');clickAria('Voltar à ficha');assert.ok(find('Ficha do aluno'));assert.equal(cards().length,0);assert.ok(button('Abrir treino'));click('Abrir treino');assert.equal(current()[0].workout[0].load,'18 kg');assert.ok(cards().length);
+click('Adicionar exercício da biblioteca');clickAria('Selecionar Supino reto com barra');set('Séries (vezes)','5');set('Carga ou intensidade','24 kg');clickAria('Voltar à ficha');click('Abrir treino');assert.equal(find('Séries (vezes)').props.value,'5');assert.equal(find('Carga ou intensidade').props.value,'24 kg','Back navigation keeps the unfinished prescription');click('Cancelar');clickAria('Voltar à ficha');clickAria('Fechar ficha');assert.ok(!find('Ficha do aluno'));assert.notEqual(JSON.stringify(current()[0].workout),original);
+console.log('PASS workspace: compact record, dedicated workout view, existing cards/handlers, edit persistence, return/reopen, unfinished prescription retained, close navigation.');
