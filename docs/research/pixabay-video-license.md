@@ -23,3 +23,10 @@ A licença Pixabay geralmente permite uso comercial e adaptação, sem crédito 
 **Aprovado condicionalmente como banco de clipes de apoio e material visual**, não aprovado como fonte automática para povoar a biblioteca de exercícios. Para vídeos de execução, preferir gravação própria ou licença comercial específica de biblioteca especializada.
 
 Nenhum vídeo baixado, copiado ou integrado. Produção inalterada.
+
+## Busca adicional: gym videos (2026-10-18)
+- https://pixabay.com/pt/videos/search/gym%20videos/ (versao inglesa equivalente: https://pixabay.com/videos/search/gym%20videos/)
+- Resultado indexado: mais de 2.477 clipes de stock relacionados ao termo, **nao** 2.477 demonstracoes tecnicas de exercicios. A contagem pode variar.
+- E uma busca mais ampla do mesmo fornecedor, nao um novo licenciamento ou biblioteca validada.
+- Mantida a decisao: clipes de apoio condicionais; nao importar automaticamente para a biblioteca de exercicios.
+- Referencia de direitos: https://pixabay.com/service/license-summary/ e https://pixabay.com/service/terms/ . Uso comercial em obras originais pode ser permitido, mas redistribuicao standalone nao; direitos de imagem/marcas devem ser verificados por ativo.
