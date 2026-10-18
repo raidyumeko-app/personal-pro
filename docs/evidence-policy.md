@@ -18,3 +18,11 @@ Esta base e um **controle de publicacao**, nao um motor de prescricao. A inclusa
 
 ## Estado
 Modulo evidence.js isolado, com testes de unidade; **ainda nao conectado a interface nem com conteudo de exercicios aprovado**. Nenhum video foi copiado. Para ativar a biblioteca, produzir/licenciar midias e obter revisao de profissional habilitado. Nao aplicar migracoes de producao nesta etapa.
+
+## Fluxo de revisao e publicacao
+- `draft`: fonte cadastrada, conteudo nao publicado.
+- `in_review`: profissional habilitado confere aplicabilidade, seguranca e evidencia.
+- `approved`: registro contem `reviewedBy`, `reviewedAt`, `evidenceNotes` e `sourceIds` validos.
+- Conteudos de video so passam com `commercialLicenseVerified: true` e `videoUrl`.
+- O motor `evaluateSuggestion` exige contexto adulto, revisao do personal e verifica alertas de dor, lesao, restricoes e equipamento. Ausencia de sinalizacao nao equivale a avaliacao clinica.
+- O modulo permanece **desacoplado da interface** ate que existam registros de exercicios revisados e direitos de video comprovados. Nao apresentar catalogo generico como se fosse validado.
