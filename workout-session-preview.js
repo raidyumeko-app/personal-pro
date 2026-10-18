@@ -8,7 +8,7 @@ function adapt(exercises){return (Array.isArray(exercises)?exercises:[]).slice(0
  reps:Math.max(1,Math.min(100,numberFrom(item.repetitions??item.reps,10))),
  restSeconds:Math.max(0,Math.min(600,numberFrom(item.rest,60)))
 }));}
-function Simulator(props){const R=root.React,engine=root.PersonalProWorkoutSession;
+function Simulator(props){const R=props.React||root.React,engine=root.PersonalProWorkoutSession;
  const [session,setSession]=R.useState(null),[weights,setWeights]=R.useState({}),[error,setError]=R.useState('');
  const exercises=adapt(props.exercises),day=props.day||'A',studentId=String(props.studentId||'preview');
  function start(){try{setError('');setWeights({});setSession(engine.createSession({id:'preview-'+Date.now(),studentId,workoutId:'preview-'+day,exercises}));}catch(e){setError(e.message);}}
