@@ -9,7 +9,7 @@ const items=exercises.map(normalizeExercise);if(new Set(items.map(x=>x.id)).size
 return {id:String(id),studentId:String(studentId),workoutId:String(workoutId),startedAt:at,completedAt:null,exercises:items,logs:[]};}
 function logSet(session,{exerciseId,setNumber,reps,weightKg,at=new Date().toISOString()}){if(session.completedAt)throw Error('Treino encerrado');
 const exercise=session.exercises.find(x=>x.id===exerciseId);if(!exercise)throw Error('Exercício não pertence ao treino');
-const n=integer(setNumber,1,exercise.sets),r=integer(reps,0,100),w=Number(weightKg);if(n===null||r===null||weightKg===''||weightKg===null||!Number.isFinite(w)||w<0||w>1000)throw Error('Registro inválido');
+const n=integer(setNumber,1,exercise.sets),r=integer(reps,0,100),w=Number(weightKg);if(n===null||r===null||weightKg===null||weightKg===undefined||String(weightKg).trim()===''||!Number.isFinite(w)||w<0||w>1000)throw Error('Registro inválido');
 return {...session,logs:[...session.logs.filter(l=>!(l.exerciseId===exerciseId&&l.setNumber===n)),{exerciseId,setNumber:n,reps:r,weightKg:w,at}]};}
 function progress(session){const expected=session.exercises.reduce((s,e)=>s+e.sets,0);return {done:session.logs.length,expected,percent:Math.round(session.logs.length/expected*100)};}
 function finish(session,at=new Date().toISOString()){if(session.completedAt)throw Error('Treino já encerrado');if(!session.logs.length)throw Error('Registre ao menos uma série');return {...session,completedAt:at};}
