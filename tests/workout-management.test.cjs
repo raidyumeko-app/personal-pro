@@ -21,23 +21,25 @@ const openStudent=name=>{clickAria('Aba Alunos');const node=nodes(tree).find(n=>
 async function main(){
  clickAria('Aba Biblioteca');assert.ok(text(tree).includes('Biblioteca de exercícios'));
  assert.ok(button('Adicionar à ficha').props.disabled);
- clickAria('Selecionar Supino reto com barra');set('Aluno de destino','one');set('Treino de destino','C');set('Séries (vezes)','5');set('Repetições ou duração','6');set('Carga ou intensidade','15 kg');set('Descanso em segundos','120');click('Adicionar à ficha');
- assert.equal(current()[0].workout.at(-1).day,'C');assert.equal(current()[0].workout.at(-1).sets,'5x6');
+ clickAria('Favoritar Supino reto com barra');click('☆ Ver favoritos');assert.ok(find('Selecionar Supino reto com barra'));assert.ok(!find('Selecionar Supino reto com halteres'));click('★ Somente favoritos');clickAria('Aba Alunos');clickAria('Aba Biblioteca');assert.ok(find('Remover favorito Supino reto com barra'));
+ clickAria('Selecionar Supino reto com barra');set('Observações do exercício','Começar com carga leve.');set('Aluno de destino','one');set('Treino de destino','C');set('Séries (vezes)','5');set('Repetições ou duração','6');set('Carga ou intensidade','15 kg');set('Descanso em segundos','120');click('Adicionar à ficha');
+ assert.equal(current()[0].workout.at(-1).notes,'Começar com carga leve.');assert.equal(current()[0].workout.at(-1).loadHistory[0].load,'15 kg');assert.ok(current()[0].workout.at(-1).sourceId);assert.equal(current()[0].workout.at(-1).day,'C');assert.equal(current()[0].workout.at(-1).sets,'5x6');
  openStudent('Aluno Um');assert.equal(cards().length,2,'Old workouts appear in A');
  clickAria('Mover Supino antigo para baixo');assert.deepEqual(cards().map(n=>n.props['data-workout-card']),['a2','a1']);
  assert.equal(current()[0].workout.find(n=>n.id==='b1').day,'B');
  clickAria('Mover Supino antigo para cima');assert.deepEqual(cards().map(n=>n.props['data-workout-card']),['a1','a2']);
  assert.ok(find('Mover Supino antigo para cima').props.disabled);
  let tab=nodes(tree).find(n=>n.props?.role==='tab'&&text(n).startsWith('Treino B'));tab.props.onClick();tree=render();assert.equal(cards().length,1);
- click('Editar');set('Carga ou intensidade','22 kg');set('Descanso em segundos','75');click('Salvar');
- assert.equal(current()[0].workout.find(n=>n.id==='b1').load,'22 kg');assert.equal(current()[0].workout.find(n=>n.id==='a1').load,'10 kg');
+ click('Editar');set('Observações do exercício','Controlar a descida.');set('Carga ou intensidade','22 kg');set('Descanso em segundos','75');click('Salvar');
+ const edited=current()[0].workout.find(n=>n.id==='b1');assert.equal(edited.notes,'Controlar a descida.');assert.deepEqual(Array.from(edited.loadHistory,x=>x.load),['10 kg','22 kg']);assert.equal(edited.loadHistory[0].at,null);assert.ok(edited.loadHistory[1].at);assert.equal(edited.load,'22 kg');
+ click('Editar');set('Observações do exercício','Controlar a descida e pausar.');click('Salvar');assert.equal(current()[0].workout.find(n=>n.id==='b1').loadHistory.length,2,'Editing notes never creates another load entry');assert.equal(current()[0].workout.find(n=>n.id==='a1').load,'10 kg');
  await click('Salvar treino');tree=render();assert.equal(saved.length,1);assert.equal(saved[0][0].workout.find(n=>n.day==='B').rest,75);assert.ok(saved[0][0].workout.some(n=>n.day==='C'));
  click('Duplicar treino');set('Copiar para treino','C');click('Confirmar cópia');assert.equal(cards().length,2,'Existing C exercise remains beside copied B');
- const copied=current()[0].workout.find(n=>n.day==='C'&&n.name==='Remada no treino B');assert.ok(copied.id!=='b1');assert.ok(!copied.lastLoad);
+ const copied=current()[0].workout.find(n=>n.day==='C'&&n.name==='Remada no treino B');assert.ok(copied.id!=='b1');assert.ok(!copied.lastLoad);assert.ok(!copied.loadHistory);assert.equal(copied.notes,'Controlar a descida e pausar.');
  click('Duplicar ficha');set('Copiar ficha para aluno','two');click('Confirmar cópia');
- assert.equal(current()[1].workout.length,1+current()[0].workout.length);assert.equal(current()[1].notes,'Preservar esta nota');assert.ok(current()[1].workout.some(n=>n.id==='keep'));assert.ok(current()[1].workout.filter(n=>n.id!=='keep').every(n=>!n.lastLoad));
+ assert.equal(current()[1].workout.length,1+current()[0].workout.length);assert.equal(current()[1].notes,'Preservar esta nota');assert.ok(current()[1].workout.some(n=>n.id==='keep'));assert.ok(current()[1].workout.filter(n=>n.id!=='keep').every(n=>!n.lastLoad&&!n.loadHistory));
  const ids=current().flatMap(n=>n.workout.map(ex=>ex.id));assert.equal(new Set(ids).size,ids.length,'Copied exercises have unique IDs');
- click('Enviar treino');assert.ok(messages[0].startsWith('https://wa.me/'));const message=decodeURIComponent(messages[0].split('text=')[1]);for(const day of ['A','B','C'])assert.ok(message.includes('TREINO '+day));
+ click('Enviar treino');assert.ok(messages[0].startsWith('https://wa.me/'));const message=decodeURIComponent(messages[0].split('text=')[1]);for(const day of ['A','B','C'])assert.ok(message.includes('TREINO '+day));assert.ok(message.includes('Controlar a descida e pausar.'));
  // Preview feature is not hidden behind creation of an account.
  ctx.window.PersonalProPDF={prepare:async student=>({blob:{},fileName:'test.pdf',student}),canShare:()=>false};
  await click('Ver PDF');tree=render();assert.ok(button('Visualizar PDF'));assert.ok(button('Baixar PDF'));
