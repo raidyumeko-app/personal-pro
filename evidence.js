@@ -13,6 +13,8 @@
     if(!entry.id||!entry.title||!entry.category)reasons.push("Identificacao incompleta");
     if(!Array.isArray(entry.sourceIds)||!entry.sourceIds.length||entry.sourceIds.some(id=>!byId[id]))reasons.push("Fonte verificavel obrigatoria");
     if(!entry.reviewedBy||!entry.reviewedAt)reasons.push("Revisao profissional pendente");
+    if(entry.status!=="approved")reasons.push("Aprovacao editorial pendente");
+    if(!entry.evidenceNotes||typeof entry.evidenceNotes!=="string")reasons.push("Justificativa tecnica ausente");
     if(entry.category==="video"&&(!entry.videoUrl||entry.commercialLicenseVerified!==true))reasons.push("Video sem licenca comercial comprovada");
     if(entry.category==="nutrition"&&entry.individualPrescription===true)reasons.push("Prescricao nutricional individualizada nao autorizada");
     if(entry.category==="exercise"&&entry.medicalClearanceRequired===true)reasons.push("Requer avaliacao individual");
