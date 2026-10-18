@@ -51,9 +51,9 @@
     }
     function startPage(first) {
       if (!first) doc.addPage();
-      doc.setFillColor(19, 28, 39); doc.rect(0, 0, 210, first ? 33 : 23, 'F');
-      doc.setFillColor(211, 245, 86); doc.rect(left, first ? 27 : 18, 20, 1.4, 'F');
-      text('PERSONAL PRO', left, 12, 9, true, [211, 245, 86]);
+      doc.setFillColor(24, 63, 49); doc.rect(0, 0, 210, first ? 33 : 23, 'F');
+      doc.setFillColor(177, 224, 195); doc.rect(left, first ? 27 : 18, 20, 1.4, 'F');
+      text('PERSONAL PRO', left, 12, 9, true, [177, 224, 195]);
       text(first ? 'Ficha de treino' : 'Ficha de treino - continuação', left, first ? 23 : 17, first ? 21 : 11, true, [255, 255, 255]);
       y = first ? 43 : 32;
       if (first) {
@@ -75,10 +75,19 @@
       tableHeader();
     }
     startPage(true);
-    student.workout.forEach((exercise, index) => {
+    const dayOf = exercise => ['A','B','C'].includes(exercise.day) ? exercise.day : 'A';
+    const ordered = ['A','B','C'].flatMap(day => student.workout.filter(exercise => dayOf(exercise) === day));
+    let previousDay, dayIndex=0;
+    ordered.forEach((exercise, index) => {
+      if (previousDay !== dayOf(exercise)) {
+        if (y + 25 > bottom) startPage(false);
+        doc.setFillColor(232, 244, 236); doc.rect(left, y, width, 9, 'F');
+        text('TREINO ' + dayOf(exercise), left + 3, y + 6, 9, true, [23, 107, 82]);
+        y += 9; previousDay = dayOf(exercise); dayIndex=0;
+      }
       const [series, repetitions] = dose(exercise);
       const rest = Number(exercise.rest);
-      const cells = [String(index + 1), exercise.name, series, repetitions, exercise.load,
+      const cells = [String(++dayIndex), exercise.name, series, repetitions, exercise.load,
         exercise.rest !== undefined && exercise.rest !== '' && Number.isFinite(rest) ? Math.max(0, rest) + ' s' : '-'];
       const wrapped = cells.map((value, i) => lines(value, columns[i] - (i === 0 ? 2 : padding * 2), 9.5, i === 1));
       const count = Math.max(...wrapped.map(value => value.length));
@@ -122,6 +131,12 @@
     root.document.body.appendChild(anchor); anchor.click(); anchor.remove();
     root.setTimeout(() => root.URL.revokeObjectURL(url), 60000);
   }
+  function preview(artifact) {
+    const url = root.URL.createObjectURL(artifact.blob), anchor = root.document.createElement('a');
+    anchor.href = url; anchor.target = '_blank'; anchor.rel = 'noopener noreferrer'; anchor.style.display = 'none';
+    root.document.body.appendChild(anchor); anchor.click(); anchor.remove();
+    root.setTimeout(() => root.URL.revokeObjectURL(url), 120000);
+  }
   const shareData = artifact => ({ files: [new root.File([artifact.blob], artifact.fileName, { type: 'application/pdf' })] });
   function canShare(artifact) {
     try { return Boolean(root.File && root.navigator?.share && root.navigator?.canShare?.(shareData(artifact))); }
@@ -131,5 +146,5 @@
     if (!canShare(artifact)) return Promise.reject(new Error('Baixe o PDF e anexe o arquivo no WhatsApp.'));
     return root.navigator.share(shareData(artifact));
   }
-  root.PersonalProPDF = { makeDocument, prepare, download, canShare, share };
+  root.PersonalProPDF = { makeDocument, prepare, download, preview, canShare, share };
 })(typeof window === 'object' ? window : globalThis);
