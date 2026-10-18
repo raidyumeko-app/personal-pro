@@ -123,7 +123,7 @@ async function verifyPDFControls() {
   canShare:()=>true,
   share:async file=>{assert.equal(file,artifact);shared++}
  }};
- let pending=findButton('Ver PDF').props.onClick();tree=render();
+ await findButton('Ver PDF').props.onClick();tree=render();assert.ok(findButton('Gerar ficha'));let pending=findButton('Gerar ficha').props.onClick();tree=render();
  assert.ok(text(tree).includes('Preparando sua ficha'));
  assert.equal(receivedStudent.workout[0].load,'25 kg','Export uses the latest student prescription');
  resolvePDF(artifact);await pending;tree=render();
@@ -131,12 +131,12 @@ async function verifyPDFControls() {
  findButton('Baixar PDF').props.onClick();assert.equal(downloaded,1);
  await findButton('Compartilhar PDF').props.onClick();assert.equal(shared,1);
  nodes(tree).find(n=>n.props?.['aria-label']==='Fechar PDF').props.onClick();tree=render();
- pending=findButton('Ver PDF').props.onClick();tree=render();
+ await findButton('Ver PDF').props.onClick();tree=render();pending=findButton('Gerar ficha').props.onClick();tree=render();
  nodes(tree).find(n=>n.props?.['aria-label']==='Fechar PDF').props.onClick();
  resolvePDF(artifact);await pending;tree=render();
  assert.ok(!nodes(tree).some(n=>n.props?.role==='dialog'&&n.props['aria-label']==='PDF do treino'),'Canceling ignores a stale generation result');
  ctx.window.PersonalProPDF.prepare=async()=>{throw new Error('Sem conexão')};
- await findButton('Ver PDF').props.onClick();tree=render();
+ await findButton('Ver PDF').props.onClick();tree=render();await findButton('Gerar ficha').props.onClick();tree=render();
  assert.ok(text(tree).includes('Sem conexão'));assert.ok(findButton('Tentar novamente'));
  ctx.window.PersonalProPDF.prepare=async()=>artifact;
  await findButton('Tentar novamente').props.onClick();tree=render();assert.ok(findButton('Baixar PDF'));
