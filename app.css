@@ -186,3 +186,24 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 .pp-student-summary h2, [aria-label="Aplicar modelo de treino"] h3, .pp-model-editor h3 { overflow-wrap:anywhere; }
 .pp-recovery summary { min-height:44px; font-weight:700; cursor:pointer; }
 .pp-guide[aria-label] { scroll-margin-top:70px; }
+/* Core flow: choose, prescribe, review, deliver. */
+[hidden] { display:none !important; }
+.pp-library-choose, .pp-prescription-step { display:grid; gap:12px; }
+.pp-library-progress { color:#176b52; font-size:12px; font-weight:800; letter-spacing:.02em; }
+.pp-prescription-step > input { width:100%; }
+.pp-optional-prescription, .pp-execution, .pp-workout-options, .pp-pdf-customize { border:1px solid var(--border); border-radius:13px; padding:10px 12px; background:#f6f9f7; }
+.pp-optional-prescription > summary, .pp-execution > summary, .pp-workout-options > summary, .pp-pdf-customize > summary { cursor:pointer; min-height:44px; display:list-item; padding:10px 0; font-size:12px; font-weight:750; line-height:1.5; }
+.pp-optional-prescription[open] > *+*, .pp-execution[open] > *+*, .pp-pdf-customize[open] > *+* { margin-top:12px; }
+.pp-workout-options { margin-top:18px; background:#f7faf8; }
+.pp-workout-options[open] > *+* { margin-top:14px; }
+.pp-workout-actions { grid-template-columns:1fr 1fr 1fr; }
+.pp-pdf-presets { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
+.pp-pdf-presets button { min-height:48px; }
+.pp-pdf-customize .pp-pdf-option { background:white; }
+.pp-library-choose [aria-label="Lista de exercícios"] { max-height:270px !important; }
+.pp-library-target { padding:12px; }
+.pp-execution img { aspect-ratio: 3/2; object-fit:contain; background:white; }
+.pp-dose-inputs { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+.pp-dose-inputs > label { display:flex; flex-direction:column; justify-content:space-between; gap:7px; }
+.pp-dose-inputs input { min-width:0; }
+.pp-workout-options { margin:0 0 14px; padding:4px 12px; }
