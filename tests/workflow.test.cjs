@@ -53,7 +53,7 @@ if(html.includes('const exerciseLibrary=')) {
  const find=(role,label)=>nodes(tree).find(n=>n.type===role&&n.props?.['aria-label']===label);
  const clickLabel=label=>{const el=nodes(tree).find(n=>n.type==='button'&&text(n).trim()===label);assert.ok(el,label);el.props.onClick();tree=render();};
  const set=(label,value)=>{const el=nodes(tree).find(n=>n.props?.['aria-label']===label);assert.ok(el,label);el.props.onChange({target:{value}});tree=render();};
- clickLabel('Adicionar');
+ clickLabel('Adicionar exercício da biblioteca');
  assert.ok(text(tree).includes('Biblioteca de exercícios'));
  assert.ok(nodes(tree).some(n=>text(n)==='Adicionar à ficha'&&n.props?.disabled));
  set('Buscar exercício na biblioteca','elevacao');
@@ -72,18 +72,18 @@ if(html.includes('const exerciseLibrary=')) {
  clickLabel('Adicionar à ficha');
  let workout=states[studentState][0].workout;
  assert.equal(workout[0].name,'Supino reto com barra');assert.equal(workout[0].sets,'4x8');assert.equal(workout[0].load,'20 kg');assert.equal(workout[0].rest,90);
- clickLabel('Adicionar');
+ clickLabel('Adicionar exercício da biblioteca');
  assert.equal(find('input','Buscar exercício na biblioteca').props.value,'');
  set('Filtrar por grupo muscular','Cardio');set('Buscar exercício na biblioteca','bicicleta');
  find('button','Selecionar Bicicleta ergométrica').props.onClick();tree=render();
  set('Repetições ou duração','15 min');set('Carga ou intensidade','Moderado');set('Descanso em segundos','0');clickLabel('Adicionar à ficha');
  workout=states[studentState][0].workout;
  assert.equal(workout[1].rest,0);assert.equal(workout[1].sets,'15 min');
- clickLabel('Adicionar');set('Nome do exercício','Exercício próprio de teste');clickLabel('Adicionar à ficha');
+ clickLabel('Adicionar exercício da biblioteca');set('Nome do exercício','Exercício próprio de teste');clickLabel('Adicionar à ficha');
  workout=states[studentState][0].workout;
  assert.equal(workout[2].name,'Exercício próprio de teste');assert.equal(workout[2].sets,'A definir');assert.equal(workout[2].load,'A definir');
  assert.equal(new Set(workout.map(item=>item.id)).size,3);
- clickLabel('Adicionar');set('Nome do exercício','Não salvar');clickLabel('Cancelar');assert.equal(states[studentState][0].workout.length,3);
+ clickLabel('Adicionar exercício da biblioteca');set('Nome do exercício','Não salvar');clickLabel('Cancelar');assert.equal(states[studentState][0].workout.length,3);
 
  // Editing preserves all four independent fields and previous load.
  let edit=nodes(tree).find(n=>n.type==='button'&&n.props['aria-label']==='Editar');
@@ -96,7 +96,7 @@ if(html.includes('const exerciseLibrary=')) {
  assert.deepEqual(JSON.parse(vm.runInContext('JSON.stringify(exerciseDose({sets:"3x12"}))',ctx)),{series:'3',repetitions:'12'});
  assert.deepEqual(JSON.parse(vm.runInContext('JSON.stringify(exerciseDose({sets:"15 min"}))',ctx)),{series:'',repetitions:'15 min'});
  // Catalogue pagination, metadata filters, details and selection.
- clickLabel('Adicionar');set('Escolher catálogo','full');
+ clickLabel('Adicionar exercício da biblioteca');set('Escolher catálogo','full');
  const catalog=JSON.parse(fs.readFileSync(require('node:path').join(__dirname,'../exercise-library.json'),'utf8'));
  assert.equal(catalog.length,876);assert.equal(new Set(catalog.map(x=>x.id)).size,876);
  for(const item of catalog){assert.ok(item.name&&item.group&&item.equipment&&item.level);assert.ok(Array.isArray(item.instructions));assert.ok(item.images.every(url=>url.startsWith('https://raw.githubusercontent.com/yuhonas/free-exercise-db/')));}
@@ -124,7 +124,7 @@ async function verifyPDFControls() {
   canShare:()=>true,
   share:async file=>{assert.equal(file,artifact);shared++}
  }};
- let pending=findButton('PDF do treino').props.onClick();tree=render();
+ let pending=findButton('Ver PDF').props.onClick();tree=render();
  assert.ok(text(tree).includes('Preparando sua ficha'));
  assert.equal(receivedStudent.workout[0].load,'25 kg','Export uses the latest student prescription');
  resolvePDF(artifact);await pending;tree=render();
@@ -132,12 +132,12 @@ async function verifyPDFControls() {
  findButton('Baixar PDF').props.onClick();assert.equal(downloaded,1);
  await findButton('Compartilhar PDF').props.onClick();assert.equal(shared,1);
  nodes(tree).find(n=>n.props?.['aria-label']==='Fechar PDF').props.onClick();tree=render();
- pending=findButton('PDF do treino').props.onClick();tree=render();
+ pending=findButton('Ver PDF').props.onClick();tree=render();
  nodes(tree).find(n=>n.props?.['aria-label']==='Fechar PDF').props.onClick();
  resolvePDF(artifact);await pending;tree=render();
  assert.ok(!nodes(tree).some(n=>n.props?.role==='dialog'&&n.props['aria-label']==='PDF do treino'),'Canceling ignores a stale generation result');
  ctx.window.PersonalProPDF.prepare=async()=>{throw new Error('Sem conexão')};
- await findButton('PDF do treino').props.onClick();tree=render();
+ await findButton('Ver PDF').props.onClick();tree=render();
  assert.ok(text(tree).includes('Sem conexão'));assert.ok(findButton('Tentar novamente'));
  ctx.window.PersonalProPDF.prepare=async()=>artifact;
  await findButton('Tentar novamente').props.onClick();tree=render();assert.ok(findButton('Baixar PDF'));
