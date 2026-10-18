@@ -220,3 +220,20 @@ Na ficha do aluno, **Atendimentos presenciais → Contratação, pacote e horár
 - Registros gerais de treino continuam separados das aulas presenciais. Treinar sozinho não desconta pacote. O saldo ou a validade do pacote não bloqueiam nem alteram a ficha de treino.
 
 Verificação: `node --test tests/*.test.cjs` (13 arquivos). A suíte de agenda cobre recorrência, locais, confirmação idempotente, falta/cancelamento com e sem desconto, correção, saldo esgotado, remarcação individual, conflito, renovação, validade semanal e lembretes. Percurso em Chromium preencheu a ficha com o adaptador de conta simulado, observou salvamento automático, recarregou e restaurou os dados, conferiu agenda/financeiro e as telas de 320/390/1440 px, sem erros de execução. A camada de persistência existente permanece coberta por seus testes de gravação, restauração, fila e recuperação.
+
+
+## Revisão geral de estabilidade — 17/10/2026
+
+Correções:
+
+- Uma contratação mais recente que venceu deixa de gerar agenda; uma contratação antiga sem validade não volta a ser ativada por acidente. O histórico de ocorrências permanece disponível.
+- Abrir a ficha a partir de um atendimento da programação leva a data consultada para o painel de aulas.
+- O intervalo entre atendimentos considera o maior horário de término entre os anteriores. Uma aula longa sobreposta não é interpretada como tempo livre após uma aula curta.
+- Duração de atendimento aceita minutos inteiros entre 5 e 480 e término até 24h.
+- Remarcação calcula a alteração a partir do estado mais recente do aluno.
+- Registros de treino do dia, contagem mensal e sequência de dias usam datas efetivamente registradas. Um indicador antigo não mantém o treino como concluído no dia seguinte. Registros duplicados, futuros ou fora do mês não aumentam a contagem mensal. Alunos arquivados deixam a lista de registros de treino do dia.
+- O indicador de progresso não divide por zero em fichas novas.
+
+Verificação: 14 arquivos passaram em `node --test tests/*.test.cjs`, incluindo regressões dos casos acima e preservação de contratação, locais, eventos e contatos na gravação/restauração da camada de conta. Percursos em Chromium cobriram ficha e agenda com salvamento/restauração, biblioteca lenta/indisponível e recuperação de foto, modelos e versões, edição em lote e substituição, PDF com logo e instruções, backup sem tokens e navegação por teclado. O adaptador de conta foi exercitado com respostas HTTP simuladas para falha de gravação, cópia local, nova tentativa e recuperação após recarregar. PDFs A4/A5, com 1 e 60 exercícios, foram gerados; amostras foram renderizadas e inspecionadas. Telas de 320 a 1440 px conferidas, sem erros JavaScript nos percursos concluídos.
+
+O salvamento continua usando o estado completo da conta: em edições simultâneas em duas abas/aparelhos, prevalece a última gravação. A revisão não altera esse contrato de persistência nem adiciona cobranças ou serviços externos.
