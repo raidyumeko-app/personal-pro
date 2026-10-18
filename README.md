@@ -251,3 +251,15 @@ Na ficha do aluno, **Resumo do treino → Abrir treino** abre uma área que ocup
 - O guia rápido abre diretamente a área de montagem quando essa é a etapa escolhida.
 
 Verificação: `node --test tests/*.test.cjs` (15 arquivos). Regressão específica de entrada/retorno, edição e prescrição pendente; percurso em Chromium com largura total em 320/390/1440 px, montagem, retorno, salvamento/recarregamento com adaptador de conta simulado, PDF e teclado; regressão das funcionalidades anteriores e da agenda.
+
+
+## Ficha resumida e áreas próprias
+
+A ficha do aluno concentra identificação, resumo do treino, próximos atendimentos/saldo, evolução e pendências, além de contato rápido e anotações recolhidas. Os formulários maiores abrem em telas próprias:
+
+- **Abrir atendimentos**: tela com opções Agenda, Contratação e Contato. Exibe somente a opção escolhida. Presença, falta, cancelamento, remarcação, renovação e saldo continuam com as mesmas regras. Valores e situação do pagamento ficam em Pagamentos. O histórico de aulas e o registro de treino sem aula presencial ficam recolhidos. A programação de Hoje pode abrir o atendimento diretamente na data selecionada.
+- **Ver evolução**: formulário de data, altura, objetivo, limitações, medidas atuais e registro de peso. O histórico numérico anterior de peso é preservado; novos pesos são acrescentados por **Registrar peso**. O gráfico anterior continua disponível em **Visualizar gráfico e medidas**. Medidas representam os valores atuais; não se cria uma série temporal de medidas nesta mudança.
+- **Ver pagamentos**: valor e situação da contratação selecionada, resumos e mensagem editável de pagamento. Contratações anteriores continuam selecionáveis. O controle mensal anterior permanece separado e recolhido quando existem pacotes. Nenhuma cobrança é disparada automaticamente.
+- **Voltar à ficha** e Escape retornam sem alterar os dados preenchidos. O foco volta ao botão da área que foi aberta, e o salvamento automático continua usando a conta existente. Treino, atendimento presencial e recebimento permanecem independentes.
+
+Verificação: 16 arquivos de testes automatizados, incluindo formulários, resumos, preservação de histórico e abas de atendimentos. Percursos em Chromium de preenchimento, retorno, recarregamento e persistência com adaptador de conta simulado; navegação em 320/390/1440 px; preservação do treino, PDFs, modelos, versões, backup e navegação por teclado. As telas também estão disponíveis na demonstração, com persistência somente na sessão.
