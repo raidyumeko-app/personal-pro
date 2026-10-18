@@ -1,20 +1,20 @@
 :root {
-  color-scheme: light;
-  --bg: #f3f7f5;
-  --surface: #ffffff;
-  --surface-2: #f4f7f6;
-  --surface-3: #e9efec;
-  --border: #dce6e0;
-  --text: #18342a;
-  --text-dim: #597067;
-  --text-faint: #697d74;
-  --lime: #176b52;
-  --lime-strong: #0c533e;
-  --lime-soft: #e5f3ec;
-  --blue: #2865a2;
-  --blue-soft: #edf4fb;
-  --red: #b93845;
-  --red-soft: #fff0f1;
+  color-scheme: dark;
+  --bg: #10191e;
+  --surface: #1b292e;
+  --surface-2: #23343a;
+  --surface-3: #2d4146;
+  --border: #36494e;
+  --text: #f1f7f2;
+  --text-dim: #bacbc7;
+  --text-faint: #a3b7b1;
+  --lime: #c7f55b;
+  --lime-strong: #a9df39;
+  --lime-soft: #314534;
+  --blue: #9dcaff;
+  --blue-soft: #253d51;
+  --red: #ff9ba1;
+  --red-soft: #513239;
 }
 body { background: #eaf0ec; }
 button, input, select { -webkit-tap-highlight-color: transparent; }
@@ -354,3 +354,27 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 
 
 .pp-exp-edit{border-top:1px solid var(--exp-line);display:grid;gap:10px}.pp-exp-edit .pp-exp-exercise{border-top:0}.pp-exp-action{border:1px solid #6e8c74;border-radius:11px;background:#293f37;color:#d5f4bc;font-size:12px;font-weight:750;padding:10px;min-height:38px}.pp-exp-action:disabled{opacity:.45}.pp-exp-editor{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pp-exp-field{display:grid;gap:5px;min-width:0}.pp-exp-field span{font-size:11px;color:#b6c9c1}.pp-exp-field input,.pp-exp-add input{width:100%;min-width:0;min-height:42px;border:1px solid #4c6262;border-radius:10px;background:#101e23;color:#fff;padding:10px;font-size:16px}.pp-exp-add{display:flex;gap:8px}.pp-exp-add input{flex:1}.pp-exp-finish{min-height:46px;background:var(--exp);color:#132016;border-radius:12px;font-weight:850;padding:12px}.pp-exp-notice{padding:12px;border:1px solid #78946b;border-radius:12px;color:#d6f8b5;background:#263b31;font-size:12px}.pp-exp input:focus-visible,.pp-exp button:focus-visible{outline:3px solid #d4ff73;outline-offset:2px}
+
+
+/* Shared dark identity for actual professional screens, not only the demo. */
+html{background:var(--bg)}body{background:var(--bg)!important;color:var(--text)}
+[class*="bg-[var(--bg)]/90"]{background:rgba(16,25,30,.97)!important}
+[class*="bg-[var(--lime)]"],[class*="bg-[var(--text)]"]{color:#132016!important}
+[class*="bg-[var(--lime)]"] svg,[class*="bg-[var(--text)]"] svg{color:inherit!important}
+.pp-nav{background:var(--surface);border:1px solid var(--border);box-shadow:0 10px 24px #0002}
+.pp-nav button{color:var(--text-dim)}.pp-nav button[class*="bg-[var(--text)]"]{color:#132016!important}
+.pp-eyebrow{color:var(--lime)}.pp-primary{color:#142019}.pp-primary:hover:not(:disabled){color:#142019}
+.pp-secondary,.pp-icon-button,.pp-day,.pp-exercise-card,.pp-favorite,.pp-library-target select,.pp-copy-panel select,.pp-notes-input{background:var(--surface);color:var(--text);border-color:var(--border)}
+.pp-secondary:hover:not(:disabled),.pp-day.active{background:var(--lime-soft);border-color:var(--lime)}
+.pp-library-target,.pp-copy-panel,.pp-review-panel,.pp-model-form,.pp-exercise-notes,.pp-dose-grid div,.pp-empty{background:var(--surface-2);color:var(--text);border-color:var(--border)}
+.pp-order,.pp-favorite[aria-pressed="true"]{background:var(--lime-soft);color:var(--lime);border-color:var(--border)}
+.pp-workout-actions button,.pp-workout-tools button{min-height:44px}
+.pp-wellness-panel{background:var(--surface);color:var(--text)}
+.pp-demo-tour{background:var(--surface)!important;color:var(--text);border-color:var(--border)!important}
+input,textarea,select{accent-color:var(--lime)}
+input::placeholder,textarea::placeholder{color:#a9bcb6}
+input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
+.text-orange-400{color:#ffc57d}.text-blue-400{color:#9dcaff}
+[class*="text-[#25D366]"]{color:#78e4a3}
+[class*="bg-[var(--surface)]"][class*="rounded-"]{box-shadow:0 4px 20px #0002}
+@media(max-width:600px){.pp-nav{overflow-x:auto;scrollbar-width:thin}.pp-nav button{flex-shrink:0}}
