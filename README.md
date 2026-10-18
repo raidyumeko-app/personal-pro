@@ -57,7 +57,7 @@ Validação: `node --test tests/*.test.cjs`; testes do tema em Chromium, fluxo d
 
 Abra a aba **Biblioteca** ou, na ficha do aluno, toque em **Adicionar exercício da biblioteca** na seção **Treino Atual**.
 
-- **180 exercícios em português**, organizados por grupo muscular.
+- **180 exercícios em português**, organizados por grupo muscular. **136 possuem fotos e instruções em português**, associadas por variação/equipamento ao catálogo Free Exercise DB; 44 permanecem disponíveis sem foto nesta fonte. Os nomes em português são preservados. Fotos são carregadas da fonte pública, com aviso caso estejam indisponíveis.
 - **Catálogo ampliado com 876 exercícios**, importado do Free Exercise DB. É uma coleção separada e pode conter equivalentes dos exercícios em português; não representa 1.056 exercícios distintos.
 - No catálogo ampliado, os nomes permanecem no inglês original; instruções de execução, grupos, equipamentos e níveis estão em português. Há imagens em 873 registros e instruções em 871. Os demais mostram apenas os dados disponíveis.
 - Busca sem diferenciar acentos ou maiúsculas. Termos comuns em português, como supino, agachamento e remada, também encontram nomes correspondentes em inglês.
