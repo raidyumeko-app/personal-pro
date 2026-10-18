@@ -53,6 +53,14 @@ Ainda pendentes: validação visual em navegador, fluxo real de confirmação/re
 
 Validação: `node --test tests/*.test.cjs`; testes do tema em Chromium, fluxo demonstrativo com catálogo em português, reordenação, cópia A/B, edição e download de PDF real, em 360/390 px e desktop, sem erros JavaScript. A aparência da tela e a renderização do PDF foram conferidas. O salvamento autenticado continua coberto com API simulada; esta alteração não executou cadastro ou cobrança real.
 
+## Favoritos, orientações e evolução
+
+- A estrela em cada exercício adiciona/remove um favorito. **Ver favoritos** filtra o catálogo; a mesma fonte é reconhecida entre os catálogos português/ampliado. Favoritos ficam no perfil da conta (`profile.favoriteExercises`), usando o salvamento existente. Na demonstração, duram apenas a sessão demonstrativa.
+- **Observações do exercício** está disponível ao adicionar e editar, até 2.000 caracteres. Aparece no cartão, no PDF e no texto de WhatsApp. É diferente das notas internas do aluno, que continuam privadas.
+- **Histórico de cargas** em cada cartão mostra as alterações de carga prescrita com data/hora. Registros antigos sem data são identificados. Alterar somente observações não cria nova entrada. Não representa automaticamente uma carga executada pelo aluno.
+- Novos exercícios com carga recebem o registro inicial. Copiar fichas/dias preserva as orientações e a carga prescrita, sem transferir o histórico anterior.
+- No celular, campos têm fonte de 16 px, botões de toque maiores e diálogos de edição/PDF com rolagem interna.
+
 ## Biblioteca de exercícios
 
 Abra a aba **Biblioteca** ou, na ficha do aluno, toque em **Adicionar exercício da biblioteca** na seção **Treino Atual**.
@@ -79,10 +87,12 @@ Validação desta alteração: `node --test tests/*.test.cjs`. Cobre adicionar/e
 
 Na ficha do aluno, em **Treino Atual**, toque em **Ver PDF**. A ficha deve conter pelo menos um exercício.
 
-- O PDF A4 inclui nome do aluno, personal, estúdio (quando preenchido), data e tabela com exercício, séries, repetições/tempo, carga/intensidade e descanso.
+- O PDF A4 inclui nome do aluno, personal, estúdio (quando preenchido), data e tabela com exercício, séries, repetições/tempo, carga/intensidade, descanso e orientações de cada exercício.
+- **Incluir fotos no PDF** alterna entre compacto (padrão, sem downloads de fotos) e ilustrado. Até duas posições corretas de cada exercício são incorporadas ao arquivo, preservando a proporção. O PDF recebido pode ser aberto sem internet. A geração ilustrada precisa de internet para obter as fotos.
+- Fotos ausentes, downloads com falha e indisponibilidade da fonte geram avisos, mantendo a ficha utilizável. Exercícios personalizados sem correspondência não recebem uma foto aproximada. O histórico de cargas não é exportado.
 - Usa os valores atuais da ficha e interpreta os treinos antigos no formato `3x12`. Preserva duração de cardio e descanso zero.
 - O PDF organiza os exercícios por Treino A/B/C. Tabelas longas recebem páginas adicionais com cabeçalho e numeração. Campos extensos quebram linha.
-- **Baixar PDF** salva o arquivo `treino-nome-do-aluno.pdf`.
+- **Baixar PDF** salva `treino-nome-do-aluno.pdf` ou `treino-nome-do-aluno-ilustrado.pdf`, conforme a opção.
 - **Compartilhar PDF** aparece quando o navegador oferece compartilhamento de arquivos. O personal escolhe o WhatsApp e a conversa do aluno na tela do aparelho. O aplicativo não seleciona o destinatário nem envia automaticamente.
 - No computador ou sem compartilhamento nativo, baixe o arquivo e anexe na conversa do WhatsApp. **Mandar treino** continua enviando o treino como texto.
 - A geração acontece no aparelho. Notas internas, finanças e medidas não são incluídas. O arquivo não é enviado a um serviço de geração de PDF nem fica hospedado em link público.
