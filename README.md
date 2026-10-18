@@ -131,7 +131,7 @@ Validação desta alteração: `node --test tests/*.test.cjs`. Cobre adicionar/e
 
 ## PDF da ficha para o aluno
 
-Na ficha do aluno, em **Treino Atual**, toque em **Ver PDF**. A ficha deve conter pelo menos um exercício.
+Na ficha do aluno, em **Treino Atual**, toque em **Ver PDF**, confira o resumo e escolha **Gerar ficha**. A ficha deve conter pelo menos um exercício.
 
 - O PDF A4 inclui nome do aluno, personal, estúdio (quando preenchido), data e tabela com exercício, séries, repetições/tempo, carga/intensidade, descanso e orientações de cada exercício.
 - **Incluir fotos no PDF** alterna entre compacto (padrão, sem downloads de fotos) e ilustrado. Até duas posições corretas de cada exercício são incorporadas ao arquivo, preservando a proporção. O PDF recebido pode ser aberto sem internet. A geração ilustrada precisa de internet para obter as fotos.
@@ -188,3 +188,17 @@ Google Auth não está configurado no aplicativo. Não há processamento de paga
 - Ajustada a quebra de nomes longos no cabeçalho de continuação do PDF para celular.
 
 Verificação: 11 arquivos passaram em `node --test tests/*.test.cjs`. Percurso em Chromium com catálogo lento e indisponível, nova tentativa de catálogo e foto, correspondências corrigidas, modelos editáveis, ficha vazia, nomes longos, descanso zero/inválido e download do PDF. Larguras de 320, 360, 390 e 1440 px conferidas sem transbordamento do diálogo e sem erros JavaScript. PDFs A4 e A5 com 1 e 60 exercícios foram gerados, renderizados e conferidos visualmente.
+
+
+## Ferramentas para montar e revisar a ficha
+
+Disponíveis também na demonstração:
+
+1. **Trocar por equivalente**, no cartão do exercício, lista opções do mesmo grupo e tipo de movimento, priorizando o mesmo equipamento. A escolha é manual. Séries, repetições, descanso e treino são mantidos. Carga, histórico de carga, alternativas e orientações específicas são redefinidos para não atribuir dados de outro movimento; a versão anterior permanece no histórico da ficha. Sem correspondência suficiente, use a biblioteca.
+2. **Comparar ficha anterior e atual**, junto às ações da ficha, destaca alterações, adições e remoções, incluindo séries, repetições, carga, descanso e treino. É possível escolher uma versão do histórico. O último salvamento explícito vira a referência para a próxima comparação; nas fichas antigas, a primeira versão disponível é a referência inicial.
+3. **Ver PDF** abre uma revisão por treino A/B/C com contagem de exercícios, duração planejada/estimada e campos a definir. **Corrigir** abre o exercício; **Gerar ficha** permite continuar com campos pendentes. Fotos e formato continuam personalizáveis antes da geração.
+4. **Filtrar por objetivo**, na biblioteca, organiza movimentos em Força, Mobilidade e Condicionamento. A classificação usa as categorias do catálogo original e equivalências dos nomes em português; carga, volume e contexto continuam definindo a prescrição. Equipamento também pode ser filtrado no catálogo em português.
+5. **Organizar e revisar ficha → Ajustar vários exercícios** ativa seleção nos cartões. Selecione individualmente ou todo o treino visível, defina descanso e/ou destino A/B/C e aplique. Descanso zero é válido; valores fora de 0–3600 são rejeitados. As demais prescrições e os exercícios não selecionados permanecem iguais.
+6. **Organizar e revisar ficha → Identidade do profissional no PDF** configura nome, estúdio, contato e logo. PNG, JPEG e WebP de até 3 MB são processados localmente e reduzidos para armazenamento no perfil. O contato e o logo aparecem em A4 e no formato para celular. A logo pode ser removida; URLs externas não são carregadas como logo.
+
+Verificação: 12 arquivos de testes automatizados, percurso em Chromium das seis ferramentas, conferência de telas de 320/390/1440 px e PDFs A4/A5 renderizados com identidade do profissional. Não foram adicionados serviços pagos.
