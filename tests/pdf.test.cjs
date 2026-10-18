@@ -43,6 +43,10 @@ for (let page = 1; page <= long.getNumberOfPages(); page++) {
 }
 const huge = api.makeDocument({...student, workout: [{...student.workout[0], name: 'Exercício de mobilidade e estabilização '.repeat(300)}]}, coach);
 assert.ok(huge.getNumberOfPages() > 2, 'A single long row can continue on other pages');
+const grouped=api.makeDocument({...student,workout:student.workout.map((exercise,index)=>({...exercise,day:['C','A','B','A'][index]}))},coach);
+const groupedText=grouped.internal.pages.flat().join('\n');
+for(const day of ['A','B','C'])assert.ok(groupedText.includes('TREINO '+day));
+assert.ok(groupedText.indexOf('TREINO A')<groupedText.indexOf('TREINO B')&&groupedText.indexOf('TREINO B')<groupedText.indexOf('TREINO C'),'PDF groups A/B/C in order');
 async function main() {
   const artifact = await api.prepare(student, coach);
   assert.equal(artifact.fileName, 'treino-joao-goncalves.pdf');
