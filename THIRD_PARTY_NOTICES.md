@@ -64,6 +64,6 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Portuguese exercise instructions
 
-`exercise-instructions.pt.json` translates only the public-domain source instructions, preserving the exercise names and IDs. Generated offline with Helsinki-NLP OPUS-MT (`Helsinki-NLP/opus-mt-tc-big-en-pt`), using the CTranslate2 int8 conversion distributed by Playto (`playto-mt/opus-mt-tc-big-en-pt-ct2`), followed by terminology corrections. The model weights are not distributed with this app.
+`exercise-instructions.pt.json` translates only the public-domain source instructions, preserving the exercise names and IDs. Generated offline with Helsinki-NLP OPUS-MT (`Helsinki-NLP/opus-mt-tc-big-en-pt`), using the CTranslate2 int8 conversion distributed by Playto (`playto-mt/opus-mt-tc-big-en-pt-ct2`), followed by terminology corrections and editorial refinements of common exercise instructions. Original exercise names, IDs and source metadata are preserved. The model weights are not distributed with this app.
 
 Model provenance: https://huggingface.co/Helsinki-NLP/opus-mt-tc-big-en-pt and https://huggingface.co/playto-mt/opus-mt-tc-big-en-pt-ct2. Model license: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit: Helsinki-NLP, OPUS-MT — Open Machine Translation Models; conversion by Playto.
