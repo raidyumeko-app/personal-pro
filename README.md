@@ -14,7 +14,7 @@ Projeto `lnlwkjsfcpeofhajqesh` (PersonalPro). `cloud.js` usa apenas URL e chave 
 
 A tabela `public.personal_pro_accounts` armazena perfil e alunos, incluindo exercícios, notas, medidas, histórico, check-ins e valores financeiros como JSON. RLS restringe leitura e escrita ao proprietário com `auth.uid() = user_id`. Acesso anônimo à tabela foi revogado. `schema.sql` documenta a tabela já existente; não reaplicar em produção.
 
-Login, cadastro, confirmação, recuperação e redefinição de senha, renovação da sessão e logout usam Supabase Auth. Tokens ficam no sessionStorage da aba. Gravações são serializadas, com erro visível e nova tentativa. A demonstração é separada da conta.
+Login, cadastro, confirmação, recuperação e redefinição de senha, renovação da sessão e logout usam Supabase Auth. Tokens ficam no sessionStorage da aba. Gravações são serializadas, com erro visível, rascunho local separado por conta e nova tentativa. A demonstração é separada da conta.
 
 Ao definir a URL de produção, configurar Site URL e Redirect URLs no Supabase Auth para permitir o retorno da confirmação e recuperação.
 
@@ -52,6 +52,29 @@ Ainda pendentes: validação visual em navegador, fluxo real de confirmação/re
 - Os dados A/B/C são armazenados no JSON de exercícios já existente. Não há alteração de schema, perda de registros ou migração destrutiva.
 
 Validação: `node --test tests/*.test.cjs`; testes do tema em Chromium, fluxo demonstrativo com catálogo em português, reordenação, cópia A/B, edição e download de PDF real, em 360/390 px e desktop, sem erros JavaScript. A aparência da tela e a renderização do PDF foram conferidas. O salvamento autenticado continua coberto com API simulada; esta alteração não executou cadastro ou cobrança real.
+
+## Melhorias de conclusão do aplicativo
+
+1. **Editar modelos:** modelos pessoais permitem renomear, mudar a descrição, adicionar/remover exercícios, editar dose, carga, descanso, técnica e substituições; arquivar e reativar. Modelos prontos permanecem disponíveis.
+2. **Desfazer exclusão:** a última remoção de exercício oferece desfazer durante a sessão. Outras remoções também podem ser recuperadas pelo histórico de versões.
+3. **Estado de salvamento:** indicador de salvando, salvo e pendente, com mensagem explícita se o navegador não permitir cópia local. A demonstração identifica armazenamento apenas na sessão.
+4. **Versões:** até 20 estados anteriores por aluno, sem snapshots recursivos. É possível conferir a lista de exercícios antes de restaurar. A restauração preserva o estado atual como outra versão. Inclui plano semanal e duração; não substitui dados pessoais do aluno.
+5. **Substituições:** até cinco alternativas por exercício, definidas pelo profissional; aparecem na ficha, nos modelos, no texto de WhatsApp e no PDF. Não há substituição automática nem prescrição algorítmica.
+6. **Técnicas:** Tradicional, Supersérie, Bi-set e Circuito, com identificação de bloco. O profissional identifica quais exercícios são executados em sequência. As marcações acompanham modelos e exportações; o cronômetro existente continua manual.
+7. **Plano semanal:** A/B/C pode ser associado a dias da semana, sem criar agendamento ou portal do aluno.
+8. **Duração:** estimativa aproximada usa séries, repetições/duração e descansos, com transição entre exercícios. Valores sem quantidade usam um tempo padrão aproximado. O profissional pode substituir por uma duração planejada de 1 a 600 minutos por treino. Não representa medição da sessão nem prescrição automática.
+9. **Explicações no PDF:** opção de incorporar instruções da biblioteca em português. Requer internet ao gerar; o arquivo final pode ser lido offline. Correspondências ausentes são informadas.
+10. **PDF para celular:** A5 vertical, fonte maior e ficha em blocos, sem a tabela densa do A4. Pode combinar fotos e explicações. Fotos em nova página repetem o nome do exercício.
+11. **Gráfico de cargas:** usa registros numéricos explícitos em kg; outras unidades e textos ficam na lista de histórico. São cargas prescritas, não execuções confirmadas pelo aluno.
+12. **Arquivar alunos:** lista de ativos/arquivados e reativação, preservando dados. Arquivados não aparecem como destino de novos modelos ou da biblioteca, e não entram na contagem de ativos. Os registros financeiros existentes permanecem disponíveis.
+13. **Exportação:** botão global baixa JSON com perfil, alunos, modelos, fichas e versões. Não inclui sessão, senha ou tokens. Não é um PDF para compartilhar com o aluno; contém os dados completos da conta. A recuperação de rascunho local é um fluxo separado.
+14. **Conexão instável:** antes do envio, `cloud.js` tenta preservar um rascunho no localStorage, separado por ID da conta. Sucessos removem apenas o rascunho correspondente à gravação concluída, evitando apagar uma alteração posterior. Falhas mantêm a cópia e o evento de reconexão tenta novamente durante a mesma sessão. Ao reencontrar uma cópia no login, o aplicativo oferece baixar, recuperar ou manter o estado da conta, sem aplicar automaticamente o rascunho antigo. Não é um modo offline completo: abrir/autenticar o aplicativo e obter a biblioteca/fotos ainda depende da rede. Não há conciliação automática de alterações feitas em vários aparelhos.
+15. **Guia:** três passos curtos mostram biblioteca, ficha e PDF; disponível na demonstração e pelo botão **Guia rápido**, com opção de pular.
+16. **Acessibilidade e visual:** controles de formulários recebem nomes acessíveis; diálogos prendem a navegação Tab, fecham com Escape quando possuem comando de fechar/cancelar e devolvem o foco. Há foco visível, controles de toque, tratamento de nomes longos e revisão em 360/390 px e desktop. Isso é uma revisão prática dos fluxos, não uma certificação WCAG.
+
+Todos os novos dados usam os documentos JSON já existentes na conta, sem nova tabela, migração destrutiva ou serviço pago.
+
+Validação desta etapa: nove arquivos de testes automatizados; Chromium com demonstração completa, modelos, arquivos, versões, desfazer, plano semanal, gráfico, backup, guia e PDF móvel com fotos e instruções; teste de cliente cloud real no navegador com HTTP simulado para falha, reconexão e recuperação após recarga; PDFs A4/A5 renderizados e conferidos. Fotos usadas no teste de navegador foram as imagens originais baixadas previamente da fonte e servidas pela rota de teste. A publicação é conferida pela versão pronta da Vercel e correspondência dos arquivos servidos. Não foram criadas contas reais nem enviados arquivos a alunos nesta etapa.
 
 ## Modelos pessoais, revisão e busca de alunos
 
