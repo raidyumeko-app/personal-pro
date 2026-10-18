@@ -1,0 +1,10 @@
+const test=require('node:test'),assert=require('node:assert/strict'),engine=require('../workout-session.js');
+const data={id:'s1',studentId:'a1',workoutId:'t1',exercises:[{id:'ag1',name:'Agachamento',sets:3,reps:10,restSeconds:60}]};
+test('cria sessao com progresso zerado',()=>{const s=engine.createSession(data);assert.deepEqual(engine.progress(s),{done:0,expected:3,percent:0})});
+test('nao aceita video sem licenca e revisao',()=>{const s=engine.createSession({...data,exercises:[{...data.exercises[0],video:{url:'https://example.com/a.mp4',licensed:false,reviewed:true}}]});assert.equal(s.exercises[0].video,null)});
+test('registra carga zero e substitui serie sem duplicar',()=>{let s=engine.createSession(data);s=engine.logSet(s,{exerciseId:'ag1',setNumber:1,reps:10,weightKg:0});s=engine.logSet(s,{exerciseId:'ag1',setNumber:1,reps:9,weightKg:20});assert.equal(s.logs.length,1);assert.equal(s.logs[0].weightKg,20)});
+test('rejeita serie inexistente e peso negativo',()=>{const s=engine.createSession(data);assert.throws(()=>engine.logSet(s,{exerciseId:'ag1',setNumber:4,reps:10,weightKg:20}));assert.throws(()=>engine.logSet(s,{exerciseId:'ag1',setNumber:1,reps:10,weightKg:-1}))});
+test('nao finaliza sessao vazia',()=>assert.throws(()=>engine.finish(engine.createSession(data))));
+test('finaliza com registro e bloqueia alteracao',()=>{let s=engine.logSet(engine.createSession(data),{exerciseId:'ag1',setNumber:1,reps:10,weightKg:15});s=engine.finish(s);assert.ok(s.completedAt);assert.throws(()=>engine.logSet(s,{exerciseId:'ag1',setNumber:2,reps:10,weightKg:15}))});
+test('consulta carga anterior por aluno',()=>{const s=engine.logSet(engine.createSession(data),{exerciseId:'ag1',setNumber:1,reps:10,weightKg:15});assert.equal(engine.previousLoad([s],'a1','ag1'),15);assert.equal(engine.previousLoad([s],'a2','ag1'),null)});
+test('rejeita exercicios duplicados',()=>assert.throws(()=>engine.createSession({...data,exercises:[data.exercises[0],data.exercises[0]]})));
