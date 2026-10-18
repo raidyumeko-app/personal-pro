@@ -237,3 +237,17 @@ Correções:
 Verificação: 14 arquivos passaram em `node --test tests/*.test.cjs`, incluindo regressões dos casos acima e preservação de contratação, locais, eventos e contatos na gravação/restauração da camada de conta. Percursos em Chromium cobriram ficha e agenda com salvamento/restauração, biblioteca lenta/indisponível e recuperação de foto, modelos e versões, edição em lote e substituição, PDF com logo e instruções, backup sem tokens e navegação por teclado. O adaptador de conta foi exercitado com respostas HTTP simuladas para falha de gravação, cópia local, nova tentativa e recuperação após recarregar. PDFs A4/A5, com 1 e 60 exercícios, foram gerados; amostras foram renderizadas e inspecionadas. Telas de 320 a 1440 px conferidas, sem erros JavaScript nos percursos concluídos.
 
 O salvamento continua usando o estado completo da conta: em edições simultâneas em duas abas/aparelhos, prevalece a última gravação. A revisão não altera esse contrato de persistência nem adiciona cobranças ou serviços externos.
+
+
+## Tela própria para montagem de treinos
+
+Na ficha do aluno, **Resumo do treino → Abrir treino** abre uma área que ocupa a tela inteira. A ficha mantém o resumo A/B/C e a quantidade de exercícios; agenda, pacotes e dados pessoais permanecem na ficha.
+
+- Cabeçalho com aluno, **Voltar à ficha** e acesso ao PDF.
+- Biblioteca, A/B/C, prescrição, edição, cópias, modelos, versões, substituições, edição em lote e configurações de PDF mantêm os mesmos dados e controles.
+- Voltar não descarta os exercícios nem os campos de uma prescrição ainda em montagem. O salvamento automático da conta continua ativo. Na demonstração, a persistência continua restrita à sessão.
+- A navegação restaura a posição da ficha e o foco do botão de abertura. Escape fecha primeiro o PDF/edição e, na tela de treino, retorna à ficha.
+- No computador, a tela usa a largura disponível e exibe os cartões em duas colunas. No telefone, os campos usam fonte de 16 px e a prescrição mantém o fluxo vertical.
+- O guia rápido abre diretamente a área de montagem quando essa é a etapa escolhida.
+
+Verificação: `node --test tests/*.test.cjs` (15 arquivos). Regressão específica de entrada/retorno, edição e prescrição pendente; percurso em Chromium com largura total em 320/390/1440 px, montagem, retorno, salvamento/recarregamento com adaptador de conta simulado, PDF e teclado; regressão das funcionalidades anteriores e da agenda.
