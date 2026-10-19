@@ -41,3 +41,12 @@ button:disabled{opacity:.5;cursor:default}button{touch-action:manipulation}butto
 .portal-nutrition-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:20px 0}.portal-nutrition-tabs button{font-size:12px;padding:10px 5px;min-height:42px}.portal-nutrition-tabs button[aria-pressed=true]{color:#111a09;background:var(--lime)!important}
 .portal-media-credit{font-size:9px;color:#b0c0b4;display:block;text-decoration:underline;margin-top:16px}
 .portal-profile-illustration{width:42px;height:42px;border-radius:14px;margin-left:auto;margin-right:12px}
+
+/* Entry forms stay above fixed navigation, including short mobile viewports. */
+.pp-entry-overlay{position:fixed;inset:0;z-index:80;display:flex;align-items:center;justify-content:center;padding:16px;isolation:isolate}
+.pp-entry-shade{position:absolute;inset:0;background:#000b;backdrop-filter:blur(5px)}
+.pp-entry-dialog{position:relative;width:100%;max-width:440px;max-height:calc(100dvh - 32px);overflow-y:auto;overscroll-behavior:contain;scroll-padding:18px;border:1px solid var(--border);border-radius:24px;background:var(--surface);padding:22px;box-shadow:0 20px 90px #0009}
+.pp-entry-dialog header,.pp-entry-dialog footer{display:flex;align-items:center;justify-content:space-between;gap:12px}.pp-entry-dialog h2{font-size:24px;font-weight:750}.pp-entry-dialog fieldset{border:0;padding:0;margin:18px 0;display:grid;gap:14px;min-width:0}.pp-entry-dialog footer{position:sticky;bottom:-22px;background:var(--surface);padding:16px 0 22px;margin-bottom:-22px}.pp-entry-dialog footer button{flex:1;min-height:46px}.pp-entry-dialog input{width:100%;box-sizing:border-box;min-height:46px}
+.pp-save-error,.pp-save-success{font-size:14px;line-height:1.5;padding:12px;border-radius:12px;white-space:normal;overflow-wrap:anywhere}.pp-save-error{color:#ffb7b7;background:#54282866;border:1px solid #894545}.pp-save-success{color:var(--lime);background:var(--lime-soft);border:1px solid #647f2f}
+.pp-toast{pointer-events:none!important;bottom:calc(92px + env(safe-area-inset-bottom,0px))!important;white-space:normal!important;text-align:center;max-width:calc(100vw - 32px)!important}
+html{scroll-padding-bottom:110px}button,input,select,textarea{scroll-margin-block:20px 110px}
