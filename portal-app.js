@@ -133,6 +133,8 @@
               act.run(async () => {
                 if (mode === "reset") {
                   await root.PersonalProCloud.updatePassword(password);
+                  setPassword("");
+                  await root.PersonalProCloud.signOut();
                   setMode("login");
                   act.setMessage("Senha atualizada. Entre novamente.");
                   return;

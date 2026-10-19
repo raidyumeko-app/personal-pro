@@ -26,7 +26,8 @@
     if (authenticated) {
       if (!session) throw new Error('Entre na sua conta para salvar.');
       if (session.expires_at < Date.now()/1000 + 60) {
-        refreshPromise ||= request('/auth/v1/token?grant_type=refresh_token', {method:'POST',body:JSON.stringify({refresh_token:session.refresh_token})}).then(remember).finally(()=>{refreshPromise=null});
+        const pendingReset = session.pending_password_reset;
+        refreshPromise ||= request('/auth/v1/token?grant_type=refresh_token', {method:'POST',body:JSON.stringify({refresh_token:session.refresh_token})}).then(data=>remember({...data,pending_password_reset:pendingReset})).finally(()=>{refreshPromise=null});
         await refreshPromise;
       }
     }
@@ -84,15 +85,30 @@
       try { if (session) await request('/auth/v1/logout',{method:'POST'},true); }
       finally {remember(null);announce('idle','Sessão encerrada');window.dispatchEvent?.(new Event('personal-pro-signout'));}
     },
-    async updatePassword(password) { return request('/auth/v1/user',{method:'PUT',body:JSON.stringify({password})},true); },
+    async updatePassword(password) {
+      const user = await request('/auth/v1/user',{method:'PUT',body:JSON.stringify({password})},true);
+      remember({...session,user,pending_password_reset:false});
+      return user;
+    },
     acceptRecovery() {
       return recoveryPromise ||= (async () => {
       const hash = new URLSearchParams(location.hash.slice(1));
-      if (!hash.get('access_token')) return false;
+      if (hash.has('error') || hash.has('error_code')) {
+        history.replaceState(null,'',location.pathname+location.search);
+        throw new Error('Este link de e-mail é inválido ou expirou. Solicite um novo link de recuperação ou entre para confirmar seu cadastro.');
+      }
+      if (!hash.get('access_token')) {
+        if (!session?.pending_password_reset) return false;
+        await request('/auth/v1/user',{},true);
+        return true;
+      }
       const isRecovery = hash.get('type') === 'recovery';
-      remember({access_token:hash.get('access_token'),refresh_token:hash.get('refresh_token'),expires_in:Number(hash.get('expires_in')) || 3600});
+      const previous = session;
+      remember({access_token:hash.get('access_token'),refresh_token:hash.get('refresh_token'),expires_in:Number(hash.get('expires_in')) || 3600,pending_password_reset:isRecovery});
       history.replaceState(null,'',location.pathname+location.search);
-      const user = await request('/auth/v1/user',{},true);
+      let user;
+      try { user = await request('/auth/v1/user',{},true); }
+      catch (error) { remember(previous); throw error; }
       session.user=user; remember(session);
       return isRecovery;
       })();
