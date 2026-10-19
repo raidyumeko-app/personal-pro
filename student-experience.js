@@ -613,7 +613,7 @@
                       ),
                     ),
               ),
-            (tab === "evolucao" || tab === "inicio") &&
+            tab === "evolucao" &&
               h(Progress, { React: R, student, sessions, catalog }),
             h(
               "div",
