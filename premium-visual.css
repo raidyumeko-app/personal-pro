@@ -36,3 +36,27 @@ body{background:#090d0d;color:var(--text);-webkit-font-smoothing:antialiased}
 .pp-field input,.pp-field textarea,.pp-notes-input{border-radius:14px!important;border-color:var(--border)!important}
 .pp-evolution-chart,.pp-load-graph{border-radius:20px;overflow:hidden}
 @media(prefers-reduced-motion:reduce){.pp-day,.pp-exercise-controls button,.pp-icon-button{transition:none}}
+
+/* Unified premium treatment across trainer, student and workout surfaces. */
+.pp-ui :is(.pp-panel,.pp-training-card,.pp-exercise-card,.pp-student-workout-card,.pp-record-section-card,.pp-quick-card-content,.pp-library-row,.pp-week-workout-card,.pp-exercise-visual-card,.pp-session-preview){
+  background:linear-gradient(155deg,#1a2220 0%,#111817 100%);
+  border:1px solid rgba(229,243,228,.13);
+  border-radius:22px;
+  box-shadow:0 14px 34px rgba(0,0,0,.17);
+}
+.pp-ui :is(.pp-primary,.pp-start-workout){min-height:46px;touch-action:manipulation}
+.pp-ui :is(button,input,select,textarea):focus-visible{outline:3px solid #c4f533;outline-offset:3px}
+.pp-ui :is(.pp-week-workout-card,.pp-exercise-visual-card,.pp-library-row){overflow:hidden}
+.pp-ui :is(.pp-workout-hero,.pp-exercise-visual-list){border-radius:24px;overflow:hidden}
+.pp-ui .pp-workout-hero{position:relative;isolation:isolate}
+.pp-ui .pp-workout-hero-shade{background:linear-gradient(0deg,rgba(5,10,9,.95),rgba(5,10,9,.05) 85%)}
+.pp-ui .pp-workout-hero-info{position:relative;z-index:1}
+.pp-ui :is(.pp-exercise-title,.pp-session-preview-heading){letter-spacing:-.035em;line-height:1.12}
+.pp-ui :is(.pp-exercise-dose,.pp-hero-eyebrow){color:#c4f533}
+.pp-ui :is(.pp-session-error,[role="alert"]){overflow-wrap:anywhere}
+.pp-ui :is(.pp-evolution-chart,.pp-load-graph){background:#141c1a;border:1px solid rgba(229,243,228,.12);border-radius:20px}
+@media(max-width:600px){
+  .pp-ui :is(.pp-panel,.pp-training-card,.pp-exercise-card,.pp-student-workout-card,.pp-record-section-card,.pp-week-workout-card,.pp-session-preview){border-radius:18px}
+  .pp-ui :is(.pp-primary,.pp-start-workout){min-height:50px}
+}
+@media(prefers-reduced-motion:reduce){.pp-ui *{scroll-behavior:auto!important}}
