@@ -159,24 +159,23 @@ Validação: `node --test tests/*.test.cjs`, incluindo login/restauração com a
 
 ## Modelo comercial do Personal Pro
 
-Regras definidas pelo proprietário em 17/10/2026. Esta seção trata do pagamento do usuário ao proprietário pelo uso do aplicativo.
+Regras atualizadas pelo proprietário em 19/10/2026. Esta seção trata do pagamento pelo uso do aplicativo, separado do financeiro do personal.
 
 - **Período gratuito:** os primeiros 30 dias são grátis.
-- **Assinatura:** depois do período gratuito, R$ 19,90 por mês. O usuário também pode assinar antes de terminar o período gratuito.
-- **Continuidade sem assinatura:** no 31º dia o aplicativo não bloqueia o uso; quem não optar por pagar continua utilizando com anúncios.
-- **Programa de indicação:** ao assinar, o usuário vê um popup “Indique um amigo”.
+- **Profissional:** depois do período gratuito, R$ 29,90/mês ou continuar gratuitamente com anúncios. Para o profissional: “No dia 31 não trava.”
+- **Aluno:** 30 dias grátis com todas as áreas de aluno. Depois, R$ 9,90/mês para continuar usando treinos, nutrição e evolução. Sem assinatura válida, bloquear o acesso; não há opção de anúncios para aluno. Dados e vínculos são preservados. Um único produto, sem cobrança separada de Nutrição/Evolução.
+- **Programa de indicação de profissionais:** após pagamento confirmado, oferecer “Indique um amigo”.
 - **Condição da recompensa:** indicar ou cadastrar um amigo não basta. O usuário que indicou recebe o benefício quando esse amigo também pagar pelo aplicativo.
-- **Recompensa:** cada indicação que cumprir a condição concede 3 dias grátis de uso ao assinante que indicou, adiando sua próxima cobrança em 3 dias.
-- **Exemplo:** uma indicação recompensada estende o intervalo até a próxima cobrança de 30 para 33 dias.
+- **Recompensa:** cada indicação válida concede 3 dias de benefício. A aplicação deve respeitar as regras do Google Play Billing, sem alterar datas de renovação arbitrariamente.
 - **Limite mensal:** no máximo 5 indicações recompensadas, equivalentes a 15 dias extras por mês.
 
 ### Estado da implementação
 
-As regras acima documentam o modelo comercial desejado. O aplicativo atual ainda não processa pagamentos nem implementa o popup de indicação, a atribuição de amigos indicados, a confirmação de pagamento deles, o crédito dos dias extras ou a exibição de anúncios. O botão de assinatura informa que o pagamento ainda está indisponível e não ativa o plano.
+Na branch de prévia, o servidor valida o prazo de 30 dias e o direito do aluno, bloqueando sessões e nutrição após expiração. O endpoint de validação Google Play e o registro de indicações existem, mas as credenciais, integração nativa e aplicação dos benefícios pelo provedor permanecem pendentes. O botão de assinatura informa a indisponibilidade e não ativa um pagamento fictício. Anúncios reais ainda dependem do provedor.
 
 ## Limitações existentes
 
-Google Auth não está configurado no aplicativo. Não há processamento de pagamentos; o botão de assinatura não ativa o plano. O acompanhamento do aluno é manual, feito pelo personal; não há portal do aluno nesta versão. Não há fila offline nem resolução de edição simultânea entre dispositivos: prevalece o último estado completo salvo.
+Google Auth, entrega real de e-mails, pagamentos/anúncios reais e testes em Android físico permanecem pendentes. O portal autenticado de aluno, com vínculos, execução, nutrição e evolução, está disponível na prévia. Consulte `docs/audits/` para evidências e limites de cada fluxo.
 
 
 ## Revisão de conteúdo e consistência — 18/10/2026

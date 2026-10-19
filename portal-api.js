@@ -59,6 +59,7 @@
         p_gender: gender,
       }),
     studentData: () => rpc("pp_student_data"),
+    studentAccess: () => rpc("pp_student_access"),
     async sessions(offset = 0) {
       return (
         await rows(

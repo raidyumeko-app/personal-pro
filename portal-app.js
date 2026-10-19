@@ -222,7 +222,7 @@
         el(
           "p",
           { className: "portal-caption" },
-          "Profissional: 30 dias grátis. Depois, R$ 29,90/mês ou continuar grátis com anúncios. Aluno: acesso gratuito aos treinos.",
+          "Profissional: 30 dias grátis. Depois, R$ 29,90/mês ou continuar grátis com anúncios. Aluno: 30 dias grátis; depois, R$ 9,90/mês para continuar, sem opção com anúncios.",
         ),
       ),
     );
@@ -296,7 +296,7 @@
           "p",
           { className: "portal-caption" },
           role === "student"
-            ? "Seu cadastro é gratuito. Depois você insere o convite do seu personal. O gênero declarado orienta apenas ilustrações."
+            ? "Você tem 30 dias grátis. Depois, R$ 9,90/mês para continuar, sem anúncios. Após o cadastro, insira o convite do seu personal. O gênero declarado orienta apenas ilustrações."
             : "Seu período gratuito começa ao cadastrar o perfil profissional. No dia 31 não trava.",
         ),
         btn("Continuar", undefined, true, {
@@ -506,6 +506,7 @@
   }
   function Student({ member }) {
     const [data, setData] = R.useState(null), [plus,setPlus]=R.useState(false),
+      [access, setAccess] = R.useState(null),
       [sessions, setSessions] = R.useState([]),
       [catalog, setCatalog] = R.useState([]),
       [tab, setTab] = R.useState("home"),
@@ -518,8 +519,13 @@
       [more, setMore] = R.useState(true),
       act = useAction();
     async function refresh() {
-      const [d, s, ent] = await Promise.all([API().studentData(), API().sessions(),API().entitlements()]);
-      setPlus(root.PersonalProPlus.fromEntitlements(ent));
+      let status;
+      try { status = await API().studentAccess(); }
+      catch(error) { setAccess(null); setLoaded(true); throw error; }
+      setAccess(status);
+      if (!status.active) { setData(null); setSessions([]); setPlus(false); setLoaded(true); return null; }
+      const [d, s] = await Promise.all([API().studentData(), API().sessions()]);
+      setPlus(true);
       setData(d);
       setSessions(s);
       setMore(s.length === 30);
@@ -542,6 +548,21 @@
         })
         .catch(() => {});
     }, []);
+    R.useEffect(() => {
+      if (!access?.active) return;
+      const recheck = () => { setAccess(null); act.run(refresh); };
+      const delay = Math.max(0, Date.parse(access.expiresAt) - Date.parse(access.serverNow));
+      const timer = setTimeout(recheck, Math.min(delay, 2147483647));
+      root.addEventListener('focus', recheck);
+      return () => { clearTimeout(timer); root.removeEventListener('focus', recheck); };
+    }, [access]);
+    if (!access?.active) return el('main',{className:'portal-auth'},el('section',{className:'portal-card'},
+      title('PERSONAL PRO', !loaded ? 'Conferindo seu acesso…' : access ? 'Seu período gratuito terminou.' : 'Não foi possível conferir seu acesso.'),
+      loaded && el('p',null,'O aluno tem 30 dias grátis. Depois, a assinatura de R$ 9,90/mês libera treinos, nutrição e evolução. Não há opção com anúncios. Seus dados e o vínculo com o personal são preservados.'),
+      el(Notice,{action:act}),
+      loaded && btn('Assinar por R$ 9,90/mês',()=>act.setMessage('A contratação pelo Google Play ainda não está disponível nesta prévia. Nenhuma cobrança foi feita.'),true),
+      loaded && btn('Verificar acesso novamente',()=>act.run(refresh),false,{disabled:act.busy}),
+      btn('Sair',()=>root.PersonalProCloud.signOut())));
     const student = data?.student;
     const active = sessions.find((s) => !s.completedAt),
       prescription = active?.prescription || student?.workout || [];
@@ -951,7 +972,7 @@
       e(
         "p",
         null,
-        "No dia 31 não trava. Alunos continuam com acesso gratuito aos treinos.",
+        "Para o profissional, no dia 31 não trava: você pode continuar com anúncios. O aluno tem 30 dias grátis e, depois, assinatura de R$ 9,90/mês, sem opção com anúncios.",
       ),
       !paid &&
         e(
@@ -1114,5 +1135,5 @@
     const active=plan?.some(e=>e.product==='trainer'&&Date.parse(e.valid_until)>Date.now());
     return el(R.Fragment,null,plan&&expired&&!active&&!member.free_with_ads&&el('aside',{className:'portal-trial-banner','aria-label':'Período gratuito'},el(Billing,{React:R,member,onFree:()=>setMember({...member,free_with_ads:true})})),el(Legacy));
   }
-  root.PersonalProPortal = { Shell, TrainerTools, Billing, Evolution, Spark };
+  root.PersonalProPortal = { Shell, TrainerTools, Billing, Evolution, Spark, Student };
 })(window);

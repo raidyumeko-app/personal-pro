@@ -34,9 +34,8 @@ begin
  ok=false;
  begin perform public.pp_accept_invite(code);exception when others then ok=true;end;
  if not ok then raise exception 'FAIL: invite replay';end if;
- ok=false;
- begin insert into public.pp_nutrition_entries(user_id,kind,text) values(auth.uid(),'meal','Not paid');exception when others then ok=true;end;
- if not ok then raise exception 'FAIL: unpaid nutrition write';end if;
+ insert into public.pp_nutrition_entries(user_id,kind,text) values(auth.uid(),'meal','Trial meal');
+ if (select count(*) from public.pp_nutrition_entries)<>1 then raise exception 'FAIL: trial nutrition access';end if;
  perform set_config('request.jwt.claim.sub','d0000000-0000-4000-8000-000000000001',true);
  perform public.pp_congratulate((sess->>'id')::uuid,'Parabéns pelo treino!');
  select count(*) into n from public.pp_sessions_v2 where congratulations='Parabéns pelo treino!';

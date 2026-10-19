@@ -145,10 +145,10 @@
     }
     async function load() {
       const [ent, info] = await Promise.all([
-        API.entitlements(),
+        API.studentAccess(),
         API.nutrition(),
       ]);
-      setPaid(root.PersonalProPlus.fromEntitlements(ent));
+      setPaid(ent.active === true);
       setSettings(
         info[0][0] || { goal_ml: 2500, portion_ml: 240, reminders: [] },
       );
@@ -599,7 +599,7 @@
                 h(
                   "p",
                   null,
-                  "Personal Pro+ — Nutrição e Evolução. Diário com fotos, dieta, hidratação, silhueta corporal e gráficos por R$ 9,90/mês. Opcional; os treinos continuam gratuitos.",
+                  "Personal Pro — 30 dias grátis para o aluno. Depois, R$ 9,90/mês para continuar com treinos, nutrição e evolução, sem anúncios.",
                 ),
                 b(
                   "Assinar Personal Pro+ · R$ 9,90/mês",
