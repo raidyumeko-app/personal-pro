@@ -33,3 +33,12 @@ Escopo: branch `feature/premium-visual-preview`. Revisão de código e configura
 
 ## Segurança operacional
 Não alterar produção, não executar exclusões, não migrar banco sem autorização. Validar tudo em preview. Este relatório é uma **auditoria inicial**, não aprovação para lançamento.
+
+
+## Atualização — preparação para revisão profissional
+- O projeto Vercel recebeu configuração `previewDeploymentsDisabled=true` para impedir novos deployments de preview enquanto a revisão ocorre. Reverter manualmente quando houver autorização explícita para publicar nova preview.
+- Removidos do HTML os três botões que abriam/reiniciavam a demonstração sem cadastro. A lógica interna e os arquivos ainda permanecem temporariamente, porque alguns módulos também são referenciados por telas do aplicativo. Não tratar como remoção completa do modo demo.
+- Alteração feita no commit `2ea0aea8511d10d8f2777f239aa7b6f7598d4cba`.
+- Não foi solicitada nem executada publicação manual. O commit acima ainda **não** foi validado em navegador ou Vercel.
+- Atenção: o painel de nutrição e vídeos usa `PersonalProWellnessDemo`; remover o arquivo sem migrar esses usos quebraria essas áreas.
+- Revisão profissional necessária antes do merge: confirmar se há referências remanescentes ao modo demonstração, testar autenticação, persistência e mídias, consolidar CSS e validar a aparência de cada tela.
