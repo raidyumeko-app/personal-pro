@@ -74,17 +74,17 @@ const clickLabel=label=>{const el=nodes(tree).find(n=>n.type==='button'&&text(n)
  clickLabel('Adicionar à ficha');
  let workout=states[studentState][0].workout;
  assert.equal(workout[0].name,'Supino reto com barra');assert.equal(workout[0].sets,'4x8');assert.equal(workout[0].load,'20 kg');assert.equal(workout[0].rest,90);
- assert.equal(find('input','Buscar exercício na biblioteca').props.value,'','Library stays open for the next exercise');
+ assert.ok(!find('input','Buscar exercício na biblioteca'),'Library closes after adding a prescription');clickLabel('Adicionar exercício da biblioteca');
  set('Filtrar por grupo muscular','Cardio');set('Buscar exercício na biblioteca','bicicleta');
  find('button','Selecionar Bicicleta ergométrica').props.onClick();tree=render();
  set('Repetições ou duração','15 min');set('Carga ou intensidade','Moderado');set('Descanso em segundos','0');clickLabel('Adicionar à ficha');
  workout=states[studentState][0].workout;
  assert.equal(workout[1].rest,0);assert.equal(workout[1].sets,'15 min');
- clickLabel('Criar exercício personalizado');set('Nome do exercício','Exercício próprio de teste');clickLabel('Adicionar à ficha');
+ clickLabel('Adicionar exercício da biblioteca');clickLabel('Criar exercício personalizado');set('Nome do exercício','Exercício próprio de teste');clickLabel('Adicionar à ficha');
  workout=states[studentState][0].workout;
  assert.equal(workout[2].name,'Exercício próprio de teste');assert.equal(workout[2].sets,'A definir');assert.equal(workout[2].load,'A definir');
  assert.equal(new Set(workout.map(item=>item.id)).size,3);
- clickLabel('Criar exercício personalizado');set('Nome do exercício','Não salvar');clickLabel('Cancelar');assert.equal(states[studentState][0].workout.length,3);
+ clickLabel('Adicionar exercício da biblioteca');clickLabel('Criar exercício personalizado');set('Nome do exercício','Não salvar');clickLabel('Cancelar');assert.equal(states[studentState][0].workout.length,3);
 
  // Editing preserves all four independent fields and previous load.
  let edit=nodes(tree).find(n=>n.type==='button'&&n.props['aria-label']==='Editar');
