@@ -1,14 +1,25 @@
-/* Home uses the same students, agenda and ledger as the account modules. */
-(function(root){'use strict';
-function Dashboard({React:R,students=[],profile={},onStudents,onNewStudent,onWorkout,onModels,onFinance,onStudentPreview,onAppointment}){
- const h=R.createElement,I=(name,size=22)=>h(root.PersonalProUI.Icon,{React:R,name,size}),active=students.filter(s=>!s.archived),api=root.PersonalProSchedule,today=api.today(),agenda=api.agenda(active,today).filter(x=>x.status!=='cancelled'),pending=agenda.filter(x=>x.status==='scheduled').length,ledger=root.PersonalProStudentSections.monthlyLedger(profile,today.slice(0,7)),money=n=>Number(n).toLocaleString('pt-BR',{style:'currency',currency:'BRL'}),balances=active.map(s=>root.PersonalProStudentSections.financeSummary(s)),due=balances.reduce((sum,x)=>sum+x.pending,0),paid=balances.filter(x=>x.pending===0&&x.paid>0).length;
- const stat=(icon,value,label,note,fn)=>h('button',{type:'button',className:'pp-overview-stat',onClick:fn},h('span',{className:'pp-stat-icon'},I(icon,25)),h('strong',null,value),h('span',null,label),h('small',null,note));
- return h('section',{className:'pp-home','aria-label':'Central de trabalho do profissional'},
- h('div',{className:'pp-overview-stats'},stat('users',active.length,'alunos ativos','Gerenciar alunos ↗',onStudents),stat('clock',pending,'aulas pendentes hoje',new Date(today+'T12:00:00').toLocaleDateString('pt-BR',{weekday:'long',day:'numeric'}),()=>document.getElementById('pp-home-agenda')?.scrollIntoView({behavior:'smooth'}))),
- h('section',{className:'pp-home-panel',id:'pp-home-agenda'},h('div',{className:'pp-card-title'},h('h2',null,I('calendar'),'Agenda do dia'),h('button',{type:'button',onClick:()=>document.getElementById('pp-agenda-home')?.scrollIntoView({behavior:'smooth'})},'Ver todos ›')),agenda.length?h('div',{className:'pp-agenda-compact'},agenda.slice(0,3).map(item=>h('button',{type:'button',key:item.key,onClick:()=>onAppointment?.(item.studentId,today)},h('time',null,item.time),h('span',{className:'pp-small-avatar'},item.studentName.split(' ').map(n=>n[0]).slice(0,2).join('')),h('span',{className:'pp-agenda-person'},h('strong',null,item.studentName),h('small',null,item.location||'Atendimento presencial')),h('span',{className:'pp-agenda-state '+(item.status==='done'?'done':'')},item.status==='done'?'Realizada':item.status==='missed'?'Falta':'Prevista')))):h('p',{className:'pp-empty-agenda'},'Seu dia começa aqui. Configure os horários nos atendimentos do aluno.'),h('button',{type:'button',className:'pp-home-outline',onClick:onStudents},I('plus'),'Organizar atendimentos')),
- h('button',{type:'button',className:'pp-home-panel pp-finance-snapshot',onClick:onFinance},h('h2',null,I('chart'),'Resumo financeiro rápido'),h('div',{className:'pp-home-money'},h('div',null,h('small',null,'Recebido no mês'),h('strong',null,money(ledger.received))),h('div',null,h('small',null,'Contratos a receber'),h('strong',null,money(due))),h('div',null,h('small',null,'Alunos em dia'),h('strong',null,paid+' de '+active.length))),h('small',{className:'pp-hint'},'Recebimentos do mês e situação cadastrada dos contratos.')),
- h('div',{className:'pp-home-shortcuts'},h('button',{type:'button',onClick:onNewStudent},I('users'),'Novo aluno',I('plus',18)),h('button',{type:'button',onClick:onWorkout},I('weight'),'Montar treino',I('arrow',18))),
- h('div',{className:'pp-home-small-links'},h('button',{type:'button',onClick:onModels},'Modelos de treino →'),h('button',{type:'button',onClick:onStudentPreview},'Visão do aluno →')));
-}
-root.PersonalProDashboard={Dashboard};
+/* Training-first presentation; financial information belongs to its existing tab. */
+(function (root) {
+  "use strict";
+  function Dashboard({
+    React: R,
+    students = [],
+    catalog = [],
+    sessions = [],
+    onFinish,
+    onStudents,
+    onWorkout,
+  }) {
+    return R.createElement(root.PersonalProStudentExperience.Experience, {
+      React: R,
+      students,
+      catalog,
+      sessions,
+      onFinish,
+      onStudents,
+      onManage: onWorkout,
+      embedded: true,
+    });
+  }
+  root.PersonalProDashboard = { Dashboard };
 })(window);

@@ -69,3 +69,11 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 Model provenance: https://huggingface.co/Helsinki-NLP/opus-mt-tc-big-en-pt and https://huggingface.co/playto-mt/opus-mt-tc-big-en-pt-ct2. Model license: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit: Helsinki-NLP, OPUS-MT — Open Machine Translation Models; conversion by Playto.
 
 Exercise objective filters also use the original category metadata from the same pinned Free Exercise DB snapshot. Stretching maps to Mobilidade; cardio and plyometrics map to Condicionamento; other source categories map to Força. These are organizational filters, not personalized prescriptions.
+
+## Exercise demonstration videos and posters (2026-10-19)
+
+The files under `media/exercises/` are adapted from exercise videos by Goulart,
+via wger, under CC BY-SA 4.0. See `media/exercises/LICENSE.md` and the exact
+per-file source metadata in `exercise-media.js`. Videos are supplied as H.264
+MP4; posters are extracted from the same movement. Source licenses apply to
+these media assets, not to the surrounding application code.
