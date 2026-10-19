@@ -74,6 +74,25 @@ async function main() {
       const ex=account.students[0].workout[0];
       assert.equal(ex.series,'4');assert.equal(ex.repetitions,'8–12');assert.equal(ex.load,'22,5 kg');assert.equal(ex.rest,90);
       console.log('Prescription persisted',JSON.stringify({series:ex.series,repetitions:ex.repetitions,load:ex.load,rest:ex.rest}));
+      // Edit by semantic labels: the exercise name is not a dosage field.
+      await page.getByRole('button',{name:'Editar',exact:true}).first().click();
+      const editor=page.getByRole('dialog',{name:'Editar exercício',exact:true});
+      await editor.getByLabel('Nome do exercício',{exact:true}).fill('4');
+      await editor.getByRole('button',{name:'Salvar',exact:true}).click();
+      await editor.getByRole('alert').filter({hasText:'Informe o nome do exercício'}).waitFor();
+      await editor.getByLabel('Nome do exercício',{exact:true}).fill('Supino reto com barra');
+      await editor.getByLabel('Séries (vezes)',{exact:true}).fill('4');
+      await editor.getByLabel('Repetições ou duração',{exact:true}).fill('8');
+      await editor.getByLabel('Carga ou intensidade',{exact:true}).fill('42.5 kg');
+      await editor.getByLabel('Descanso em segundos',{exact:true}).fill('90');
+      await editor.getByRole('button',{name:'Salvar',exact:true}).click();
+      await page.getByRole('button',{name:'Salvar treino',exact:true}).click();
+      await page.getByText('Treino salvo na sua conta',{exact:true}).waitFor();
+      await page.reload();await openWorkout();
+      if(real)account=(await page.evaluate(()=>window.PersonalProCloud.request('/rest/v1/personal_pro_accounts?select=profile,students')))[0];
+      const edited=account.students[0].workout[0];
+      assert.equal(edited.name,'Supino reto com barra');assert.equal(edited.series,'4');assert.equal(edited.repetitions,'8');assert.equal(edited.load,'42.5 kg');assert.equal(edited.rest,90);
+
       await page.getByRole('button',{name:'PDF para o aluno',exact:true}).click();
       await page.getByRole('button',{name:'Gerar ficha',exact:true}).click();
       await page.getByRole('button',{name:'Baixar PDF',exact:true}).waitFor();

@@ -91,9 +91,22 @@ const clickLabel=label=>{const el=nodes(tree).find(n=>n.type==='button'&&text(n)
  edit.props.onClick();tree=render();
  assert.equal(find('input','Séries (vezes)').props.value,'4');
  assert.equal(find('input','Repetições ou duração').props.value,'8');
+ // Audit regression: the name is a separate field, never the first dosage slot.
+ set('Nome do exercício','4');clickLabel('Salvar');
+ assert.equal(states[studentState][0].workout[0].name,'Supino reto com barra');
+ assert.ok(text(tree).includes('Séries, repetições, carga e descanso têm campos próprios.'));
+ assert.ok(find('input','Nome do exercício'),'Invalid names keep the editor open');
+ set('Nome do exercício','Supino reto com barra');
+ set('Séries (vezes)','4');set('Repetições ou duração','8');set('Carga ou intensidade','42.5 kg');set('Descanso em segundos','90');clickLabel('Salvar');
+ const prescribed=JSON.parse(JSON.stringify(states[studentState][0].workout[0]));
+ assert.equal(prescribed.name,'Supino reto com barra');assert.equal(prescribed.series,'4');assert.equal(prescribed.repetitions,'8');assert.equal(prescribed.load,'42.5 kg');assert.equal(prescribed.rest,90);
+ const adapter={};vm.runInNewContext(fs.readFileSync(require('node:path').join(__dirname,'../workout-session-preview.js'),'utf8'),{window:adapter});
+ const execution=adapter.PersonalProSessionPreview.adapt([prescribed])[0];
+ assert.equal(execution.sets,4);assert.equal(execution.reps,8);assert.equal(execution.restSeconds,90);
+ nodes(tree).find(n=>n.type==='button'&&n.props['aria-label']==='Editar').props.onClick();tree=render();
  set('Séries (vezes)','5');set('Repetições ou duração','10–12');set('Carga ou intensidade','25 kg');set('Descanso em segundos','120');clickLabel('Salvar');
  workout=states[studentState][0].workout;
- assert.equal(workout[0].series,'5');assert.equal(workout[0].repetitions,'10–12');assert.equal(workout[0].sets,'5x10–12');assert.equal(workout[0].load,'25 kg');assert.equal(workout[0].lastLoad,'20 kg');assert.equal(workout[0].rest,120);
+ assert.equal(workout[0].series,'5');assert.equal(workout[0].repetitions,'10–12');assert.equal(workout[0].sets,'5x10–12');assert.equal(workout[0].load,'25 kg');assert.equal(workout[0].lastLoad,'42.5 kg');assert.equal(workout[0].rest,120);
  assert.deepEqual(JSON.parse(vm.runInContext('JSON.stringify(exerciseDose({sets:"3x12"}))',ctx)),{series:'3',repetitions:'12'});
  assert.deepEqual(JSON.parse(vm.runInContext('JSON.stringify(exerciseDose({sets:"15 min"}))',ctx)),{series:'',repetitions:'15 min'});
  // Catalogue pagination, metadata filters, details and selection.
