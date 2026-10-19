@@ -2,7 +2,9 @@
 (function (root) {
   "use strict";
   function numberFrom(value, fallback) {
-    const match = String(value ?? "").match(/\d+/);
+    const match = String(value ?? "")
+      .replace(",", ".")
+      .match(/\d+(?:\.\d+)?/);
     return match ? Number(match[0]) : fallback;
   }
   function adapt(exercises) {
@@ -43,7 +45,10 @@
       [imageFailed, setImageFailed] = R.useState(false),
       [reps, setReps] = R.useState(""),
       [videoFailed, setVideoFailed] = R.useState(false),
-      [playing, setPlaying] = R.useState(false);
+      [playing, setPlaying] = R.useState(false),
+      [saving, setSaving] = R.useState(false),
+      [effort, setEffort] = R.useState(null),
+      [note, setNote] = R.useState("");
     const exercises = adapt(props.exercises),
       day = props.day || "A",
       studentId = String(props.studentId || "preview"),
@@ -87,25 +92,40 @@
         document.body.style.overflow = previous;
       };
     }, [!!session]);
-    function start() {
+    async function start() {
       try {
         setError("");
         setWeights({});
         setCurrent(0);
         setView("treino");
         setSession(
-          engine.createSession({
-            id: "preview-" + Date.now(),
-            studentId,
-            workoutId: "preview-" + day,
-            exercises,
-          }),
+          props.onStart
+            ? await props.onStart(day)
+            : engine.createSession({
+                id: "preview-" + Date.now(),
+                studentId,
+                workoutId: "preview-" + day,
+                exercises,
+              }),
         );
       } catch (e) {
         setError(e.message);
       }
     }
-    function record() {
+    async function commit(next, finish = false) {
+      if (saving) return;
+      setSaving(true);
+      try {
+        const saved = props.onSave
+          ? await props.onSave(next, finish, effort, note)
+          : next;
+        setSession(saved);
+        return saved;
+      } finally {
+        setSaving(false);
+      }
+    }
+    async function record() {
       try {
         const updated = engine.logSet(session, {
           exerciseId: ex.id,
@@ -113,7 +133,7 @@
           reps: reps === "" ? ex.reps : Number(reps),
           weightKg: weights[key] ?? String(numberFrom(original.load, 0)),
         });
-        setSession(updated);
+        await commit(updated);
         setError("");
         setRemaining(ex.restSeconds);
         setRunning(ex.restSeconds > 0);
@@ -142,14 +162,22 @@
     const button = (label, fn, cls = "pp-secondary", extra = {}) =>
       h(
         "button",
-        { type: "button", className: cls, onClick: fn, ...extra },
+        {
+          type: "button",
+          className: cls,
+          onClick: fn,
+          ...extra,
+          disabled: saving || extra.disabled,
+        },
         label,
       );
     return h(
       "section",
       {
         className: "pp-session-preview",
-        "aria-label": "Simulador de execução do treino",
+        "aria-label": props.onSave
+          ? "Execução do treino"
+          : "Conferir execução do treino",
       },
       props.hero
         ? h(
@@ -202,9 +230,14 @@
                 "Abra a execução com as séries, cargas e descansos desta ficha.",
               ),
             ),
-            button("Iniciar simulação", start, "pp-primary", {
-              disabled: !exercises.length,
-            }),
+            button(
+              props.onSave ? "Iniciar ou retomar treino" : "Conferir execução",
+              start,
+              "pp-primary",
+              {
+                disabled: !exercises.length,
+              },
+            ),
           ),
       session &&
         h(
@@ -228,7 +261,9 @@
             h(
               "p",
               { className: "pp-simulation-label" },
-              "Simulação · registros temporários",
+              props.onSave
+                ? "Seu progresso é salvo a cada série."
+                : "Conferência do profissional · sem registro de execução",
             ),
             h(
               "div",
@@ -391,7 +426,7 @@
                           value:
                             weights[key] ??
                             String(numberFrom(original.load, 0)),
-                          disabled: !!session.completedAt,
+                          disabled: saving || !!session.completedAt,
                           "aria-label": "Carga da série em kg",
                           onChange: (e) =>
                             setWeights((old) => ({
@@ -403,6 +438,21 @@
                           "small",
                           null,
                           "Prescrita: " + (original.load || "A definir"),
+                          props.previousSessions?.length > 0 &&
+                            h(
+                              "small",
+                              null,
+                              (() => {
+                                const v = engine.previousLoad(
+                                  props.previousSessions,
+                                  studentId,
+                                  key,
+                                );
+                                return v === null
+                                  ? "Sem carga anterior registrada"
+                                  : "Última carga registrada: " + v + " kg";
+                              })(),
+                            ),
                         ),
                       ),
                       h(
@@ -436,7 +486,7 @@
                           inputMode: "numeric",
                           "aria-label": "Repetições feitas",
                           value: reps === "" ? ex.reps : reps,
-                          disabled: !!session.completedAt,
+                          disabled: saving || !!session.completedAt,
                           onChange: (e) => setReps(e.target.value),
                         }),
                         h("small", null, "Meta: " + ex.reps),
@@ -488,23 +538,29 @@
                                 (log ? "Desmarcar" : "Marcar") +
                                 " série " +
                                 (i + 1),
-                              disabled: !!session.completedAt,
-                              onClick: () => {
+                              disabled: saving || !!session.completedAt,
+                              onClick: async () => {
+                                if (saving) return;
                                 if (log) {
-                                  setSession((old) => ({
-                                    ...old,
-                                    logs: old.logs.filter(
-                                      (l) =>
-                                        !(
-                                          l.exerciseId === ex.id &&
-                                          l.setNumber === i + 1
-                                        ),
-                                    ),
-                                  }));
+                                  try {
+                                    await commit({
+                                      ...session,
+                                      logs: session.logs.filter(
+                                        (l) =>
+                                          !(
+                                            l.exerciseId === ex.id &&
+                                            l.setNumber === i + 1
+                                          ),
+                                      ),
+                                    });
+                                    setError("");
+                                  } catch (e) {
+                                    setError(e.message);
+                                  }
                                   return;
                                 }
                                 try {
-                                  setSession(
+                                  await commit(
                                     engine.logSet(session, {
                                       exerciseId: ex.id,
                                       setNumber: i + 1,
@@ -547,26 +603,66 @@
                   ),
             error &&
               h("p", { className: "pp-session-error", role: "alert" }, error),
+            props.onSave &&
+              !session.completedAt &&
+              h(
+                "section",
+                { className: "pp-home-panel" },
+                h("h3", null, "Como foi o treino de hoje?"),
+                h("p", null, "Resposta opcional para seu personal."),
+                h(
+                  "div",
+                  { className: "portal-effort" },
+                  ["Leve", "Na medida", "Puxado", "Muito puxado"].map((value) =>
+                    h(
+                      "button",
+                      {
+                        key: value,
+                        type: "button",
+                        "aria-pressed": effort === value,
+                        disabled: saving,
+                        onClick: () =>
+                          setEffort(effort === value ? null : value),
+                      },
+                      value,
+                    ),
+                  ),
+                ),
+                h(
+                  "label",
+                  null,
+                  "Observação opcional",
+                  h("textarea", {
+                    value: note,
+                    maxLength: 1000,
+                    onChange: (e) => setNote(e.target.value),
+                  }),
+                ),
+              ),
+            saving && h("p", { role: "status" }, "Salvando série…"),
             session.completedAt
               ? h(
                   "p",
                   { className: "pp-completed-message", role: "status" },
-                  "Treino concluído nesta simulação.",
+                  props.onSave
+                    ? "Treino salvo. Você concluiu mais uma etapa!"
+                    : "Conferência concluída.",
                 )
               : button(
-                  "Concluir simulação",
-                  () => {
+                  props.onSave ? "Concluir treino" : "Concluir conferência",
+                  async () => {
                     try {
                       const finished = engine.finish(session);
-                      setSession(finished);
+                      const saved = await commit(finished, true);
                       setRunning(false);
-                      props.onFinish?.(finished);
+                      props.onFinish?.(saved);
+                      if(props.onSave) close();
                     } catch (e) {
                       setError(e.message);
                     }
                   },
                   "pp-home-outline",
-                  { disabled: done.done !== done.expected },
+                  { disabled: done.done === 0 },
                 ),
             h(
               "nav",

@@ -31,18 +31,14 @@ function harness(serverAccount) {
 }
 async function main() {
   const h = harness(account());
-  let tree=h.render();assert.ok(h.button(tree,'Abrir demonstração'));
-  h.button(tree,'Abrir demonstração').props.onClick();tree=h.render();
-  assert.ok(h.text(tree).includes('Demonstração. Dados de exemplo.'));
-  h.button(tree,'Criar minha conta').props.onClick();tree=h.render();
+  let tree=h.render();assert.ok(!h.button(tree,'Abrir demonstração'));
   await h.nodes(tree).find(n=>n.type==='button'&&h.text(n).trim()==='Entrar'&&n.props.className.includes('h-[54px]')).props.onClick();tree=h.render();
   assert.ok(!h.text(tree).includes('Demonstração. Dados de exemplo.'));
-  assert.ok(!h.button(tree,'Abrir demonstração'));
   h.states[h.states.findIndex(value=>value==='hoje')]='financeiro';tree=h.render();
   assert.ok(h.text(tree).includes('Plano Pro'));
-  assert.ok(!h.button(tree,'Assinar R$ 19,90'));
+  assert.ok(!h.button(tree,'Assinar R$ 29,90'));
   await h.button(tree,'Sair da conta').props.onClick();tree=h.render();
-  assert.ok(h.button(tree,'Abrir demonstração'),'Signed-out public visitors can use the demo');
+  assert.ok(!h.button(tree,'Abrir demonstração'),'Anonymous demonstration remains disabled after logout');
   const restored = harness(account());restored.render();
   restored.effects.find(effect=>String(effect).includes('acceptRecovery'))();
   await new Promise(resolve=>setImmediate(resolve));
@@ -53,7 +49,7 @@ async function main() {
   await free.nodes(tree).find(n=>n.type==='button'&&free.text(n).trim()==='Entrar'&&n.props.className.includes('h-[54px]')).props.onClick();
   free.states[free.states.findIndex(value=>value==='hoje')]='financeiro';tree=free.render();
   assert.ok(!free.text(tree).includes('Demonstração. Dados de exemplo.'),'A real free account is not the demo');
-  free.button(tree,'Assinar R$ 19,90').props.onClick();tree=free.render();
+  free.button(tree,'Assinar R$ 29,90').props.onClick();tree=free.render();
   assert.ok(free.text(tree).includes('pagamento ainda não está disponível'));
   assert.ok(!free.text(tree).includes('Assinatura ativa'));
   assert.ok(!free.text(tree).includes('Plano Pro'));

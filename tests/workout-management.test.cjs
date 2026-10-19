@@ -74,8 +74,8 @@ async function main(){
  nodes(tree).find(n=>n.type==='button'&&text(n).includes('Ficha editada')).props.onClick();tree=render();click('Arquivar modelo');assert.ok(states.find(value=>value?.workoutTemplates).workoutTemplates.find(model=>model.id===updated.id).archived);click('Ver modelos arquivados');nodes(tree).find(n=>n.type==='button'&&text(n).includes('Ficha editada')).props.onClick();tree=render();click('Reativar modelo');click('Ver modelos ativos');
  click('Guia rápido');assert.ok(text(tree).includes('PASSO 1 DE 3'));click('Pular guia');
  let backupBlob,backupName;ctx.Blob=Blob;ctx.URL={createObjectURL:blob=>{backupBlob=blob;return 'blob:test'},revokeObjectURL(){}};ctx.document={createElement:()=>({click(){backupName=this.download}})};click('Exportar cópia dos dados');const backup=JSON.parse(await backupBlob.text());assert.equal(backup.format,'personal-pro-backup');assert.equal(backup.students.length,2);assert.ok(backup.profile.workoutTemplates.length);assert.ok(backupName.endsWith('.json'));assert.equal(backup.access_token,undefined);
- // Same functionality is available with sample data, and save is clear about demo scope.
- states[0]='login';tree=render();click('Abrir demonstração');openStudent('Aluno Úm');await click('Salvar treino');tree=render();assert.equal(saved.length,1);assert.ok(text(tree).includes('salvo nesta demonstração'));
- console.log('PASS: accent-insensitive student search; review dates/statuses; private reusable day/sheet models and safe application; global library; selected student/day; legacy A; A/B/C filtering; reorder boundaries; independent editing; saved day metadata; non-destructive day/sheet copies; unique IDs; grouped WhatsApp; PDF preview controls; demo save.');
+ // The definitive specification removes anonymous demonstration entry points.
+ states[0]='login';tree=render();assert.ok(!button('Abrir demonstração'));
+ console.log('PASS: accent-insensitive student search; review dates/statuses; private reusable day/sheet models and safe application; global library; selected student/day; legacy A; A/B/C filtering; reorder boundaries; independent editing; saved day metadata; non-destructive day/sheet copies; unique IDs; grouped WhatsApp; PDF preview controls; anonymous demo unavailable.');
 }
 main().catch(error=>{console.error(error);process.exitCode=1});

@@ -15,9 +15,9 @@
   function normalize(entries) {
     return (Array.isArray(entries) ? entries : []).filter(x =>
       x && regions.some(([id]) => id === x.region) && safeNumber(x.value) !== null &&
-      typeof x.date === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(x.date)
-    ).map(x => ({region:x.region, value:safeNumber(x.value), date:x.date}))
-      .sort((a,b) => b.date.localeCompare(a.date));
+      (x.date == null || typeof x.date === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(x.date))
+    ).map(x => ({region:x.region, value:safeNumber(x.value), date:x.date||null,current:!!x.current}))
+      .sort((a,b) => Number(b.current)-Number(a.current)||String(b.date||'').localeCompare(String(a.date||'')));
   }
   function render(container, entries) {
     if (!container) throw new Error('Container de medidas obrigatório');
@@ -55,12 +55,12 @@
       const summary = document.createElement('summary');
       const current = values[0], previous = values[1];
       const delta = previous ? current.value - previous.value : null;
-      summary.textContent = label + ' · ' + current.value.toLocaleString('pt-BR') + ' cm · ' + current.date +
+      summary.textContent = label + ' · ' + current.value.toLocaleString('pt-BR') + ' cm · ' + (current.date||'Data não registrada') +
         (delta === null ? '' : ' · ' + (delta > 0 ? '+' : '') + delta.toLocaleString('pt-BR') + ' cm');
       item.append(summary);
       values.forEach(record => {
         const p = document.createElement('p');
-        p.textContent = record.date + ' — ' + record.value.toLocaleString('pt-BR') + ' cm';
+        p.textContent = (record.date||'Data não registrada') + ' — ' + record.value.toLocaleString('pt-BR') + ' cm';
         item.append(p);
       });
       list.append(item);

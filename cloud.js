@@ -30,11 +30,11 @@
         await refreshPromise;
       }
     }
-    const response = await fetch(url + path, {signal:AbortSignal.timeout(15000),...options, headers:{apikey:key,'Content-Type':'application/json',...(authenticated ? {Authorization:'Bearer '+session.access_token} : {}),...options.headers}});
+    let response;try { response = await fetch(url + path, {signal:AbortSignal.timeout(20000),...options, headers:{apikey:key,'Content-Type':'application/json',...(authenticated ? {Authorization:'Bearer '+session.access_token} : {}),...options.headers}}); } catch(error) { throw new Error(error.name==='TimeoutError'||error.name==='AbortError'?'A conexão demorou. Confira sua internet e tente novamente.':'Não foi possível conectar. Confira sua internet e tente novamente.'); }
     const text = await response.text();
     let data;
     try { data = text ? JSON.parse(text) : null; } catch { throw new Error('Resposta inválida do servidor.'); }
-    if (!response.ok) throw new Error(data?.msg || data?.message || data?.error_description || 'Não foi possível conectar à sua conta.');
+    if (!response.ok) {const errors={invalid_credentials:'E-mail ou senha incorretos.',email_not_confirmed:'Confirme seu e-mail antes de entrar.',over_email_send_rate_limit:'Limite de e-mails atingido. Aguarde e tente novamente.'};throw new Error(errors[data?.code||data?.error_code] || data?.msg || data?.message || data?.error_description || 'Não foi possível conectar à sua conta.');}
     return data;
   }
   async function load() {
@@ -45,6 +45,8 @@
   }
   window.PersonalProCloud = {
     getSyncState: () => syncState,
+    userId: () => session?.user?.id,
+    request: (path,options={}) => request(path,options,true),
     subscribeSync(listener) {listeners.add(listener);listener(syncState);return()=>listeners.delete(listener)},
     getDraft() {return session?.user?.id?readDraft(session.user.id):null},
     clearDraft() {if(session?.user?.id)removeDraft(session.user.id);announce('saved','Dados da conta mantidos')},
@@ -79,8 +81,8 @@
     },
     async signOut() {
       await writeQueue.catch(()=>{});
-      if (session) await request('/auth/v1/logout',{method:'POST'},true);
-      remember(null);announce('idle','Sessão encerrada');
+      try { if (session) await request('/auth/v1/logout',{method:'POST'},true); }
+      finally {remember(null);announce('idle','Sessão encerrada');window.dispatchEvent?.(new Event('personal-pro-signout'));}
     },
     async updatePassword(password) { return request('/auth/v1/user',{method:'PUT',body:JSON.stringify({password})},true); },
     acceptRecovery() {

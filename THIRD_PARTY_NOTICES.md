@@ -77,3 +77,11 @@ via wger, under CC BY-SA 4.0. See `media/exercises/LICENSE.md` and the exact
 per-file source metadata in `exercise-media.js`. Videos are supplied as H.264
 MP4; posters are extracted from the same movement. Source licenses apply to
 these media assets, not to the surrounding application code.
+
+## PDF.js 6.4.299
+
+The private nutrition PDF importer uses Mozilla PDF.js, pinned to version 6.4.299
+from the `pdfjs-dist` npm distribution. Browser module and worker are bundled
+locally in `vendor/pdfjs/`. License: Apache License 2.0; full text in
+`vendor/pdfjs/LICENSE`. Text extraction takes place in the student's browser;
+no PDF is sent to an AI provider. Scanned PDFs require manual transcription.

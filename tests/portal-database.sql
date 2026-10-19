@@ -1,0 +1,55 @@
+-- Run after the migration inside a transaction, then ROLLBACK.
+-- All identities below are temporary test fixtures, never real users.
+insert into auth.users(id) values('d0000000-0000-4000-8000-000000000001'),('d0000000-0000-4000-8000-000000000002'),('d0000000-0000-4000-8000-000000000003');
+set local role authenticated;
+do $$
+declare code text; payload jsonb; sess jsonb; ok boolean; n int;
+begin
+ perform set_config('request.jwt.claim.sub','d0000000-0000-4000-8000-000000000001',true);
+ perform public.pp_register_member('trainer','Profissional teste','undisclosed');
+ insert into public.personal_pro_accounts(user_id,profile,students) values(auth.uid(),'{"name":"Teste isolado"}','[{"id":"test-student","name":"Teste","planValue":999,"notes":"PRIVATE COACH","workout":[{"id":"ex1","name":"Supino reto com barra","series":"1","repetitions":"10","day":"A","load":"10 kg"}],"measures":{"waist":80}}]');
+ code=public.pp_create_invite('test-student');
+ perform set_config('request.jwt.claim.sub','d0000000-0000-4000-8000-000000000002',true);
+ perform public.pp_register_member('student','Aluno teste','female');
+ perform public.pp_accept_invite(code);
+ select count(*) into n from public.personal_pro_accounts;
+ if n<>0 then raise exception 'FAIL: student can read trainer accounts'; end if;
+ payload=public.pp_student_data();
+ if payload is null or payload->'student' ? 'planValue' or payload->'student' ? 'notes' then raise exception 'FAIL: privacy projection'; end if;
+ sess=public.pp_start_session('d0000000-0000-4000-8000-000000000010','A');
+ if public.pp_start_session('d0000000-0000-4000-8000-000000000011','A')->>'id'<>sess->>'id' then raise exception 'FAIL: duplicate active session'; end if;
+ ok=false;
+ begin perform public.pp_save_session((sess->>'id')::uuid,0,'[{"exerciseId":"foreign-0","setNumber":1,"reps":10,"weightKg":15}]',false,null,'');exception when others then ok=true;end;
+ if not ok then raise exception 'FAIL: foreign exercise accepted'; end if;
+ sess=public.pp_save_session((sess->>'id')::uuid,0,'[{"exerciseId":"ex1-0","setNumber":1,"reps":10,"weightKg":15}]',false,null,'');
+ ok=false;
+ begin perform public.pp_save_session((sess->>'id')::uuid,0,'[]',false,null,'');exception when others then ok=true;end;
+ if not ok then raise exception 'FAIL: stale update accepted'; end if;
+ sess=public.pp_save_session((sess->>'id')::uuid,1,sess->'logs',true,'Na medida','Teste de esforço');
+ if sess->>'completed_at' is null or sess->>'effort'<>'Na medida' then raise exception 'FAIL: completion'; end if;
+ perform set_config('request.jwt.claim.sub','d0000000-0000-4000-8000-000000000003',true);
+ perform public.pp_register_member('student','Outro aluno teste','male');
+ select count(*) into n from public.pp_sessions_v2;
+ if n<>0 or public.pp_student_data() is not null then raise exception 'FAIL: cross-account read'; end if;
+ ok=false;
+ begin perform public.pp_accept_invite(code);exception when others then ok=true;end;
+ if not ok then raise exception 'FAIL: invite replay';end if;
+ ok=false;
+ begin insert into public.pp_nutrition_entries(user_id,kind,text) values(auth.uid(),'meal','Not paid');exception when others then ok=true;end;
+ if not ok then raise exception 'FAIL: unpaid nutrition write';end if;
+ perform set_config('request.jwt.claim.sub','d0000000-0000-4000-8000-000000000001',true);
+ perform public.pp_congratulate((sess->>'id')::uuid,'Parabéns pelo treino!');
+ select count(*) into n from public.pp_sessions_v2 where congratulations='Parabéns pelo treino!';
+ if n<>1 then raise exception 'FAIL: trainer encouragement';end if;
+ if (select count(*) from public.pp_nutrition_entries)<>0 then raise exception 'FAIL: trainer sees nutrition';end if;
+end $$;
+reset role;
+insert into public.pp_entitlements(user_id,product,valid_until) values('d0000000-0000-4000-8000-000000000002','personal_pro_plus',now()+interval '1 day');
+set local role authenticated;
+select set_config('request.jwt.claim.sub','d0000000-0000-4000-8000-000000000002',true);
+insert into public.pp_nutrition_settings(user_id,goal_ml,portion_ml) values(auth.uid(),2500,240);
+insert into public.pp_nutrition_entries(user_id,kind,amount_ml) values(auth.uid(),'water',240);
+select set_config('request.jwt.claim.sub','d0000000-0000-4000-8000-000000000001',true);
+do $$ begin if exists(select 1 from public.pp_nutrition_entries) or exists(select 1 from public.pp_nutrition_settings) then raise exception 'FAIL: private nutrition leak';end if; end $$;
+reset role;
+select 'PASS: invitations, replay prevention, student projection, sessions, revision conflicts, effort, congratulations, entitlement gate and nutrition privacy' as result;
