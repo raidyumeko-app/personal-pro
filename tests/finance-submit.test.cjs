@@ -1,0 +1,19 @@
+const test=require('node:test'),assert=require('node:assert/strict'),vm=require('node:vm'),fs=require('node:fs');
+function harness(profile={}){
+ let states=[],refs=[],index=0,ri=0,remote={financialEntries:[],...profile},writes=0,fail=false,hold=null;
+ const root={FormData:class{constructor(values){return Object.entries(values)}}};
+ vm.runInNewContext(fs.readFileSync('schedule.js','utf8'),{window:root});
+ vm.runInNewContext(fs.readFileSync('student-sections.js','utf8'),{window:root,Date,Intl});
+ const React={createElement:(type,props,...children)=>({type,props:props||{},children}),useState(v){let i=index++;if(!(i in states))states[i]=typeof v==='function'?v():v;return [states[i],v=>states[i]=typeof v==='function'?v(states[i]):v]},useRef(v){return refs[ri++]||=( {current:v} )}};
+ let tree;const render=()=>{index=ri=0;tree=root.PersonalProStudentSections.MonthlyFinance({React,profile:remote,onChange:p=>{remote=p},onSave:async p=>{writes++;if(hold)await hold;if(fail)throw Error('Sem conexão');remote=JSON.parse(JSON.stringify(p))},notify(){}});return tree};
+ const nodes=()=>{const result=[];function visit(n){if(!n||typeof n!=='object')return;if(Array.isArray(n)){n.forEach(visit);return}result.push(n);visit(n.children)}visit(tree);return result};
+ const text=n=>typeof n==='string'?n:Array.isArray(n)?n.map(text).join(''):text(n?.children||[]);
+ render();nodes().find(n=>n.type==='button'&&text(n)==='＋ Novo lançamento').props.onClick();render();
+ const submit=(values)=>nodes().find(n=>n.type==='form').props.onSubmit({preventDefault(){},currentTarget:values});
+ return {render,nodes,text,submit,remote:()=>remote,writes:()=>writes,setFail:v=>fail=v,setHold:v=>hold=v,reload(){states=[];refs=[];render()}};
+}
+const payload=(patch={})=>({type:'income','Data do lançamento':'2026-09-15',amount:'250,00','Descrição':'QA recebimento',studentId:'',...patch});
+test('native submitted values save R$250 even when React input state has not received a change event',async()=>{const h=harness();await h.submit(payload());h.render();assert.equal(h.remote().financialEntries[0].amount,250);assert.equal(h.remote().financialEntries[0].description,'QA recebimento');assert.match(h.text(h.render()),/Lançamentos do mês \(1\)/);assert.equal(h.nodes().find(n=>n.props['aria-label']==='Mês de referência').props.value,'2026-09');h.reload();assert.equal(h.remote().financialEntries.length,1)});
+test('validation and failed cloud save retain the fields and never show a success',async()=>{const h=harness();await h.submit(payload({'Descrição':''}));assert.equal(h.writes(),0);assert.match(h.text(h.render()),/Informe uma descrição/);h.setFail(true);await h.submit(payload());assert.match(h.text(h.render()),/Não foi possível salvar/);assert.equal(h.nodes().find(n=>n.props['aria-label']==='Valor (R$)').props.value,'250,00');assert.equal(h.remote().financialEntries.length,0);h.setFail(false);await h.submit(payload());assert.equal(h.remote().financialEntries.length,1)});
+test('two synchronous submissions issue one pending write',async()=>{const h=harness();let release;h.setHold(new Promise(r=>release=r));const first=h.submit(payload());const second=h.submit(payload());assert.equal(h.writes(),1);release();await Promise.all([first,second]);assert.equal(h.remote().financialEntries.length,1)});
+test('an unspecified contract amount is not an explicit zero-value contract',async()=>{const profile=amount=>({financialStudentOptions:[{id:'qa',name:'QA',contracts:[{id:'pack',amount}]}]});const draft=payload({studentId:'qa',contractId:'pack'});const unknown=harness(profile(null));await unknown.submit(draft);assert.equal(unknown.remote().financialEntries[0].amount,250);const zero=harness(profile(0));await zero.submit(draft);assert.equal(zero.writes(),0);assert.match(zero.text(zero.render()),/ultrapassa o saldo do contrato/)});
