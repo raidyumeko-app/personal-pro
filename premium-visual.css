@@ -1,0 +1,38 @@
+/* Personal Pro premium visual layer — branch preview only.
+   Visual overrides only. No JS, data, permissions, or business logic changed. */
+:root{
+  --lime:#c4f533;
+  --lime-strong:#d4ff55;
+  --lime-soft:rgba(196,245,51,.12);
+  --surface:#141a1a;
+  --surface-2:#1b2222;
+  --surface-3:#252d2d;
+  --border:rgba(229,243,228,.13);
+  --text:#f5f8f4;
+  --text-dim:#abb7ad;
+  --text-faint:#79887f;
+}
+body{background:#090d0d;color:var(--text);-webkit-font-smoothing:antialiased}
+.pp-ui{background:radial-gradient(ellipse 90% 35% at 100% 0%,rgba(172,222,34,.085),transparent 70%),#090d0d;color:var(--text)}
+.pp-panel,.pp-training-card,.pp-exercise-card,.pp-student-workout-card,.pp-record-section-card,.pp-quick-card-content,.pp-library-row{
+  border-color:var(--border)!important;
+  background-color:#161d1c;
+  box-shadow:0 12px 34px rgba(0,0,0,.15);
+}
+.pp-panel,.pp-training-card,.pp-exercise-card,.pp-student-workout-card,.pp-record-section-card{border-radius:22px}
+.pp-primary{
+  background:#c4f533!important;color:#11170a!important;
+  border-radius:999px!important;
+  font-weight:800!important;
+  box-shadow:0 5px 22px rgba(196,245,51,.12);
+}
+.pp-primary:focus-visible,.pp-secondary:focus-visible,.pp-nav a:focus-visible{outline:3px solid #c4f533;outline-offset:3px}
+.pp-secondary{border-radius:999px!important;border:1px solid rgba(196,245,51,.3)!important;background:rgba(196,245,51,.07)!important}
+.pp-page-title,.pp-workout-heading,.pp-screen-heading{letter-spacing:-.045em;font-weight:850}
+.pp-eyebrow{letter-spacing:.13em;text-transform:uppercase;color:#c4f533}
+.pp-nav{background:rgba(12,18,17,.96)!important;border-color:var(--border)!important;backdrop-filter:blur(16px)}
+.pp-day,.pp-exercise-controls button,.pp-icon-button{transition:background .2s ease,border-color .2s ease,transform .2s ease}
+.pp-day:active,.pp-icon-button:active{transform:scale(.97)}
+.pp-field input,.pp-field textarea,.pp-notes-input{border-radius:14px!important;border-color:var(--border)!important}
+.pp-evolution-chart,.pp-load-graph{border-radius:20px;overflow:hidden}
+@media(prefers-reduced-motion:reduce){.pp-day,.pp-exercise-controls button,.pp-icon-button{transition:none}}
