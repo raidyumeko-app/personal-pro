@@ -110,22 +110,32 @@ const clickLabel=label=>{const el=nodes(tree).find(n=>n.type==='button'&&text(n)
  assert.deepEqual(JSON.parse(vm.runInContext('JSON.stringify(exerciseDose({sets:"3x12"}))',ctx)),{series:'3',repetitions:'12'});
  assert.deepEqual(JSON.parse(vm.runInContext('JSON.stringify(exerciseDose({sets:"15 min"}))',ctx)),{series:'',repetitions:'15 min'});
  // Catalogue pagination, metadata filters, details and selection.
- clickLabel('Adicionar exercício da biblioteca');set('Escolher catálogo','full');
+ clickLabel('Adicionar exercício da biblioteca');
+ assert.ok(!nodes(tree).some(n=>n.props?.['aria-label']==='Escolher catálogo'));
+ assert.ok(text(tree).includes('180 exercícios essenciais'));
  const catalog=JSON.parse(fs.readFileSync(require('node:path').join(__dirname,'../exercise-library.json'),'utf8'));
  assert.equal(catalog.length,876);assert.equal(new Set(catalog.map(x=>x.id)).size,876);
  for(const item of catalog){assert.ok(item.name&&item.group&&item.equipment&&item.level);assert.ok(Array.isArray(item.instructions));assert.ok(item.images.every(url=>url.startsWith('https://raw.githubusercontent.com/yuhonas/free-exercise-db/')));}
- const dataState=states.findIndex((value,i)=>value===null && i>states.findIndex(v=>v==='full'));
+ const dataState=states.findIndex((value,i)=>value===null && states[i+1]==='' && states[i+2]===0 && states[i+3]===40);
  assert.ok(dataState>=0);states[dataState]=catalog;tree=render();
  assert.equal(nodes(tree).filter(n=>n.type==='button'&&n.props?.['aria-label']?.startsWith('Selecionar ')).length,40);
+ const mediaWindow={};vm.runInNewContext(fs.readFileSync(require('node:path').join(__dirname,'../exercise-media.js'),'utf8'),{window:mediaWindow});ctx.window=mediaWindow;
+ clickLabel('Ver exercícios com vídeo');
+ const videoChoices=nodes(tree).filter(n=>n.type==='button'&&n.props?.['aria-label']?.startsWith('Selecionar '));
+ assert.equal(videoChoices.length,22);
+ assert.ok(videoChoices.some(n=>n.props['aria-label']==='Selecionar Cadeira extensora'));
+ assert.ok(!videoChoices.some(n=>n.props['aria-label']==='Selecionar Stiff com halteres'));
+ clickLabel('Com vídeo');
+
  clickLabel('Mostrar mais exercícios');
  assert.equal(nodes(tree).filter(n=>n.type==='button'&&n.props?.['aria-label']?.startsWith('Selecionar ')).length,80);
  set('Buscar exercício na biblioteca','supino');
  const matching=nodes(tree).filter(n=>n.type==='button'&&n.props?.['aria-label']?.startsWith('Selecionar '));
- assert.ok(matching.length>0);assert.ok(matching.every(n=>n.props['aria-label'].toLowerCase().includes('bench')));
+ assert.ok(matching.length>0);assert.ok(matching.every(n=>n.props['aria-label'].toLowerCase().includes('supino')));
  matching[0].props.onClick();tree=render();assert.ok(nodes(tree).some(n=>n.type==='section'&&n.props['aria-label']==='Detalhes do exercício'));assert.ok(nodes(tree).some(n=>n.type==='img'));
  set('Filtrar por equipamento','Peso corporal');
  assert.ok(nodes(tree).filter(n=>n.type==='button'&&n.props?.['aria-label']?.startsWith('Selecionar ')).every(n=>text(n).length>0));
- console.log('PASS: 180 Portuguese exercises; 876 extended exercises; search/filter/pagination; illustrated instructions; add/edit independent series/repetitions/load/rest; previous load; legacy 3x12 and duration compatibility; custom exercise; zero rest; cancel.');
+ console.log('PASS: 180 essential Portuguese choices; 876 compatibility references; search/filter/pagination; illustrated instructions; add/edit independent series/repetitions/load/rest; previous load; legacy 3x12 and duration compatibility; custom exercise; zero rest; cancel.');
 }
 
 async function verifyPDFControls() {
