@@ -113,6 +113,7 @@ const clickLabel=label=>{const el=nodes(tree).find(n=>n.type==='button'&&text(n)
  clickLabel('Adicionar exercício da biblioteca');
  assert.ok(!nodes(tree).some(n=>n.props?.['aria-label']==='Escolher catálogo'));
  assert.ok(text(tree).includes('130 exercícios selecionados'));
+ assert.ok(!/licença comercial|aprovação técnica|Verificação técnica da biblioteca/.test(text(tree)));
  const catalog=JSON.parse(fs.readFileSync(require('node:path').join(__dirname,'../exercise-library.json'),'utf8'));
  assert.equal(catalog.length,130);assert.equal(new Set(catalog.map(x=>x.id)).size,130);
  for(const item of catalog){assert.ok(item.name&&item.group&&item.equipment&&item.level);assert.ok(Array.isArray(item.instructions));assert.ok(item.images.every(url=>url.startsWith('https://raw.githubusercontent.com/yuhonas/free-exercise-db/')));}
@@ -127,7 +128,9 @@ const clickLabel=label=>{const el=nodes(tree).find(n=>n.type==='button'&&text(n)
  assert.ok(videoChoices.some(n=>n.props['aria-label']==='Selecionar Supino declinado com barra'));
  assert.ok(videoChoices.some(n=>n.props['aria-label']==='Selecionar Crucifixo com halteres'));
  assert.ok(!videoChoices.some(n=>n.props['aria-label']==='Selecionar Ponte de glúteo'));
- clickLabel('Com vídeo');
+ assert.ok(text(tree).includes('86 exercícios com vídeo · filtro ativo'));
+ clickLabel('Mostrar todos os exercícios');
+ assert.ok(text(tree).includes('130 exercícios encontrados'));
 
  clickLabel('Mostrar mais exercícios');
  assert.equal(nodes(tree).filter(n=>n.type==='button'&&n.props?.['aria-label']?.startsWith('Selecionar ')).length,80);
