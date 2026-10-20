@@ -88,6 +88,7 @@
   function Panel({ React: R, member }) {
     const h = R.createElement,
       API = root.PersonalProAPI;
+    const operation = R.useRef(false), mealAttempt = R.useRef(null);
     const [area,setArea]=R.useState('plan');
     const [entries, setEntries] = R.useState([]),
       [settings, setSettings] = R.useState({
@@ -133,6 +134,8 @@
         h("input", { "aria-label": label, ...props }),
       );
     async function run(fn) {
+      if (operation.current) return;
+      operation.current = true;
       setBusy(true);
       setMessage("");
       try {
@@ -140,6 +143,7 @@
       } catch (e) {
         setMessage(e.message);
       } finally {
+        operation.current = false;
         setBusy(false);
       }
     }
@@ -421,20 +425,25 @@
             e.preventDefault();
             run(async () => {
               if (!text.trim()) throw Error("Descreva a refeição.");
-              let path = null;
+              let attempt = mealAttempt.current;
+              if (!attempt || attempt.text !== text || attempt.when !== when || attempt.photo !== photo) {
+                attempt = { id: crypto.randomUUID(), text, when, photo, path: null,
+                  occurredAt: when ? new Date(when).toISOString() : new Date().toISOString() };
+                mealAttempt.current = attempt;
+              }
+              let path = attempt.path;
               if (photo) {
                 if (!consent) throw Error("Confirme o envio privado da foto.");
-                path = await API.upload(await API.compress(photo));
+                if (!path) path = attempt.path = await API.upload(await API.compress(photo));
               }
               await API.write("pp_nutrition_entries", {
-                id: crypto.randomUUID(),
+                id: attempt.id,
                 kind: "meal",
                 text: text.trim(),
                 file_path: path,
-                occurred_at: when
-                  ? new Date(when).toISOString()
-                  : new Date().toISOString(),
+                occurred_at: attempt.occurredAt,
               });
+              mealAttempt.current = null;
               setText("");
               setPhoto(null);
               setWhen("");

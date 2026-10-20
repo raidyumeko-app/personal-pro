@@ -7,7 +7,7 @@ declare code text; payload jsonb; sess jsonb; ok boolean; n int;
 begin
  perform set_config('request.jwt.claim.sub','d0000000-0000-4000-8000-000000000001',true);
  perform public.pp_register_member('trainer','Profissional teste','undisclosed');
- insert into public.personal_pro_accounts(user_id,profile,students) values(auth.uid(),'{"name":"Teste isolado"}','[{"id":"test-student","name":"Teste","planValue":999,"notes":"PRIVATE COACH","workout":[{"id":"ex1","name":"Supino reto com barra","series":"1","repetitions":"10","day":"A","load":"10 kg"}],"measures":{"waist":80}}]');
+ insert into public.personal_pro_accounts(user_id,profile,students) values(auth.uid(),'{"name":"Teste isolado"}','[{"id":"test-student","name":"Teste","planValue":999,"notes":"PRIVATE COACH","workout":[{"id":"ex1","name":"Supino reto com barra","series":"1","repetitions":"10","day":"A","load":"10 kg"}],"measures":{"waist":80},"measureHistory":[{"region":"waist","value":82,"date":"2026-10-18"}],"measureDates":{"waist":"2026-10-19"}}]');
  code=public.pp_create_invite('test-student');
  perform set_config('request.jwt.claim.sub','d0000000-0000-4000-8000-000000000002',true);
  perform public.pp_register_member('student','Aluno teste','female');
@@ -16,6 +16,7 @@ begin
  if n<>0 then raise exception 'FAIL: student can read trainer accounts'; end if;
  payload=public.pp_student_data();
  if payload is null or payload->'student' ? 'planValue' or payload->'student' ? 'notes' then raise exception 'FAIL: privacy projection'; end if;
+ if payload#>>'{student,measures,waist}'<>'80' or payload#>>'{student,measureHistory,0,value}'<>'82' or payload#>>'{student,measureDates,waist}'<>'2026-10-19' then raise exception 'FAIL: dated measurements projection';end if;
  sess=public.pp_start_session('d0000000-0000-4000-8000-000000000010','A');
  if public.pp_start_session('d0000000-0000-4000-8000-000000000011','A')->>'id'<>sess->>'id' then raise exception 'FAIL: duplicate active session'; end if;
  ok=false;
