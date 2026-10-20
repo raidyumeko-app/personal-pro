@@ -378,7 +378,7 @@
                         ),
                     ),
                     original.video?.variants && Object.keys(original.video.variants).length > 1 && h("label",{className:"pp-field"},"Demonstração",h("select",{"aria-label":"Modelo da demonstração",value:videoVariant,onChange:event=>{setVideoVariant(event.target.value);setVideoFailed(false);}},h("option",{value:"male"},"Masculino"),h("option",{value:"female"},"Feminino"))),
-                    original.video &&
+                    original.video?.licensed && /^CC BY/.test(original.video.license || "") &&
                       h(
                         "p",
                         { className: "pp-video-credit" },
@@ -402,9 +402,9 @@
                           },
                           "Fonte",
                         ),
-                        videoFailed &&
-                          " · Não foi possível reproduzir o vídeo nesta conexão.",
+
                       ),
+                    videoFailed && h("p",{role:"status",className:"pp-hint"},"Não foi possível reproduzir o vídeo nesta conexão."),
                     h("h3", { className: "pp-exercise-title" }, ex.name),
                     h(
                       "p",

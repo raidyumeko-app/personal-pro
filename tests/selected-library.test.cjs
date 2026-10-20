@@ -28,6 +28,6 @@ test('execution can switch male/female demonstrations and recover from a failed 
  const exercise=catalog.find(x=>x.name==='Crucifixo com halteres');const render=()=>{i=0;tree=root.PersonalProSessionPreview.Simulator({React:R,studentId:'qa',day:'A',exercises:[{...exercise,series:'3',repetitions:'12',rest:60}]})};
  const nodes=()=>{const out=[];function walk(n){if(!n||typeof n!=='object')return;if(Array.isArray(n)){n.forEach(walk);return}out.push(n);walk(n.props?.children)}walk(tree);return out};
  const txt=n=>typeof n==='string'?n:Array.isArray(n)?n.map(txt).join(''):txt(n?.props?.children||[]);
- render();await nodes().find(n=>n.type==='button'&&txt(n)==='Conferir execução').props.onClick();render();let video=nodes().find(n=>n.type==='video');assert.match(video.props.src,/\/male\//);video.props.onError();render();assert.ok(!nodes().some(n=>n.type==='video'));
+ render();await nodes().find(n=>n.type==='button'&&txt(n)==='Conferir execução').props.onClick();render();let video=nodes().find(n=>n.type==='video');assert.match(video.props.src,/\/male\//);assert.ok(!/licen[çc]a|comprova|Demonstração em teste|free-exercise-db-api/i.test(txt(tree)));video.props.onError();render();assert.ok(!nodes().some(n=>n.type==='video'));
  nodes().find(n=>n.props?.['aria-label']==='Modelo da demonstração').props.onChange({target:{value:'female'}});render();video=nodes().find(n=>n.type==='video');assert.match(video.props.src,/\/female\//);assert.ok(nodes().some(n=>n.type==='button'&&txt(n)==='Registrar série 1 de 3'));
 });
