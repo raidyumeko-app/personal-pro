@@ -124,11 +124,11 @@ const clickLabel=label=>{const el=nodes(tree).find(n=>n.type==='button'&&text(n)
  clickLabel('Ver exercícios com vídeo');
  const videoChoices=nodes(tree).filter(n=>n.type==='button'&&n.props?.['aria-label']?.startsWith('Selecionar '));
  assert.equal(videoChoices.length,40);
- assert.ok(text(tree).includes("86 exercícios encontrados"));
+ assert.ok(text(tree).includes("87 exercícios encontrados"));
  assert.ok(videoChoices.some(n=>n.props['aria-label']==='Selecionar Supino declinado com barra'));
  assert.ok(videoChoices.some(n=>n.props['aria-label']==='Selecionar Crucifixo com halteres'));
  assert.ok(!videoChoices.some(n=>n.props['aria-label']==='Selecionar Ponte de glúteo'));
- assert.ok(text(tree).includes('86 exercícios com vídeo · filtro ativo'));
+ assert.ok(text(tree).includes('87 exercícios com vídeo · filtro ativo'));
  clickLabel('Mostrar todos os exercícios');
  assert.ok(text(tree).includes('130 exercícios encontrados'));
 

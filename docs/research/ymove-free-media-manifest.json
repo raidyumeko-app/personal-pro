@@ -202,6 +202,21 @@
       "sha256": "40351045e73a6b356864fb39ce16bad709d6a1c33fcfe45a28e17b0fd1d9ff3a",
       "bytes": 4255607,
       "durationSeconds": 17.6
+    },
+    {
+      "sourceId": "One-Arm_Dumbbell_Row",
+      "videoUrl": "https://ymove.app/api/free/d3fece95-c7e2-4794-ba8f-65a5b3e30a28",
+      "thumbnailUrl": "https://ymove.app/api/free/d3fece95-c7e2-4794-ba8f-65a5b3e30a28?type=thumbnail",
+      "bytes": 1074064,
+      "durationSeconds": 12.84,
+      "sha256": "66ecd9675d6d07657fdbc74b32155a20def240a2f235503cc1df0b283c586e6c",
+      "review": "Downloaded and decoded; frames at 0, 2 and 4 seconds inspected. One-arm dumbbell row standing with free hand supported on thigh; variant explicitly indicated in execution UI.",
+      "exercise": "Remada unilateral com halter",
+      "names": [
+        "Remada unilateral com halter",
+        "Single Arm Dumbbell Row - Legs apart"
+      ],
+      "providerTitle": "Single Arm Dumbbell Row - Legs apart"
     }
   ]
 }

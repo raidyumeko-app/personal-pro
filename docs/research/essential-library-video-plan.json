@@ -2,7 +2,7 @@
   "scope": "130 selected exercises from the user list; six duplicate labels merged",
   "selectionRule": "Exact movement, equipment and grip; commercial use permission required",
   "total": 130,
-  "withVideo": 86,
+  "withVideo": 87,
   "exercises": [
     {
       "name": "Supino reto com barra",
@@ -210,7 +210,10 @@
       "group": "Costas",
       "equipment": "Halteres",
       "sourceId": "One-Arm_Dumbbell_Row",
-      "videoStatus": "needed"
+      "videoStatus": "available",
+      "videoUrl": "https://ymove.app/api/free/d3fece95-c7e2-4794-ba8f-65a5b3e30a28",
+      "license": "Uso comercial autorizado — pacote gratuito YMove",
+      "source": "https://ymove.app/free-exercise-videos"
     },
     {
       "name": "Remada sentada na polia",

@@ -377,6 +377,7 @@
                             : "Sem mídia demonstrativa disponível",
                         ),
                     ),
+                    original.video?.demonstrationVariant && h("p",{className:"pp-hint"},"Demonstração: "+original.video.demonstrationVariant),
                     original.video?.variants && Object.keys(original.video.variants).length > 1 && h("label",{className:"pp-field"},"Demonstração",h("select",{"aria-label":"Modelo da demonstração",value:videoVariant,onChange:event=>{setVideoVariant(event.target.value);setVideoFailed(false);}},h("option",{value:"male"},"Masculino"),h("option",{value:"female"},"Feminino"))),
                     original.video?.licensed && /^CC BY/.test(original.video.license || "") &&
                       h(

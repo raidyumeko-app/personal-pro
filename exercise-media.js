@@ -408,6 +408,25 @@
     }
   }
 ]);
+  entries.push({
+  "id": "ymove-single-arm-dumbbell-row-legs-apart",
+  "sourceId": "One-Arm_Dumbbell_Row",
+  "names": [
+    "Remada unilateral com halter",
+    "Single Arm Dumbbell Row - Legs apart"
+  ],
+  "poster": "https://ymove.app/api/free/d3fece95-c7e2-4794-ba8f-65a5b3e30a28?type=thumbnail",
+  "video": {
+    "url": "https://ymove.app/api/free/d3fece95-c7e2-4794-ba8f-65a5b3e30a28",
+    "author": "YMove / Your Move",
+    "license": "Uso comercial autorizado — pacote gratuito YMove",
+    "licenseUrl": "https://ymove.app/free-exercise-videos",
+    "source": "https://ymove.app/free-exercise-videos",
+    "originalUrl": "https://ymove.app/api/free/d3fece95-c7e2-4794-ba8f-65a5b3e30a28",
+    "licensed": true,
+    "demonstrationVariant": "Em pé, com a mão apoiada na perna"
+  }
+});
   const previewEntries = [
   {
     "id": "free-preview-0025",
