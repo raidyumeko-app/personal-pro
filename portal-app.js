@@ -527,6 +527,7 @@
       const [d, s] = await Promise.all([API().studentData(), API().sessions()]);
       setPlus(true);
       setData(d);
+      Promise.all([fetch("/exercise-library.json").then(r=>r.json()),fetch("/exercise-instructions.pt.json").then(r=>r.json())]).then(([items,steps])=>root.PersonalProExerciseCompatibility?root.PersonalProExerciseCompatibility.forWorkouts(items,steps,d.student?.workout||[]):{catalog:items,translations:steps}).then(resolved=>setCatalog(resolved.catalog.map(item=>({...item,instructions:resolved.translations[item.id]||item.instructions})))).catch(()=>{});
       setSessions(s);
       setMore(s.length === 30);
       setLoaded(true);
@@ -534,19 +535,7 @@
     }
     R.useEffect(() => {
       act.run(refresh);
-      Promise.all([
-        fetch("/exercise-library.json").then((r) => r.json()),
-        fetch("/exercise-instructions.pt.json").then((r) => r.json()),
-      ])
-        .then(([items, translations]) => {
-          setCatalog(
-            items.map((item) => ({
-              ...item,
-              instructions: translations[item.id] || item.instructions,
-            })),
-          );
-        })
-        .catch(() => {});
+
     }, []);
     R.useEffect(() => {
       if (!access?.active) return;
@@ -590,7 +579,7 @@
       .filter((ex) => (ex.day || "A") === (active?.workoutId || day))
       .map((ex) => {
         const item = catalog.find(
-          (i) => i.id === ex.sourceId || i.name === ex.name,
+          (i) => i.id === ex.sourceId || i.name === ex.name || i.aliases?.includes(ex.name),
         );
         return root.PersonalProMedia.resolve({ ...item, ...ex });
       });

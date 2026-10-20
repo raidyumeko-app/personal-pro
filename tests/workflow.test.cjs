@@ -49,7 +49,7 @@ assert.ok(html.includes('children:"Enviar texto"'),'WhatsApp workout sharing rem
 console.log('PASS: Today action; duplicate-safe manual recording; disabled confirmation; student record; date accessibility; future-date rejection; WhatsApp sharing retained; student portal removed.');
 
 if(html.includes('const exerciseLibrary=')) {
- assert.equal(vm.runInContext('exerciseLibrary.length',ctx),180);
+ assert.equal(vm.runInContext('exerciseLibrary.length',ctx),130);
  const find=(role,label)=>nodes(tree).find(n=>n.type===role&&n.props?.['aria-label']===label);
  nodes(tree).find(n=>n.props?.['aria-label']==='Voltar à ficha').props.onClick();tree=render();
 const openTraining=nodes(tree).find(n=>n.type==='button'&&text(n)==='Abrir treino');assert.ok(openTraining);openTraining.props.onClick();tree=render();
@@ -61,7 +61,7 @@ const clickLabel=label=>{const el=nodes(tree).find(n=>n.type==='button'&&text(n)
  set('Buscar exercício na biblioteca','elevacao');
  let results=nodes(tree).filter(n=>n.type==='button'&&n.props?.['aria-label']?.startsWith('Selecionar '));
  assert.ok(results.length>=3,'Search ignores Portuguese accents');
- assert.ok(results.every(n=>n.props['aria-label'].toLowerCase().includes('eleva')));
+ assert.ok(results.every(n=>{const item=vm.runInContext('exerciseLibrary',ctx).find(x=>'Selecionar '+x.name===n.props['aria-label']);return ctx.normalizeExerciseText(item.name+' '+item.aliases.join(' ')).includes('eleva')}));
  set('Filtrar por grupo muscular','Peito');
  assert.ok(text(tree).includes('Nenhum exercício encontrado'));
  set('Buscar exercício na biblioteca','supino');
@@ -76,7 +76,7 @@ const clickLabel=label=>{const el=nodes(tree).find(n=>n.type==='button'&&text(n)
  assert.equal(workout[0].name,'Supino reto com barra');assert.equal(workout[0].sets,'4x8');assert.equal(workout[0].load,'20 kg');assert.equal(workout[0].rest,90);
  assert.ok(!find('input','Buscar exercício na biblioteca'),'Library closes after adding a prescription');clickLabel('Adicionar exercício da biblioteca');
  set('Filtrar por grupo muscular','Cardio');set('Buscar exercício na biblioteca','bicicleta');
- find('button','Selecionar Bicicleta ergométrica').props.onClick();tree=render();
+ find('button','Selecionar Bike').props.onClick();tree=render();
  set('Repetições ou duração','15 min');set('Carga ou intensidade','Moderado');set('Descanso em segundos','0');clickLabel('Adicionar à ficha');
  workout=states[studentState][0].workout;
  assert.equal(workout[1].rest,0);assert.equal(workout[1].sets,'15 min');
@@ -112,19 +112,21 @@ const clickLabel=label=>{const el=nodes(tree).find(n=>n.type==='button'&&text(n)
  // Catalogue pagination, metadata filters, details and selection.
  clickLabel('Adicionar exercício da biblioteca');
  assert.ok(!nodes(tree).some(n=>n.props?.['aria-label']==='Escolher catálogo'));
- assert.ok(text(tree).includes('180 exercícios essenciais'));
+ assert.ok(text(tree).includes('130 exercícios selecionados'));
  const catalog=JSON.parse(fs.readFileSync(require('node:path').join(__dirname,'../exercise-library.json'),'utf8'));
- assert.equal(catalog.length,876);assert.equal(new Set(catalog.map(x=>x.id)).size,876);
+ assert.equal(catalog.length,130);assert.equal(new Set(catalog.map(x=>x.id)).size,130);
  for(const item of catalog){assert.ok(item.name&&item.group&&item.equipment&&item.level);assert.ok(Array.isArray(item.instructions));assert.ok(item.images.every(url=>url.startsWith('https://raw.githubusercontent.com/yuhonas/free-exercise-db/')));}
  const dataState=states.findIndex((value,i)=>value===null && states[i+1]==='' && states[i+2]===0 && states[i+3]===40);
  assert.ok(dataState>=0);states[dataState]=catalog;tree=render();
  assert.equal(nodes(tree).filter(n=>n.type==='button'&&n.props?.['aria-label']?.startsWith('Selecionar ')).length,40);
- const mediaWindow={};vm.runInNewContext(fs.readFileSync(require('node:path').join(__dirname,'../exercise-media.js'),'utf8'),{window:mediaWindow});ctx.window=mediaWindow;
+ const mediaWindow={location:{hostname:'personal-123456789-raidyumeko-9261.vercel.app'}};vm.runInNewContext(fs.readFileSync(require('node:path').join(__dirname,'../exercise-media.js'),'utf8'),{window:mediaWindow});ctx.window=mediaWindow;
  clickLabel('Ver exercícios com vídeo');
  const videoChoices=nodes(tree).filter(n=>n.type==='button'&&n.props?.['aria-label']?.startsWith('Selecionar '));
- assert.equal(videoChoices.length,22);
- assert.ok(videoChoices.some(n=>n.props['aria-label']==='Selecionar Cadeira extensora'));
- assert.ok(!videoChoices.some(n=>n.props['aria-label']==='Selecionar Stiff com halteres'));
+ assert.equal(videoChoices.length,40);
+ assert.ok(text(tree).includes("86 exercícios encontrados"));
+ assert.ok(videoChoices.some(n=>n.props['aria-label']==='Selecionar Supino declinado com barra'));
+ assert.ok(videoChoices.some(n=>n.props['aria-label']==='Selecionar Crucifixo com halteres'));
+ assert.ok(!videoChoices.some(n=>n.props['aria-label']==='Selecionar Ponte de glúteo'));
  clickLabel('Com vídeo');
 
  clickLabel('Mostrar mais exercícios');
@@ -135,7 +137,7 @@ const clickLabel=label=>{const el=nodes(tree).find(n=>n.type==='button'&&text(n)
  matching[0].props.onClick();tree=render();assert.ok(nodes(tree).some(n=>n.type==='section'&&n.props['aria-label']==='Detalhes do exercício'));assert.ok(nodes(tree).some(n=>n.type==='img'));
  set('Filtrar por equipamento','Peso corporal');
  assert.ok(nodes(tree).filter(n=>n.type==='button'&&n.props?.['aria-label']?.startsWith('Selecionar ')).every(n=>text(n).length>0));
- console.log('PASS: 180 essential Portuguese choices; 876 compatibility references; search/filter/pagination; illustrated instructions; add/edit independent series/repetitions/load/rest; previous load; legacy 3x12 and duration compatibility; custom exercise; zero rest; cancel.');
+ console.log('PASS: 130 selected choices; preview video filter; archived compatibility only; search/filter/pagination; illustrated instructions; add/edit independent series/repetitions/load/rest; previous load; legacy 3x12 and duration compatibility; custom exercise; zero rest; cancel.');
 }
 
 async function verifyPDFControls() {

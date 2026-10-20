@@ -29,7 +29,7 @@ async function main() {
   assert.equal(requested.length, 2);
   assert.deepEqual(JSON.parse(JSON.stringify(localized.map(({instructions,...rest})=>rest))),catalog.map(({instructions,...rest})=>rest), 'Names, IDs, images, muscles, equipment and levels remain unchanged');
   assert.ok(localized[0].instructions[0].includes('Deite-se'));
-  assert.equal(localized[0].name, '3/4 Sit-Up');
+  assert.equal(localized[0].name, 'Supino reto com barra');
   assert.ok(html.includes('Instruções de execução em português'));
   assert.ok(!html.includes('Instruções originais em inglês'));
   await assert.rejects(ctx.loadPersonalProCatalog(async()=>({ok:false})),/indisponível/);

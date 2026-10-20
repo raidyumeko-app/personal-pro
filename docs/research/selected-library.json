@@ -1,0 +1,3116 @@
+{
+  "total": 130,
+  "rawUserEntries": 136,
+  "mergedAliases": {
+    "Mergulho no banco (peito)": "Mergulho no banco",
+    "Supino fechado": "Supino fechado com barra",
+    "Remada T": "Remada cavalinho",
+    "Remada no banco inclinado": "Remada inclinada com halteres",
+    "Remada com corda (face pull)": "Face pull",
+    "Encolhimento de ombro": "Encolhimento com halter"
+  },
+  "exercises": [
+    {
+      "name": "Supino reto com barra",
+      "group": "Peito",
+      "catalogId": "Barbell_Bench_Press_-_Medium_Grip",
+      "sourceId": "Barbell_Bench_Press_-_Medium_Grip",
+      "previewSourceId": "0025",
+      "sourceName": "Barbell Bench Press",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-bench-press.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/barbell-bench-press.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-bench-press.mp4",
+          "bytes": 342101,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/barbell-bench-press.mp4",
+          "bytes": 477526,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Supino inclinado com barra",
+      "group": "Peito",
+      "catalogId": "Barbell_Incline_Bench_Press_-_Medium_Grip",
+      "sourceId": "Barbell_Incline_Bench_Press_-_Medium_Grip",
+      "previewSourceId": "0047",
+      "sourceName": "Barbell Incline Bench Press",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-incline-bench-press.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/barbell-incline-bench-press.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-incline-bench-press.mp4",
+          "bytes": 977670,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/barbell-incline-bench-press.mp4",
+          "bytes": 618305,
+          "duration": 6.57324,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Supino declinado com barra",
+      "group": "Peito",
+      "catalogId": "Decline_Barbell_Bench_Press",
+      "sourceId": "Decline_Barbell_Bench_Press",
+      "previewSourceId": "0033",
+      "sourceName": "Barbell Decline Bench Press",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-decline-bench-press.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/barbell-decline-bench-press.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-decline-bench-press.mp4",
+          "bytes": 1076491,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/barbell-decline-bench-press.mp4",
+          "bytes": 604126,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Supino reto com halteres",
+      "group": "Peito",
+      "catalogId": "Dumbbell_Bench_Press",
+      "sourceId": "Dumbbell_Bench_Press",
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": []
+    },
+    {
+      "name": "Supino inclinado com halteres",
+      "group": "Peito",
+      "catalogId": "Incline_Dumbbell_Press",
+      "sourceId": "Incline_Dumbbell_Press",
+      "previewSourceId": "0314",
+      "sourceName": "Dumbbell Incline Bench Press",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-incline-bench-press.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-incline-bench-press.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-incline-bench-press.mp4",
+          "bytes": 326492,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-incline-bench-press.mp4",
+          "bytes": 406891,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Crucifixo com halteres",
+      "group": "Peito",
+      "catalogId": "Dumbbell_Flyes",
+      "sourceId": "Dumbbell_Flyes",
+      "previewSourceId": "0308",
+      "sourceName": "Dumbbell Fly",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-fly.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-fly.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-fly.mp4",
+          "bytes": 570574,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-fly.mp4",
+          "bytes": 745878,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Crucifixo inclinado com halteres",
+      "group": "Peito",
+      "catalogId": "Incline_Dumbbell_Flyes",
+      "sourceId": "Incline_Dumbbell_Flyes",
+      "previewSourceId": "0319",
+      "sourceName": "Dumbbell Incline Fly",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-incline-fly.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-incline-fly.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-incline-fly.mp4",
+          "bytes": 895142,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-incline-fly.mp4",
+          "bytes": 446829,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Crossover na polia",
+      "group": "Peito",
+      "catalogId": "Cable_Crossover",
+      "sourceId": "Cable_Crossover",
+      "previewSourceId": "1269",
+      "sourceName": "Cable Standing Fly",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-standing-fly-crossover-fly.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-standing-fly-crossover-fly.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-standing-fly-crossover-fly.mp4",
+          "bytes": 1077890,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-standing-fly-crossover-fly.mp4",
+          "bytes": 526121,
+          "duration": 6.6,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Voador (Pec Deck)",
+      "group": "Peito",
+      "catalogId": "Butterfly",
+      "sourceId": "Butterfly",
+      "previewSourceId": "drv-lever-pec-deck-fly",
+      "sourceName": "Pec Deck Fly",
+      "aliases": [
+        "Crucifixo na máquina (peck deck)"
+      ],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/lever-pec-deck-fly.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/lever-pec-deck-fly.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/lever-pec-deck-fly.mp4",
+          "bytes": 393293,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/lever-pec-deck-fly.mp4",
+          "bytes": 525681,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Flexão de braço",
+      "group": "Peito",
+      "catalogId": "Pushups",
+      "sourceId": "Pushups",
+      "previewSourceId": "drv-push-ups",
+      "sourceName": "Push-Up",
+      "aliases": [
+        "Flexão de braços"
+      ],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/push-ups.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/push-ups.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/push-ups.mp4",
+          "bytes": 698022,
+          "duration": 6.57324,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/push-ups.mp4",
+          "bytes": 773197,
+          "duration": 6.6,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Flexão inclinada",
+      "group": "Peito",
+      "catalogId": "Incline_Push-Up_Medium",
+      "sourceId": "Incline_Push-Up_Medium",
+      "previewSourceId": "0493",
+      "sourceName": "Incline Push-Up",
+      "aliases": [
+        "Flexão de braços inclinada"
+      ],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/incline-push-ups.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/incline-push-ups.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/incline-push-ups.mp4",
+          "bytes": 625406,
+          "duration": 6.6,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/incline-push-ups.mp4",
+          "bytes": 651849,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Mergulho no banco",
+      "group": "Tríceps",
+      "catalogId": "Bench_Dips",
+      "sourceId": "Bench_Dips",
+      "previewSourceId": "drv-bench-dips",
+      "sourceName": "Bench Dips",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/bench-dips.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/bench-dips.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/bench-dips.mp4",
+          "bytes": 701102,
+          "duration": 6.57324,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/bench-dips.mp4",
+          "bytes": 671216,
+          "duration": 6.6,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Supino fechado com barra",
+      "group": "Tríceps",
+      "catalogId": "Close-Grip_Barbell_Bench_Press",
+      "sourceId": "Close-Grip_Barbell_Bench_Press",
+      "previewSourceId": "0030",
+      "sourceName": "Barbell Close Grip Bench Press",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-close-grip-bench-press.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-close-grip-bench-press.mp4",
+          "bytes": 1061281,
+          "duration": 6.639967,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Crucifixo na polia baixa",
+      "group": "Peito",
+      "catalogId": "Low_Cable_Crossover",
+      "sourceId": "Low_Cable_Crossover",
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": [
+        "Crossover na polia baixa"
+      ]
+    },
+    {
+      "name": "Supino com halteres pegada neutra",
+      "group": "Peito",
+      "catalogId": "Dumbbell_Bench_Press_with_Neutral_Grip",
+      "sourceId": "Dumbbell_Bench_Press_with_Neutral_Grip",
+      "previewSourceId": "0340",
+      "sourceName": "Dumbbell Lying Hammer Press",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-lying-hammer-press.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-lying-hammer-press.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-lying-hammer-press.mp4",
+          "bytes": 1363136,
+          "duration": 6.639967,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-lying-hammer-press.mp4",
+          "bytes": 746975,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Flexão diamante",
+      "group": "Peito",
+      "catalogId": "Diamond_Push-Up",
+      "sourceId": "Diamond_Push-Up",
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": []
+    },
+    {
+      "name": "Crucifixo declinado com halteres",
+      "group": "Peito",
+      "catalogId": "Decline_Dumbbell_Flyes",
+      "sourceId": "Decline_Dumbbell_Flyes",
+      "previewSourceId": "0302",
+      "sourceName": "Decline Dumbbell Fly",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-decline-fly-45-degree-1.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-decline-fly-45-degree-1.mp4",
+          "bytes": 448721,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Alongamento de peito",
+      "group": "Mobilidade",
+      "catalogId": "Dynamic_Chest_Stretch",
+      "sourceId": "Dynamic_Chest_Stretch",
+      "previewSourceId": "1167",
+      "sourceName": "Dynamic Chest Stretch",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-dynamic-chest-stretch.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/stretching-dynamic-chest-stretch.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-dynamic-chest-stretch.mp4",
+          "bytes": 309458,
+          "duration": 7.033333,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/stretching-dynamic-chest-stretch.mp4",
+          "bytes": 285065,
+          "duration": 7.033333,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Puxada frontal na polia",
+      "group": "Costas",
+      "catalogId": "Wide-Grip_Lat_Pulldown",
+      "sourceId": "Wide-Grip_Lat_Pulldown",
+      "previewSourceId": "0198",
+      "sourceName": "Cable Pulldown",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-pulldown.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-pulldown.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-pulldown.mp4",
+          "bytes": 859822,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-pulldown.mp4",
+          "bytes": 645228,
+          "duration": 6.57324,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Puxada fechada na polia",
+      "group": "Costas",
+      "catalogId": "selected-puxada-fechada-na-polia",
+      "sourceId": null,
+      "previewSourceId": "0974",
+      "sourceName": "Cable Close Grip Lat Pulldown",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-close-grip-front-lat-pulldown.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-close-grip-front-lat-pulldown.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-close-grip-front-lat-pulldown.mp4",
+          "bytes": 854896,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-close-grip-front-lat-pulldown.mp4",
+          "bytes": 345581,
+          "duration": 5.933333,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Remada curvada com barra",
+      "group": "Costas",
+      "catalogId": "Bent_Over_Barbell_Row",
+      "sourceId": "Bent_Over_Barbell_Row",
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": []
+    },
+    {
+      "name": "Remada unilateral com halter",
+      "group": "Costas",
+      "catalogId": "One-Arm_Dumbbell_Row",
+      "sourceId": "One-Arm_Dumbbell_Row",
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": []
+    },
+    {
+      "name": "Remada sentada na polia",
+      "group": "Costas",
+      "catalogId": "Seated_Cable_Rows",
+      "sourceId": "Seated_Cable_Rows",
+      "previewSourceId": "0208",
+      "sourceName": "Seated Cable Row (V-Grip)",
+      "aliases": [
+        "Remada baixa na polia"
+      ],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-straight-back-seated-row-v-grip.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-straight-back-seated-row-v-grip.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-straight-back-seated-row-v-grip.mp4",
+          "bytes": 277347,
+          "duration": 6.6,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-straight-back-seated-row-v-grip.mp4",
+          "bytes": 299192,
+          "duration": 6.6,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Remada alta na polia",
+      "group": "Costas",
+      "catalogId": "Upright_Cable_Row",
+      "sourceId": "Upright_Cable_Row",
+      "previewSourceId": "0213",
+      "sourceName": "Cable Seated High Row (V-bar)",
+      "aliases": [],
+      "previewStatus": "rejected",
+      "reason": "High seated row differs from the existing upright cable row"
+    },
+    {
+      "name": "Barra fixa (pull-up)",
+      "group": "Costas",
+      "catalogId": "Pullups",
+      "sourceId": "Pullups",
+      "previewSourceId": "1429",
+      "sourceName": "Pull-Up (Wide Grip)",
+      "aliases": [
+        "Barra fixa"
+      ],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/pull-up-wide-front-grip.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/pull-up-wide-front-grip.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/pull-up-wide-front-grip.mp4",
+          "bytes": 326231,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/pull-up-wide-front-grip.mp4",
+          "bytes": 534248,
+          "duration": 6.6,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Barra fixa pegada supinada (chin-up)",
+      "group": "Costas",
+      "catalogId": "selected-barra-fixa-pegada-supinada-chin-up",
+      "sourceId": null,
+      "previewSourceId": "2327",
+      "sourceName": "Reverse Grip Pull-Up",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/reverse-grip-pull-up.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/reverse-grip-pull-up.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/reverse-grip-pull-up.mp4",
+          "bytes": 613023,
+          "duration": 5.905906,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/reverse-grip-pull-up.mp4",
+          "bytes": 605397,
+          "duration": 6.6,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Remada cavalinho",
+      "group": "Costas",
+      "catalogId": "T-Bar_Row_with_Handle",
+      "sourceId": "T-Bar_Row_with_Handle",
+      "previewSourceId": "drv-lever-t-bar-row",
+      "sourceName": "Lever T-Bar Row",
+      "aliases": [
+        "Remada cavalinho com barra T"
+      ],
+      "previewStatus": "rejected",
+      "reason": "Lever machine differs from the barbell T-row"
+    },
+    {
+      "name": "Encolhimento com barra",
+      "group": "Costas",
+      "catalogId": "Barbell_Shrug",
+      "sourceId": "Barbell_Shrug",
+      "previewSourceId": "0095",
+      "sourceName": "Barbell Shrug",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-shrug.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/barbell-shrug.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-shrug.mp4",
+          "bytes": 234340,
+          "duration": 6.639967,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/barbell-shrug.mp4",
+          "bytes": 299977,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Encolhimento com halter",
+      "group": "Costas",
+      "catalogId": "Dumbbell_Shrug",
+      "sourceId": "Dumbbell_Shrug",
+      "previewSourceId": "0406",
+      "sourceName": "Dumbbell Shrug",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-shrug.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-shrug.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-shrug.mp4",
+          "bytes": 190816,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-shrug.mp4",
+          "bytes": 266932,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Remada inclinada com halteres",
+      "group": "Costas",
+      "catalogId": "Dumbbell_Incline_Row",
+      "sourceId": "Dumbbell_Incline_Row",
+      "previewSourceId": "0327",
+      "sourceName": "Dumbbell Incline Row",
+      "aliases": [
+        "Remada com halteres no banco inclinado"
+      ],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-incline-row.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-incline-row.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-incline-row.mp4",
+          "bytes": 209831,
+          "duration": 6.639967,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-incline-row.mp4",
+          "bytes": 454195,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Puxada unilateral na polia",
+      "group": "Costas",
+      "catalogId": "selected-puxada-unilateral-na-polia",
+      "sourceId": null,
+      "previewSourceId": "2616",
+      "sourceName": "Cable One Arm Lateral Pulldown",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-one-arm-lateral-pulldown.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-one-arm-lateral-pulldown.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-one-arm-lateral-pulldown.mp4",
+          "bytes": 809209,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-one-arm-lateral-pulldown.mp4",
+          "bytes": 522875,
+          "duration": 6.6,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Face pull",
+      "group": "Ombros",
+      "catalogId": "Face_Pull",
+      "sourceId": "Face_Pull",
+      "previewSourceId": "0203",
+      "sourceName": "Cable Rear Delt Row (with rope)",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-rear-delt-row-with-rope.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-rear-delt-row-with-rope.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-rear-delt-row-with-rope.mp4",
+          "bytes": 761773,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-rear-delt-row-with-rope.mp4",
+          "bytes": 358530,
+          "duration": 6.6,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Hiperextensão lombar",
+      "group": "Costas",
+      "catalogId": "Hyperextensions_Back_Extensions",
+      "sourceId": "Hyperextensions_Back_Extensions",
+      "previewSourceId": "0489",
+      "sourceName": "45 Degree Hyperextension",
+      "aliases": [
+        "Extensão lombar no banco romano"
+      ],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/45-degree-hyperextension.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/45-degree-hyperextension.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/45-degree-hyperextension.mp4",
+          "bytes": 644586,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/45-degree-hyperextension.mp4",
+          "bytes": 364623,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Pull-over com halter",
+      "group": "Costas",
+      "catalogId": "Bent-Arm_Dumbbell_Pullover",
+      "sourceId": "Bent-Arm_Dumbbell_Pullover",
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": [
+        "Pullover com halter"
+      ]
+    },
+    {
+      "name": "Remada invertida",
+      "group": "Costas",
+      "catalogId": "Inverted_Row",
+      "sourceId": "Inverted_Row",
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": []
+    },
+    {
+      "name": "Puxada com pegada neutra",
+      "group": "Costas",
+      "catalogId": "V-Bar_Pulldown",
+      "sourceId": "V-Bar_Pulldown",
+      "previewSourceId": "0974",
+      "sourceName": "Cable Close Grip Lat Pulldown",
+      "aliases": [
+        "Puxada frontal com pegada neutra"
+      ],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-close-grip-front-lat-pulldown.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-close-grip-front-lat-pulldown.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-close-grip-front-lat-pulldown.mp4",
+          "bytes": 854896,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-close-grip-front-lat-pulldown.mp4",
+          "bytes": 345581,
+          "duration": 5.933333,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Alongamento de costas",
+      "group": "Mobilidade",
+      "catalogId": "selected-alongamento-de-costas",
+      "sourceId": null,
+      "previewSourceId": "0690",
+      "sourceName": "Seated Lower Back Stretch",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-seated-lower-back-stretch.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/stretching-seated-lower-back-stretch.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-seated-lower-back-stretch.mp4",
+          "bytes": 310451,
+          "duration": 6.4,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/stretching-seated-lower-back-stretch.mp4",
+          "bytes": 261744,
+          "duration": 6.0,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Good morning com barra",
+      "group": "Posteriores e glúteos",
+      "catalogId": "Good_Morning",
+      "sourceId": "Good_Morning",
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": []
+    },
+    {
+      "name": "Desenvolvimento com barra",
+      "group": "Ombros",
+      "catalogId": "Standing_Military_Press",
+      "sourceId": "Standing_Military_Press",
+      "previewSourceId": "0553",
+      "sourceName": "Military Press",
+      "aliases": [
+        "Desenvolvimento em pé com barra"
+      ],
+      "previewStatus": "rejected",
+      "reason": "Seated press differs from the mapped standing barbell press"
+    },
+    {
+      "name": "Desenvolvimento com halteres",
+      "group": "Ombros",
+      "catalogId": "Dumbbell_Shoulder_Press",
+      "sourceId": "Dumbbell_Shoulder_Press",
+      "previewSourceId": "0289",
+      "sourceName": "Seated Dumbbell Shoulder Press",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-bench-seated-press.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-bench-seated-press.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-bench-seated-press.mp4",
+          "bytes": 304048,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-bench-seated-press.mp4",
+          "bytes": 464176,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Desenvolvimento Arnold",
+      "group": "Ombros",
+      "catalogId": "Arnold_Dumbbell_Press",
+      "sourceId": "Arnold_Dumbbell_Press",
+      "previewSourceId": "2137",
+      "sourceName": "Dumbbell Arnold Press",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-arnold-press.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-arnold-press.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-arnold-press.mp4",
+          "bytes": 874282,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-arnold-press.mp4",
+          "bytes": 485808,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Elevação lateral com halteres",
+      "group": "Ombros",
+      "catalogId": "Side_Lateral_Raise",
+      "sourceId": "Side_Lateral_Raise",
+      "previewSourceId": "0334",
+      "sourceName": "Dumbbell Lateral Raise",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-lateral-raise.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-lateral-raise.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-lateral-raise.mp4",
+          "bytes": 324030,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-lateral-raise.mp4",
+          "bytes": 355200,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Elevação frontal com halteres",
+      "group": "Ombros",
+      "catalogId": "Front_Dumbbell_Raise",
+      "sourceId": "Front_Dumbbell_Raise",
+      "previewSourceId": "0310",
+      "sourceName": "Dumbbell Front Raise",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-front-raise.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-front-raise.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-front-raise.mp4",
+          "bytes": 312469,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-front-raise.mp4",
+          "bytes": 322630,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Elevação posterior (crucifixo inverso)",
+      "group": "Ombros",
+      "catalogId": "Reverse_Flyes",
+      "sourceId": "Reverse_Flyes",
+      "previewSourceId": "0602",
+      "sourceName": "Lever Seated Reverse Fly",
+      "aliases": [
+        "Crucifixo inverso"
+      ],
+      "previewStatus": "rejected",
+      "reason": "Machine differs from the prescribed dumbbell reverse fly"
+    },
+    {
+      "name": "Remada alta com barra",
+      "group": "Ombros",
+      "catalogId": "selected-remada-alta-com-barra",
+      "sourceId": null,
+      "previewSourceId": "0123",
+      "sourceName": "Barbell Wide-Grip Upright Row",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-upright-row-wide-grip.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/barbell-upright-row-wide-grip.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-upright-row-wide-grip.mp4",
+          "bytes": 711750,
+          "duration": 6.539867,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/barbell-upright-row-wide-grip.mp4",
+          "bytes": 426210,
+          "duration": 6.6,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Elevação lateral na polia",
+      "group": "Ombros",
+      "catalogId": "Standing_Low-Pulley_Deltoid_Raise",
+      "sourceId": "Standing_Low-Pulley_Deltoid_Raise",
+      "previewSourceId": "0178",
+      "sourceName": "Cable Lateral Raise",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-lateral-raise.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-lateral-raise.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-lateral-raise.mp4",
+          "bytes": 1077687,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-lateral-raise.mp4",
+          "bytes": 545513,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Desenvolvimento unilateral",
+      "group": "Ombros",
+      "catalogId": "Dumbbell_One-Arm_Shoulder_Press",
+      "sourceId": "Dumbbell_One-Arm_Shoulder_Press",
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": [
+        "Desenvolvimento unilateral com halter"
+      ]
+    },
+    {
+      "name": "Elevação frontal na polia",
+      "group": "Ombros",
+      "catalogId": "selected-elevacao-frontal-na-polia",
+      "sourceId": null,
+      "previewSourceId": "0162",
+      "sourceName": "Cable One Arm Front Raise",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-one-arm-forward-raise.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-one-arm-forward-raise.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-one-arm-forward-raise.mp4",
+          "bytes": 615584,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-one-arm-forward-raise.mp4",
+          "bytes": 304593,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Rotação externa com halter",
+      "group": "Ombros",
+      "catalogId": "External_Rotation_with_Dumbbell",
+      "sourceId": "External_Rotation_with_Dumbbell",
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": []
+    },
+    {
+      "name": "Rotação interna com elástico",
+      "group": "Ombros",
+      "catalogId": "selected-rotacao-interna-com-elastico",
+      "sourceId": null,
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": []
+    },
+    {
+      "name": "Alongamento de ombro",
+      "group": "Mobilidade",
+      "catalogId": "selected-alongamento-de-ombro",
+      "sourceId": null,
+      "previewSourceId": "0669",
+      "sourceName": "Rear Deltoid Stretch",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-rear-deltoid-stretch.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/stretching-rear-deltoid-stretch.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-rear-deltoid-stretch.mp4",
+          "bytes": 257705,
+          "duration": 6.333333,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/stretching-rear-deltoid-stretch.mp4",
+          "bytes": 236020,
+          "duration": 6.0,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Elevação lateral inclinada",
+      "group": "Ombros",
+      "catalogId": "One-Arm_Incline_Lateral_Raise",
+      "sourceId": "One-Arm_Incline_Lateral_Raise",
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": [
+        "Elevação lateral no banco inclinado"
+      ]
+    },
+    {
+      "name": "Rosca direta com barra",
+      "group": "Bíceps",
+      "catalogId": "Barbell_Curl",
+      "sourceId": "Barbell_Curl",
+      "previewSourceId": "0031",
+      "sourceName": "Barbell Curl",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-curl.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/barbell-curl.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-curl.mp4",
+          "bytes": 398705,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/barbell-curl.mp4",
+          "bytes": 693100,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Rosca alternada com halteres",
+      "group": "Bíceps",
+      "catalogId": "Dumbbell_Alternate_Bicep_Curl",
+      "sourceId": "Dumbbell_Alternate_Bicep_Curl",
+      "previewSourceId": "0285",
+      "sourceName": "Seated Alternating Dumbbell Curl",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-alternate-seated-biceps-curl.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-alternate-seated-biceps-curl.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-alternate-seated-biceps-curl.mp4",
+          "bytes": 532162,
+          "duration": 13.2,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-alternate-seated-biceps-curl.mp4",
+          "bytes": 261446,
+          "duration": 6.6,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Rosca martelo",
+      "group": "Bíceps",
+      "catalogId": "Hammer_Curls",
+      "sourceId": "Hammer_Curls",
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": []
+    },
+    {
+      "name": "Rosca concentrada",
+      "group": "Bíceps",
+      "catalogId": "Concentration_Curls",
+      "sourceId": "Concentration_Curls",
+      "previewSourceId": "0297",
+      "sourceName": "Dumbbell Concentration Curl",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-concentration-curl.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-concentration-curl.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-concentration-curl.mp4",
+          "bytes": 400927,
+          "duration": 6.6066,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-concentration-curl.mp4",
+          "bytes": 310787,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Rosca inclinada com halteres",
+      "group": "Bíceps",
+      "catalogId": "Incline_Dumbbell_Curl",
+      "sourceId": "Incline_Dumbbell_Curl",
+      "previewSourceId": "0322",
+      "sourceName": "Dumbbell Incline Biceps Curl",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-incline-biceps-curl.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-incline-biceps-curl.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-incline-biceps-curl.mp4",
+          "bytes": 819556,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-incline-biceps-curl.mp4",
+          "bytes": 336644,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Rosca na polia",
+      "group": "Bíceps",
+      "catalogId": "Standing_Biceps_Cable_Curl",
+      "sourceId": "Standing_Biceps_Cable_Curl",
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": [
+        "Rosca direta na polia com barra"
+      ]
+    },
+    {
+      "name": "Rosca scott",
+      "group": "Bíceps",
+      "catalogId": "Preacher_Curl",
+      "sourceId": "Preacher_Curl",
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": [
+        "Rosca Scott"
+      ]
+    },
+    {
+      "name": "Rosca inversa",
+      "group": "Bíceps",
+      "catalogId": "Reverse_Barbell_Curl",
+      "sourceId": "Reverse_Barbell_Curl",
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": [
+        "Rosca inversa com barra"
+      ]
+    },
+    {
+      "name": "Rosca 21",
+      "group": "Bíceps",
+      "catalogId": "selected-rosca-21",
+      "sourceId": null,
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": []
+    },
+    {
+      "name": "Rosca unilateral na polia",
+      "group": "Bíceps",
+      "catalogId": "Standing_One-Arm_Cable_Curl",
+      "sourceId": "Standing_One-Arm_Cable_Curl",
+      "previewSourceId": "0190",
+      "sourceName": "Cable One Arm Curl",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-one-arm-curl.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-one-arm-curl.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-one-arm-curl.mp4",
+          "bytes": 660133,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-one-arm-curl.mp4",
+          "bytes": 242331,
+          "duration": 6.6,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Rosca com corda",
+      "group": "Bíceps",
+      "catalogId": "Cable_Hammer_Curls_-_Rope_Attachment",
+      "sourceId": "Cable_Hammer_Curls_-_Rope_Attachment",
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": [
+        "Rosca martelo com corda na polia"
+      ]
+    },
+    {
+      "name": "Alongamento de bíceps",
+      "group": "Mobilidade",
+      "catalogId": "selected-alongamento-de-biceps",
+      "sourceId": null,
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": []
+    },
+    {
+      "name": "Tríceps testa com barra",
+      "group": "Tríceps",
+      "catalogId": "EZ-Bar_Skullcrusher",
+      "sourceId": "EZ-Bar_Skullcrusher",
+      "previewSourceId": "0061",
+      "sourceName": "EZ Bar Lying Triceps Extension",
+      "aliases": [
+        "Tríceps testa"
+      ],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/ez-barbell-lying-triceps-extension.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/ez-barbell-lying-triceps-extension.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/ez-barbell-lying-triceps-extension.mp4",
+          "bytes": 1045438,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/ez-barbell-lying-triceps-extension.mp4",
+          "bytes": 443887,
+          "duration": 6.6,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Tríceps corda na polia",
+      "group": "Tríceps",
+      "catalogId": "Triceps_Pushdown_-_Rope_Attachment",
+      "sourceId": "Triceps_Pushdown_-_Rope_Attachment",
+      "previewSourceId": "0200",
+      "sourceName": "Cable Rope Triceps Pushdown",
+      "aliases": [
+        "Tríceps na polia com corda"
+      ],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-pushdown-rope-attachment.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-pushdown-rope-attachment.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-pushdown-rope-attachment.mp4",
+          "bytes": 601072,
+          "duration": 6.57324,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-pushdown-rope-attachment.mp4",
+          "bytes": 209992,
+          "duration": 5.4,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Tríceps testa com halteres",
+      "group": "Tríceps",
+      "catalogId": "Lying_Dumbbell_Tricep_Extension",
+      "sourceId": "Lying_Dumbbell_Tricep_Extension",
+      "previewSourceId": "0351",
+      "sourceName": "Dumbbell Lying Triceps Extension",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-lying-triceps-extension.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-lying-triceps-extension.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-lying-triceps-extension.mp4",
+          "bytes": 932887,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-lying-triceps-extension.mp4",
+          "bytes": 364438,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Tríceps coice",
+      "group": "Tríceps",
+      "catalogId": "Tricep_Dumbbell_Kickback",
+      "sourceId": "Tricep_Dumbbell_Kickback",
+      "previewSourceId": "0333",
+      "sourceName": "Dumbbell Kickback",
+      "aliases": [
+        "Tríceps coice com halter"
+      ],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-kickback.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-kickback.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-kickback.mp4",
+          "bytes": 299404,
+          "duration": 6.639967,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-kickback.mp4",
+          "bytes": 295355,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Tríceps francês",
+      "group": "Tríceps",
+      "catalogId": "Seated_Triceps_Press",
+      "sourceId": "Seated_Triceps_Press",
+      "previewSourceId": "2188",
+      "sourceName": "Dumbbell Seated Triceps Extension",
+      "aliases": [
+        "Tríceps francês com halter"
+      ],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-seated-triceps-extension.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-seated-triceps-extension.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-seated-triceps-extension.mp4",
+          "bytes": 652109,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-seated-triceps-extension.mp4",
+          "bytes": 272975,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Extensão de tríceps acima da cabeça",
+      "group": "Tríceps",
+      "catalogId": "selected-extensao-de-triceps-acima-da-cabeca",
+      "sourceId": null,
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": [
+        "Extensão de tríceps acima da cabeça na polia com barra"
+      ]
+    },
+    {
+      "name": "Tríceps unilateral na polia",
+      "group": "Tríceps",
+      "catalogId": "Cable_One_Arm_Tricep_Extension",
+      "sourceId": "Cable_One_Arm_Tricep_Extension",
+      "previewSourceId": "0231",
+      "sourceName": "Cable Standing One Arm Triceps Extension",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-standing-one-arm-triceps-extension.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-standing-one-arm-triceps-extension.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-standing-one-arm-triceps-extension.mp4",
+          "bytes": 654305,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-standing-one-arm-triceps-extension.mp4",
+          "bytes": 278942,
+          "duration": 6.6,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Tríceps no banco com peso",
+      "group": "Tríceps",
+      "catalogId": "selected-triceps-no-banco-com-peso",
+      "sourceId": null,
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": []
+    },
+    {
+      "name": "Extensão de tríceps na polia",
+      "group": "Tríceps",
+      "catalogId": "Triceps_Pushdown",
+      "sourceId": "Triceps_Pushdown",
+      "previewSourceId": "1723",
+      "sourceName": "Cable Triceps Pushdown",
+      "aliases": [
+        "Tríceps na polia com barra"
+      ],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-triceps-pushdown.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-triceps-pushdown.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-triceps-pushdown.mp4",
+          "bytes": 818153,
+          "duration": 6.539867,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-triceps-pushdown.mp4",
+          "bytes": 363032,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Alongamento de tríceps",
+      "group": "Mobilidade",
+      "catalogId": "selected-alongamento-de-triceps",
+      "sourceId": null,
+      "previewSourceId": "1771",
+      "sourceName": "Kneeling Triceps Stretch",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-kneeling-triceps-extension.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/stretching-kneeling-triceps-extension.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-kneeling-triceps-extension.mp4",
+          "bytes": 662481,
+          "duration": 5.4,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/stretching-kneeling-triceps-extension.mp4",
+          "bytes": 700953,
+          "duration": 6.0,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Agachamento livre com barra",
+      "group": "Quadríceps",
+      "catalogId": "Barbell_Squat",
+      "sourceId": "Barbell_Squat",
+      "previewSourceId": "1435",
+      "sourceName": "Barbell Back Squat",
+      "aliases": [
+        "Agachamento livre"
+      ],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/classic-barbell-squat.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/classic-barbell-squat.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/classic-barbell-squat.mp4",
+          "bytes": 543090,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/classic-barbell-squat.mp4",
+          "bytes": 628622,
+          "duration": 5.333333,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Agachamento frontal",
+      "group": "Quadríceps",
+      "catalogId": "Front_Barbell_Squat",
+      "sourceId": "Front_Barbell_Squat",
+      "previewSourceId": "0042",
+      "sourceName": "Barbell Front Squat",
+      "aliases": [
+        "Agachamento frontal com barra"
+      ],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-front-chest-squat.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/barbell-front-chest-squat.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-front-chest-squat.mp4",
+          "bytes": 540786,
+          "duration": 6.639967,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/barbell-front-chest-squat.mp4",
+          "bytes": 762297,
+          "duration": 6.6,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Agachamento goblet",
+      "group": "Quadríceps",
+      "catalogId": "Goblet_Squat",
+      "sourceId": "Goblet_Squat",
+      "previewSourceId": "1760",
+      "sourceName": "Dumbbell Goblet Squat",
+      "aliases": [],
+      "previewStatus": "rejected",
+      "reason": "Dumbbell differs from the existing kettlebell goblet demonstration"
+    },
+    {
+      "name": "Leg press",
+      "group": "Quadríceps",
+      "catalogId": "Leg_Press",
+      "sourceId": "Leg_Press",
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": [
+        "Leg press 45 graus"
+      ]
+    },
+    {
+      "name": "Afundo com barra",
+      "group": "Quadríceps",
+      "catalogId": "selected-afundo-com-barra",
+      "sourceId": null,
+      "previewSourceId": "0054",
+      "sourceName": "Barbell Lunge",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-lunge.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/barbell-lunge.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-lunge.mp4",
+          "bytes": 553898,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/barbell-lunge.mp4",
+          "bytes": 780653,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Afundo com halteres",
+      "group": "Quadríceps",
+      "catalogId": "Dumbbell_Lunges",
+      "sourceId": "Dumbbell_Lunges",
+      "previewSourceId": "0336",
+      "sourceName": "Dumbbell Lunge",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-lunge.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-lunge.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-lunge.mp4",
+          "bytes": 1068246,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-lunge.mp4",
+          "bytes": 764948,
+          "duration": 6.6,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Afundo caminhando",
+      "group": "Quadríceps",
+      "catalogId": "selected-afundo-caminhando",
+      "sourceId": null,
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": [
+        "Passada caminhando com halteres"
+      ]
+    },
+    {
+      "name": "Stiff com barra",
+      "group": "Posteriores e glúteos",
+      "catalogId": "Stiff-Legged_Barbell_Deadlift",
+      "sourceId": "Stiff-Legged_Barbell_Deadlift",
+      "previewSourceId": "0116",
+      "sourceName": "Barbell Straight Leg Deadlift",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-straight-leg-deadlift.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/barbell-straight-leg-deadlift.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-straight-leg-deadlift.mp4",
+          "bytes": 591588,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/barbell-straight-leg-deadlift.mp4",
+          "bytes": 794821,
+          "duration": 6.6,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Stiff com halteres",
+      "group": "Posteriores e glúteos",
+      "catalogId": "Stiff-Legged_Dumbbell_Deadlift",
+      "sourceId": "Stiff-Legged_Dumbbell_Deadlift",
+      "previewSourceId": "0432",
+      "sourceName": "Dumbbell Stiff Leg Deadlift",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-stiff-leg-deadlift.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-stiff-leg-deadlift.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-stiff-leg-deadlift.mp4",
+          "bytes": 1122033,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-stiff-leg-deadlift.mp4",
+          "bytes": 707527,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Cadeira extensora",
+      "group": "Quadríceps",
+      "catalogId": "Leg_Extensions",
+      "sourceId": "Leg_Extensions",
+      "previewSourceId": "0585",
+      "sourceName": "Lever Leg Extension",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/lever-leg-extension.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/lever-leg-extension.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/lever-leg-extension.mp4",
+          "bytes": 1123427,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/lever-leg-extension.mp4",
+          "bytes": 710851,
+          "duration": 6.57324,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Mesa flexora",
+      "group": "Posteriores e glúteos",
+      "catalogId": "Lying_Leg_Curls",
+      "sourceId": "Lying_Leg_Curls",
+      "previewSourceId": "0586",
+      "sourceName": "Lever Lying Leg Curl",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/lever-lying-leg-curl.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/lever-lying-leg-curl.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/lever-lying-leg-curl.mp4",
+          "bytes": 897634,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/lever-lying-leg-curl.mp4",
+          "bytes": 638049,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Flexora em pé",
+      "group": "Posteriores e glúteos",
+      "catalogId": "Standing_Leg_Curl",
+      "sourceId": "Standing_Leg_Curl",
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": [
+        "Flexora em pé unilateral"
+      ]
+    },
+    {
+      "name": "Agachamento sumô",
+      "group": "Quadríceps",
+      "catalogId": "selected-agachamento-sumo",
+      "sourceId": null,
+      "previewSourceId": "new-dumbbell-sumo-squat",
+      "sourceName": "Dumbbell Sumo Squat",
+      "aliases": [
+        "Agachamento sumô com halter"
+      ],
+      "previewStatus": "rejected",
+      "reason": "Wide-stance sumo movement not sufficiently verified"
+    },
+    {
+      "name": "Agachamento búlgaro",
+      "group": "Quadríceps",
+      "catalogId": "Split_Squat_with_Dumbbells",
+      "sourceId": "Split_Squat_with_Dumbbells",
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": []
+    },
+    {
+      "name": "Hip thrust",
+      "group": "Posteriores e glúteos",
+      "catalogId": "Barbell_Hip_Thrust",
+      "sourceId": "Barbell_Hip_Thrust",
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": [
+        "Elevação pélvica com barra"
+      ]
+    },
+    {
+      "name": "Ponte de glúteo",
+      "group": "Posteriores e glúteos",
+      "catalogId": "Butt_Lift_Bridge",
+      "sourceId": "Butt_Lift_Bridge",
+      "previewSourceId": "drv-hip-raise-bridge",
+      "sourceName": "Glute Bridge",
+      "aliases": [
+        "Ponte de glúteos no solo"
+      ],
+      "previewStatus": "rejected",
+      "reason": "Video shows a plank, not a glute bridge"
+    },
+    {
+      "name": "Abdução de quadril",
+      "group": "Posteriores e glúteos",
+      "catalogId": "Thigh_Abductor",
+      "sourceId": "Thigh_Abductor",
+      "previewSourceId": "0597",
+      "sourceName": "Lever Seated Hip Abduction",
+      "aliases": [
+        "Cadeira abdutora"
+      ],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/lever-seated-hip-abduction.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/lever-seated-hip-abduction.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/lever-seated-hip-abduction.mp4",
+          "bytes": 1064772,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/lever-seated-hip-abduction.mp4",
+          "bytes": 517959,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Adução de quadril",
+      "group": "Posteriores e glúteos",
+      "catalogId": "Thigh_Adductor",
+      "sourceId": "Thigh_Adductor",
+      "previewSourceId": "0598",
+      "sourceName": "Lever Seated Hip Adduction",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/lever-seated-hip-adduction.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/lever-seated-hip-adduction.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/lever-seated-hip-adduction.mp4",
+          "bytes": 957965,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/lever-seated-hip-adduction.mp4",
+          "bytes": 509787,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Passada lateral",
+      "group": "Quadríceps",
+      "catalogId": "selected-passada-lateral",
+      "sourceId": null,
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": []
+    },
+    {
+      "name": "Agachamento unilateral",
+      "group": "Quadríceps",
+      "catalogId": "selected-agachamento-unilateral",
+      "sourceId": null,
+      "previewSourceId": "0411",
+      "sourceName": "Dumbbell Single Leg Squat",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-single-leg-squat.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-single-leg-squat.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-single-leg-squat.mp4",
+          "bytes": 1017569,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-single-leg-squat.mp4",
+          "bytes": 713778,
+          "duration": 6.6,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Elevação de panturrilha em pé",
+      "group": "Panturrilhas",
+      "catalogId": "Standing_Calf_Raises",
+      "sourceId": "Standing_Calf_Raises",
+      "previewSourceId": "0605",
+      "sourceName": "Lever Standing Calf Raise",
+      "aliases": [
+        "Panturrilha na máquina em pé"
+      ],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/lever-standing-calf-raise.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/lever-standing-calf-raise.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/lever-standing-calf-raise.mp4",
+          "bytes": 315258,
+          "duration": 6.639967,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/lever-standing-calf-raise.mp4",
+          "bytes": 659980,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Elevação de panturrilha sentado",
+      "group": "Panturrilhas",
+      "catalogId": "Seated_Calf_Raise",
+      "sourceId": "Seated_Calf_Raise",
+      "previewSourceId": "0594",
+      "sourceName": "Lever Seated Calf Raise",
+      "aliases": [
+        "Panturrilha sentada"
+      ],
+      "previewStatus": "rejected",
+      "reason": "Bar-loaded seated raise differs from the mapped calf machine"
+    },
+    {
+      "name": "Agachamento na parede",
+      "group": "Quadríceps",
+      "catalogId": "Wall_Squat",
+      "sourceId": "Wall_Squat",
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": []
+    },
+    {
+      "name": "Alongamento de quadríceps / posterior",
+      "group": "Mobilidade",
+      "catalogId": "selected-alongamento-de-quadriceps-posterior",
+      "sourceId": null,
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": []
+    },
+    {
+      "name": "Prancha frontal",
+      "group": "Abdômen e core",
+      "catalogId": "Plank",
+      "sourceId": "Plank",
+      "previewSourceId": "0464",
+      "sourceName": "Front Plank",
+      "aliases": [
+        "Prancha abdominal"
+      ],
+      "previewStatus": "verified",
+      "variants": {
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/front-plank-female.mp4"
+      },
+      "validation": {
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/front-plank-female.mp4",
+          "bytes": 5377462,
+          "duration": 7.3,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Prancha lateral",
+      "group": "Abdômen e core",
+      "catalogId": "selected-prancha-lateral",
+      "sourceId": null,
+      "previewSourceId": "0705",
+      "sourceName": "Side Plank",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/side-bridge-side-plank.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/side-bridge-side-plank.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/side-bridge-side-plank.mp4",
+          "bytes": 409003,
+          "duration": 6.639973,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/side-bridge-side-plank.mp4",
+          "bytes": 540103,
+          "duration": 6.639967,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Abdominal crunch",
+      "group": "Abdômen e core",
+      "catalogId": "Crunches",
+      "sourceId": "Crunches",
+      "previewSourceId": "0274",
+      "sourceName": "Floor Crunch",
+      "aliases": [
+        "Abdominal no solo"
+      ],
+      "previewStatus": "verified",
+      "variants": {
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/crunch-floor-female.mp4"
+      },
+      "validation": {
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/crunch-floor-female.mp4",
+          "bytes": 5573379,
+          "duration": 5.233333,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Abdominal infra",
+      "group": "Abdômen e core",
+      "catalogId": "Reverse_Crunch",
+      "sourceId": "Reverse_Crunch",
+      "previewSourceId": "0872",
+      "sourceName": "Reverse Crunch",
+      "aliases": [
+        "Abdominal reverso"
+      ],
+      "previewStatus": "verified",
+      "variants": {
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/reverse-crunch-female.mp4"
+      },
+      "validation": {
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/reverse-crunch-female.mp4",
+          "bytes": 8976640,
+          "duration": 6.6,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Abdominal oblíquo",
+      "group": "Abdômen e core",
+      "catalogId": "Cross-Body_Crunch",
+      "sourceId": "Cross-Body_Crunch",
+      "previewSourceId": "0985",
+      "sourceName": "Twisting Crunch",
+      "aliases": [
+        "Abdominal oblíquo no solo"
+      ],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/twisting-crunch.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/twisting-crunch.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/twisting-crunch.mp4",
+          "bytes": 808641,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/twisting-crunch.mp4",
+          "bytes": 554843,
+          "duration": 6.639967,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Abdominal na polia",
+      "group": "Abdômen e core",
+      "catalogId": "Cable_Crunch",
+      "sourceId": "Cable_Crunch",
+      "previewSourceId": "0175",
+      "sourceName": "Cable Kneeling Crunch",
+      "aliases": [
+        "Abdominal na polia alta"
+      ],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-kneeling-crunch.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-kneeling-crunch.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-kneeling-crunch.mp4",
+          "bytes": 818852,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/cable-kneeling-crunch.mp4",
+          "bytes": 695381,
+          "duration": 6.57324,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Elevação de pernas",
+      "group": "Abdômen e core",
+      "catalogId": "Flat_Bench_Lying_Leg_Raise",
+      "sourceId": "Flat_Bench_Lying_Leg_Raise",
+      "previewSourceId": "0865",
+      "sourceName": "Lying Leg Raise",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/lying-floor-leg-raise.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/lying-floor-leg-raise.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/lying-floor-leg-raise.mp4",
+          "bytes": 776434,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/lying-floor-leg-raise.mp4",
+          "bytes": 473322,
+          "duration": 6.639967,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Bicicleta",
+      "group": "Abdômen e core",
+      "catalogId": "Air_Bike",
+      "sourceId": "Air_Bike",
+      "previewSourceId": "drv-45-degree-bycicle-twisting-crunch",
+      "sourceName": "45-Degree Bicycle Twisting Crunch",
+      "aliases": [
+        "Abdominal bicicleta"
+      ],
+      "previewStatus": "rejected",
+      "reason": "Video shows bench-supported oblique crunch, not the selected floor bicycle"
+    },
+    {
+      "name": "Abdominal no banco declinado",
+      "group": "Abdômen e core",
+      "catalogId": "Decline_Crunch",
+      "sourceId": "Decline_Crunch",
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": []
+    },
+    {
+      "name": "Rotação russa",
+      "group": "Abdômen e core",
+      "catalogId": "Russian_Twist",
+      "sourceId": "Russian_Twist",
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": []
+    },
+    {
+      "name": "Dead bug",
+      "group": "Abdômen e core",
+      "catalogId": "Dead_Bug",
+      "sourceId": "Dead_Bug",
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": []
+    },
+    {
+      "name": "Bird dog",
+      "group": "Abdômen e core",
+      "catalogId": "selected-bird-dog",
+      "sourceId": null,
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": []
+    },
+    {
+      "name": "Abdominal com bola",
+      "group": "Abdômen e core",
+      "catalogId": "Exercise_Ball_Crunch",
+      "sourceId": "Exercise_Ball_Crunch",
+      "previewSourceId": "1338",
+      "sourceName": "Exercise Ball Sit-Up",
+      "aliases": [
+        "Abdominal na bola suíça"
+      ],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/sit-up-on-exercise-ball.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/sit-up-on-exercise-ball.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/sit-up-on-exercise-ball.mp4",
+          "bytes": 739159,
+          "duration": 6.639973,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/sit-up-on-exercise-ball.mp4",
+          "bytes": 1163911,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Alongamento de core",
+      "group": "Mobilidade",
+      "catalogId": "selected-alongamento-de-core",
+      "sourceId": null,
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": []
+    },
+    {
+      "name": "Panturrilha em pé com barra",
+      "group": "Panturrilhas",
+      "catalogId": "selected-panturrilha-em-pe-com-barra",
+      "sourceId": null,
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": []
+    },
+    {
+      "name": "Panturrilha unilateral",
+      "group": "Panturrilhas",
+      "catalogId": "selected-panturrilha-unilateral",
+      "sourceId": null,
+      "previewSourceId": "0409",
+      "sourceName": "Dumbbell Single Leg Calf Raise",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-single-leg-calf-raise.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-single-leg-calf-raise.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-single-leg-calf-raise.mp4",
+          "bytes": 546848,
+          "duration": 6.6,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-single-leg-calf-raise.mp4",
+          "bytes": 513407,
+          "duration": 6.6,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Rosca de punho",
+      "group": "Antebraços",
+      "catalogId": "selected-rosca-de-punho",
+      "sourceId": null,
+      "previewSourceId": "0369",
+      "sourceName": "Dumbbell Over Bench Wrist Curl",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-over-bench-wrist-curl.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-over-bench-wrist-curl.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-over-bench-wrist-curl.mp4",
+          "bytes": 286339,
+          "duration": 6.6,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/dumbbell-over-bench-wrist-curl.mp4",
+          "bytes": 306358,
+          "duration": 6.6,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Rosca inversa de punho",
+      "group": "Antebraços",
+      "catalogId": "selected-rosca-inversa-de-punho",
+      "sourceId": null,
+      "previewSourceId": "0082",
+      "sourceName": "Barbell Reverse Wrist Curl",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-reverse-wrist-curl-over-grip.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/barbell-reverse-wrist-curl-over-grip.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-reverse-wrist-curl-over-grip.mp4",
+          "bytes": 1061805,
+          "duration": 6.573233,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/barbell-reverse-wrist-curl-over-grip.mp4",
+          "bytes": 337869,
+          "duration": 6.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Alongamento de panturrilha",
+      "group": "Mobilidade",
+      "catalogId": "selected-alongamento-de-panturrilha",
+      "sourceId": null,
+      "previewSourceId": "1390",
+      "sourceName": "Seated Calf Stretch",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-seated-calf-stretch.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/stretching-seated-calf-stretch.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-seated-calf-stretch.mp4",
+          "bytes": 710640,
+          "duration": 6.0,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/stretching-seated-calf-stretch.mp4",
+          "bytes": 636392,
+          "duration": 6.0,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Alongamento de antebraço",
+      "group": "Mobilidade",
+      "catalogId": "selected-alongamento-de-antebraco",
+      "sourceId": null,
+      "previewSourceId": "0721",
+      "sourceName": "Side Wrist Pull Stretch",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-side-wrist-pull-stretch.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/stretching-side-wrist-pull-stretch.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-side-wrist-pull-stretch.mp4",
+          "bytes": 289166,
+          "duration": 6.0,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/stretching-side-wrist-pull-stretch.mp4",
+          "bytes": 248846,
+          "duration": 6.0,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Alongamento de flexores de quadril",
+      "group": "Mobilidade",
+      "catalogId": "selected-alongamento-de-flexores-de-quadril",
+      "sourceId": null,
+      "previewSourceId": "1564",
+      "sourceName": "Hip Flexor and Quadriceps Stretch",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-hip-flexor-and-quad-stretch.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/stretching-hip-flexor-and-quad-stretch.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-hip-flexor-and-quad-stretch.mp4",
+          "bytes": 338753,
+          "duration": 6.6,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/stretching-hip-flexor-and-quad-stretch.mp4",
+          "bytes": 279093,
+          "duration": 6.133333,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Alongamento de adutores",
+      "group": "Mobilidade",
+      "catalogId": "selected-alongamento-de-adutores",
+      "sourceId": null,
+      "previewSourceId": "drv-stretching-adductor-stretch",
+      "sourceName": "Standing Adductor Stretch",
+      "aliases": [],
+      "previewStatus": "rejected",
+      "reason": "Video shows a lying leg raise, not an adductor stretch"
+    },
+    {
+      "name": "Mobilidade de ombro",
+      "group": "Mobilidade",
+      "catalogId": "selected-mobilidade-de-ombro",
+      "sourceId": null,
+      "previewSourceId": "drv-stretching-band-warm-up-shoulder-stretch",
+      "sourceName": "Band Shoulder Warm-Up Stretch",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-band-warm-up-shoulder-stretch.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/stretching-band-warm-up-shoulder-stretch.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-band-warm-up-shoulder-stretch.mp4",
+          "bytes": 358291,
+          "duration": 6.766667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/stretching-band-warm-up-shoulder-stretch.mp4",
+          "bytes": 287601,
+          "duration": 7.033333,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Mobilidade de quadril",
+      "group": "Mobilidade",
+      "catalogId": "selected-mobilidade-de-quadril",
+      "sourceId": null,
+      "previewSourceId": "0257",
+      "sourceName": "Hip Circles Stretch",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-hip-circles-stretch.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/stretching-hip-circles-stretch.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-hip-circles-stretch.mp4",
+          "bytes": 482756,
+          "duration": 4.4,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/stretching-hip-circles-stretch.mp4",
+          "bytes": 744078,
+          "duration": 6.6,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Burpee",
+      "group": "Cardio",
+      "catalogId": "selected-burpee",
+      "sourceId": null,
+      "previewSourceId": "1160",
+      "sourceName": "Burpee",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/burpee.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/burpee.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/burpee.mp4",
+          "bytes": 614720,
+          "duration": 6.6066,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/burpee.mp4",
+          "bytes": 803161,
+          "duration": 7.566667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Polichinelo",
+      "group": "Cardio",
+      "catalogId": "selected-polichinelo",
+      "sourceId": null,
+      "previewSourceId": "new-low-impact-jumping-jack",
+      "sourceName": "Jumping Jack",
+      "aliases": [],
+      "previewStatus": "rejected",
+      "reason": "Low-impact step variation not the selected jumping jack"
+    },
+    {
+      "name": "Corrida estacionária",
+      "group": "Cardio",
+      "catalogId": "selected-corrida-estacionaria",
+      "sourceId": null,
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": []
+    },
+    {
+      "name": "Bike",
+      "group": "Cardio",
+      "catalogId": "Bicycling_Stationary",
+      "sourceId": "Bicycling_Stationary",
+      "previewSourceId": "2138",
+      "sourceName": "Stationary Bike",
+      "aliases": [
+        "Bicicleta ergométrica"
+      ],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stationary-bike.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/stationary-bike.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stationary-bike.mp4",
+          "bytes": 964289,
+          "duration": 6.6066,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/stationary-bike.mp4",
+          "bytes": 1667626,
+          "duration": 19.7,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Esteira",
+      "group": "Cardio",
+      "catalogId": "Running_Treadmill",
+      "sourceId": "Running_Treadmill",
+      "previewSourceId": "drv-treadmill-running",
+      "sourceName": "Treadmill Running",
+      "aliases": [
+        "Corrida na esteira"
+      ],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/treadmill-running.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/treadmill-running.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/treadmill-running.mp4",
+          "bytes": 414432,
+          "duration": 3.933333,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/treadmill-running.mp4",
+          "bytes": 1421444,
+          "duration": 11.878533,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Pular corda",
+      "group": "Cardio",
+      "catalogId": "Rope_Jumping",
+      "sourceId": "Rope_Jumping",
+      "previewSourceId": "2612",
+      "sourceName": "Jump Rope",
+      "aliases": [],
+      "previewStatus": "verified",
+      "variants": {
+        "male": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/jump-rope.mp4",
+        "female": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/jump-rope.mp4"
+      },
+      "validation": {
+        "male": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/jump-rope.mp4",
+          "bytes": 2199174,
+          "duration": 19.766667,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        "female": {
+          "url": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/jump-rope.mp4",
+          "bytes": 557510,
+          "duration": 4.933333,
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        }
+      }
+    },
+    {
+      "name": "Mountain climber",
+      "group": "Cardio",
+      "catalogId": "Mountain_Climbers",
+      "sourceId": "Mountain_Climbers",
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": []
+    },
+    {
+      "name": "Step-up",
+      "group": "Quadríceps",
+      "catalogId": "Dumbbell_Step_Ups",
+      "sourceId": "Dumbbell_Step_Ups",
+      "previewSourceId": null,
+      "sourceName": null,
+      "aliases": [
+        "Subida no banco com halteres"
+      ]
+    }
+  ]
+}

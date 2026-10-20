@@ -206,6 +206,7 @@
     }
     let translations={};
     if(options.includeInstructions)try{const response=await root.fetch('/exercise-instructions.pt.json',{signal:root.AbortSignal.timeout(15000)});if(!response.ok)throw Error();translations=await response.json()}catch{warnings.push('As instruções de execução não puderam ser carregadas.')}
+    if(root.PersonalProExerciseCompatibility){const resolved=await root.PersonalProExerciseCompatibility.forWorkouts(catalog,translations,student.workout);catalog=resolved.catalog;translations=resolved.translations;}
     const byId = new Map(catalog.map(item => [item.id, item]));
     const byName = new Map(catalog.map(item => [item.name, item]));
     const jobs = [], entries = new Map(), downloads = new Map();

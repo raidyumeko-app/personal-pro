@@ -1,8 +1,8 @@
 {
-  "scope": "180 essential exercises offered for new prescriptions and equivalents",
+  "scope": "130 selected exercises from the user list; six duplicate labels merged",
   "selectionRule": "Exact movement, equipment and grip; commercial use permission required",
-  "total": 180,
-  "withVideo": 22,
+  "total": 130,
+  "withVideo": 86,
   "exercises": [
     {
       "name": "Supino reto com barra",
@@ -13,6 +13,26 @@
       "videoUrl": "/media/exercises/73.mp4",
       "license": "CC BY-SA 4.0",
       "source": "https://wger.de/api/v2/video/21/?format=json"
+    },
+    {
+      "name": "Supino inclinado com barra",
+      "group": "Peito",
+      "equipment": "Barra",
+      "sourceId": "Barbell_Incline_Bench_Press_-_Medium_Grip",
+      "videoStatus": "available",
+      "videoUrl": "/media/exercises/538.mp4",
+      "license": "CC BY-SA 4.0",
+      "source": "https://wger.de/api/v2/video/16/?format=json"
+    },
+    {
+      "name": "Supino declinado com barra",
+      "group": "Peito",
+      "equipment": "Barra",
+      "sourceId": "Decline_Barbell_Bench_Press",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-decline-bench-press.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
       "name": "Supino reto com halteres",
@@ -35,132 +55,148 @@
       "source": "https://wger.de/api/v2/video/24/?format=json"
     },
     {
-      "name": "Supino declinado com barra",
-      "group": "Peito",
-      "equipment": "Barra",
-      "sourceId": "Decline_Barbell_Bench_Press",
-      "videoStatus": "needed"
-    },
-    {
       "name": "Crucifixo com halteres",
       "group": "Peito",
       "equipment": "Halteres",
       "sourceId": "Dumbbell_Flyes",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Crossover na polia",
-      "group": "Peito",
-      "equipment": "Cabo/polia",
-      "sourceId": "Cable_Crossover",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Flexão de braços",
-      "group": "Peito",
-      "equipment": "Peso corporal",
-      "sourceId": "Pushups",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Supino inclinado com barra",
-      "group": "Peito",
-      "equipment": "Barra",
-      "sourceId": "Barbell_Incline_Bench_Press_-_Medium_Grip",
-      "videoStatus": "available",
-      "videoUrl": "/media/exercises/538.mp4",
-      "license": "CC BY-SA 4.0",
-      "source": "https://wger.de/api/v2/video/16/?format=json"
-    },
-    {
-      "name": "Supino declinado com halteres",
-      "group": "Peito",
-      "equipment": "Halteres",
-      "sourceId": "Decline_Dumbbell_Bench_Press",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Supino reto na máquina",
-      "group": "Peito",
-      "equipment": "Máquina",
-      "sourceId": "Machine_Bench_Press",
-      "videoStatus": "available",
-      "videoUrl": "https://ymove.app/api/free/20cc4825-dd52-4887-99db-c492546741dc",
-      "license": "Uso comercial autorizado — pacote gratuito YMove",
-      "source": "https://ymove.app/free-exercise-videos"
-    },
-    {
-      "name": "Supino inclinado na máquina",
-      "group": "Peito",
-      "equipment": "Máquina",
-      "sourceId": "Leverage_Incline_Chest_Press",
-      "videoStatus": "needed"
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-fly.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
       "name": "Crucifixo inclinado com halteres",
       "group": "Peito",
       "equipment": "Halteres",
       "sourceId": "Incline_Dumbbell_Flyes",
-      "videoStatus": "needed"
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-incline-fly.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
-      "name": "Crucifixo na máquina (peck deck)",
-      "group": "Peito",
-      "equipment": "Máquina",
-      "sourceId": "Butterfly",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Crucifixo na polia com banco reto",
-      "group": "Peito",
-      "equipment": "Cabo/polia",
-      "sourceId": "Flat_Bench_Cable_Flyes",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Crossover na polia alta",
+      "name": "Crossover na polia",
       "group": "Peito",
       "equipment": "Cabo/polia",
       "sourceId": "Cable_Crossover",
-      "videoStatus": "needed"
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-standing-fly-crossover-fly.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
-      "name": "Crossover na polia baixa",
+      "name": "Voador (Pec Deck)",
+      "group": "Peito",
+      "equipment": "Máquina",
+      "sourceId": "Butterfly",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/lever-pec-deck-fly.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Flexão de braço",
+      "group": "Peito",
+      "equipment": "Peso corporal",
+      "sourceId": "Pushups",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/push-ups.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Flexão inclinada",
+      "group": "Peito",
+      "equipment": "Peso corporal",
+      "sourceId": "Incline_Push-Up_Medium",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/incline-push-ups.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Mergulho no banco",
+      "group": "Tríceps",
+      "equipment": "Peso corporal",
+      "sourceId": "Bench_Dips",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/bench-dips.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Supino fechado com barra",
+      "group": "Tríceps",
+      "equipment": "Barra",
+      "sourceId": "Close-Grip_Barbell_Bench_Press",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-close-grip-bench-press.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Crucifixo na polia baixa",
       "group": "Peito",
       "equipment": "Cabo/polia",
       "sourceId": "Low_Cable_Crossover",
       "videoStatus": "needed"
     },
     {
-      "name": "Flexão de braços com joelhos apoiados",
+      "name": "Supino com halteres pegada neutra",
       "group": "Peito",
-      "equipment": null,
-      "sourceId": null,
+      "equipment": "Halteres",
+      "sourceId": "Dumbbell_Bench_Press_with_Neutral_Grip",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-lying-hammer-press.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Flexão diamante",
+      "group": "Peito",
+      "equipment": "Conforme prescrição",
+      "sourceId": "Diamond_Push-Up",
       "videoStatus": "needed"
     },
     {
-      "name": "Flexão de braços inclinada",
+      "name": "Crucifixo declinado com halteres",
       "group": "Peito",
+      "equipment": "Halteres",
+      "sourceId": "Decline_Dumbbell_Flyes",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-decline-fly-45-degree-1.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Alongamento de peito",
+      "group": "Mobilidade",
       "equipment": "Peso corporal",
-      "sourceId": "Incline_Push-Up_Medium",
-      "videoStatus": "needed"
+      "sourceId": "Dynamic_Chest_Stretch",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-dynamic-chest-stretch.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
       "name": "Puxada frontal na polia",
       "group": "Costas",
       "equipment": "Cabo/polia",
       "sourceId": "Wide-Grip_Lat_Pulldown",
-      "videoStatus": "needed"
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-pulldown.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
-      "name": "Remada baixa na polia",
+      "name": "Puxada fechada na polia",
       "group": "Costas",
       "equipment": "Cabo/polia",
-      "sourceId": "Seated_Cable_Rows",
-      "videoStatus": "available",
-      "videoUrl": "/media/exercises/512.mp4",
-      "license": "CC BY-SA 4.0",
-      "source": "https://wger.de/api/v2/video/1/?format=json"
+      "sourceId": "selected-puxada-fechada-na-polia",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-close-grip-front-lat-pulldown.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
       "name": "Remada curvada com barra",
@@ -177,56 +213,7 @@
       "videoStatus": "needed"
     },
     {
-      "name": "Barra fixa",
-      "group": "Costas",
-      "equipment": "Peso corporal",
-      "sourceId": "Pullups",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Barra fixa assistida",
-      "group": "Costas",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Pulldown com braços estendidos",
-      "group": "Costas",
-      "equipment": "Cabo/polia",
-      "sourceId": "Straight-Arm_Pulldown",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Remada cavalinho com barra T",
-      "group": "Costas",
-      "equipment": "Barra",
-      "sourceId": "T-Bar_Row_with_Handle",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Remada articulada na máquina",
-      "group": "Costas",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Remada curvada com halteres",
-      "group": "Costas",
-      "equipment": "Halteres",
-      "sourceId": "Bent_Over_Two-Dumbbell_Row",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Remada curvada com pegada supinada",
-      "group": "Costas",
-      "equipment": "Barra",
-      "sourceId": "Reverse_Grip_Bent-Over_Rows",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Remada baixa com triângulo",
+      "name": "Remada sentada na polia",
       "group": "Costas",
       "equipment": "Cabo/polia",
       "sourceId": "Seated_Cable_Rows",
@@ -236,17 +223,104 @@
       "source": "https://wger.de/api/v2/video/1/?format=json"
     },
     {
-      "name": "Remada unilateral na polia",
+      "name": "Remada alta na polia",
       "group": "Costas",
       "equipment": "Cabo/polia",
-      "sourceId": "Seated_One-arm_Cable_Pulley_Rows",
+      "sourceId": "Upright_Cable_Row",
       "videoStatus": "needed"
     },
     {
-      "name": "Remada com halteres no banco inclinado",
+      "name": "Barra fixa (pull-up)",
+      "group": "Costas",
+      "equipment": "Peso corporal",
+      "sourceId": "Pullups",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/pull-up-wide-front-grip.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Barra fixa pegada supinada (chin-up)",
+      "group": "Costas",
+      "equipment": "Peso corporal",
+      "sourceId": "selected-barra-fixa-pegada-supinada-chin-up",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/reverse-grip-pull-up.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Remada cavalinho",
+      "group": "Costas",
+      "equipment": "Barra",
+      "sourceId": "T-Bar_Row_with_Handle",
+      "videoStatus": "needed"
+    },
+    {
+      "name": "Encolhimento com barra",
+      "group": "Costas",
+      "equipment": "Barra",
+      "sourceId": "Barbell_Shrug",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-shrug.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Encolhimento com halter",
+      "group": "Costas",
+      "equipment": "Halteres",
+      "sourceId": "Dumbbell_Shrug",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-shrug.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Remada inclinada com halteres",
       "group": "Costas",
       "equipment": "Halteres",
       "sourceId": "Dumbbell_Incline_Row",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-incline-row.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Puxada unilateral na polia",
+      "group": "Costas",
+      "equipment": "Cabo/polia",
+      "sourceId": "selected-puxada-unilateral-na-polia",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-one-arm-lateral-pulldown.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Face pull",
+      "group": "Ombros",
+      "equipment": "Cabo/polia",
+      "sourceId": "Face_Pull",
+      "videoStatus": "available",
+      "videoUrl": "https://ymove.app/api/free/d9b9cf47-c5ff-4672-b8a8-2fe5f4845231",
+      "license": "Uso comercial autorizado — pacote gratuito YMove",
+      "source": "https://ymove.app/free-exercise-videos"
+    },
+    {
+      "name": "Hiperextensão lombar",
+      "group": "Costas",
+      "equipment": "Outro",
+      "sourceId": "Hyperextensions_Back_Extensions",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/45-degree-hyperextension.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Pull-over com halter",
+      "group": "Costas",
+      "equipment": "Halteres",
+      "sourceId": "Bent-Arm_Dumbbell_Pullover",
       "videoStatus": "needed"
     },
     {
@@ -257,14 +331,7 @@
       "videoStatus": "needed"
     },
     {
-      "name": "Remada no TRX",
-      "group": "Costas",
-      "equipment": "Outro",
-      "sourceId": "Suspended_Row",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Puxada frontal com pegada neutra",
+      "name": "Puxada com pegada neutra",
       "group": "Costas",
       "equipment": "Cabo/polia",
       "sourceId": "V-Bar_Pulldown",
@@ -274,38 +341,27 @@
       "source": "https://ymove.app/free-exercise-videos"
     },
     {
-      "name": "Puxada frontal com pegada supinada",
-      "group": "Costas",
-      "equipment": "Cabo/polia",
-      "sourceId": "Underhand_Cable_Pulldowns",
+      "name": "Alongamento de costas",
+      "group": "Mobilidade",
+      "equipment": "Peso corporal",
+      "sourceId": "selected-alongamento-de-costas",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-seated-lower-back-stretch.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Good morning com barra",
+      "group": "Posteriores e glúteos",
+      "equipment": "Barra",
+      "sourceId": "Good_Morning",
       "videoStatus": "needed"
     },
     {
-      "name": "Puxada unilateral na polia",
-      "group": "Costas",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Pullover com halter",
-      "group": "Costas",
-      "equipment": "Halteres",
-      "sourceId": "Bent-Arm_Dumbbell_Pullover",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Pullover na máquina",
-      "group": "Costas",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Extensão lombar no banco romano",
-      "group": "Costas",
-      "equipment": "Outro",
-      "sourceId": "Hyperextensions_Back_Extensions",
+      "name": "Desenvolvimento com barra",
+      "group": "Ombros",
+      "equipment": "Barra",
+      "sourceId": "Standing_Military_Press",
       "videoStatus": "needed"
     },
     {
@@ -313,14 +369,20 @@
       "group": "Ombros",
       "equipment": "Halteres",
       "sourceId": "Dumbbell_Shoulder_Press",
-      "videoStatus": "needed"
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-bench-seated-press.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
-      "name": "Desenvolvimento na máquina",
+      "name": "Desenvolvimento Arnold",
       "group": "Ombros",
-      "equipment": "Máquina",
-      "sourceId": "Machine_Shoulder_Military_Press",
-      "videoStatus": "needed"
+      "equipment": "Halteres",
+      "sourceId": "Arnold_Dumbbell_Press",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-arnold-press.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
       "name": "Elevação lateral com halteres",
@@ -337,52 +399,27 @@
       "group": "Ombros",
       "equipment": "Halteres",
       "sourceId": "Front_Dumbbell_Raise",
-      "videoStatus": "needed"
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-front-raise.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
-      "name": "Crucifixo inverso",
+      "name": "Elevação posterior (crucifixo inverso)",
       "group": "Ombros",
       "equipment": "Halteres",
       "sourceId": "Reverse_Flyes",
       "videoStatus": "needed"
     },
     {
-      "name": "Face pull",
-      "group": "Ombros",
-      "equipment": "Cabo/polia",
-      "sourceId": "Face_Pull",
-      "videoStatus": "available",
-      "videoUrl": "https://ymove.app/api/free/d9b9cf47-c5ff-4672-b8a8-2fe5f4845231",
-      "license": "Uso comercial autorizado — pacote gratuito YMove",
-      "source": "https://ymove.app/free-exercise-videos"
-    },
-    {
-      "name": "Desenvolvimento sentado com barra",
+      "name": "Remada alta com barra",
       "group": "Ombros",
       "equipment": "Barra",
-      "sourceId": "Seated_Barbell_Military_Press",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Desenvolvimento em pé com barra",
-      "group": "Ombros",
-      "equipment": "Barra",
-      "sourceId": "Standing_Military_Press",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Desenvolvimento Arnold",
-      "group": "Ombros",
-      "equipment": "Halteres",
-      "sourceId": "Arnold_Dumbbell_Press",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Desenvolvimento unilateral com halter",
-      "group": "Ombros",
-      "equipment": "Halteres",
-      "sourceId": "Dumbbell_One-Arm_Shoulder_Press",
-      "videoStatus": "needed"
+      "sourceId": "selected-remada-alta-com-barra",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-upright-row-wide-grip.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
       "name": "Elevação lateral na polia",
@@ -395,52 +432,51 @@
       "source": "https://ymove.app/free-exercise-videos"
     },
     {
-      "name": "Elevação lateral na máquina",
-      "group": "Ombros",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Elevação lateral sentada",
+      "name": "Desenvolvimento unilateral",
       "group": "Ombros",
       "equipment": "Halteres",
-      "sourceId": "Seated_Side_Lateral_Raise",
+      "sourceId": "Dumbbell_One-Arm_Shoulder_Press",
       "videoStatus": "needed"
     },
     {
-      "name": "Elevação lateral no banco inclinado",
+      "name": "Elevação frontal na polia",
+      "group": "Ombros",
+      "equipment": "Cabo/polia",
+      "sourceId": "selected-elevacao-frontal-na-polia",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-one-arm-forward-raise.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Rotação externa com halter",
+      "group": "Ombros",
+      "equipment": "Conforme prescrição",
+      "sourceId": "External_Rotation_with_Dumbbell",
+      "videoStatus": "needed"
+    },
+    {
+      "name": "Rotação interna com elástico",
+      "group": "Ombros",
+      "equipment": "Conforme prescrição",
+      "sourceId": "selected-rotacao-interna-com-elastico",
+      "videoStatus": "needed"
+    },
+    {
+      "name": "Alongamento de ombro",
+      "group": "Mobilidade",
+      "equipment": "Peso corporal",
+      "sourceId": "selected-alongamento-de-ombro",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-rear-deltoid-stretch.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Elevação lateral inclinada",
       "group": "Ombros",
       "equipment": "Halteres",
       "sourceId": "One-Arm_Incline_Lateral_Raise",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Elevação frontal com barra",
-      "group": "Ombros",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Elevação frontal com anilha",
-      "group": "Ombros",
-      "equipment": "Outro",
-      "sourceId": "Front_Plate_Raise",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Crucifixo inverso na polia",
-      "group": "Ombros",
-      "equipment": "Cabo/polia",
-      "sourceId": "Cable_Rear_Delt_Fly",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Remada alta na polia",
-      "group": "Ombros",
-      "equipment": "Cabo/polia",
-      "sourceId": "Upright_Cable_Row",
       "videoStatus": "needed"
     },
     {
@@ -458,7 +494,10 @@
       "group": "Bíceps",
       "equipment": "Halteres",
       "sourceId": "Dumbbell_Alternate_Bicep_Curl",
-      "videoStatus": "needed"
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-alternate-seated-biceps-curl.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
       "name": "Rosca martelo",
@@ -471,56 +510,65 @@
       "source": "https://ymove.app/free-exercise-videos"
     },
     {
-      "name": "Rosca Scott",
-      "group": "Bíceps",
-      "equipment": "Barra",
-      "sourceId": "Preacher_Curl",
-      "videoStatus": "needed"
-    },
-    {
       "name": "Rosca concentrada",
       "group": "Bíceps",
       "equipment": "Halteres",
       "sourceId": "Concentration_Curls",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Rosca direta na polia com barra",
-      "group": "Bíceps",
-      "equipment": "Cabo/polia",
-      "sourceId": "Standing_Biceps_Cable_Curl",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Rosca direta com halteres",
-      "group": "Bíceps",
-      "equipment": "Halteres",
-      "sourceId": "Dumbbell_Bicep_Curl",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Rosca direta com barra W",
-      "group": "Bíceps",
-      "equipment": "Barra W",
-      "sourceId": "EZ-Bar_Curl",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Rosca Scott na máquina",
-      "group": "Bíceps",
-      "equipment": "Máquina",
-      "sourceId": "Machine_Preacher_Curls",
-      "videoStatus": "needed"
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-concentration-curl.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
       "name": "Rosca inclinada com halteres",
       "group": "Bíceps",
       "equipment": "Halteres",
       "sourceId": "Incline_Dumbbell_Curl",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-incline-biceps-curl.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Rosca na polia",
+      "group": "Bíceps",
+      "equipment": "Cabo/polia",
+      "sourceId": "Standing_Biceps_Cable_Curl",
       "videoStatus": "needed"
     },
     {
-      "name": "Rosca martelo com corda na polia",
+      "name": "Rosca scott",
+      "group": "Bíceps",
+      "equipment": "Barra",
+      "sourceId": "Preacher_Curl",
+      "videoStatus": "needed"
+    },
+    {
+      "name": "Rosca inversa",
+      "group": "Bíceps",
+      "equipment": "Barra",
+      "sourceId": "Reverse_Barbell_Curl",
+      "videoStatus": "needed"
+    },
+    {
+      "name": "Rosca 21",
+      "group": "Bíceps",
+      "equipment": "Conforme prescrição",
+      "sourceId": "selected-rosca-21",
+      "videoStatus": "needed"
+    },
+    {
+      "name": "Rosca unilateral na polia",
+      "group": "Bíceps",
+      "equipment": "Cabo/polia",
+      "sourceId": "Standing_One-Arm_Cable_Curl",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-one-arm-curl.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Rosca com corda",
       "group": "Bíceps",
       "equipment": "Cabo/polia",
       "sourceId": "Cable_Hammer_Curls_-_Rope_Attachment",
@@ -530,28 +578,24 @@
       "source": "https://ymove.app/free-exercise-videos"
     },
     {
-      "name": "Rosca inversa com barra",
-      "group": "Bíceps",
-      "equipment": "Barra",
-      "sourceId": "Reverse_Barbell_Curl",
+      "name": "Alongamento de bíceps",
+      "group": "Mobilidade",
+      "equipment": "Peso corporal",
+      "sourceId": "selected-alongamento-de-biceps",
       "videoStatus": "needed"
     },
     {
-      "name": "Rosca simultânea sentada",
-      "group": "Bíceps",
-      "equipment": "Halteres",
-      "sourceId": "Seated_Dumbbell_Curl",
-      "videoStatus": "needed"
+      "name": "Tríceps testa com barra",
+      "group": "Tríceps",
+      "equipment": "Barra W",
+      "sourceId": "EZ-Bar_Skullcrusher",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/ez-barbell-lying-triceps-extension.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
-      "name": "Rosca unilateral na polia",
-      "group": "Bíceps",
-      "equipment": "Cabo/polia",
-      "sourceId": "Standing_One-Arm_Cable_Curl",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Tríceps na polia com corda",
+      "name": "Tríceps corda na polia",
       "group": "Tríceps",
       "equipment": "Cabo/polia",
       "sourceId": "Triceps_Pushdown_-_Rope_Attachment",
@@ -561,55 +605,40 @@
       "source": "https://ymove.app/free-exercise-videos"
     },
     {
-      "name": "Tríceps na polia com barra",
-      "group": "Tríceps",
-      "equipment": "Cabo/polia",
-      "sourceId": "Triceps_Pushdown",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Tríceps testa",
-      "group": "Tríceps",
-      "equipment": "Barra W",
-      "sourceId": "EZ-Bar_Skullcrusher",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Tríceps francês com halter",
-      "group": "Tríceps",
-      "equipment": "Halteres",
-      "sourceId": "Seated_Triceps_Press",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Mergulho no banco",
-      "group": "Tríceps",
-      "equipment": "Peso corporal",
-      "sourceId": "Bench_Dips",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Supino fechado com barra",
-      "group": "Tríceps",
-      "equipment": "Barra",
-      "sourceId": "Close-Grip_Barbell_Bench_Press",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Tríceps francês com corda na polia",
-      "group": "Tríceps",
-      "equipment": "Cabo/polia",
-      "sourceId": "Cable_Rope_Overhead_Triceps_Extension",
-      "videoStatus": "available",
-      "videoUrl": "https://ymove.app/api/free/a1c3384e-62db-4595-9b97-df2e7f131234",
-      "license": "Uso comercial autorizado — pacote gratuito YMove",
-      "source": "https://ymove.app/free-exercise-videos"
-    },
-    {
       "name": "Tríceps testa com halteres",
       "group": "Tríceps",
       "equipment": "Halteres",
       "sourceId": "Lying_Dumbbell_Tricep_Extension",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-lying-triceps-extension.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Tríceps coice",
+      "group": "Tríceps",
+      "equipment": "Halteres",
+      "sourceId": "Tricep_Dumbbell_Kickback",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-kickback.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Tríceps francês",
+      "group": "Tríceps",
+      "equipment": "Halteres",
+      "sourceId": "Seated_Triceps_Press",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-seated-triceps-extension.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Extensão de tríceps acima da cabeça",
+      "group": "Tríceps",
+      "equipment": "Conforme prescrição",
+      "sourceId": "selected-extensao-de-triceps-acima-da-cabeca",
       "videoStatus": "needed"
     },
     {
@@ -617,45 +646,40 @@
       "group": "Tríceps",
       "equipment": "Cabo/polia",
       "sourceId": "Cable_One_Arm_Tricep_Extension",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-standing-one-arm-triceps-extension.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Tríceps no banco com peso",
+      "group": "Tríceps",
+      "equipment": "Conforme prescrição",
+      "sourceId": "selected-triceps-no-banco-com-peso",
       "videoStatus": "needed"
     },
     {
-      "name": "Tríceps coice com halter",
+      "name": "Extensão de tríceps na polia",
       "group": "Tríceps",
-      "equipment": "Halteres",
-      "sourceId": "Tricep_Dumbbell_Kickback",
-      "videoStatus": "needed"
+      "equipment": "Cabo/polia",
+      "sourceId": "Triceps_Pushdown",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-triceps-pushdown.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
-      "name": "Tríceps coice na polia",
-      "group": "Tríceps",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Extensão de tríceps na máquina",
-      "group": "Tríceps",
-      "equipment": "Máquina",
-      "sourceId": "Machine_Triceps_Extension",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Tríceps nas paralelas",
-      "group": "Tríceps",
+      "name": "Alongamento de tríceps",
+      "group": "Mobilidade",
       "equipment": "Peso corporal",
-      "sourceId": "Dips_-_Triceps_Version",
-      "videoStatus": "needed"
+      "sourceId": "selected-alongamento-de-triceps",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-kneeling-triceps-extension.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
-      "name": "Extensão de tríceps acima da cabeça na polia com barra",
-      "group": "Tríceps",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Agachamento livre",
+      "name": "Agachamento livre com barra",
       "group": "Quadríceps",
       "equipment": "Barra",
       "sourceId": "Barbell_Squat",
@@ -665,59 +689,14 @@
       "source": "https://ymove.app/free-exercise-videos"
     },
     {
-      "name": "Agachamento no Smith",
-      "group": "Quadríceps",
-      "equipment": "Máquina",
-      "sourceId": "Smith_Machine_Squat",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Leg press 45 graus",
-      "group": "Quadríceps",
-      "equipment": "Máquina",
-      "sourceId": "Leg_Press",
-      "videoStatus": "available",
-      "videoUrl": "/media/exercises/371.mp4",
-      "license": "CC BY-SA 4.0",
-      "source": "https://wger.de/api/v2/video/44/?format=json"
-    },
-    {
-      "name": "Cadeira extensora",
-      "group": "Quadríceps",
-      "equipment": "Máquina",
-      "sourceId": "Leg_Extensions",
-      "videoStatus": "available",
-      "videoUrl": "https://ymove.app/api/free/af0c3d19-5ee2-4a19-8688-f8504bb33e3c",
-      "license": "Uso comercial autorizado — pacote gratuito YMove",
-      "source": "https://ymove.app/free-exercise-videos"
-    },
-    {
-      "name": "Afundo com halteres",
-      "group": "Quadríceps",
-      "equipment": "Halteres",
-      "sourceId": "Dumbbell_Lunges",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Agachamento búlgaro",
-      "group": "Quadríceps",
-      "equipment": "Halteres",
-      "sourceId": "Split_Squat_with_Dumbbells",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Agachamento no hack",
-      "group": "Quadríceps",
-      "equipment": "Máquina",
-      "sourceId": "Hack_Squat",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Agachamento frontal com barra",
+      "name": "Agachamento frontal",
       "group": "Quadríceps",
       "equipment": "Barra",
       "sourceId": "Front_Barbell_Squat",
-      "videoStatus": "needed"
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-front-chest-squat.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
       "name": "Agachamento goblet",
@@ -730,95 +709,71 @@
       "source": "https://ymove.app/free-exercise-videos"
     },
     {
-      "name": "Agachamento sumô com halter",
+      "name": "Leg press",
       "group": "Quadríceps",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
+      "equipment": "Máquina",
+      "sourceId": "Leg_Press",
+      "videoStatus": "available",
+      "videoUrl": "/media/exercises/371.mp4",
+      "license": "CC BY-SA 4.0",
+      "source": "https://wger.de/api/v2/video/44/?format=json"
     },
     {
-      "name": "Agachamento na caixa",
+      "name": "Afundo com barra",
       "group": "Quadríceps",
       "equipment": "Barra",
-      "sourceId": "Box_Squat",
-      "videoStatus": "needed"
+      "sourceId": "selected-afundo-com-barra",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-lunge.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
-      "name": "Agachamento no TRX",
-      "group": "Quadríceps",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Agachamento com halteres",
+      "name": "Afundo com halteres",
       "group": "Quadríceps",
       "equipment": "Halteres",
-      "sourceId": "Dumbbell_Squat",
+      "sourceId": "Dumbbell_Lunges",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-lunge.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Afundo caminhando",
+      "group": "Quadríceps",
+      "equipment": "Conforme prescrição",
+      "sourceId": "selected-afundo-caminhando",
       "videoStatus": "needed"
     },
     {
-      "name": "Agachamento pistol assistido",
-      "group": "Quadríceps",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Leg press horizontal",
-      "group": "Quadríceps",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Leg press unilateral",
-      "group": "Quadríceps",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Cadeira extensora unilateral",
-      "group": "Quadríceps",
-      "equipment": "Máquina",
-      "sourceId": "Single-Leg_Leg_Extension",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Passada caminhando com halteres",
-      "group": "Quadríceps",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Subida no banco com halteres",
-      "group": "Quadríceps",
-      "equipment": "Halteres",
-      "sourceId": "Dumbbell_Step_Ups",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Afundo no Smith",
-      "group": "Quadríceps",
-      "equipment": "Máquina",
-      "sourceId": "Smith_Single-Leg_Split_Squat",
-      "videoStatus": "needed"
+      "name": "Stiff com barra",
+      "group": "Posteriores e glúteos",
+      "equipment": "Barra",
+      "sourceId": "Stiff-Legged_Barbell_Deadlift",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-straight-leg-deadlift.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
       "name": "Stiff com halteres",
       "group": "Posteriores e glúteos",
       "equipment": "Halteres",
       "sourceId": "Stiff-Legged_Dumbbell_Deadlift",
-      "videoStatus": "needed"
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-stiff-leg-deadlift.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
-      "name": "Levantamento terra romeno",
-      "group": "Posteriores e glúteos",
-      "equipment": "Barra",
-      "sourceId": "Romanian_Deadlift",
-      "videoStatus": "needed"
+      "name": "Cadeira extensora",
+      "group": "Quadríceps",
+      "equipment": "Máquina",
+      "sourceId": "Leg_Extensions",
+      "videoStatus": "available",
+      "videoUrl": "https://ymove.app/api/free/af0c3d19-5ee2-4a19-8688-f8504bb33e3c",
+      "license": "Uso comercial autorizado — pacote gratuito YMove",
+      "source": "https://ymove.app/free-exercise-videos"
     },
     {
       "name": "Mesa flexora",
@@ -831,244 +786,197 @@
       "source": "https://ymove.app/free-exercise-videos"
     },
     {
-      "name": "Cadeira flexora",
-      "group": "Posteriores e glúteos",
-      "equipment": "Máquina",
-      "sourceId": "Seated_Leg_Curl",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Elevação pélvica com barra",
-      "group": "Posteriores e glúteos",
-      "equipment": "Barra",
-      "sourceId": "Barbell_Hip_Thrust",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Glúteo na polia",
-      "group": "Posteriores e glúteos",
-      "equipment": "Cabo/polia",
-      "sourceId": "One-Legged_Cable_Kickback",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Cadeira abdutora",
-      "group": "Posteriores e glúteos",
-      "equipment": "Máquina",
-      "sourceId": "Thigh_Abductor",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Stiff com barra",
-      "group": "Posteriores e glúteos",
-      "equipment": "Barra",
-      "sourceId": "Stiff-Legged_Barbell_Deadlift",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Levantamento terra com barra",
-      "group": "Posteriores e glúteos",
-      "equipment": "Barra",
-      "sourceId": "Barbell_Deadlift",
-      "videoStatus": "available",
-      "videoUrl": "https://ymove.app/api/free/b59952ca-1551-4c07-835d-ab78bfe9953c",
-      "license": "Uso comercial autorizado — pacote gratuito YMove",
-      "source": "https://ymove.app/free-exercise-videos"
-    },
-    {
-      "name": "Levantamento terra sumô com barra",
-      "group": "Posteriores e glúteos",
-      "equipment": "Barra",
-      "sourceId": "Sumo_Deadlift",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Levantamento terra romeno com halteres",
-      "group": "Posteriores e glúteos",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Stiff unilateral com halter",
-      "group": "Posteriores e glúteos",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Flexora em pé unilateral",
+      "name": "Flexora em pé",
       "group": "Posteriores e glúteos",
       "equipment": "Máquina",
       "sourceId": "Standing_Leg_Curl",
       "videoStatus": "needed"
     },
     {
-      "name": "Mesa flexora unilateral",
-      "group": "Posteriores e glúteos",
-      "equipment": null,
-      "sourceId": null,
+      "name": "Agachamento sumô",
+      "group": "Quadríceps",
+      "equipment": "Conforme prescrição",
+      "sourceId": "selected-agachamento-sumo",
       "videoStatus": "needed"
     },
     {
-      "name": "Flexão de joelhos na bola suíça",
-      "group": "Posteriores e glúteos",
-      "equipment": "Bola suíça",
-      "sourceId": "Ball_Leg_Curl",
+      "name": "Agachamento búlgaro",
+      "group": "Quadríceps",
+      "equipment": "Halteres",
+      "sourceId": "Split_Squat_with_Dumbbells",
       "videoStatus": "needed"
     },
     {
-      "name": "Flexão de joelhos com elástico",
+      "name": "Hip thrust",
       "group": "Posteriores e glúteos",
-      "equipment": "Outro",
-      "sourceId": "Seated_Band_Hamstring_Curl",
+      "equipment": "Barra",
+      "sourceId": "Barbell_Hip_Thrust",
       "videoStatus": "needed"
     },
     {
-      "name": "Flexão nórdica assistida",
-      "group": "Posteriores e glúteos",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Elevação pélvica com halter",
-      "group": "Posteriores e glúteos",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Elevação pélvica na máquina",
-      "group": "Posteriores e glúteos",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Ponte de glúteos no solo",
+      "name": "Ponte de glúteo",
       "group": "Posteriores e glúteos",
       "equipment": "Peso corporal",
       "sourceId": "Butt_Lift_Bridge",
       "videoStatus": "needed"
     },
     {
-      "name": "Ponte de glúteos unilateral",
+      "name": "Abdução de quadril",
       "group": "Posteriores e glúteos",
-      "equipment": "Peso corporal",
-      "sourceId": "Single_Leg_Glute_Bridge",
+      "equipment": "Máquina",
+      "sourceId": "Thigh_Abductor",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/lever-seated-hip-abduction.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Adução de quadril",
+      "group": "Posteriores e glúteos",
+      "equipment": "Máquina",
+      "sourceId": "Thigh_Adductor",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/lever-seated-hip-adduction.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Passada lateral",
+      "group": "Quadríceps",
+      "equipment": "Conforme prescrição",
+      "sourceId": "selected-passada-lateral",
       "videoStatus": "needed"
     },
     {
-      "name": "Abdução de quadril na polia",
-      "group": "Posteriores e glúteos",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
+      "name": "Agachamento unilateral",
+      "group": "Quadríceps",
+      "equipment": "Halteres",
+      "sourceId": "selected-agachamento-unilateral",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-single-leg-squat.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
-      "name": "Abdução de quadril com elástico",
-      "group": "Posteriores e glúteos",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Extensão de quadril em quatro apoios",
-      "group": "Posteriores e glúteos",
-      "equipment": "Peso corporal",
-      "sourceId": "Glute_Kickback",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Panturrilha em pé",
+      "name": "Elevação de panturrilha em pé",
       "group": "Panturrilhas",
       "equipment": "Máquina",
       "sourceId": "Standing_Calf_Raises",
-      "videoStatus": "needed"
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/lever-standing-calf-raise.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
-      "name": "Panturrilha sentada",
+      "name": "Elevação de panturrilha sentado",
       "group": "Panturrilhas",
       "equipment": "Máquina",
       "sourceId": "Seated_Calf_Raise",
       "videoStatus": "needed"
     },
     {
-      "name": "Panturrilha no leg press",
-      "group": "Panturrilhas",
-      "equipment": "Máquina",
-      "sourceId": "Calf_Press_On_The_Leg_Press_Machine",
+      "name": "Agachamento na parede",
+      "group": "Quadríceps",
+      "equipment": "Conforme prescrição",
+      "sourceId": "Wall_Squat",
       "videoStatus": "needed"
     },
     {
-      "name": "Panturrilha unilateral",
-      "group": "Panturrilhas",
-      "equipment": null,
-      "sourceId": null,
+      "name": "Alongamento de quadríceps / posterior",
+      "group": "Mobilidade",
+      "equipment": "Peso corporal",
+      "sourceId": "selected-alongamento-de-quadriceps-posterior",
       "videoStatus": "needed"
     },
     {
-      "name": "Panturrilha no Smith",
-      "group": "Panturrilhas",
-      "equipment": "Máquina",
-      "sourceId": "Smith_Machine_Calf_Raise",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Panturrilha no hack",
-      "group": "Panturrilhas",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Panturrilha no step com halteres",
-      "group": "Panturrilhas",
-      "equipment": "Halteres",
-      "sourceId": "Standing_Dumbbell_Calf_Raise",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Panturrilha na máquina em pé",
-      "group": "Panturrilhas",
-      "equipment": "Máquina",
-      "sourceId": "Standing_Calf_Raises",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Prancha abdominal",
+      "name": "Prancha frontal",
       "group": "Abdômen e core",
       "equipment": "Peso corporal",
       "sourceId": "Plank",
-      "videoStatus": "needed"
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/front-plank-female.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
       "name": "Prancha lateral",
       "group": "Abdômen e core",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
+      "equipment": "Peso corporal",
+      "sourceId": "selected-prancha-lateral",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/side-bridge-side-plank.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
-      "name": "Abdominal no solo",
+      "name": "Abdominal crunch",
       "group": "Abdômen e core",
       "equipment": "Peso corporal",
       "sourceId": "Crunches",
-      "videoStatus": "needed"
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/crunch-floor-female.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
-      "name": "Abdominal bicicleta",
+      "name": "Abdominal infra",
+      "group": "Abdômen e core",
+      "equipment": "Peso corporal",
+      "sourceId": "Reverse_Crunch",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/female/reverse-crunch-female.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Abdominal oblíquo",
+      "group": "Abdômen e core",
+      "equipment": "Peso corporal",
+      "sourceId": "Cross-Body_Crunch",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/twisting-crunch.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Abdominal na polia",
+      "group": "Abdômen e core",
+      "equipment": "Cabo/polia",
+      "sourceId": "Cable_Crunch",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/cable-kneeling-crunch.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Elevação de pernas",
+      "group": "Abdômen e core",
+      "equipment": "Peso corporal",
+      "sourceId": "Flat_Bench_Lying_Leg_Raise",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/lying-floor-leg-raise.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Bicicleta",
       "group": "Abdômen e core",
       "equipment": "Peso corporal",
       "sourceId": "Air_Bike",
       "videoStatus": "needed"
     },
     {
-      "name": "Abdominal infra no banco",
+      "name": "Abdominal no banco declinado",
       "group": "Abdômen e core",
       "equipment": "Peso corporal",
-      "sourceId": "Flat_Bench_Lying_Leg_Raise",
+      "sourceId": "Decline_Crunch",
+      "videoStatus": "needed"
+    },
+    {
+      "name": "Rotação russa",
+      "group": "Abdômen e core",
+      "equipment": "Peso corporal",
+      "sourceId": "Russian_Twist",
       "videoStatus": "needed"
     },
     {
@@ -1079,235 +987,176 @@
       "videoStatus": "needed"
     },
     {
-      "name": "Abdominal na polia alta",
+      "name": "Bird dog",
       "group": "Abdômen e core",
-      "equipment": "Cabo/polia",
-      "sourceId": "Cable_Crunch",
+      "equipment": "Peso corporal",
+      "sourceId": "selected-bird-dog",
       "videoStatus": "needed"
     },
     {
-      "name": "Abdominal na máquina",
-      "group": "Abdômen e core",
-      "equipment": "Máquina",
-      "sourceId": "Ab_Crunch_Machine",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Abdominal na bola suíça",
+      "name": "Abdominal com bola",
       "group": "Abdômen e core",
       "equipment": "Bola suíça",
       "sourceId": "Exercise_Ball_Crunch",
-      "videoStatus": "needed"
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/sit-up-on-exercise-ball.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
-      "name": "Abdominal remador",
-      "group": "Abdômen e core",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Abdominal reverso",
-      "group": "Abdômen e core",
+      "name": "Alongamento de core",
+      "group": "Mobilidade",
       "equipment": "Peso corporal",
-      "sourceId": "Reverse_Crunch",
+      "sourceId": "selected-alongamento-de-core",
       "videoStatus": "needed"
     },
     {
-      "name": "Elevação de pernas na barra",
-      "group": "Abdômen e core",
+      "name": "Panturrilha em pé com barra",
+      "group": "Panturrilhas",
+      "equipment": "Conforme prescrição",
+      "sourceId": "selected-panturrilha-em-pe-com-barra",
+      "videoStatus": "needed"
+    },
+    {
+      "name": "Panturrilha unilateral",
+      "group": "Panturrilhas",
+      "equipment": "Halteres",
+      "sourceId": "selected-panturrilha-unilateral",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-single-leg-calf-raise.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Rosca de punho",
+      "group": "Antebraços",
+      "equipment": "Halteres",
+      "sourceId": "selected-rosca-de-punho",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/dumbbell-over-bench-wrist-curl.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Rosca inversa de punho",
+      "group": "Antebraços",
+      "equipment": "Barra",
+      "sourceId": "selected-rosca-inversa-de-punho",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/barbell-reverse-wrist-curl-over-grip.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Alongamento de panturrilha",
+      "group": "Mobilidade",
       "equipment": "Peso corporal",
-      "sourceId": "Hanging_Leg_Raise",
-      "videoStatus": "needed"
+      "sourceId": "selected-alongamento-de-panturrilha",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-seated-calf-stretch.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
-      "name": "Elevação de joelhos nas paralelas",
-      "group": "Abdômen e core",
-      "equipment": "Outro",
-      "sourceId": "Knee_Hip_Raise_On_Parallel_Bars",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Prancha com toque nos ombros",
-      "group": "Abdômen e core",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Prancha com braços estendidos",
-      "group": "Abdômen e core",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Prancha lateral com elevação de quadril",
-      "group": "Abdômen e core",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Pallof press na polia",
-      "group": "Abdômen e core",
-      "equipment": "Cabo/polia",
-      "sourceId": "Pallof_Press",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Pallof press com elástico",
-      "group": "Abdômen e core",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Rotação de tronco na polia",
-      "group": "Abdômen e core",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Abdominal oblíquo no solo",
-      "group": "Abdômen e core",
+      "name": "Alongamento de antebraço",
+      "group": "Mobilidade",
       "equipment": "Peso corporal",
-      "sourceId": "Cross-Body_Crunch",
+      "sourceId": "selected-alongamento-de-antebraco",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-side-wrist-pull-stretch.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Alongamento de flexores de quadril",
+      "group": "Mobilidade",
+      "equipment": "Peso corporal",
+      "sourceId": "selected-alongamento-de-flexores-de-quadril",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-hip-flexor-and-quad-stretch.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
+    },
+    {
+      "name": "Alongamento de adutores",
+      "group": "Mobilidade",
+      "equipment": "Peso corporal",
+      "sourceId": "selected-alongamento-de-adutores",
       "videoStatus": "needed"
     },
     {
-      "name": "Hollow hold",
-      "group": "Abdômen e core",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
+      "name": "Mobilidade de ombro",
+      "group": "Mobilidade",
+      "equipment": "Elástico",
+      "sourceId": "selected-mobilidade-de-ombro",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-band-warm-up-shoulder-stretch.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
-      "name": "Bird dog",
-      "group": "Abdômen e core",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
+      "name": "Mobilidade de quadril",
+      "group": "Mobilidade",
+      "equipment": "Peso corporal",
+      "sourceId": "selected-mobilidade-de-quadril",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stretching-hip-circles-stretch.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
-      "name": "Roda abdominal",
-      "group": "Abdômen e core",
-      "equipment": "Outro",
-      "sourceId": "Ab_Roller",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Prancha na bola suíça",
-      "group": "Abdômen e core",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Caminhada na esteira",
+      "name": "Burpee",
       "group": "Cardio",
-      "equipment": "Máquina",
-      "sourceId": "Walking_Treadmill",
-      "videoStatus": "needed"
+      "equipment": "Peso corporal",
+      "sourceId": "selected-burpee",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/burpee.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
-      "name": "Corrida na esteira",
+      "name": "Polichinelo",
       "group": "Cardio",
-      "equipment": "Máquina",
-      "sourceId": "Running_Treadmill",
+      "equipment": "Conforme prescrição",
+      "sourceId": "selected-polichinelo",
       "videoStatus": "needed"
     },
     {
-      "name": "Bicicleta ergométrica",
+      "name": "Corrida estacionária",
+      "group": "Cardio",
+      "equipment": "Conforme prescrição",
+      "sourceId": "selected-corrida-estacionaria",
+      "videoStatus": "needed"
+    },
+    {
+      "name": "Bike",
       "group": "Cardio",
       "equipment": "Máquina",
       "sourceId": "Bicycling_Stationary",
-      "videoStatus": "needed"
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/stationary-bike.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
-      "name": "Elíptico",
+      "name": "Esteira",
       "group": "Cardio",
       "equipment": "Máquina",
-      "sourceId": "Elliptical_Trainer",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Remo ergômetro",
-      "group": "Cardio",
-      "equipment": "Máquina",
-      "sourceId": "Rowing_Stationary",
-      "videoStatus": "needed"
+      "sourceId": "Running_Treadmill",
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/treadmill-running.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
       "name": "Pular corda",
       "group": "Cardio",
       "equipment": "Outro",
       "sourceId": "Rope_Jumping",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Corrida ao ar livre",
-      "group": "Cardio",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Caminhada ao ar livre",
-      "group": "Cardio",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Bicicleta de spinning",
-      "group": "Cardio",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Bicicleta ergométrica horizontal",
-      "group": "Cardio",
-      "equipment": "Máquina",
-      "sourceId": "Recumbent_Bike",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Escada ergométrica",
-      "group": "Cardio",
-      "equipment": "Máquina",
-      "sourceId": "Stairmaster",
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Ski ergômetro",
-      "group": "Cardio",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Air bike",
-      "group": "Cardio",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Polichinelo",
-      "group": "Cardio",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Corrida estacionária",
-      "group": "Cardio",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
+      "videoStatus": "preview-only",
+      "videoUrl": "https://pub-585d42eb1aa64a67aedf483ec328d3fe.r2.dev/exercise-videos/male/jump-rope.mp4",
+      "license": "Demonstração em teste",
+      "source": "https://github.com/luisaraujoc/free-exercise-db-api/tree/38c5670c3210f69268a0255bdb2cb3edcb596c46"
     },
     {
       "name": "Mountain climber",
@@ -1317,17 +1166,10 @@
       "videoStatus": "needed"
     },
     {
-      "name": "Burpee",
-      "group": "Cardio",
-      "equipment": null,
-      "sourceId": null,
-      "videoStatus": "needed"
-    },
-    {
-      "name": "Subida alternada no step",
-      "group": "Cardio",
-      "equipment": null,
-      "sourceId": null,
+      "name": "Step-up",
+      "group": "Quadríceps",
+      "equipment": "Halteres",
+      "sourceId": "Dumbbell_Step_Ups",
       "videoStatus": "needed"
     }
   ]

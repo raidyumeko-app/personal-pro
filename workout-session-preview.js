@@ -45,6 +45,7 @@
       [imageFailed, setImageFailed] = R.useState(false),
       [reps, setReps] = R.useState(""),
       [videoFailed, setVideoFailed] = R.useState(false),
+      [videoVariant, setVideoVariant] = R.useState("male"),
       [playing, setPlaying] = R.useState(false),
       [saving, setSaving] = R.useState(false),
       [effort, setEffort] = R.useState(null),
@@ -329,8 +330,8 @@
                             R.Fragment,
                             null,
                             h("video", {
-                              key: original.video.url,
-                              src: original.video.url,
+                              key: original.video.url + videoVariant,
+                              src: original.video.variants?.[videoVariant] || original.video.url,
                               poster: media,
                               controls: true,
                               playsInline: true,
@@ -376,6 +377,7 @@
                             : "Sem mídia demonstrativa disponível",
                         ),
                     ),
+                    original.video?.variants && Object.keys(original.video.variants).length > 1 && h("label",{className:"pp-field"},"Demonstração",h("select",{"aria-label":"Modelo da demonstração",value:videoVariant,onChange:event=>{setVideoVariant(event.target.value);setVideoFailed(false);}},h("option",{value:"male"},"Masculino"),h("option",{value:"female"},"Feminino"))),
                     original.video &&
                       h(
                         "p",
