@@ -37,6 +37,7 @@
       revision: s.revision,
       effort: s.effort,
       studentNote: s.student_note,
+      feedbackSeenAt: s.feedback_seen_at || null,
       congratulations: s.congratulations,
       prescription: s.prescription,
     };
@@ -47,6 +48,11 @@
     write,
     uid,
     fromServer,
+    markFeedbackSeen: id => rpc('pp_mark_feedback_seen', {p_session_id:id}),
+    feedbackReceipts(ids) {
+      const valid=ids.filter(id=>/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)).slice(0,100);
+      return valid.length ? rows('pp_sessions_v2','select=id,feedback_seen_at&id=in.('+valid.join(',')+')&completed_at=not.is.null') : Promise.resolve([]);
+    },
     async member() {
       return (
         (await rows("pp_members", "select=*&user_id=eq." + uid()))[0] || null

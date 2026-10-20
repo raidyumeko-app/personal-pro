@@ -14,9 +14,9 @@
     const h = R.createElement,
       [sessions, setSessions] = R.useState([]),
       [links, setLinks] = R.useState([]),
-      [messages, setMessages] = R.useState({}),
       [error, setError] = R.useState(""),
       [busy, setBusy] = R.useState("");
+    const marking = R.useRef(false);
     async function refresh() {
       try {
         const [s, l] = await Promise.all([
@@ -225,58 +225,21 @@
                     (s.effort || "Sem avaliação de esforço"),
                 ),
                 s.student_note && h("p", null, s.student_note),
-                s.congratulations
-                  ? h(
-                      "p",
-                      { className: "portal-encouragement" },
-                      "Sua mensagem: " + s.congratulations,
-                    )
-                  : h(
-                      "div",
-                      null,
-                      h(
-                        "label",
-                        { className: "pp-field" },
-                        "Mensagem de incentivo",
-                        h("input", {
-                          maxLength: 500,
-                          value:
-                            messages[s.id] ??
-                            "Parabéns pelo treino! Continue firme.",
-                          onChange: (e) =>
-                            setMessages((old) => ({
-                              ...old,
-                              [s.id]: e.target.value,
-                            })),
-                        }),
-                      ),
-                      h(
-                        "button",
-                        {
-                          type: "button",
-                          className: "pp-primary",
-                          disabled: busy === s.id,
-                          onClick: async () => {
-                            setBusy(s.id);
-                            setError("");
-                            try {
-                              await root.PersonalProAPI.rpc("pp_congratulate", {
-                                p_session_id: s.id,
-                                p_message:
-                                  messages[s.id] ??
-                                  "Parabéns pelo treino! Continue firme.",
-                              });
-                              await refresh();
-                            } catch (e) {
-                              setError(e.message);
-                            } finally {
-                              setBusy("");
-                            }
-                          },
-                        },
-                        "Parabenizar",
-                      ),
-                    ),
+                h(root.PersonalProFeedback.Status, {
+                  React: R, trainer: true, seenAt: s.feedback_seen_at,
+                  busy: Boolean(busy),
+                  onMark: async () => {
+                    if (marking.current) return;
+                    marking.current = true;
+                    setBusy(s.id); setError("");
+                    try {
+                      const seenAt = await root.PersonalProAPI.markFeedbackSeen(s.id);
+                      if (!seenAt) throw Error("Não foi possível confirmar a leitura. Tente novamente.");
+                      setSessions(list => list.map(item => item.id === s.id ? {...item, feedback_seen_at: seenAt} : item));
+                    } catch (e) { setError(e.message); }
+                    finally { marking.current = false; setBusy(""); }
+                  },
+                }),
               );
             }),
       ),

@@ -556,6 +556,26 @@
       root.addEventListener('focus', recheck);
       return () => { clearTimeout(timer); root.removeEventListener('focus', recheck); };
     }, [access]);
+    const pendingReceiptIds = sessions.filter(s=>s.completedAt&&!s.feedbackSeenAt).map(s=>s.id).join(',');
+    R.useEffect(() => {
+      if (!access?.active || !pendingReceiptIds || !API().feedbackReceipts) return;
+      let disposed=false, pending=false;
+      const sync=async()=>{
+        if(pending) return;
+        pending=true;
+        try {
+          const receipts=await API().feedbackReceipts(pendingReceiptIds.split(','));
+          if(!disposed) setSessions(list=>list.map(s=>{
+            const receipt=receipts.find(item=>item.id===s.id);
+            return receipt?.feedback_seen_at ? {...s,feedbackSeenAt:receipt.feedback_seen_at} : s;
+          }));
+        } catch (_) { /* A failed read never invents a green receipt. Retry on next tick/focus. */ }
+        finally { pending=false; }
+      };
+      const timer=setInterval(sync,15000);
+      root.addEventListener('focus',sync);
+      return()=>{disposed=true;clearInterval(timer);root.removeEventListener('focus',sync)};
+    },[access?.active,pendingReceiptIds]);
     if (!access?.active) return el('main',{className:'portal-auth'},el('section',{className:'portal-card'},
       title('PERSONAL PRO', !loaded ? 'Conferindo seu acesso…' : access ? 'Seu período gratuito terminou.' : 'Não foi possível conferir seu acesso.'),
       loaded && el('p',null,'O aluno tem 30 dias grátis. Depois, a assinatura de R$ 9,90/mês libera treinos, nutrição e evolução. Não há opção com anúncios. Seus dados e o vínculo com o personal são preservados.'),
@@ -679,6 +699,7 @@
                       ),
                       summary.effort &&
                         el("p", null, "Seu esforço: " + summary.effort),
+                      el(root.PersonalProFeedback.Status, {React:R,seenAt:sessions.find(s=>s.id===summary.id)?.feedbackSeenAt}),
                       btn("Continuar", () => setSummary(null)),
                     ),
                   el(
@@ -765,21 +786,12 @@
                       );
                     }),
                   ),
-                  completed
-                    .filter((s) => s.congratulations)
-                    .slice(0, 3)
-                    .map((s) =>
-                      el(
-                        "article",
-                        { key: s.id, className: "portal-encouragement" },
-                        el(
-                          "small",
-                          null,
-                          "DO SEU PERSONAL · " + date(s.completedAt),
-                        ),
-                        el("p", null, s.congratulations),
-                      ),
+                  completed.slice(0, 3).map((s) =>
+                    el("article", {key:s.id,className:"portal-feedback-summary"},
+                      el("small", null, "Treino " + s.workoutId + " · " + date(s.completedAt)),
+                      el(root.PersonalProFeedback.Status, {React:R,seenAt:s.feedbackSeenAt}),
                     ),
+                  ),
                 ),
               tab === "evolution" && el(Evolution, { student, sessions, plus,onUpgrade:()=>setTab('nutrition') }),
               tab === "history" &&
@@ -794,6 +806,7 @@
                           "article",
                           { key: s.id, className: "portal-card" },
                           el("h3", null, "Treino " + s.workoutId),
+                          el(root.PersonalProFeedback.Status, {React:R,seenAt:s.feedbackSeenAt}),
                           el("p", null, date(s.completedAt)),
                           el(
                             "p",
