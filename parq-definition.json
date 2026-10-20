@@ -1,0 +1,16 @@
+{
+  "version": "ms-cab38-2014-anexo-f-v1",
+  "title": "PAR-Q — prontidão para atividade física",
+  "sourceTitle": "Ministério da Saúde · Cadernos de Atenção Básica nº 38 · 2014 · Anexo F (Q-PAF), p. 194",
+  "sourceUrl": "https://bvsms.saude.gov.br/bvs/publicacoes/estrategias_cuidado_doenca_cronica_obesidade_cab38.pdf",
+  "questions": [
+    "Seu médico já mencionou alguma vez que você tem uma condição cardíaca e que você só deve realizar atividade física recomendada por um médico?",
+    "Você sente dor no tórax quando realiza atividade física?",
+    "No mês passado, você teve dor torácica quando não estava realizando atividade física?",
+    "Você perdeu o equilíbrio por causa de tontura ou alguma vez perdeu a consciência?",
+    "Você tem algum problema ósseo ou de articulação que poderia piorar em consequência de uma alteração em sua atividade física?",
+    "Seu médico está prescrevendo medicamentos (por exemplo, água pílulas) para sua pressão ou condição cardíaca?",
+    "Conhece alguma outra razão pela qual você não deveria praticar atividade física?"
+  ],
+  "consent": "Confirmo que estas são minhas respostas e autorizo o compartilhamento deste questionário de saúde com meu personal vinculado para acompanhamento da atividade física."
+}

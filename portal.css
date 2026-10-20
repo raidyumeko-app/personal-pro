@@ -52,3 +52,26 @@ button:disabled{opacity:.5;cursor:default}button{touch-action:manipulation}butto
 html{scroll-padding-bottom:110px}button,input,select,textarea{scroll-margin-block:20px 110px}
 
 .pp-feedback-receipt{display:inline-flex;align-items:center;gap:8px;color:#a8b0b8;font-size:13px;line-height:1.4;padding:8px 10px;border:1px solid #59616a;border-radius:10px;background:transparent;max-width:100%;text-align:left}.pp-feedback-receipt.is-seen{color:#65d98b;border-color:#356a46;background:#18322255}.pp-feedback-check{font-size:18px;font-weight:700;letter-spacing:-7px;padding-right:7px;flex-shrink:0}.pp-feedback-receipt:disabled{cursor:wait;opacity:.7}.pp-feedback-receipt:focus-visible{outline:2px solid var(--lime);outline-offset:3px}.portal-feedback-summary{display:grid;gap:8px;padding:12px 0}.portal-feedback-summary small{color:var(--text-dim)}
+
+/* PAR-Q shares the assessment workspace and remains readable on small screens. */
+.pp-parq{padding:20px;margin-bottom:18px;display:grid;gap:14px;min-width:0}
+.pp-parq h3{font-size:21px;line-height:1.25;font-weight:800}
+.pp-parq-questions{display:grid;gap:12px;margin:12px 0}
+.pp-parq fieldset{min-width:0;padding:14px;border:1px solid var(--border,#333);border-radius:14px;background:var(--surface-2,#191d25)}
+.pp-parq legend{float:left;width:100%;line-height:1.5;font-size:14px;font-weight:600;margin-bottom:12px}
+.pp-parq-options{display:flex;gap:10px;clear:both}
+.pp-parq-options label{display:flex;gap:9px;align-items:center;justify-content:center;min-height:44px;flex:1;border:1px solid var(--border,#444);border-radius:12px;cursor:pointer}
+.pp-parq-options label.selected{border-color:var(--lime,#c5f56a);background:rgba(197,245,106,.10)}
+.pp-parq input{accent-color:var(--lime,#c5f56a)}
+.pp-parq fieldset:disabled{opacity:1}
+.pp-parq fieldset:disabled label{cursor:default}
+.pp-parq-consent{display:flex;align-items:flex-start;gap:10px;font-size:13px;line-height:1.6;margin:18px 0}
+.pp-parq-consent input{margin-top:5px;flex-shrink:0;width:18px;height:18px}
+.pp-parq button{margin:6px 8px 6px 0;min-height:44px;white-space:normal}
+.pp-parq-status{padding:12px 14px;border-radius:12px;background:var(--surface-3,#272b35);font-weight:700}
+.pp-parq-status.attention{border-left:3px solid #eec16c}
+.pp-parq-source{font-size:12px;color:var(--text-dim,#abb1be);line-height:1.6}
+.pp-parq-source a{display:block;margin-top:12px;color:var(--lime,#c5f56a);overflow-wrap:anywhere}
+.pp-parq-history{padding:12px 0;border-top:1px solid var(--border,#333)}
+.pp-parq-demo,.pp-parq-message{font-size:13px;line-height:1.6;color:var(--lime,#c5f56a)}
+@media(max-width:420px){.pp-parq{padding:16px}.pp-parq fieldset{padding:12px}.pp-parq h3{font-size:19px}}

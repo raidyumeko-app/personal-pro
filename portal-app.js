@@ -782,7 +782,7 @@
                     ),
                   ),
                 ),
-              tab === "evolution" && el(Evolution, { student, sessions, plus,onUpgrade:()=>setTab('nutrition') }),
+              tab === "evolution" && el(R.Fragment, null, el(root.PersonalProParQ.Panel,{React:R,role:"student",linkId:data.linkId,trainerName:data.trainerName}),el(Evolution, { student, sessions, plus,onUpgrade:()=>setTab('nutrition') })),
               tab === "history" &&
                 el(
                   "section",

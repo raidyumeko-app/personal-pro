@@ -48,6 +48,9 @@
     write,
     uid,
     fromServer,
+    parqRecords: linkId => rows('pp_parq_responses','select=*&link_id=eq.'+encodeURIComponent(linkId)+'&order=submitted_at.desc,id.desc'),
+    submitParq: (id,linkId,answers,consent) => rpc('pp_submit_parq',{p_id:id,p_link_id:linkId,p_answers:answers,p_consent:consent}),
+    reviewParq: (id,note) => rpc('pp_review_parq',{p_id:id,p_note:note}),
     markFeedbackSeen: id => rpc('pp_mark_feedback_seen', {p_session_id:id}),
     feedbackReceipts(ids) {
       const valid=ids.filter(id=>/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)).slice(0,100);
