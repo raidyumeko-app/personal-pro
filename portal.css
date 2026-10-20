@@ -75,3 +75,5 @@ html{scroll-padding-bottom:110px}button,input,select,textarea{scroll-margin-bloc
 .pp-parq-history{padding:12px 0;border-top:1px solid var(--border,#333)}
 .pp-parq-demo,.pp-parq-message{font-size:13px;line-height:1.6;color:var(--lime,#c5f56a)}
 @media(max-width:420px){.pp-parq{padding:16px}.pp-parq fieldset{padding:12px}.pp-parq h3{font-size:19px}}
+.pp-parq input[type="radio"]{appearance:auto;width:18px;height:18px;min-width:18px;min-height:18px;max-width:18px;flex:0 0 18px;padding:0;margin:0;border-radius:50%}
+.pp-parq input[type="checkbox"]{appearance:auto;min-width:18px;max-width:18px;min-height:18px;padding:0;flex:0 0 18px}
