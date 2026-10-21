@@ -22,15 +22,15 @@
       id: "75",
       sourceId: "Dumbbell_Bench_Press",
       names: ["Supino reto com halteres"],
-      poster: "/media/exercises/75.jpg",
+      poster: "/media/exercises/personal-pro-supino-halteres.jpg",
       video: {
-        url: "/media/exercises/75.mp4",
-        author: "Goulart",
-        license: "CC BY-SA 4.0",
-        licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
-        source: "https://wger.de/api/v2/video/17/?format=json",
+        url: "/media/exercises/personal-pro-supino-halteres.mp4",
+        author: "Personal Pro",
+        license: "Produção Personal Pro",
+        licenseUrl: "/",
+        source: "/media/exercises/personal-pro-supino-halteres.mp4",
         originalUrl:
-          "https://wger.de/media/exercise-video/75/080c799b-8afd-4130-8d72-9cef0cd79f54.MOV",
+          "/media/exercises/personal-pro-supino-halteres.mp4",
         licensed: true,
       },
     },
@@ -2231,10 +2231,24 @@
     }
   }
 ];
+  const personalProEntries = [{
+    id: "personal-pro-goblet-halter",
+    sourceId: "Goblet_Squat",
+    names: ["Agachamento goblet", "Agachamento goblet com halter"],
+    poster: "/media/exercises/personal-pro-goblet-halter.jpg",
+    video: {
+      url: "/media/exercises/personal-pro-goblet-halter.mp4",
+      author: "Personal Pro", license: "Produção Personal Pro", licensed: true,
+      source: "/media/exercises/personal-pro-goblet-halter.mp4",
+      originalUrl: "/media/exercises/personal-pro-goblet-halter.mp4",
+      demonstrationVariant: "Com halter"
+    }
+  }];
   function previewEnabled(){return /^(localhost|127\.0\.0\.1)$/.test(root.location?.hostname||"")||/^personal-[a-z0-9]{9}-raidyumeko-9261\.vercel\.app$/.test(root.location?.hostname||"")}
   function resolve(ex) {
     const identity = ex.sourceId || ex.id;
-    const allowed = previewEnabled() ? [...entries,...previewEntries] : entries;
+    const own = /kettlebell/i.test(String(ex.name || "") + " " + String(ex.equipment || "")) ? [] : personalProEntries;
+    const allowed = previewEnabled() ? [...own,...entries,...previewEntries] : [...own,...entries];
     const item = allowed.find(item => item.sourceId === identity) ||
       allowed.find(item => item.names.includes(ex.name));
     return item
@@ -2246,5 +2260,5 @@
         }
       : ex;
   }
-  root.PersonalProMedia = { resolve, entries, previewEntries, previewEnabled };
+  root.PersonalProMedia = { resolve, entries, personalProEntries, previewEntries, previewEnabled };
 })(window);

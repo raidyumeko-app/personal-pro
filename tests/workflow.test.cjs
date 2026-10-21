@@ -116,7 +116,7 @@ const clickLabel=label=>{const el=nodes(tree).find(n=>n.type==='button'&&text(n)
  assert.ok(!/licença comercial|aprovação técnica|Verificação técnica da biblioteca/.test(text(tree)));
  const catalog=JSON.parse(fs.readFileSync(require('node:path').join(__dirname,'../exercise-library.json'),'utf8'));
  assert.equal(catalog.length,130);assert.equal(new Set(catalog.map(x=>x.id)).size,130);
- for(const item of catalog){assert.ok(item.name&&item.group&&item.equipment&&item.level);assert.ok(Array.isArray(item.instructions));assert.ok(item.images.every(url=>url.startsWith('https://raw.githubusercontent.com/yuhonas/free-exercise-db/')));}
+ for(const item of catalog){assert.ok(item.name&&item.group&&item.equipment&&item.level);assert.ok(Array.isArray(item.instructions));assert.ok(item.images.every(url=>url.startsWith('https://raw.githubusercontent.com/yuhonas/free-exercise-db/')||url==='/media/exercises/personal-pro-goblet-halter.jpg'));}
  const dataState=states.findIndex((value,i)=>value===null && states[i+1]==='' && states[i+2]===0 && states[i+3]===40);
  assert.ok(dataState>=0);states[dataState]=catalog;tree=render();
  assert.equal(nodes(tree).filter(n=>n.type==='button'&&n.props?.['aria-label']?.startsWith('Selecionar ')).length,40);

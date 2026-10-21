@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Personal Pro · Vídeo do exercício</title>
+  <link rel="stylesheet" href="/app.css">
+  <link rel="stylesheet" href="/premium-visual.css">
+  <link rel="stylesheet" href="/portal.css">
+  <style>body{margin:0;background:#0e1117;color:#f1f3f7;font-family:system-ui,sans-serif;--surface-2:#191e27;--surface-3:#252c37;--border:#333b47;--text-dim:#b5bdca;--lime:#c4f36b}main{max-width:560px;padding:24px 16px;margin:auto}header small{color:#c4f36b;font-weight:800;letter-spacing:2px}header h1{font-size:24px}header p{color:#b5bdca;line-height:1.5}a{color:#c4f36b}</style>
+</head>
+<body>
+  <main>
+    <header><small>PERSONAL PRO</small><h1>Vídeos dos exercícios</h1><p>Escolha o exercício e confira o vídeo na tela de execução. Esta prévia não salva registros.</p></header>
+    <div id="preview"></div>
+    <p><a href="/">Abrir Personal Pro</a></p>
+  </main>
+  <script src="/app-ui.js"></script>
+  <script src="/exercise-media.js"></script>
+  <script src="/workout-session.js"></script>
+  <script src="/workout-session-preview.js"></script>
+  <script type="module">
+    import React from 'https://esm.sh/react@19.1.0';
+    import {createRoot} from 'https://esm.sh/react-dom@19.1.0/client';
+    const exercises = [{
+        sourceId:'Goblet_Squat',name:'Agachamento goblet com halter',equipment:'Halteres',series:'3',repetitions:'12',rest:60,
+        instructions:['Segure um halter junto ao peito com as duas mãos.','Desça com os calcanhares apoiados e volte com controle.']
+      },{
+        sourceId:'Dumbbell_Bench_Press',name:'Supino reto com halteres',series:'3',repetitions:'12',rest:60,
+        instructions:['Mantenha os pés apoiados e os halteres alinhados acima do peito.','Desça com controle e empurre os halteres de volta, mantendo os punhos alinhados.']
+      }];
+    function Preview(){
+      const [selected,setSelected]=React.useState(0);
+      return React.createElement(React.Fragment,null,
+        React.createElement('div',{style:{display:'flex',gap:12,marginBottom:20,flexWrap:'wrap'}},exercises.map((ex,i)=>React.createElement('button',{key:ex.sourceId,type:'button',className:selected===i?'pp-primary':'pp-secondary','aria-pressed':selected===i,onClick:()=>setSelected(i)},ex.name))),
+        React.createElement(window.PersonalProSessionPreview.Simulator,{key:selected,React,day:'A',studentId:'video-preview',exercises:[exercises[selected]]})
+      );
+    }
+    createRoot(document.getElementById('preview')).render(React.createElement(Preview));
+  </script>
+</body>
+</html>
