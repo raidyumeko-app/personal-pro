@@ -1950,20 +1950,37 @@
     }
   }];
   function previewEnabled(){return /^(localhost|127\.0\.0\.1)$/.test(root.location?.hostname||"")||/^personal-[a-z0-9]{9}-raidyumeko-9261\.vercel\.app$/.test(root.location?.hostname||"")}
+  function isOriginalYMove(url) {
+    return /^https?:\/\/(?:www\.)?ymove\.app(?:\/|$)/i.test(String(url || ""));
+  }
+  function withoutYMovePlayback(value) {
+    if (!value || typeof value !== "object") return value;
+    const video = value.video;
+    const originalVideo = Boolean(video && (
+      isOriginalYMove(video.url) ||
+      isOriginalYMove(video.originalUrl) ||
+      Object.values(video.variants || {}).some(isOriginalYMove) ||
+      /YMove/i.test(String(video.author || "")) && /Your Move|YMove/i.test(String(video.source || ""))
+    ));
+    const poster = isOriginalYMove(value.poster) ? null : value.poster;
+    const images = Array.isArray(value.images) ? value.images.filter(image => !isOriginalYMove(image)) : value.images;
+    if (!originalVideo && poster === value.poster && images?.length === value.images?.length) return value;
+    return {...value,video:originalVideo ? undefined : video,poster,images,originalYMoveVideo:false};
+  }
   function resolve(ex) {
     const identity = ex.sourceId || ex.id;
     const own = /kettlebell/i.test(String(ex.name || "") + " " + String(ex.equipment || "")) ? [] : personalProEntries;
     const allowed = previewEnabled() ? [...own,...entries,...previewEntries] : [...own,...entries];
     const item = allowed.find(item => item.sourceId === identity) ||
       (!identity ? allowed.find(item => item.names.includes(ex.name)) : undefined);
-    return item
+    return withoutYMovePlayback(item
       ? {
           ...ex,
           poster: item.poster,
           images: ex.images?.length ? ex.images : [item.poster],
           video: item.video,
         }
-      : ex;
+      : ex);
   }
   root.PersonalProMedia = { resolve, entries, personalProEntries, previewEntries, previewEnabled };
 })(window);
