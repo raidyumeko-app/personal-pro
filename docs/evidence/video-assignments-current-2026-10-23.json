@@ -389,9 +389,7 @@
       "sha256": "cfb530b8b727d47e48f121c261e16571ac89acb3823047db3bf0c12b24ae4359",
       "status": "vinculado para revisão final",
       "supersededBy": null,
-      "technicalFlags": [
-        "Rever a amplitude da abertura."
-      ]
+      "technicalFlags": []
     },
     {
       "index": 33,

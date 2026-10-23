@@ -14,7 +14,7 @@ Há 70 gerações no histórico completo, 46 vinculadas a exercícios distintos 
 | 4 | Supino reto com halteres | vinculado; revisão final pendente |
 | 5 | Supino inclinado com halteres | vinculado; revisão final pendente |
 | 6 | Crucifixo reto com halteres | vinculado; revisão técnica pendente — Revisão final: conferir amplitude do fechamento; os halteres terminam afastados acima do peito. |
-| 7 | Crucifixo inclinado com halteres | vinculado; revisão técnica pendente — Rever a amplitude da abertura. |
+| 7 | Crucifixo inclinado com halteres | vinculado; revisão final pendente — comparação com JEFIT 165 concluída. |
 | 8 | Crossover na polia alta | vinculado; revisão final pendente |
 | 9 | Voador (peck deck) | vinculado; revisão final pendente |
 | 10 | Flexão de braço | vinculado; revisão final pendente |

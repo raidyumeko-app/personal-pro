@@ -91,5 +91,6 @@ test('low cable fly remains visibly pending and cannot fall back to an incorrect
   assert.equal(result.video,undefined);assert.equal(result.poster,null);assert.equal(result.images.length,0);assert.match(result.mediaWarning,/Vídeo em correção/);assert.equal(result.series,'3');assert.equal(result.rest,90);assert.equal(root.PersonalProGeneratedVideos.forExercise(ex.id).length,0);
  }
  const api=boot().PersonalProGeneratedVideos;assert.equal(api.chestReview.linkedCount,22);assert.equal(api.chestReview.complete,false);assert.equal(api.duplicateCount,6);
+ const audit=JSON.parse(fs.readFileSync('docs/evidence/chest-corrections-2026-10-23.json'));assert.equal(audit.chest.filter(x=>x.generationId&&x.technicalFlags.length).length,api.chestReview.technicalNotesCount);assert.equal(api.forExercise('Incline_Dumbbell_Flyes')[0].technicalFlags.length,0);
  for(const id of ['Dumbbell_Flyes','Decline_Dumbbell_Flyes'])assert.ok(api.forExercise(id)[0].technicalFlags.length);
 });

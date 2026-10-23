@@ -1275,10 +1275,9 @@
       "name": "Crucifixo inclinado com halteres",
       "sourceId": "Incline_Dumbbell_Flyes",
       "generationId": "01a166d5-f02d-7e29-bbdc-0d2d3691834f",
-      "status": "vinculado; revisão técnica pendente",
-      "technicalFlags": [
-        "Rever a amplitude da abertura."
-      ]
+      "status": "vinculado; revisão final pendente",
+      "technicalFlags": [],
+      "reviewNotes": "Conferido nesta rodada com JEFIT 165; observação antiga de amplitude resolvida na comparação."
     },
     {
       "number": 8,
