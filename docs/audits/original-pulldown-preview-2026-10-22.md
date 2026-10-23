@@ -11,3 +11,7 @@ The dedicated video preview now defaults to this exercise and retains the goblet
 Verification: ffprobe confirmed output format and duration; contact sheets inspected across both cycles; 86 automated tests passed, including media identity and prescription preservation. Physical-device testing remains pending.
 
 Next production reference: existing seated low cable row footage, source https://wger.de/media/exercise-video/512/fff4c294-93f0-4926-b3a2-bf59ad4afaa5.MOV — real person, neutral triangle grip, feet on footplates, pull to abdomen, return forward. Local reference frames inspected; original URL returned HTTP 200.
+
+## Identification correction — supersedes the assignment above
+
+The user clarified that the generated video does not show the triangle-handle pulldown. The previous attachment/grip identification was not confirmed and must not be treated as technical approval. The generated clip is retained as an unassigned asset; its V-Bar_Pulldown mapping and dedicated preview choice have been removed. V-Bar_Pulldown again resolves to the previously established YMove reference. No alternative exercise identity is assigned without confirming the attachment, grip and movement.

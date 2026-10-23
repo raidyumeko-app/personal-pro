@@ -4,7 +4,7 @@ const manifest=JSON.parse(fs.readFileSync('docs/research/ymove-free-media-manife
 test('authorized YMove matches expand the existing library without replacing local licensed media',()=>{
  const media=root.PersonalProMedia,added=media.entries.filter(e=>e.id.startsWith('ymove-'));assert.equal(added.length,16);assert.equal(media.entries.length,24);assert.equal(new Set(media.entries.map(e=>e.sourceId)).size,24);
  const catalog=JSON.parse(fs.readFileSync('exercise-library.json','utf8'));
- for(const entry of manifest.entries){assert.ok([...catalog,...JSON.parse(fs.readFileSync('docs/compatibility/exercise-source-archive.json','utf8'))].some(e=>e.id===entry.sourceId));const resolved=media.resolve({sourceId:entry.sourceId,name:'Prescrição QA',equipment:entry.sourceId==='Goblet_Squat'?'Kettlebell':undefined,series:'4',repetitions:'8',load:'42.5 kg',rest:90});const own=entry.sourceId==='V-Bar_Pulldown';assert.equal(resolved.video.url,own?'/media/exercises/personal-pro-puxada-triangulo.mp4':entry.videoUrl);assert.equal(resolved.poster,own?'/media/exercises/personal-pro-puxada-triangulo.jpg':entry.thumbnailUrl);assert.equal(resolved.series,'4');assert.equal(resolved.rest,90);assert.equal(resolved.video.licensed,true);if(!own)assert.match(resolved.video.licenseUrl,/^https:\/\/ymove\.app\/free-exercise-videos/);assert.ok(entry.durationSeconds>0&&entry.bytes>0);}
+ for(const entry of manifest.entries){assert.ok([...catalog,...JSON.parse(fs.readFileSync('docs/compatibility/exercise-source-archive.json','utf8'))].some(e=>e.id===entry.sourceId));const resolved=media.resolve({sourceId:entry.sourceId,name:'Prescrição QA',equipment:entry.sourceId==='Goblet_Squat'?'Kettlebell':undefined,series:'4',repetitions:'8',load:'42.5 kg',rest:90});assert.equal(resolved.video.url,entry.videoUrl);assert.equal(resolved.poster,entry.thumbnailUrl);assert.equal(resolved.series,'4');assert.equal(resolved.rest,90);assert.equal(resolved.video.licensed,true);assert.match(resolved.video.licenseUrl,/^https:\/\/ymove\.app\/free-exercise-videos/);assert.ok(entry.durationSeconds>0&&entry.bytes>0);}
  assert.match(media.resolve({sourceId:'One-Arm_Dumbbell_Row',name:'Remada unilateral com halter'}).video.demonstrationVariant,/apoiada na perna/);
  assert.equal(media.resolve({name:'Supino reto com barra'}).video.url,'/media/exercises/73.mp4');assert.equal(media.resolve({name:'Leg press 45 graus'}).video.url,'/media/exercises/371.mp4');
 });
@@ -13,7 +13,7 @@ test('media uses the prescribed source identity before a conflicting display nam
 });
 test('different grips, equipment and variants are not silently assigned a free clip',()=>{
  for(const id of ['Glute_Kickback','One-Arm_Kettlebell_Swings','Triceps_Pushdown','Bodyweight_Squat','Cable_Crossover','Romanian_Deadlift'])assert.equal(root.PersonalProMedia.resolve({sourceId:id,name:'QA variant'}).video,undefined,id);
- assert.equal(root.PersonalProMedia.resolve({name:'Puxada frontal com pegada neutra'}).video.url,'/media/exercises/personal-pro-puxada-triangulo.mp4');
+ assert.equal(root.PersonalProMedia.resolve({name:'Puxada frontal com pegada neutra'}).video.url,manifest.entries.find(e=>e.sourceId==='V-Bar_Pulldown').videoUrl);
 });
 test('execution offers the new video and still permits set recording when media fails',async()=>{
  vm.runInNewContext(fs.readFileSync('workout-session.js','utf8'),{globalThis:root});vm.runInNewContext(fs.readFileSync('workout-session-preview.js','utf8'),{window:root});
@@ -29,7 +29,4 @@ test('Personal Pro clips match dumbbell exercise identities and preserve explici
  assert.equal(media.resolve({sourceId:'Dumbbell_Bench_Press',name:'Supino reto com halteres'}).video.url,'/media/exercises/personal-pro-supino-halteres.mp4');
  assert.equal(media.resolve({sourceId:'Goblet_Squat',name:'Agachamento goblet',equipment:'Halteres'}).video.url,'/media/exercises/personal-pro-goblet-halter.mp4');
  assert.match(media.resolve({sourceId:'Goblet_Squat',name:'Agachamento goblet com kettlebell'}).video.url,/ymove/);
- assert.equal(media.resolve({sourceId:'V-Bar_Pulldown',name:'Puxada com pegada neutra'}).video.url,'/media/exercises/personal-pro-puxada-triangulo.mp4');
- const previewRoot={location:{hostname:'localhost'}};vm.runInNewContext(fs.readFileSync('exercise-media.js','utf8'),{window:previewRoot});
- assert.notEqual(previewRoot.PersonalProMedia.resolve({sourceId:'Wide-Grip_Lat_Pulldown',name:'Puxada frontal na polia'}).video.url,'/media/exercises/personal-pro-puxada-triangulo.mp4');
 });

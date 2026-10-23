@@ -2232,19 +2232,6 @@
   }
 ];
   const personalProEntries = [{
-    id: "personal-pro-puxada-triangulo",
-    sourceId: "V-Bar_Pulldown",
-    names: ["Puxada com pegada neutra", "Puxada frontal com pegada neutra", "Puxada com triângulo", "Puxada frontal com triângulo"],
-    poster: "/media/exercises/personal-pro-puxada-triangulo.jpg",
-    video: {
-      url: "/media/exercises/personal-pro-puxada-triangulo.mp4",
-      author: "Personal Pro", license: "Produção Personal Pro", licensed: true,
-      licenseUrl: "/",
-      source: "/media/exercises/personal-pro-puxada-triangulo.mp4",
-      originalUrl: "/media/exercises/personal-pro-puxada-triangulo.mp4",
-      demonstrationVariant: "Triângulo · pegada neutra"
-    }
-  },{
     id: "personal-pro-goblet-halter",
     sourceId: "Goblet_Squat",
     names: ["Agachamento goblet", "Agachamento goblet com halter"],
