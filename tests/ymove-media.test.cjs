@@ -1,33 +1,51 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
-const root={PersonalProUI:{Icon(){}}};vm.runInNewContext(fs.readFileSync('exercise-media.js','utf8'),{window:root});
-const manifest=JSON.parse(fs.readFileSync('docs/research/ymove-free-media-manifest.json','utf8'));
-test('authorized YMove matches expand the existing library without replacing local licensed media',()=>{
- const media=root.PersonalProMedia,added=media.entries.filter(e=>e.id.startsWith('ymove-'));assert.equal(added.length,15);assert.equal(media.entries.length,23);assert.equal(new Set(media.entries.map(e=>e.sourceId)).size,23);
- const catalog=JSON.parse(fs.readFileSync('exercise-library.json','utf8'));
- for(const entry of manifest.entries.filter(e=>e.linkAllowed!==false&&e.providerTitle!=='Dumbbell Goblet Squat')){assert.ok([...catalog,...JSON.parse(fs.readFileSync('docs/compatibility/exercise-source-archive.json','utf8'))].some(e=>e.id===entry.sourceId));const resolved=media.resolve({sourceId:entry.sourceId,name:'Prescrição QA',equipment:entry.sourceId==='Goblet_Squat'?'Kettlebell':undefined,series:'4',repetitions:'8',load:'42.5 kg',rest:90});assert.equal(resolved.video.url,entry.videoUrl);assert.equal(resolved.poster,entry.thumbnailUrl);assert.equal(resolved.series,'4');assert.equal(resolved.rest,90);assert.equal(resolved.video.licensed,true);assert.match(resolved.video.licenseUrl,/^https:\/\/ymove\.app\/free-exercise-videos/);assert.ok(entry.durationSeconds>0&&entry.bytes>0);}
- assert.equal(media.resolve({sourceId:'One-Arm_Dumbbell_Row',name:'Remada unilateral com halter'}).video,undefined);
- assert.equal(media.resolve({name:'Supino reto com barra'}).video.url,'/media/exercises/73.mp4');assert.equal(media.resolve({name:'Leg press 45 graus'}).video.url,'/media/exercises/371.mp4');
+function boot(host='localhost'){
+ const window={location:{hostname:host},PersonalProUI:{Icon(){}}};
+ for(const path of ['exercise-media.js','personal-pro-generated-videos.js'])vm.runInNewContext(fs.readFileSync(path,'utf8'),{window});
+ return window;
+}
+test('YMove reference clips are not included in active exercise media',()=>{
+ const source=fs.readFileSync('exercise-media.js','utf8');
+ assert.equal(source.includes('https://ymove.app/api/free/'),false);
+ const media=boot().PersonalProMedia;
+ assert.equal(media.entries.length,8);
+ assert.ok(media.entries.every(item=>!/ymove\.app/i.test(item.video?.url||'')));
+ for(const ex of JSON.parse(fs.readFileSync('exercise-library.json','utf8'))){
+   const result=media.resolve(ex);
+   assert.ok(!/ymove\.app/i.test(result.video?.url||''),ex.name);
+   assert.ok(!/ymove\.app/i.test(result.poster||''),ex.name);
+ }
 });
-test('media uses the prescribed source identity before a conflicting display name',()=>{
- const e=root.PersonalProMedia.resolve({sourceId:'Hammer_Curls',name:'Supino reto com barra'});assert.match(e.video.originalUrl,/b11e6c6f-b2e8-44ca-95dc-adf0dcd34426/);
+test('original YMove videos are stripped from old prescribed media without changing prescription',()=>{
+ const media=boot().PersonalProMedia;
+ const source='https://ymove.app/api/free/af0c3d19-5ee2-4a19-8688-f8504bb33e3c';
+ const old={id:'old',name:'Cadeira extensora',load:'42.5 kg',rest:75,poster:source+'?type=thumbnail',images:[source+'?type=thumbnail','/media/safe.jpg'],video:{url:source,author:'YMove / Your Move',licensed:true}};
+ const result=media.resolve(old);
+ assert.equal(result.video,undefined);
+ assert.equal(result.poster,null);
+ assert.equal(result.images.length,1);
+ assert.equal(result.images[0],'/media/safe.jpg');
+ assert.equal(result.load,'42.5 kg');
+ assert.equal(result.rest,75);
+ assert.equal(result.originalYMoveVideo,false);
 });
-test('different grips, equipment and variants are not silently assigned a free clip',()=>{
- for(const id of ['Glute_Kickback','One-Arm_Kettlebell_Swings','Triceps_Pushdown','Bodyweight_Squat','Cable_Crossover','Romanian_Deadlift'])assert.equal(root.PersonalProMedia.resolve({sourceId:id,name:'QA variant'}).video,undefined,id);
- assert.equal(root.PersonalProMedia.resolve({name:'Puxada frontal com pegada neutra'}).video,undefined);
- assert.match(root.PersonalProMedia.resolve({sourceId:'selected-puxada-unilateral-na-polia',name:'Puxada unilateral na polia'}).video.url,/5971eaa2/);
+test('only generated Personal Pro videos remain for mapped exercise IDs',()=>{
+ const root=boot(),item=root.PersonalProGeneratedVideos.forExercise('Hammer_Curls')[0];
+ assert.ok(item&&item.linkAllowed);
+ const e=root.PersonalProMedia.resolve({sourceId:'Hammer_Curls',name:'Rosca martelo',series:'3',rest:90});
+ assert.equal(e.video.generationId,item.id);
+ assert.equal(e.video.url,item.url);
+ assert.ok(!e.video.url.includes('ymove.app'));
+ assert.equal(e.series,'3');
+ assert.equal(e.rest,90);
 });
-test('execution offers the new video and still permits set recording when media fails',async()=>{
- vm.runInNewContext(fs.readFileSync('workout-session.js','utf8'),{globalThis:root});vm.runInNewContext(fs.readFileSync('workout-session-preview.js','utf8'),{window:root});
- let state=[],i=0,tree;const R={Fragment:'fragment',createElement:(type,props,...children)=>({type,props:{...props,children}}),useState(v){const n=i++;if(!(n in state))state[n]=typeof v==='function'?v():v;return[state[n],v=>state[n]=typeof v==='function'?v(state[n]):v]},useEffect(){}};
- const render=()=>{i=0;tree=root.PersonalProSessionPreview.Simulator({React:R,studentId:'qa',day:'A',exercises:[{id:'qa-ex',sourceId:'Leg_Extensions',name:'Cadeira extensora',series:'3',repetitions:'12',rest:60}]});return tree};
- const nodes=()=>{const out=[];function walk(n){if(!n||typeof n!=='object')return;if(Array.isArray(n)){n.forEach(walk);return}out.push(n);walk(n.props?.children)}walk(tree);return out};
- const txt=n=>typeof n==='string'?n:Array.isArray(n)?n.map(txt).join(''):txt(n?.props?.children||[]);
- render();await nodes().find(n=>n.type==='button'&&txt(n)==='Conferir execução').props.onClick();render();const video=nodes().find(n=>n.type==='video');assert.ok(video.props.playsInline&&video.props.controls);assert.match(video.props.src,/ymove\.app\/api\/free/);video.props.onError();render();assert.ok(!nodes().some(n=>n.type==='video'));assert.ok(nodes().some(n=>n.type==='img'));assert.ok(nodes().some(n=>n.type==='button'&&txt(n)==='Registrar série 1 de 3'));
-});
-
-test('Personal Pro clips match dumbbell exercise identities and preserve explicit kettlebell prescriptions',()=>{
- const media=root.PersonalProMedia;
- assert.equal(media.resolve({sourceId:'Dumbbell_Bench_Press',name:'Supino reto com halteres'}).video.url,'/media/exercises/personal-pro-supino-halteres.mp4');
- assert.equal(media.resolve({sourceId:'Goblet_Squat',name:'Agachamento goblet',equipment:'Halteres'}).video.url,'/media/exercises/personal-pro-goblet-halter.mp4');
- assert.match(media.resolve({sourceId:'Goblet_Squat',name:'Agachamento goblet com kettlebell'}).video.url,/ymove/);
+test('app and review pages never load or play original YMove videos',()=>{
+ for(const page of ['index.html','video-preview.html','videos-gerados.html']){
+   const html=fs.readFileSync(page,'utf8');
+   assert.ok(!html.includes('personal-pro-ymove-verified.js'),page);
+   assert.ok(!html.includes('ymove.app/api/free'),page);
+ }
+ const gallery=fs.readFileSync('videos-gerados.html','utf8');
+ assert.ok(!gallery.includes('renderYMove'));
+ assert.ok(!gallery.includes('ymove-grid'));
 });
