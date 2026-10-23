@@ -31,7 +31,10 @@
       },{
         sourceId:'Dumbbell_Bench_Press',name:'Supino reto com halteres',series:'3',repetitions:'12',rest:60,
         instructions:['Mantenha os pés apoiados e os halteres alinhados acima do peito.','Desça com controle e empurre os halteres de volta, mantendo os punhos alinhados.']
-      }];
+      },...(window.PersonalProVerifiedYMove?.clips||[]).map(clip=>({
+        sourceId:clip.sourceId,name:clip.name,equipment:'Conforme referência YMove',series:'3',repetitions:'12',rest:60,
+        instructions:[clip.movement,'Confira o vídeo original de execução YMove.']
+      }))];
     function Preview(){
       const [selected,setSelected]=React.useState(0);
       return React.createElement(React.Fragment,null,
