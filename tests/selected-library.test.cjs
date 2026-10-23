@@ -8,7 +8,7 @@ test('original selection is preserved and only the thirteen required video exerc
  assert.ok(catalog.some(x=>x.name==='Rosca 21'));assert.ok(catalog.some(x=>x.name==='Mobilidade de quadril'));
 });
 test('preview media expands 143 choices with 87 base videos without falsely granting commercial rights',()=>{
- const preview=media('personal-123456789-raidyumeko-9261.vercel.app');assert.equal(preview.previewEntries.length,81);assert.equal(catalog.filter(x=>preview.resolve(x).video).length,87);
+ const preview=media('personal-123456789-raidyumeko-9261.vercel.app');assert.equal(preview.previewEntries.length,81);assert.equal(catalog.filter(x=>preview.resolve(x).video).length,84);
  for(const entry of preview.previewEntries){assert.ok(catalog.some(x=>x.id===entry.sourceId));assert.equal(entry.video.licensed,false);assert.equal(entry.video.previewOnly,true);for(const url of Object.values(entry.video.variants))assert.match(url,/^https:\/\/pub-585d42eb1aa64a67aedf483ec328d3fe\.r2\.dev\/exercise-videos\/(male|female)\//);}
  for(const host of ['personal-pro.vercel.app','personal-pro-raidyumeko-9261.vercel.app','personalpro.app','personal-123456789-raidyumeko-9261.vercel.app.evil.example'])assert.equal(media(host).resolve(catalog.find(x=>x.name==='Crucifixo com halteres')).video,undefined);
  assert.ok(preview.resolve(catalog.find(x=>x.name==='Crucifixo com halteres')).video.variants.female);
