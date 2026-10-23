@@ -2,7 +2,7 @@ const test=require('node:test'),assert=require('node:assert/strict'),fs=require(
 const catalog=JSON.parse(fs.readFileSync('exercise-library.json'));
 function boot(host='localhost'){
  const window={location:{hostname:host},PersonalProUI:{Icon(){}}};
- for(const file of ['exercise-media.js','personal-pro-ymove-verified.js','personal-pro-generated-videos.js'])vm.runInNewContext(fs.readFileSync(file,'utf8'),{window});
+ for(const file of ['exercise-media.js','personal-pro-generated-videos.js'])vm.runInNewContext(fs.readFileSync(file,'utf8'),{window});
  return window;
 }
 test('46 chosen generations are reachable under distinct exercise identities; rejected and superseded takes stay out',()=>{
@@ -49,16 +49,20 @@ test('YMove unilateral pulldown never becomes a two-handed V-bar demonstration',
  const unilateral=media.resolve({sourceId:'selected-puxada-unilateral-na-polia',name:'Puxada unilateral na polia'});
  assert.equal(unilateral.video.variants,undefined);assert.equal(unilateral.generatedVideoFinalReviewPending,true);
 });
-test('generated videos have one chosen take and preserve prescription values; source references stay recorded',()=>{
- const root=boot();assert.equal(root.PersonalProVerifiedYMove.clips.length,14);
- for(const clip of root.PersonalProVerifiedYMove.clips){
-  const ex={sourceId:clip.sourceId,name:clip.name,series:'3',repetitions:'8',rest:120,load:'24 kg'};
-  const result=root.PersonalProMedia.resolve(ex);
-  assert.ok(result.video.url===clip.url||result.generatedVideoFinalReviewPending);assert.ok(root.PersonalProVerifiedYMove.clips.some(x=>x.url===clip.url));
-  for(const key of ['series','repetitions','rest','load'])assert.equal(result[key],ex[key]);
+test('YMove sources are for reference only; generated exercise videos keep prescriptions',()=>{
+ const root=boot();
+ assert.equal(root.PersonalProVerifiedYMove,undefined);
+ for(const ex of catalog){
+   const result=root.PersonalProMedia.resolve(ex);
+   assert.ok(!/ymove\.app/i.test(result.video?.url||''),ex.name);
  }
- assert.match(root.PersonalProMedia.resolve({sourceId:'Goblet_Squat',name:'Agachamento goblet',equipment:'Halteres'}).video.url,/a2a797d0/);
- assert.match(root.PersonalProMedia.resolve({sourceId:'Goblet_Squat',name:'Agachamento goblet com kettlebell',equipment:'Kettlebell'}).video.url,/198d4a7d/);
+ const ex={sourceId:'Hammer_Curls',name:'Rosca martelo',series:'3',repetitions:'8',rest:120,load:'24 kg'};
+ const result=root.PersonalProMedia.resolve(ex);
+ assert.match(result.video.url,/artlist\.io|\/assets\/videos\//);
+ assert.ok(result.generatedVideoFinalReviewPending);
+ for(const key of ['series','repetitions','rest','load'])assert.equal(result[key],ex[key]);
+ const kettlebell=root.PersonalProMedia.resolve({sourceId:'Goblet_Squat',name:'Agachamento goblet com kettlebell',equipment:'Kettlebell'});
+ assert.ok(!/ymove\.app/i.test(kettlebell.video?.url||''));
 });
 test('execution offers exactly one chosen clip and still permits recording after playback failure',async()=>{
  const root=boot();for(const file of ['workout-session.js','workout-session-preview.js'])vm.runInNewContext(fs.readFileSync(file,'utf8'),{window:root,globalThis:root});
