@@ -1,0 +1,1174 @@
+{
+  "date": "2026-10-23",
+  "authorizedScope": "Usuário pediu vínculo provisório dos arquivos existentes por movimento, usando também outras referências; revisão final após completar o conjunto de 220.",
+  "generatedTotal": 49,
+  "assignedTotal": 42,
+  "exerciseTotal": 42,
+  "unassignedTotal": 1,
+  "newCreditsSpent": 0,
+  "items": [
+    {
+      "index": 0,
+      "generationId": "01a16723-7ac0-761c-b26c-99246804f8b8",
+      "requestedName": "Superman no solo",
+      "assignedName": null,
+      "sourceId": null,
+      "status": "sem correspondência de movimento",
+      "finalReviewPending": false,
+      "description": [],
+      "comparisonReferences": [],
+      "notes": "Corpo fica suspenso no ar com objetos nas mãos; não há apoio ventral no chão.",
+      "technicalFlags": [
+        "Corpo suspenso no ar; não corresponde ao Superman no solo."
+      ],
+      "sha256": "f096ad0d9da97b3e0f48f037b6dd37e93ff07db024a46b32b50cea752581e009",
+      "linkAllowed": false
+    },
+    {
+      "index": 1,
+      "generationId": "01a16723-7ac0-74c5-a6f7-4ff5bd6c48e1",
+      "requestedName": "Remada sentada na máquina",
+      "assignedName": "Remada sentada na máquina",
+      "sourceId": "pp-remada-sentada-na-maquina",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Trabalha: Costas e bíceps.",
+        "Ajuste o banco e os apoios da máquina. Puxe os pegadores para o tronco e volte devagar, mantendo o tronco estável."
+      ],
+      "comparisonReferences": [],
+      "notes": "Puxada horizontal sentada em aparelho; a origem YMove e o modelo exato não foram comprovados.",
+      "technicalFlags": [],
+      "sha256": "27639b2b71bec6fd9d2fd473ea45511d5bee1e138c31f44357bb63ba6fd2159f",
+      "linkAllowed": true
+    },
+    {
+      "index": 2,
+      "generationId": "01a16723-7abf-7014-b631-18ed9a68467a",
+      "requestedName": "Pulldown com braços estendidos",
+      "assignedName": "Pulldown com braços estendidos",
+      "sourceId": "pp-pulldown-com-bracos-estendidos",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Trabalha: Costas, principalmente dorsais.",
+        "Em pé diante da polia alta, mantenha os cotovelos levemente dobrados. Leve a barra até as coxas e retorne sem balançar."
+      ],
+      "comparisonReferences": [],
+      "notes": "Braços levam puxador da frente do tronco até as coxas; referência YMove exata não comprovada.",
+      "technicalFlags": [],
+      "sha256": "99c9109adabeb11fb2fb9db6a48652e54981b1c58281fc71ecd9e4c8462aeae6",
+      "linkAllowed": true
+    },
+    {
+      "index": 3,
+      "generationId": "01a16723-7abb-7fd2-bf5e-3a09f5713a5f",
+      "requestedName": "Puxada frontal pegada supinada",
+      "assignedName": "Puxada frontal na polia",
+      "sourceId": "Wide-Grip_Lat_Pulldown",
+      "status": "excedente repetido — fora do aplicativo",
+      "finalReviewPending": false,
+      "description": [
+        "Sente-se na máquina de puxada com a barra longa presa à polia alta. Ajuste o apoio das coxas à sua altura para impedir que a resistência levante o corpo.",
+        "Segure a barra com as palmas voltadas para a frente. A pegada aberta fica além da largura dos ombros; a média acompanha essa largura, e a fechada fica mais próxima.",
+        "Com os braços estendidos, incline o tronco aproximadamente 30 graus para trás, mantendo a curvatura natural da lombar e o peito elevado. Esta é a posição inicial.",
+        "Expire e puxe a barra em direção à parte superior do peito, levando os ombros e os braços para baixo e para trás. Contraia os dorsais. Mantenha o tronco estável; os antebraços apenas sustentam a pegada, sem conduzir a puxada.",
+        "Após um segundo de contração, aproxime as escápulas e retorne a barra lentamente até estender os braços e alongar os dorsais. Inspire durante o retorno.",
+        "Repita este movimento para a quantidade prescrita de repetições."
+      ],
+      "comparisonReferences": [],
+      "notes": "Puxada com barra longa e pegada por cima; retirada da ficha supinada.",
+      "technicalFlags": [],
+      "sha256": "94f2aa2d9849033115c78b3500360ee136a292528da3ca5ad82bdd532e65c9a0",
+      "linkAllowed": false,
+      "duplicateOf": "01a166e0-9224-70e9-9b26-f4e3733a4a06"
+    },
+    {
+      "index": 4,
+      "generationId": "01a16723-7ab2-72bd-a8e4-98e73be7158e",
+      "requestedName": "Remada unilateral sentada na polia",
+      "assignedName": "Remada unilateral sentada na polia",
+      "sourceId": "pp-remada-unilateral-sentada-na-polia",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Trabalha: Costas, bíceps e estabilizadores do tronco.",
+        "Sente diante da polia baixa e segure com uma mão. Puxe o cotovelo para trás e volte, mantendo o tronco sem rotação."
+      ],
+      "comparisonReferences": [],
+      "notes": "Uma mão puxa cabo horizontal sentado no chão, sem banco ou plataforma para os pés.",
+      "technicalFlags": [],
+      "sha256": "d0f6c6b0bf63a0e362145cfab10f79bd598cac5397a9b41f4412aba0fdc2452d",
+      "linkAllowed": true
+    },
+    {
+      "index": 5,
+      "generationId": "01a16721-51ac-74fb-b0d9-d99dc93f5df1",
+      "requestedName": "Remada curvada com dois halteres — pegada neutra",
+      "assignedName": "Remada unilateral com halter",
+      "sourceId": "One-Arm_Dumbbell_Row",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Escolha um banco plano e coloque um haltere em cada lado dele.",
+        "Coloque a perna direita em cima da extremidade do banco, dobre o tronco para a frente da cintura até que sua parte superior do corpo esteja paralela ao chão e coloque a mão direita na outra extremidade do banco para apoio.",
+        "Use a mão esquerda para pegar o haltere no chão e mantenha o peso, mantendo sua parte inferior das costas reta. A palma da mão deve estar voltada para o seu tronco. Esta será a sua posição inicial.",
+        "Puxe a resistência diretamente para o lado do peito, mantendo o braço perto do lado e mantendo o tronco parado. expire para fora enquanto você realiza este passo. Dica: Concentre-se em apertar os músculos das costas uma vez que você atinja a posição de contração completa. Além disso, certifique-se de que a força é realizada com os músculos das costas e não com os braços. Finalmente, o tronco superior deve permanecer estacionário e apenas os braços devem se mover. Os antebraços não devem fazer outro trabalho, exceto segurar o haltere; portanto, não tente puxar o haltere usando os antebraços.",
+        "Reduza a resistência diretamente para a posição inicial. Inspire enquanto você realiza este passo.",
+        "Repita o movimento para a quantidade especificada de repetições.",
+        "Alterne os lados e repita novamente com o outro braço."
+      ],
+      "comparisonReferences": [],
+      "notes": "Uma mão e um joelho apoiados no banco e um halter na mão oposta; remada unilateral com banco.",
+      "technicalFlags": [],
+      "sha256": "386ff0c4ddbe8ae7dbb49eef6f10b397b6078b50afc4c2ba8c4dc22e6cec5465",
+      "linkAllowed": true
+    },
+    {
+      "index": 6,
+      "generationId": "01a16711-fe5e-73c1-8a30-444ec9d09499",
+      "requestedName": "Remada curvada com barra pegada supinada",
+      "assignedName": "Remada curvada com barra",
+      "sourceId": "Bent_Over_Barbell_Row",
+      "status": "excedente repetido — fora do aplicativo",
+      "finalReviewPending": false,
+      "description": [
+        "Segurando uma barra com uma pegada pronada (palmeiras viradas para baixo), dobre os joelhos ligeiramente e traga o tronco para a frente, dobrando-se na cintura, mantendo as costas retas até que esteja quase paralela ao chão. Dica: Certifique-se de manter a cabeça erguida. A barra deve ser pendurada diretamente na sua frente enquanto seus braços estão perpendiculares ao chão e ao tronco. Esta é a sua posição inicial.",
+        "Agora, enquanto mantém o tronco parado, expire e levante a barra para você. Mantenha os cotovelos perto do corpo e use apenas os antebraços para manter o peso. Na posição superior contraída, esprema os músculos das costas e segure por uma breve pausa.",
+        "Em seguida, inale e abaixe lentamente a barra de volta para a posição inicial.",
+        "Repita a quantidade recomendada de repetições."
+      ],
+      "comparisonReferences": [
+        {
+          "type": "description",
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/12/bent-over-row/"
+        }
+      ],
+      "notes": "Remada com barra e tronco inclinado; vinculada à ficha genérica, sem certificar a supinação atribuída anteriormente.",
+      "technicalFlags": [
+        "Confirmar a pegada no fechamento da revisão."
+      ],
+      "sha256": "cac1526eae08a35bb67aaadb1adab09da7021803d5f9b9ff3119fb454b640630",
+      "linkAllowed": false,
+      "duplicateOf": "01a166e0-924e-74e5-afb8-94fb19cb211e"
+    },
+    {
+      "index": 7,
+      "generationId": "01a16711-fe2d-7fda-945a-d04eccdfc6b1",
+      "requestedName": "Hiperextensão lombar",
+      "assignedName": "Hiperextensão lombar",
+      "sourceId": "Hyperextensions_Back_Extensions",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Deite-se de frente para baixo em um banco de hiperextensão, prendendo os tornozelos com segurança sob as patas.",
+        "Ajuste a almofada superior, se possível, para que suas coxas superiores fiquem planas em toda a almofada larga, deixando espaço suficiente para você dobrar na cintura sem qualquer restrição.",
+        "Com o corpo reto, cruze os braços à sua frente (minha preferência) ou atrás da cabeça. Esta será a sua posição inicial. Dica: Você também pode segurar uma anilha de peso para resistência extra na frente de você sob seus braços cruzados.",
+        "Comece a se inclinar para a frente lentamente na cintura, tanto quanto você pode, mantendo suas costas planas. Inspire enquanto realiza esse movimento. Continue avançando até que você sinta um alongamento agradável nos isquiotibiais e você não pode mais continuar sem um arredondamento das costas. Dica: Nunca vire as costas enquanto realiza este exercício. Além disso, algumas pessoas podem ir mais longe do que outras. A chave é que você vai tão longe quanto seu corpo permite que você vá sem arredondar as costas.",
+        "Lentamente, eleve seu tronco de volta à posição inicial à medida que você inspira. Dica: Evite a tentação de arquear as costas depois de uma linha reta. Além disso, não balançar o tronco a qualquer momento, a fim de proteger as costas de lesões.",
+        "Repita a quantidade recomendada de repetições."
+      ],
+      "comparisonReferences": [],
+      "notes": "Tronco estende além da linha das pernas em banco inclinado; requer revisão da amplitude.",
+      "technicalFlags": [
+        "Rever a amplitude: o tronco ultrapassa o alinhamento com as pernas."
+      ],
+      "sha256": "697462e659b1adb549e3e825dfdff5f3e2bc7fe788b00b252c6a3a4323f2da7d",
+      "linkAllowed": true
+    },
+    {
+      "index": 8,
+      "generationId": "01a16711-fe2c-74f3-ad7e-04f5e2470651",
+      "requestedName": "Remada com halteres e peito apoiado no banco inclinado",
+      "assignedName": "Remada inclinada com halteres",
+      "sourceId": "Dumbbell_Incline_Row",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Usando uma pegada neutra, incline-se em um banco inclinado.",
+        "Pegue um haltere em cada mão com uma pegada neutra, começando com os braços retos. Esta será a sua posição inicial.",
+        "Retraia as escápulas e flexione os cotovelos para remar os halteres ao seu lado.",
+        "Pausar no topo do movimento e, em seguida, retornar à posição inicial."
+      ],
+      "comparisonReferences": [],
+      "notes": "Peito apoiado em banco inclinado, remada com dois halteres; referência YMove exata não comprovada.",
+      "technicalFlags": [],
+      "sha256": "8b88b650e07e76e1aece8065b8bbcac7e16000b5ccd3d8def16a9fd14593f9ba",
+      "linkAllowed": true
+    },
+    {
+      "index": 9,
+      "generationId": "01a16711-fe28-77b9-be65-df4bfc55084d",
+      "requestedName": "Remada invertida em barra fixa baixa",
+      "assignedName": "Remada invertida",
+      "sourceId": "Inverted_Row",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Posicione uma barra em um rack para cerca de altura da cintura. Você também pode usar uma máquina de ferreiro.",
+        "Pegue uma pegada mais larga do que a largura do ombro na barra e posicione-se pendurado debaixo da barra. Seu corpo deve ser reto com os calcanhares no chão com os braços totalmente estendidos. Esta será a sua posição inicial.",
+        "Comece flexionando o cotovelo, puxando o peito em direção ao barra. Retraia as escápulas enquanto realiza o movimento.",
+        "Pausar no topo do movimento, e voltar-se para a posição inicial.",
+        "Repita para o número desejado de repetições."
+      ],
+      "comparisonReferences": [],
+      "notes": "Corpo sob barra baixa com calcanhares apoiados; sobe em direção à barra; referência YMove não comprovada.",
+      "technicalFlags": [],
+      "sha256": "3f27794127f8de19d15d63ab32a6d3c7789bd6f8d58fdd7fcea388b6e70915e6",
+      "linkAllowed": true
+    },
+    {
+      "index": 10,
+      "generationId": "01a16711-fe26-7349-9c06-4e5904c4c680",
+      "requestedName": "Puxada frontal na polia com triângulo — pegada neutra",
+      "assignedName": "Puxada frontal na polia",
+      "sourceId": "Wide-Grip_Lat_Pulldown",
+      "status": "excedente repetido — fora do aplicativo",
+      "finalReviewPending": false,
+      "description": [
+        "Sente-se na máquina de puxada com a barra longa presa à polia alta. Ajuste o apoio das coxas à sua altura para impedir que a resistência levante o corpo.",
+        "Segure a barra com as palmas voltadas para a frente. A pegada aberta fica além da largura dos ombros; a média acompanha essa largura, e a fechada fica mais próxima.",
+        "Com os braços estendidos, incline o tronco aproximadamente 30 graus para trás, mantendo a curvatura natural da lombar e o peito elevado. Esta é a posição inicial.",
+        "Expire e puxe a barra em direção à parte superior do peito, levando os ombros e os braços para baixo e para trás. Contraia os dorsais. Mantenha o tronco estável; os antebraços apenas sustentam a pegada, sem conduzir a puxada.",
+        "Após um segundo de contração, aproxime as escápulas e retorne a barra lentamente até estender os braços e alongar os dorsais. Inspire durante o retorno.",
+        "Repita este movimento para a quantidade prescrita de repetições."
+      ],
+      "comparisonReferences": [],
+      "notes": "Barra longa, sem triângulo; vinculada à puxada frontal aberta.",
+      "technicalFlags": [],
+      "sha256": "f210a47569d7a29e01792fb5cf33ab69c9cc654fa80ec6efd8a32163143f496b",
+      "linkAllowed": false,
+      "duplicateOf": "01a166e0-9224-70e9-9b26-f4e3733a4a06"
+    },
+    {
+      "index": 11,
+      "generationId": "01a16711-fe21-718a-9136-cd207829a751",
+      "requestedName": "Puxada unilateral na polia",
+      "assignedName": "Puxada unilateral na polia",
+      "sourceId": "selected-puxada-unilateral-na-polia",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Trabalha: Costas e bíceps.",
+        "Sente com o corpo estável e segure o puxador alto com uma mão. Traga o cotovelo para baixo e retorne com controle."
+      ],
+      "comparisonReferences": [
+        {
+          "type": "video",
+          "title": "Lat Pulldown",
+          "url": "https://ymove.app/api/free/5971eaa2-5264-49cc-99c2-1310305c5342",
+          "inspection": "MP4 decodificado e quadros comparados com a geração"
+        }
+      ],
+      "notes": "Puxada vertical sentada com um braço; substituir pela fonte original YMove do mesmo movimento.",
+      "technicalFlags": [],
+      "sha256": "49ca021409250c301894e34e3e5eef5794a0f2ef93c58bc10caf50175899dd30",
+      "linkAllowed": true
+    },
+    {
+      "index": 12,
+      "generationId": "01a166fc-f950-7e22-b0a8-823dd8c330fa",
+      "requestedName": "Remada cavalinho com barra apoiada e triângulo",
+      "assignedName": "Remada cavalinho",
+      "sourceId": "T-Bar_Row_with_Handle",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Posicione uma barra em uma mina terrestre ou em um canto para evitar que ela se mova. Coloque um peso adequado no seu final.",
+        "Fique de pé sobre a barra e posicione uma alça de linha Double D ao redor da barra ao lado do colarinho. Usando seus quadris e pernas, suba para uma posição de pé.",
+        "Assuma uma postura ampla com os quadris para trás e o peito para cima. Seus braços devem ser estendidos. Esta será a sua posição inicial.",
+        "Puxe o peso para o abdômen superior, retraindo as escápulas e flexionando os cotovelos. Não empurre o peso ou trapacear durante o movimento.",
+        "Após uma breve pausa, retorne à posição inicial."
+      ],
+      "comparisonReferences": [],
+      "notes": "Reexame do quadro ampliado mostra pegadores junto à barra landmine; correspondência provisória com a remada cavalinho, acessório ainda integra a revisão final.",
+      "technicalFlags": [
+        "Confirmar o acessório e a ancoragem da barra na revisão final."
+      ],
+      "sha256": "06a8a7cf1af3c7a3aa955f2b91dffa6cc24fbe5ce6530908360e37cff3e1c865",
+      "linkAllowed": true
+    },
+    {
+      "index": 13,
+      "generationId": "01a166fc-f94a-7993-ab1d-0422fdd9d7ab",
+      "requestedName": "Encolhimento com halter",
+      "assignedName": "Encolhimento com halter",
+      "sourceId": "Dumbbell_Shrug",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Fique ereto com um haltere em cada mão (palmas viradas para o tronco), braços estendidos nas laterais.",
+        "Levante os halteres elevando os ombros o mais alto possível enquanto expira. Segure a contração no topo por um segundo. Dica: Os braços devem permanecer estendidos em todos os momentos. Evite usar o bíceps para ajudar a levantar os halteres. Apenas os ombros devem estar se movendo para cima e para baixo.",
+        "Abaixe os halteres de volta para a posição original.",
+        "Repita a quantidade recomendada de repetições."
+      ],
+      "comparisonReferences": [],
+      "notes": "Elevação e descida dos ombros segurando dois halteres; sem referência YMove comprovada.",
+      "technicalFlags": [],
+      "sha256": "89df21e51c0f889eed0c80264ce36b5b8b3b9cceb67fb39ca4e5e726aa94b3ee",
+      "linkAllowed": true
+    },
+    {
+      "index": 14,
+      "generationId": "01a166fc-f944-7ff8-a61d-43971aced830",
+      "requestedName": "Encolhimento com barra",
+      "assignedName": "Encolhimento com barra",
+      "sourceId": "Barbell_Shrug",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Levante-se em linha reta com os pés na largura do ombro enquanto segura uma barra com as duas mãos à sua frente usando uma pegada pronada (palmeiras voltadas para as coxas). Dica: Suas mãos devem ser um pouco mais largas do que a largura do ombro. Você pode usar straps de pegada para este exercício para uma melhor pegada. Esta será a sua posição inicial.",
+        "Levante os ombros o mais longe que puder enquanto expira e segure a contração por um segundo. Dica: Evite tentar levantar a barra usando seu bíceps.",
+        "Retorne lentamente à posição inicial enquanto você inspira.",
+        "Repita a quantidade recomendada de repetições."
+      ],
+      "comparisonReferences": [],
+      "notes": "Elevação e descida dos ombros com barra à frente das coxas; sem referência YMove comprovada.",
+      "technicalFlags": [],
+      "sha256": "88fa40d924a2e7669e087bb5f529c371703ac9a1d515d88f9fb521ef4575e97b",
+      "linkAllowed": true
+    },
+    {
+      "index": 15,
+      "generationId": "01a166fc-f93b-7bbc-a9c9-cfb6ad2412d0",
+      "requestedName": "Barra fixa pegada supinada (chin-up)",
+      "assignedName": "Barra fixa (pull-up)",
+      "sourceId": "Pullups",
+      "status": "excedente repetido — fora do aplicativo",
+      "finalReviewPending": false,
+      "description": [
+        "Pegue a barra pull-up com as palmas voltadas para a frente usando a pegada indicada. Para uma grande pegada, suas mãos precisam ser espaçadas a uma distância maior do que a largura do ombro. Para uma pegada média, suas mãos precisam ser espaçadas a uma distância igual à largura do ombro e para uma pegada próxima a uma distância menor do que a largura do ombro.",
+        "Como você tem ambos os braços estendidos na frente de você segurando a barra na largura de pegada escolhida, traga seu tronco de volta em torno de 30 graus ou mais enquanto cria uma curvatura em sua parte inferior das costas e enfia o peito para fora. Esta é a sua posição inicial.",
+        "Puxe o tronco para cima até que a barra toque o peito, puxando os ombros e os braços para baixo e para trás. Expire enquanto você realiza essa parte do movimento. Dica: Concentre-se em apertar os músculos das costas uma vez que você atinja a posição de contração completa. O tronco superior deve permanecer estacionário à medida que se move através do espaço e apenas os braços devem se mover. Os antebraços não devem fazer outro trabalho além de segurar a barra.",
+        "Depois de um segundo na posição contraída, comece a inspirar e abaixe lentamente o tronco de volta para a posição inicial quando seus braços estiverem totalmente estendidos e os traseiros estiverem totalmente esticados.",
+        "Repita este movimento para a quantidade prescrita de repetições."
+      ],
+      "comparisonReferences": [
+        {
+          "type": "grip-contrast",
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/190/chin-ups/",
+          "note": "Supinação contrastada com pegada observada; não atribuir pelo nome anterior."
+        }
+      ],
+      "notes": "Mãos por cima da barra no quadro ampliado; vinculada à barra fixa pull-up, sem atribuir chin-up supinado.",
+      "technicalFlags": [],
+      "sha256": "379aa651de7c677aa4f7f12119c7e7ed0abb8e90db07b06b5beec9578c8f8d6e",
+      "linkAllowed": false,
+      "duplicateOf": "01a166fc-f936-7912-a6cd-f655d1c9c3ac"
+    },
+    {
+      "index": 16,
+      "generationId": "01a166fc-f936-7912-a6cd-f655d1c9c3ac",
+      "requestedName": "Barra fixa (pull-up)",
+      "assignedName": "Barra fixa (pull-up)",
+      "sourceId": "Pullups",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Pegue a barra pull-up com as palmas voltadas para a frente usando a pegada indicada. Para uma grande pegada, suas mãos precisam ser espaçadas a uma distância maior do que a largura do ombro. Para uma pegada média, suas mãos precisam ser espaçadas a uma distância igual à largura do ombro e para uma pegada próxima a uma distância menor do que a largura do ombro.",
+        "Como você tem ambos os braços estendidos na frente de você segurando a barra na largura de pegada escolhida, traga seu tronco de volta em torno de 30 graus ou mais enquanto cria uma curvatura em sua parte inferior das costas e enfia o peito para fora. Esta é a sua posição inicial.",
+        "Puxe o tronco para cima até que a barra toque o peito, puxando os ombros e os braços para baixo e para trás. Expire enquanto você realiza essa parte do movimento. Dica: Concentre-se em apertar os músculos das costas uma vez que você atinja a posição de contração completa. O tronco superior deve permanecer estacionário à medida que se move através do espaço e apenas os braços devem se mover. Os antebraços não devem fazer outro trabalho além de segurar a barra.",
+        "Depois de um segundo na posição contraída, comece a inspirar e abaixe lentamente o tronco de volta para a posição inicial quando seus braços estiverem totalmente estendidos e os traseiros estiverem totalmente esticados.",
+        "Repita este movimento para a quantidade prescrita de repetições."
+      ],
+      "comparisonReferences": [
+        {
+          "type": "grip-contrast",
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/190/chin-ups/",
+          "note": "Supinação contrastada com pegada observada; não atribuir pelo nome anterior."
+        }
+      ],
+      "notes": "Subida na barra vista por trás; referência YMove e pegada exata não comprovadas.",
+      "technicalFlags": [],
+      "sha256": "5bd683b677414f5a16a0c957c4c4429fcf9ad9f8b6829f5a32fc52cee5063216",
+      "linkAllowed": true
+    },
+    {
+      "index": 17,
+      "generationId": "01a166fa-a70f-7535-8c29-3e1a73769c50",
+      "requestedName": "Remada baixa com triângulo na polia",
+      "assignedName": "Remada sentada na polia",
+      "sourceId": "Seated_Cable_Rows",
+      "status": "excedente repetido — fora do aplicativo",
+      "finalReviewPending": false,
+      "description": [
+        "Use a remada na polia baixa com puxador triangular ou em V, que permite pegada neutra, com as palmas voltadas uma para a outra. Sente-se e apoie os pés na plataforma, mantendo os joelhos levemente flexionados, sem travá-los.",
+        "Incline-se para alcançar o puxador, preservando o alinhamento natural das costas.",
+        "Com os braços estendidos, recue o tronco até formar um ângulo de 90 graus com as pernas. Mantenha o peito elevado e a curvatura natural das costas. Sinta o alongamento dos dorsais ao segurar o puxador à frente do corpo. Esta é a posição inicial.",
+        "Expire e puxe o puxador em direção ao abdômen, mantendo o tronco estável e os braços próximos ao corpo. Contraia a musculatura das costas por um segundo e retorne lentamente, inspirando.",
+        "Repita a quantidade recomendada de repetições."
+      ],
+      "comparisonReferences": [
+        {
+          "type": "video",
+          "url": "https://ymove.app/api/free/77976f52-b13a-4fd0-addf-f4404e3a8e95",
+          "inspection": "MP4 decodificado e quadros comparados com a geração"
+        }
+      ],
+      "notes": "Puxada horizontal bilateral sentada; já existe original YMove para remada com barra V.",
+      "technicalFlags": [],
+      "sha256": "095a351a1114c4581accb3a8e78910f9b44d5b6883b4a1ba0a45c9b2c92ae201",
+      "linkAllowed": false,
+      "duplicateOf": "01a16635-f9ca-7a24-b34e-14d960a59ef2"
+    },
+    {
+      "index": 18,
+      "generationId": "01a166e0-924e-74e5-afb8-94fb19cb211e",
+      "requestedName": "Remada curvada com barra — pegada pronada",
+      "assignedName": "Remada curvada com barra",
+      "sourceId": "Bent_Over_Barbell_Row",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Segurando uma barra com uma pegada pronada (palmeiras viradas para baixo), dobre os joelhos ligeiramente e traga o tronco para a frente, dobrando-se na cintura, mantendo as costas retas até que esteja quase paralela ao chão. Dica: Certifique-se de manter a cabeça erguida. A barra deve ser pendurada diretamente na sua frente enquanto seus braços estão perpendiculares ao chão e ao tronco. Esta é a sua posição inicial.",
+        "Agora, enquanto mantém o tronco parado, expire e levante a barra para você. Mantenha os cotovelos perto do corpo e use apenas os antebraços para manter o peso. Na posição superior contraída, esprema os músculos das costas e segure por uma breve pausa.",
+        "Em seguida, inale e abaixe lentamente a barra de volta para a posição inicial.",
+        "Repita a quantidade recomendada de repetições."
+      ],
+      "comparisonReferences": [
+        {
+          "type": "description",
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/12/bent-over-row/"
+        }
+      ],
+      "notes": "Remada com barra e tronco inclinado; referência YMove exata não comprovada.",
+      "technicalFlags": [],
+      "sha256": "3bfd80d0d546869b5a413fb3504c1e9b49897f90f062f0f5d9e23fdc3fce364b",
+      "linkAllowed": true
+    },
+    {
+      "index": 19,
+      "generationId": "01a166e0-9224-70e9-9b26-f4e3733a4a06",
+      "requestedName": "Puxada frontal na polia — pegada pronada aberta",
+      "assignedName": "Puxada frontal na polia",
+      "sourceId": "Wide-Grip_Lat_Pulldown",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Sente-se na máquina de puxada com a barra longa presa à polia alta. Ajuste o apoio das coxas à sua altura para impedir que a resistência levante o corpo.",
+        "Segure a barra com as palmas voltadas para a frente. A pegada aberta fica além da largura dos ombros; a média acompanha essa largura, e a fechada fica mais próxima.",
+        "Com os braços estendidos, incline o tronco aproximadamente 30 graus para trás, mantendo a curvatura natural da lombar e o peito elevado. Esta é a posição inicial.",
+        "Expire e puxe a barra em direção à parte superior do peito, levando os ombros e os braços para baixo e para trás. Contraia os dorsais. Mantenha o tronco estável; os antebraços apenas sustentam a pegada, sem conduzir a puxada.",
+        "Após um segundo de contração, aproxime as escápulas e retorne a barra lentamente até estender os braços e alongar os dorsais. Inspire durante o retorno.",
+        "Repita este movimento para a quantidade prescrita de repetições."
+      ],
+      "comparisonReferences": [],
+      "notes": "Puxada vertical bilateral com barra longa; referência YMove exata não comprovada.",
+      "technicalFlags": [],
+      "sha256": "68ea76dfe195a989333e6e3013abbf8c6b74ee527580782b9c7bf8b04e7e77b4",
+      "linkAllowed": true
+    },
+    {
+      "index": 20,
+      "generationId": "01a166e0-921d-79d3-b64b-88dbdb1ed267",
+      "requestedName": "Puxada frontal na polia — pegada pronada fechada",
+      "assignedName": "Puxada fechada na polia",
+      "sourceId": "selected-puxada-fechada-na-polia",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Trabalha: Costas, com auxílio dos bíceps.",
+        "Sente com as coxas apoiadas e segure a barra por cima, com mãos mais próximas. Puxe à frente do peito e devolva devagar."
+      ],
+      "comparisonReferences": [],
+      "notes": "Mãos próximas e por cima da barra longa no quadro ampliado; puxada fechada na polia.",
+      "technicalFlags": [],
+      "sha256": "3559f098a2ad9ebf762ea621803d2052f1cf113b4887f08625ea42a026237fe4",
+      "linkAllowed": true
+    },
+    {
+      "index": 21,
+      "generationId": "01a166e0-9212-77d6-9535-cf4ad239596d",
+      "requestedName": "Crossover unilateral na polia",
+      "assignedName": "Crossover unilateral na polia",
+      "sourceId": "pp-crossover-unilateral-na-polia",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Trabalha: Peito e estabilizadores do tronco.",
+        "Com a polia alta ao lado, traga o puxador à frente do peito em arco. Volte devagar, sem girar o corpo."
+      ],
+      "comparisonReferences": [],
+      "notes": "Um braço move cabo com tronco bastante inclinado; não há referência YMove exata confirmada.",
+      "technicalFlags": [
+        "Rever a estabilidade do tronco durante o movimento."
+      ],
+      "sha256": "410e16ddbd90623fd516be4e2b1b1fd1e56ada9414d277d1211a9cdfab5721ee",
+      "linkAllowed": true
+    },
+    {
+      "index": 22,
+      "generationId": "01a166e0-9210-7f5e-a016-d4ede78793d6",
+      "requestedName": "Flexão com joelhos apoiados",
+      "assignedName": "Flexão de braço",
+      "sourceId": "Pushups",
+      "status": "excedente repetido — fora do aplicativo",
+      "finalReviewPending": false,
+      "description": [
+        "Deite-se no chão de frente para baixo e coloque as mãos a cerca de 36 polegadas de distância, mantendo o tronco no comprimento dos braços.",
+        "Em seguida, abaixe-se para baixo até que seu peito quase toque o chão enquanto você inspira.",
+        "Agora expire e pressione a parte superior do corpo de volta para a posição inicial enquanto aperta o peito.",
+        "Depois de uma breve pausa na posição de contração superior, você pode começar a baixar-se para baixo novamente para tantas repetições quantas forem necessárias."
+      ],
+      "comparisonReferences": [
+        {
+          "type": "variant-contrast",
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/13/bent-knee-push-up/",
+          "note": "Distinguir apoio nos joelhos do apoio nas pontas dos pés."
+        }
+      ],
+      "notes": "Joelhos fora do chão e apoio nas pontas dos pés; vinculada à flexão comum.",
+      "technicalFlags": [],
+      "sha256": "0f520bd00b9cc7301e18a6005b2d9112e695f3edaca0d476b7037bc9e8c8fd62",
+      "linkAllowed": false,
+      "duplicateOf": "01a166d5-f02b-7abe-8a60-0e7fc2419152"
+    },
+    {
+      "index": 23,
+      "generationId": "01a166e0-920f-7ac8-a287-13c417812d00",
+      "requestedName": "Flexão com pés elevados",
+      "assignedName": "Flexão com pés elevados",
+      "sourceId": "pp-flexao-com-pes-elevados",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Trabalha: Peito, tríceps e ombros.",
+        "Apoie os pés em um banco estável e as mãos no chão. Desça o peito e empurre para subir, sem deixar o quadril cair."
+      ],
+      "comparisonReferences": [],
+      "notes": "Flexão com pés sobre banco e mãos no chão; referência YMove exata não comprovada.",
+      "technicalFlags": [],
+      "sha256": "2bf72f7fc46b80dc639de26b04f6a8db26c2cf4eb33a90c30b3a88967e6c56e2",
+      "linkAllowed": true
+    },
+    {
+      "index": 24,
+      "generationId": "01a166dc-f177-7939-82d3-30bb48524c00",
+      "requestedName": "Supino no chão com halteres",
+      "assignedName": "Supino no chão com halteres",
+      "sourceId": "pp-supino-no-chao-com-halteres",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Trabalha: Peito e tríceps.",
+        "Deite no chão com joelhos dobrados. Empurre os halteres acima do peito e desça até os braços encostarem suavemente no solo."
+      ],
+      "comparisonReferences": [],
+      "notes": "Dois halteres empurrados para cima com costas no chão; referência YMove exata não comprovada.",
+      "technicalFlags": [],
+      "sha256": "8244d492bdfae2f4fba4e68af3c13df71eace16d39b766c74c348a83d4ea5cac",
+      "linkAllowed": true
+    },
+    {
+      "index": 25,
+      "generationId": "01a166dc-f14f-7a54-88dc-73c5ceb434a9",
+      "requestedName": "Pull-over com halter",
+      "assignedName": "Pull-over com halter",
+      "sourceId": "Bent-Arm_Dumbbell_Pullover",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Coloque um haltere em pé em um banco plano.",
+        "Garantindo que o haltere permaneça firmemente colocado no topo do banco, fique perpendicular ao banco (tronco através dele como na formação de uma cruz) com apenas os ombros deitados na superfície. Os quadris devem estar abaixo do banco e as pernas dobradas com os pés firmemente no chão. A cabeça também estará fora do banco.",
+        "Segure o haltere com as duas mãos e segure-o diretamente sobre o peito com uma curvatura em seus braços. Ambas as palmas devem estar pressionando contra a parte inferior de um dos lados do haltere. Esta será a sua posição inicial. Cuidado: Sempre certifique-se de que o haltere usado para este exercício é seguro. Usar um haltere com anilhas soltas pode resultar no haltere caindo e caindo em seu rosto.",
+        "Mantendo os braços estendidos na posição do braço dobrado, abaixe o peso lentamente em um arco atrás da cabeça enquanto inspira até sentir um estiramento no peito.",
+        "Nesse ponto, traga o haltere de volta à posição inicial usando o arco através do qual o peso foi reduzido e expire enquanto você realiza esse movimento.",
+        "Segure o peso na posição inicial por um segundo e repita o movimento para o número prescrito de repetições."
+      ],
+      "comparisonReferences": [],
+      "notes": "Um halter nas duas mãos descreve arco atrás da cabeça e retorna; movimento de pullover visível, sem referência YMove exata.",
+      "technicalFlags": [],
+      "sha256": "58b94665046f855c3db4a099c279f1e40e207b7a03b47a1babff20d397fb2ccb",
+      "linkAllowed": true
+    },
+    {
+      "index": 26,
+      "generationId": "01a166dc-f142-7154-84b4-4d12e07cb9ae",
+      "requestedName": "Supino declinado com halteres",
+      "assignedName": "Supino declinado com halteres",
+      "sourceId": "pp-supino-declinado-com-halteres",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Trabalha: Peito, tríceps e frente dos ombros.",
+        "Deite no banco declinado, com as pernas presas ao apoio. Empurre os halteres acima do peito e abaixe com controle."
+      ],
+      "comparisonReferences": [],
+      "notes": "Tronco e cabeça aparecem fora do apoio do banco durante o supino declinado; preservar reprovação.",
+      "technicalFlags": [
+        "Rever o apoio da cabeça e do tronco no banco."
+      ],
+      "sha256": "1447728401566f8da648a24a499985f37ac9c16f95321e24c748b5a09ac3b446",
+      "linkAllowed": true
+    },
+    {
+      "index": 27,
+      "generationId": "01a166dc-f142-7009-a00e-7dbe66d0ea5c",
+      "requestedName": "Supino reto na máquina",
+      "assignedName": "Supino reto na máquina",
+      "sourceId": "Leverage_Chest_Press",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Trabalha: Peito, tríceps e frente dos ombros.",
+        "Ajuste o banco para os pegadores ficarem na altura do peito. Empurre à frente e retorne devagar, com as costas apoiadas."
+      ],
+      "comparisonReferences": [
+        {
+          "type": "video",
+          "title": "Seated Machine Chest Press",
+          "url": "https://ymove.app/api/free/20cc4825-dd52-4887-99db-c492546741dc",
+          "inspection": "MP4 decodificado e quadros comparados com a geração"
+        }
+      ],
+      "notes": "Duas mãos empurram alavancas de máquina à frente do tronco; falta fonte YMove exata do aparelho.",
+      "technicalFlags": [],
+      "sha256": "68c0e5d010527f9270627621c2d0fb8b4e14945b1219b57806854b7b548e4a64",
+      "linkAllowed": true
+    },
+    {
+      "index": 28,
+      "generationId": "01a166dc-f137-7e4b-be95-3d00cda05f1c",
+      "requestedName": "Crucifixo declinado com halteres",
+      "assignedName": "Crucifixo declinado com halteres",
+      "sourceId": "Decline_Dumbbell_Flyes",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Proteja as pernas no final do banco declinado e deite-se com um haltere em cada mão em cima de suas coxas. As palmas da sua mão estarão voltadas uma para a outra.",
+        "Uma vez que você está deitado, mova os halteres na sua frente na largura do ombro. As palmas das mãos devem estar voltadas umas para as outras e os braços devem ser perpendiculares ao chão e totalmente estendidos. Esta será a sua posição inicial.",
+        "Com uma leve flexão dos cotovelos para evitar o estresse no tendão do bíceps, abaixe os braços em ambos os lados em um arco largo até sentir um alongamento no peito. Inspire enquanto realiza essa parte do movimento. Dica: Tenha em mente que durante todo o movimento, os braços devem permanecer estacionários; o movimento só deve ocorrer na articulação do ombro.",
+        "Retorne os braços de volta à posição inicial enquanto aperta os músculos do peito e expira. Dica: Certifique-se de usar o mesmo arco de movimento usado para diminuir os pesos.",
+        "Segure por um segundo na posição de contração e repita o movimento para a quantidade prescrita de repetições."
+      ],
+      "comparisonReferences": [],
+      "notes": "Abertura lateral dos braços no banco declinado é visível; não aprovar amplitude/execução sem referência YMove.",
+      "technicalFlags": [
+        "Rever a amplitude da abertura."
+      ],
+      "sha256": "722a7676a3f39f3e3a385ced43f27ad0588460c8d8c5880975e510c25bf687db",
+      "linkAllowed": true
+    },
+    {
+      "index": 29,
+      "generationId": "01a166dc-f137-754f-937d-f5b5691893f8",
+      "requestedName": "Flexão diamante no solo",
+      "assignedName": "Prancha frontal",
+      "sourceId": "Plank",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Deite-se de frente para o chão e apoie o peso nos antebraços e nas pontas dos pés. Posicione os braços flexionados abaixo dos ombros.",
+        "Mantenha o corpo alinhado e sustente a posição pelo maior tempo que conseguir. A fonte descreve elevar um braço ou uma perna como variação para aumentar a dificuldade."
+      ],
+      "comparisonReferences": [
+        {
+          "type": "description",
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/32/front-plank/"
+        }
+      ],
+      "notes": "Apoio nos antebraços e pontas dos pés; vinculada à prancha frontal, sem atribuir flexão diamante.",
+      "technicalFlags": [],
+      "sha256": "575b36cd9aaf3aa6799b19fb289fbb6414f8d990e13e73b8cc5f218e71424e34",
+      "linkAllowed": true
+    },
+    {
+      "index": 30,
+      "generationId": "01a166d5-f068-761b-a875-a78d72da2785",
+      "requestedName": "Flexão com mãos elevadas",
+      "assignedName": "Flexão inclinada",
+      "sourceId": "Incline_Push-Up_Medium",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Fique de frente para uma barra de máquina Smith ou plataforma elevada resistente a uma altura apropriada.",
+        "Coloque as mãos na barra, com as mãos separadas sobre a largura do ombro.",
+        "Posicione os pés para trás da barra com os braços e o corpo em linha reta. Esta será a sua posição inicial.",
+        "Mantendo seu corpo reto, abaixe o peito até a barra, dobrando os braços.",
+        "Volte para a posição inicial, estendendo os cotovelos, pressionando-se de volta para cima."
+      ],
+      "comparisonReferences": [],
+      "notes": "Flexão com as mãos em caixa elevada; referência YMove exata não comprovada.",
+      "technicalFlags": [],
+      "sha256": "f2a94e0ea65071f3fb1242520b264e8d0ccfaba85979507a51e0daf31bbdbe6e",
+      "linkAllowed": true
+    },
+    {
+      "index": 31,
+      "generationId": "01a166d5-f02f-72fd-afec-85aa864d5418",
+      "requestedName": "Crucifixo reto com halteres",
+      "assignedName": "Crucifixo com halteres",
+      "sourceId": "Dumbbell_Flyes",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Deite-se em um banco plano com um haltere em cada mão descansando em cima de suas coxas. As palmas da sua mão estarão voltadas uma para a outra.",
+        "Em seguida, usando suas coxas para ajudar a levantar os halteres, levante os halteres um de cada vez para que você possa segurá-los na sua frente na largura do ombro com as palmas das mãos voltadas para o outro. Levante os halteres como se você os estivesse pressionando, mas pare e segure antes de trancar. Esta será a sua posição inicial.",
+        "Com uma leve flexão dos cotovelos para evitar o estresse no tendão do bíceps, abaixe os braços em ambos os lados em um arco largo até sentir um alongamento no peito. Inspire enquanto realiza essa parte do movimento. Dica: Tenha em mente que durante todo o movimento, os braços devem permanecer estacionários; o movimento só deve ocorrer na articulação do ombro.",
+        "Retorne os braços de volta à posição inicial enquanto aperta os músculos do peito e expira. Dica: Certifique-se de usar o mesmo arco de movimento usado para diminuir os pesos.",
+        "Segure por um segundo na posição de contração e repita o movimento para a quantidade prescrita de repetições."
+      ],
+      "comparisonReferences": [],
+      "notes": "Abertura lateral com halteres em banco plano é visível; falta referência YMove e revisão da amplitude.",
+      "technicalFlags": [
+        "Rever a amplitude da abertura."
+      ],
+      "sha256": "c3a1ebaed948ef317aba12f9921608905a1980de2bda0dc61145361d2055af56",
+      "linkAllowed": true
+    },
+    {
+      "index": 32,
+      "generationId": "01a166d5-f02d-7e29-bbdc-0d2d3691834f",
+      "requestedName": "Crucifixo inclinado com halteres",
+      "assignedName": "Crucifixo inclinado com halteres",
+      "sourceId": "Incline_Dumbbell_Flyes",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Segure um haltere em cada mão e deite-se em um banco inclinado que é definido para um ângulo inclinado de não mais de 30 graus.",
+        "Estenda os braços acima de você com uma leve flexão dos cotovelos.",
+        "Agora gire os punhos para que as palmas das suas mãos estejam voltadas para você. Dica: Os dedos mindinhos devem estar próximos um do outro. Esta será a sua posição inicial.",
+        "À medida que você inspira, comece a abaixar lentamente os braços para o lado, mantendo os braços estendidos e girando os punhos até que as palmas da mão estejam voltadas uma para a outra. Dica: No final do movimento, os braços estarão ao seu lado com as palmas das mãos voltadas para o teto.",
+        "À medida que você expira, comece a trazer os halteres de volta para a posição inicial, invertendo o movimento e girando as mãos para que os dedos mindinhos fiquem próximos uns dos outros novamente. Dica: Tenha em mente que o movimento só acontecerá na articulação do ombro e no punho. Não há movimento que aconteça na articulação do cotovelo.",
+        "Repita a quantidade recomendada de repetições."
+      ],
+      "comparisonReferences": [],
+      "notes": "Abertura lateral com halteres em banco inclinado é visível; falta referência YMove e revisão da amplitude.",
+      "technicalFlags": [
+        "Rever a amplitude da abertura."
+      ],
+      "sha256": "cfb530b8b727d47e48f121c261e16571ac89acb3823047db3bf0c12b24ae4359",
+      "linkAllowed": true
+    },
+    {
+      "index": 33,
+      "generationId": "01a166d5-f02b-7b0d-8d3f-9db0f5a65ff7",
+      "requestedName": "Crossover na polia alta",
+      "assignedName": "Crossover na polia",
+      "sourceId": "Cable_Crossover",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Posicione as polias acima da cabeça, selecione a resistência e segure um puxador em cada mão.",
+        "Dê um passo à frente e aproxime os braços à frente do corpo. Mantenha uma leve inclinação do tronco para a frente. Esta é a posição inicial.",
+        "Com os cotovelos levemente flexionados, abra os braços em um arco amplo até sentir o alongamento dos peitorais. Inspire durante a abertura. Evite sobrecarregar o tendão do bíceps. Mantenha o tronco e o ângulo dos cotovelos estáveis; o movimento ocorre nos ombros.",
+        "Expire e retorne os braços à frente do corpo pelo mesmo arco de movimento.",
+        "Mantenha a posição por um segundo e repita conforme a quantidade de repetições prescrita."
+      ],
+      "comparisonReferences": [],
+      "notes": "Quadro ampliado mostra cabos vindos das polias na parte alta das torres e convergência para baixo.",
+      "technicalFlags": [],
+      "sha256": "c3471d16a76d1afa914340d4623203a54b6641f5682ca503e19bd7ff50339c9c",
+      "linkAllowed": true
+    },
+    {
+      "index": 34,
+      "generationId": "01a166d5-f02b-7abe-8a60-0e7fc2419152",
+      "requestedName": "Flexão de braço",
+      "assignedName": "Flexão de braço",
+      "sourceId": "Pushups",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Deite-se no chão de frente para baixo e coloque as mãos a cerca de 36 polegadas de distância, mantendo o tronco no comprimento dos braços.",
+        "Em seguida, abaixe-se para baixo até que seu peito quase toque o chão enquanto você inspira.",
+        "Agora expire e pressione a parte superior do corpo de volta para a posição inicial enquanto aperta o peito.",
+        "Depois de uma breve pausa na posição de contração superior, você pode começar a baixar-se para baixo novamente para tantas repetições quantas forem necessárias."
+      ],
+      "comparisonReferences": [
+        {
+          "type": "variant-contrast",
+          "url": "https://www.acefitness.org/resources/everyone/exercise-library/13/bent-knee-push-up/",
+          "note": "Distinguir apoio nos joelhos do apoio nas pontas dos pés."
+        }
+      ],
+      "notes": "Flexão no chão sobre mãos e pontas dos pés; referência YMove exata não comprovada.",
+      "technicalFlags": [],
+      "sha256": "ff9b1a86f7d1ee6321118a96e32d2e031929c830048ca62ee7e4322fba7fdcca",
+      "linkAllowed": true
+    },
+    {
+      "index": 35,
+      "generationId": "01a166d5-f022-79a0-8fab-a281b5f2a6d5",
+      "requestedName": "Voador (peck deck)",
+      "assignedName": "Voador (Pec Deck)",
+      "sourceId": "Butterfly",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Sente-se na máquina com as costas planas na almofada.",
+        "Agarre as alças. Dica: Seus braços devem ser posicionados paralelos ao chão; ajuste a máquina de acordo. Esta será a sua posição inicial.",
+        "Empurre as alças juntas lentamente enquanto aperta o peito no meio. expire durante esta parte do movimento e segure a contração por um segundo.",
+        "Volte para a posição inicial lentamente à medida que você inspira até que seus músculos do peito estejam totalmente esticados.",
+        "Repita a quantidade recomendada de repetições."
+      ],
+      "comparisonReferences": [],
+      "notes": "Adução horizontal dos braços em máquina peck deck; referência YMove exata não comprovada.",
+      "technicalFlags": [],
+      "sha256": "adedd477d8a6da85f008836624e57b753e6de8e32c4b0cd07341763ad3342999",
+      "linkAllowed": true
+    },
+    {
+      "index": 36,
+      "generationId": "01a166c8-6444-73ae-9f17-ce3c15411bfc",
+      "requestedName": "Supino reto com halteres",
+      "assignedName": "Supino reto com halteres",
+      "sourceId": "Dumbbell_Bench_Press",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Deite-se em um banco reto, com um halter em cada mão e os pesos apoiados nas coxas. Mantenha as palmas voltadas uma para a outra.",
+        "Use o apoio das coxas para posicionar um halter de cada vez na altura dos ombros.",
+        "Gire os punhos até que as palmas fiquem voltadas para a frente. Posicione os halteres ao lado do peito, formando um ângulo de 90 graus entre braços e antebraços. Mantenha o controle dos pesos. Esta é a posição inicial.",
+        "Expire e empurre os halteres para cima usando os peitorais. Estenda os braços no ponto mais alto, mantenha a contração por um segundo e desça lentamente. A descida deve durar aproximadamente o dobro do tempo da subida.",
+        "Repita o movimento para a quantidade prescrita de repetições do seu programa de treinamento."
+      ],
+      "comparisonReferences": [
+        {
+          "type": "video",
+          "url": "/media/exercises/personal-pro-supino-halteres.mp4",
+          "inspection": "MP4 decodificado e quadros comparados com a geração"
+        }
+      ],
+      "notes": "Supino com dois halteres em banco plano; sem referência YMove exata gratuita identificada.",
+      "technicalFlags": [],
+      "sha256": "55bbb221a9a27e4d0bc3c9c81e5cee6bdf5d63eec6a322c7fbbb19a2558cf7fc",
+      "linkAllowed": true
+    },
+    {
+      "index": 37,
+      "generationId": "01a166c8-6439-7f01-b681-1ead4b5fde55",
+      "requestedName": "Supino declinado com barra",
+      "assignedName": "Supino declinado com barra",
+      "sourceId": "Decline_Barbell_Bench_Press",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Proteja as pernas no final do banco declinado e deite-se lentamente no banco.",
+        "Usando uma pegada de largura média (uma pegada que cria um ângulo de 90 graus no meio do movimento entre os antebraços e os braços), levante a barra do rack e segure-a diretamente sobre você com os braços estendidos. Os braços devem ser perpendiculares ao chão. Esta será a sua posição inicial. Dica: Para proteger seu manguito rotador, é melhor se você tiver um spotter ajudá-lo a levantar a barra do rack.",
+        "À medida que você inspira, desça lentamente até sentir a barra no peito inferior.",
+        "Depois de uma segunda pausa, traga a barra de volta para a posição inicial à medida que você expira e empurre a barra usando os músculos do peito. Estenda os braços e contraia os peitorais na posição de contração, segure por um segundo e comece a descer lentamente novamente. Dica: Deve levar pelo menos duas vezes mais tempo para descer do que para subir).",
+        "Repita o movimento para a quantidade prescrita de repetições.",
+        "Quando terminar, coloque a barra de volta no rack."
+      ],
+      "comparisonReferences": [],
+      "notes": "Supino com barra em banco declinado; sem referência YMove exata comprovada.",
+      "technicalFlags": [],
+      "sha256": "cb4411e567c8c49d3204cd2de8518469a13cd7154f64fcba29d794184708f12e",
+      "linkAllowed": true
+    },
+    {
+      "index": 38,
+      "generationId": "01a166c8-6438-7300-b3ad-9757e611d7be",
+      "requestedName": "Supino inclinado com halteres",
+      "assignedName": "Supino inclinado com halteres",
+      "sourceId": "Incline_Dumbbell_Press",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Deite-se em um banco inclinado com um halter em cada mão, inicialmente apoiado nas coxas. Mantenha as palmas voltadas uma para a outra.",
+        "Com auxílio das coxas, posicione um halter de cada vez na altura dos ombros.",
+        "Gire os punhos até que as palmas fiquem voltadas para a frente. Esta é a posição inicial.",
+        "Mantenha o controle dos halteres durante todo o exercício. Expire e empurre os pesos para cima usando os peitorais.",
+        "Estenda os braços, faça uma pausa de um segundo no alto e abaixe os halteres lentamente. A descida deve durar aproximadamente o dobro do tempo da subida.",
+        "Repita o movimento para a quantidade prescrita de repetições.",
+        "Ao terminar, apoie os halteres nas coxas e depois coloque-os no chão, mantendo o controle dos pesos."
+      ],
+      "comparisonReferences": [
+        {
+          "type": "video",
+          "url": "/media/exercises/537.mp4",
+          "inspection": "MP4 decodificado e quadros comparados com a geração"
+        }
+      ],
+      "notes": "Supino com dois halteres em banco inclinado; sem referência YMove exata comprovada.",
+      "technicalFlags": [],
+      "sha256": "80fb596a5d4da8257b9abe5c314ec52424bb4c4f31e78ecabdcbb87c2be0406e",
+      "linkAllowed": true
+    },
+    {
+      "index": 39,
+      "generationId": "01a166c7-58d5-7041-b976-a208282304f1",
+      "requestedName": "Supino inclinado com barra",
+      "assignedName": "Supino inclinado com barra",
+      "sourceId": "Barbell_Incline_Bench_Press_-_Medium_Grip",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Deite-se de volta em um banco inclinado. Usando uma pegada de largura média (uma pegada que cria um ângulo de 90 graus no meio do movimento entre os antebraços e os braços), levante a barra do rack e segure-a diretamente sobre você com os braços estendidos. Esta será a sua posição inicial.",
+        "Ao inspirar, desça lentamente até sentir a barra no parte superior do peito.",
+        "Depois de uma segunda pausa, traga a barra de volta para a posição inicial à medida que você expira e empurre a barra usando os músculos do peito. Estenda os braços na posição contraída, contraia os peitorais, segure por um segundo e comece a descer lentamente novamente. Dica: deve levar pelo menos duas vezes mais tempo para descer do que para subir.",
+        "Repita o movimento para a quantidade prescrita de repetições.",
+        "Quando terminar, coloque a barra de volta no rack."
+      ],
+      "comparisonReferences": [
+        {
+          "type": "video",
+          "url": "/media/exercises/538.mp4",
+          "inspection": "MP4 decodificado e quadros comparados com a geração"
+        }
+      ],
+      "notes": "Supino com barra em banco inclinado; sem referência YMove exata comprovada.",
+      "technicalFlags": [],
+      "sha256": "9b144b07aa5dc6f0c18da7b4982c12e6bd79c035dbe6cff35c350d73ddcb406e",
+      "linkAllowed": true
+    },
+    {
+      "index": 40,
+      "generationId": "01a16683-0b0e-711e-9e10-3f4839fa171a",
+      "requestedName": "Swing com kettlebell",
+      "assignedName": "Swing com kettlebell",
+      "sourceId": "pp-swing-com-kettlebell",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Trabalha: Glúteos, parte de trás das coxas e condicionamento.",
+        "Leve o quadril para trás com o kettlebell entre as pernas. Estenda o quadril para impulsionar o peso à frente, sem levantar só com os braços."
+      ],
+      "comparisonReferences": [
+        {
+          "type": "video",
+          "title": "Kettlebell swing",
+          "url": "https://ymove.app/api/free/13263f92-5fe2-4d92-bec0-808f8b315620",
+          "inspection": "MP4 decodificado e quadros comparados com a geração"
+        }
+      ],
+      "notes": "Sequência mostra kettlebell azul segurado pelas duas mãos e balanço com extensão do quadril; a reprovação anterior por ausência de equipamento era baseada na miniatura.",
+      "technicalFlags": [
+        "Confirmar a consistência visual do kettlebell durante todo o movimento."
+      ],
+      "sha256": "a2d6daf7fcde0b934e0812b0c28e2827287be66e0db087d297cab40ee2ce0125",
+      "linkAllowed": true
+    },
+    {
+      "index": 41,
+      "generationId": "01a16680-7438-70b7-b44a-20ac140fb7cd",
+      "requestedName": "Leg press 45 graus",
+      "assignedName": "Leg press",
+      "sourceId": "Leg_Press",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Sente-se no leg press e apoie os pés na plataforma à frente do corpo, aproximadamente na largura dos ombros. A descrição utiliza essa posição média dos pés.",
+        "Libere as travas de segurança e empurre a plataforma até estender as pernas, sem travar os joelhos. O tronco e as pernas devem formar um ângulo de 90 graus na posição descrita. Esta é a posição inicial.",
+        "Inspire e abaixe a plataforma lentamente até que coxas e pernas formem um ângulo de 90 graus.",
+        "Expire e empurre a plataforma de volta à posição inicial, usando os quadríceps e mantendo o apoio dos calcanhares.",
+        "Repita conforme a prescrição e, ao finalizar, encaixe corretamente as travas de segurança. Não retire os pés com a plataforma destravada."
+      ],
+      "comparisonReferences": [
+        {
+          "type": "video",
+          "url": "https://ymove.app/api/free/d0bc669e-0d78-46f0-95f1-86503ab746e1",
+          "inspection": "MP4 decodificado e quadros comparados com a geração"
+        }
+      ],
+      "notes": "Pressão de plataforma com pernas na máquina; reprovação anterior preservada; usar original YMove.",
+      "technicalFlags": [
+        "Reprovação anterior preservada no histórico; execução final ainda será revista."
+      ],
+      "sha256": "a9a0641e8f37bd615aacc8361aa170058c0b6cb75188deb4789821a297713d09",
+      "linkAllowed": true
+    },
+    {
+      "index": 42,
+      "generationId": "01a1667d-1927-7e41-a630-de71694deb23",
+      "requestedName": "Agachamento livre com barra",
+      "assignedName": "Agachamento livre com barra",
+      "sourceId": "Barbell_Squat",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Este exercício é melhor realizado dentro de um rack de agachamento para fins de segurança. Para começar, primeiro defina a barra em um rack para logo abaixo do nível do ombro. Uma vez que a altura correta é escolhida e a barra é carregada, pise sob a barra e coloque a parte de trás de seus ombros (ligeiramente abaixo do pescoço) através dela.",
+        "Segure a barra usando os dois braços de cada lado e levante-a do rack, primeiro empurrando com as pernas e, ao mesmo tempo, endireitando seu tronco.",
+        "Afaste-se do rack e posicione as pernas usando uma postura média de largura do ombro com os dedos dos pés ligeiramente apontados. Mantenha a cabeça erguida em todos os momentos e também mantenha as costas retas. Esta será a sua posição inicial. (Nota: Para os fins desta discussão, usaremos a posição média descrita acima, que visa o desenvolvimento geral; no entanto, você pode escolher qualquer uma das três posições discutidas na seção de posturas dos pés).",
+        "Comece a abaixar lentamente a barra dobrando os joelhos e quadris enquanto mantém uma postura reta com a cabeça erguida. Continue para baixo até que o ângulo entre a perna superior e as panturrilhas se torne ligeiramente inferior a 90 graus. Inspire enquanto você realiza essa parte do movimento. Dica: Se você realizou o exercício corretamente, a frente dos joelhos deve fazer uma linha reta imaginária com os dedos dos pés que é perpendicular à frente. Se seus joelhos ultrapassarem essa linha imaginária (se eles ultrapassarem seus dedos), você estará colocando estresse indevido no joelho e o exercício foi realizado incorretamente.",
+        "Comece a levantar a barra enquanto expira, empurrando o chão com o calcanhar do pé enquanto endireita as pernas novamente e volte para a posição inicial.",
+        "Repita a quantidade recomendada de repetições."
+      ],
+      "comparisonReferences": [
+        {
+          "type": "video",
+          "url": "https://ymove.app/api/free/fd0eaa34-d14b-4421-b41c-1669f93253b3",
+          "inspection": "MP4 decodificado e quadros comparados com a geração"
+        }
+      ],
+      "notes": "Agachamento com barra nas costas; usar original YMove do mesmo movimento.",
+      "technicalFlags": [],
+      "sha256": "4b0a90ab48d47fe2ba05383063625b274218c84db49a809a45875f73fd3c1f88",
+      "linkAllowed": true
+    },
+    {
+      "index": 43,
+      "generationId": "01a1664a-c5aa-7503-81a1-fc0e55909c89",
+      "requestedName": "Tríceps francês com corda na polia",
+      "assignedName": "Extensão de tríceps acima da cabeça",
+      "sourceId": "selected-extensao-de-triceps-acima-da-cabeca",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Trabalha: Tríceps.",
+        "De costas para a polia, segure a corda atrás da cabeça. Estenda os cotovelos para levar as mãos à frente e volte devagar."
+      ],
+      "comparisonReferences": [
+        {
+          "type": "video",
+          "title": "Overhead Cable Rope Extension",
+          "url": "https://ymove.app/api/free/a1c3384e-62db-4595-9b97-df2e7f131234",
+          "inspection": "MP4 decodificado e quadros comparados com a geração"
+        }
+      ],
+      "notes": "Extensão de cotovelos acima da cabeça em cabo; reprovação original preservada, sem regeneração.",
+      "technicalFlags": [
+        "Reprovação anterior preservada no histórico; execução final ainda será revista."
+      ],
+      "sha256": "12a93537cd8112b557e757bb3759b46ec0170b0a3c7cc8682db0e897f82216c9",
+      "linkAllowed": true
+    },
+    {
+      "index": 44,
+      "generationId": "01a16645-f0a3-7796-9ccb-37435abfd69d",
+      "requestedName": "Rosca martelo simultânea com halteres",
+      "assignedName": "Rosca martelo",
+      "sourceId": "Hammer_Curls",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Levante-se com o seu tronco ereto e um haltere em cada mão sendo realizada ao comprimento dos braços. Os cotovelos devem estar perto do tronco.",
+        "As palmas das mãos devem estar voltadas para o seu tronco. Esta será a sua posição inicial.",
+        "Agora, enquanto segura o braço parado, expire e eleve o peso para a frente enquanto contrai o bíceps. Continue a aumentar o peso até que o bíceps esteja totalmente contraído e o haltere esteja ao nível do ombro. Mantenha a posição de contração por um breve momento enquanto aperta o bíceps. Dica: Concentre-se em manter o cotovelo estacionário e apenas mover o antebraço.",
+        "Após a breve pausa, inale e comece lentamente a descer os halteres de volta para a posição inicial.",
+        "Repita a quantidade recomendada de repetições."
+      ],
+      "comparisonReferences": [
+        {
+          "type": "video",
+          "url": "https://ymove.app/api/free/b11e6c6f-b2e8-44ca-95dc-adf0dcd34426",
+          "inspection": "MP4 decodificado e quadros comparados com a geração"
+        }
+      ],
+      "notes": "Rosca com dois halteres e pegada neutra; usar original YMove, sem homologar a geração.",
+      "technicalFlags": [],
+      "sha256": "8355b90a1c238bb4989478cbf817a4eb0ed4a3a32a2a6808136081823758bcc3",
+      "linkAllowed": true
+    },
+    {
+      "index": 45,
+      "generationId": "01a16641-4b2e-7d0e-97b8-57d1bed1bb50",
+      "requestedName": "Remada unilateral com halter — apoio na coxa",
+      "assignedName": "Remada unilateral com halter — apoio na coxa",
+      "sourceId": "pp-remada-unilateral-com-halter-apoio-na-coxa",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Fique em pé com uma perna à frente e incline o tronco pelo quadril. Apoie a mão livre na coxa da frente.",
+        "Puxe o halter ao lado do tronco, levando o cotovelo para trás. Abaixe com controle e sem girar o tronco."
+      ],
+      "comparisonReferences": [
+        {
+          "type": "video",
+          "title": "Single Arm Dumbbell Row - Legs apart",
+          "url": "https://ymove.app/api/free/d3fece95-c7e2-4794-ba8f-65a5b3e30a28",
+          "inspection": "MP4 decodificado e quadros comparados com a geração"
+        }
+      ],
+      "notes": "Remada unilateral com mão livre na coxa; não vincular à descrição com apoio de mão e joelho no banco.",
+      "technicalFlags": [],
+      "sha256": "4a1fcfc4705228dd257952541a65f1eda7366f10ee8d9acbb6977b41b1b7a593",
+      "linkAllowed": true
+    },
+    {
+      "index": 46,
+      "generationId": "01a1663e-b770-7384-a42e-88afd3da5321",
+      "requestedName": "Crossover na polia média",
+      "assignedName": "Crossover na polia média",
+      "sourceId": "pp-crossover-na-polia-media",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Ajuste as duas polias aproximadamente à altura do peito. Fique entre elas, com um pé à frente e o tronco estável.",
+        "Com os cotovelos levemente dobrados, traga as mãos em arco à frente do peito. Abra os braços devagar sem mudar a altura das polias."
+      ],
+      "comparisonReferences": [
+        {
+          "type": "video",
+          "title": "Cable Crossover (Mid)",
+          "url": "https://ymove.app/api/free/8de0e422-f771-4916-8bab-3ca29cc2abe5",
+          "inspection": "MP4 decodificado e quadros comparados com a geração"
+        }
+      ],
+      "notes": "Adução horizontal em duas polias médias; não vincular à ficha de crossover alto; reprovação original preservada.",
+      "technicalFlags": [
+        "Rever cadência e quantidade de repetições; o destino é polia média, sem trocar por alta."
+      ],
+      "sha256": "c143e06351dcec33aa7de8e8590d3ae24b7d24335427c7a268e0fce1a87acc72",
+      "linkAllowed": true
+    },
+    {
+      "index": 47,
+      "generationId": "01a1663c-1b4b-7165-86f7-2900e96c1d1c",
+      "requestedName": "Supino reto com barra",
+      "assignedName": "Supino reto com barra",
+      "sourceId": "Barbell_Bench_Press_-_Medium_Grip",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Deite-se em um banco reto. Segure a barra com uma pegada média, de modo que braços e antebraços formem um ângulo de 90 graus no meio do movimento. Retire a barra do suporte e mantenha-a acima do corpo, com os braços estendidos. Esta é a posição inicial.",
+        "Inspire e abaixe a barra lentamente até a região central do peito.",
+        "Após uma breve pausa, expire e empurre a barra até a posição inicial, contraindo os peitorais. Estenda os braços, mantenha a contração por um segundo e inicie a próxima descida. Conforme a orientação da fonte, a descida deve durar aproximadamente o dobro do tempo da subida.",
+        "Repita o movimento para a quantidade prescrita de repetições.",
+        "Ao terminar, devolva a barra ao suporte."
+      ],
+      "comparisonReferences": [
+        {
+          "type": "video",
+          "url": "https://ymove.app/api/free/dd7e706c-2086-4f4b-867f-d7fece2f720d",
+          "inspection": "MP4 decodificado e quadros comparados com a geração"
+        }
+      ],
+      "notes": "Supino com barra em banco plano; usar original YMove.",
+      "technicalFlags": [],
+      "sha256": "f77e91234724827e2c27da3a8665b4149a1b45bcde1ea731cb0e779a137c87b7",
+      "linkAllowed": true
+    },
+    {
+      "index": 48,
+      "generationId": "01a16635-f9ca-7a24-b34e-14d960a59ef2",
+      "requestedName": "Remada baixa com triângulo",
+      "assignedName": "Remada sentada na polia",
+      "sourceId": "Seated_Cable_Rows",
+      "status": "vinculado para revisão final",
+      "finalReviewPending": true,
+      "description": [
+        "Use a remada na polia baixa com puxador triangular ou em V, que permite pegada neutra, com as palmas voltadas uma para a outra. Sente-se e apoie os pés na plataforma, mantendo os joelhos levemente flexionados, sem travá-los.",
+        "Incline-se para alcançar o puxador, preservando o alinhamento natural das costas.",
+        "Com os braços estendidos, recue o tronco até formar um ângulo de 90 graus com as pernas. Mantenha o peito elevado e a curvatura natural das costas. Sinta o alongamento dos dorsais ao segurar o puxador à frente do corpo. Esta é a posição inicial.",
+        "Expire e puxe o puxador em direção ao abdômen, mantendo o tronco estável e os braços próximos ao corpo. Contraia a musculatura das costas por um segundo e retorne lentamente, inspirando.",
+        "Repita a quantidade recomendada de repetições."
+      ],
+      "comparisonReferences": [
+        {
+          "type": "video",
+          "url": "https://ymove.app/api/free/77976f52-b13a-4fd0-addf-f4404e3a8e95",
+          "inspection": "MP4 decodificado e quadros comparados com a geração"
+        }
+      ],
+      "notes": "Remada horizontal sentada com barra V; usar original YMove.",
+      "technicalFlags": [],
+      "sha256": "2ba028897e6a8cd62859ddabb433596813d2cd4bf27a629ef8bbacf206cd9b75",
+      "linkAllowed": true
+    }
+  ],
+  "identifiedTotal": 48,
+  "duplicateTotal": 6,
+  "deduplicationRule": "Um único vídeo por exercício; um mesmo arquivo nunca é usado para exercícios distintos. Os seis excedentes são preservados fora dos vínculos ativos.",
+  "validation": {
+    "tests": 93,
+    "passed": 93,
+    "failed": 0,
+    "uniqueActiveExerciseIds": 42,
+    "uniqueActiveVideoUrls": 42,
+    "uniqueActiveContentHashes": 42,
+    "duplicateUrlsAcrossWholeActiveCatalog": 0,
+    "browser": "Browser executable is absent in this runtime. Component interaction and video failure fallback were exercised in automated tests; no physical-device playback claim."
+  }
+}

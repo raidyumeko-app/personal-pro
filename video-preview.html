@@ -18,28 +18,40 @@
   </main>
   <script src="/app-ui.js"></script>
   <script src="/exercise-media.js"></script>
-  <script src="/personal-pro-generated-videos.js"></script>
   <script src="/personal-pro-ymove-verified.js"></script>
+  <script src="/personal-pro-generated-videos.js"></script>
   <script src="/workout-session.js"></script>
   <script src="/workout-session-preview.js"></script>
   <script type="module">
     import React from 'https://esm.sh/react@19.1.0';
     import {createRoot} from 'https://esm.sh/react-dom@19.1.0/client';
-    const exercises = [...(window.PersonalProVerifiedYMove?.clips||[]).map(clip=>({
-        sourceId:clip.sourceId,name:clip.name,equipment:'Conforme referência YMove',series:'3',repetitions:'12',rest:60,
-        instructions:[clip.movement,'Confira o vídeo original de execução YMove.']
-      })),{
-        sourceId:'Dumbbell_Bench_Press',name:'Supino reto com halteres',series:'3',repetitions:'12',rest:60,
-        instructions:['Mantenha os pés apoiados e os halteres alinhados acima do peito.','Desça com controle e empurre os halteres de volta, mantendo os punhos alinhados.']
-      }];
-    function Preview(){
-      const [selected,setSelected]=React.useState(0);
-      return React.createElement(React.Fragment,null,
-        React.createElement('div',{style:{display:'flex',gap:12,marginBottom:20,flexWrap:'wrap'}},exercises.map((ex,i)=>React.createElement('button',{key:ex.sourceId,type:'button',className:selected===i?'pp-primary':'pp-secondary','aria-pressed':selected===i,onClick:()=>setSelected(i)},ex.name))),
-        React.createElement(window.PersonalProSessionPreview.Simulator,{key:selected,React,day:'A',studentId:'video-preview',exercises:[exercises[selected]]})
-      );
+    const root=createRoot(document.getElementById('preview'));
+    async function load(){
+      const responses=await Promise.all(['/exercise-library.json','/exercise-instructions.pt.json'].map(url=>fetch(url)));
+      if(responses.some(response=>!response.ok))throw Error('Não foi possível carregar as descrições.');
+      const [catalog,translations]=await Promise.all(responses.map(response=>response.json()));
+      const byId=new Map(catalog.map(item=>[item.id,item]));
+      const items=window.PersonalProGeneratedVideos.items.filter(item=>item.linkAllowed&&item.sourceId);
+      const exercises=items.map(item=>{
+        const entry=byId.get(item.sourceId);
+        if(!entry)throw Error('Exercício vinculado não encontrado.');
+        return {...entry,instructions:translations[entry.id],preferredGeneratedVideoId:item.id,series:'3',repetitions:'12',rest:60};
+      });
+      const requested=new URLSearchParams(location.search).get('video');
+      function Preview(){
+        const [selected,setSelected]=React.useState(Math.max(0,items.findIndex(item=>item.id===requested)));
+        const ex=exercises[selected];
+        return React.createElement(React.Fragment,null,
+          React.createElement('p',null,items.length+' vídeos vinculados · revisão final pendente'),
+          React.createElement('label',{className:'pp-field',style:{display:'block',marginBottom:20}},'Escolha um vídeo vinculado',
+            React.createElement('select',{'aria-label':'Vídeo vinculado',value:selected,onChange:event=>setSelected(Number(event.target.value)),style:{width:'100%',padding:12,background:'#191e27',color:'#f1f3f7',border:'1px solid #333b47',borderRadius:10}},
+              exercises.map((ex,index)=>React.createElement('option',{key:items[index].id,value:index},(index+1)+'. '+ex.name)))),
+          React.createElement(window.PersonalProSessionPreview.Simulator,{key:items[selected].id,React,day:'A',studentId:'video-preview',exercises:[ex]}),
+          React.createElement('p',null,React.createElement('a',{href:'/videos-gerados.html'},'Abrir todos os arquivos e notas da revisão')));
+      }
+      root.render(React.createElement(Preview));
     }
-    createRoot(document.getElementById('preview')).render(React.createElement(Preview));
+    load().catch(error=>root.render(React.createElement('p',{role:'alert'},error.message)));
   </script>
 </body>
 </html>

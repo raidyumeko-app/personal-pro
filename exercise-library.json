@@ -382,7 +382,10 @@
     "group": "Costas",
     "equipment": "Cabo/polia",
     "level": "Conforme orientação",
-    "instructions": [],
+    "instructions": [
+      "Trabalha: Costas, com auxílio dos bíceps.",
+      "Sente com as coxas apoiadas e segure a barra por cima, com mãos mais próximas. Puxe à frente do peito e devolva devagar."
+    ],
     "images": [],
     "aliases": []
   },
@@ -587,7 +590,10 @@
     "group": "Costas",
     "equipment": "Cabo/polia",
     "level": "Conforme orientação",
-    "instructions": [],
+    "instructions": [
+      "Trabalha: Costas e bíceps.",
+      "Sente com o corpo estável e segure o puxador alto com uma mão. Traga o cotovelo para baixo e retorne com controle."
+    ],
     "images": [],
     "aliases": []
   },
@@ -1302,9 +1308,12 @@
     "id": "selected-extensao-de-triceps-acima-da-cabeca",
     "name": "Extensão de tríceps acima da cabeça",
     "group": "Tríceps",
-    "equipment": "Conforme prescrição",
+    "equipment": "Cabo/polia",
     "level": "Conforme orientação",
-    "instructions": [],
+    "instructions": [
+      "Trabalha: Tríceps.",
+      "De costas para a polia, segure a corda atrás da cabeça. Estenda os cotovelos para levar as mãos à frente e volte devagar."
+    ],
     "images": [],
     "aliases": [
       "Extensão de tríceps acima da cabeça na polia com barra"
@@ -2284,5 +2293,191 @@
       "Subida no banco com halteres"
     ],
     "sourceId": "Dumbbell_Step_Ups"
+  },
+  {
+    "id": "pp-remada-sentada-na-maquina",
+    "sourceId": "pp-remada-sentada-na-maquina",
+    "name": "Remada sentada na máquina",
+    "group": "Costas",
+    "equipment": "Máquina de remada",
+    "level": "Iniciante",
+    "instructions": [
+      "Trabalha: Costas e bíceps.",
+      "Ajuste o banco e os apoios da máquina. Puxe os pegadores para o tronco e volte devagar, mantendo o tronco estável."
+    ],
+    "images": [
+      "https://cms-toolkit-public-artifacts.artlist.io/content/video/video-thumbnails/generated-thumbnail-88bd291b-b6f7-4e63-a819-20c88dddb2a0.jpg"
+    ],
+    "aliases": [],
+    "selectionId": "pp-remada-sentada-na-maquina"
+  },
+  {
+    "id": "pp-pulldown-com-bracos-estendidos",
+    "sourceId": "pp-pulldown-com-bracos-estendidos",
+    "name": "Pulldown com braços estendidos",
+    "group": "Costas",
+    "equipment": "Polia alta",
+    "level": "Iniciante",
+    "instructions": [
+      "Trabalha: Costas, principalmente dorsais.",
+      "Em pé diante da polia alta, mantenha os cotovelos levemente dobrados. Leve a barra até as coxas e retorne sem balançar."
+    ],
+    "images": [
+      "https://cms-toolkit-public-artifacts.artlist.io/content/video/video-thumbnails/generated-thumbnail-cb264f98-b9b9-4379-9260-94636860f389.jpg"
+    ],
+    "aliases": [],
+    "selectionId": "pp-pulldown-com-bracos-estendidos"
+  },
+  {
+    "id": "pp-remada-unilateral-sentada-na-polia",
+    "sourceId": "pp-remada-unilateral-sentada-na-polia",
+    "name": "Remada unilateral sentada na polia",
+    "group": "Costas",
+    "equipment": "Polia baixa",
+    "level": "Iniciante",
+    "instructions": [
+      "Trabalha: Costas, bíceps e estabilizadores do tronco.",
+      "Sente diante da polia baixa e segure com uma mão. Puxe o cotovelo para trás e volte, mantendo o tronco sem rotação."
+    ],
+    "images": [
+      "https://cms-toolkit-public-artifacts.artlist.io/content/video/video-thumbnails/generated-thumbnail-46e4a72c-0803-47fc-ba7f-fa98b771a88d.jpg"
+    ],
+    "aliases": [],
+    "selectionId": "pp-remada-unilateral-sentada-na-polia"
+  },
+  {
+    "id": "pp-crossover-unilateral-na-polia",
+    "sourceId": "pp-crossover-unilateral-na-polia",
+    "name": "Crossover unilateral na polia",
+    "group": "Peito",
+    "equipment": "Polia",
+    "level": "Iniciante",
+    "instructions": [
+      "Trabalha: Peito e estabilizadores do tronco.",
+      "Com a polia alta ao lado, traga o puxador à frente do peito em arco. Volte devagar, sem girar o corpo."
+    ],
+    "images": [
+      "https://cms-toolkit-public-artifacts.artlist.io/content/video/video-thumbnails/generated-thumbnail-dda29ca9-5e92-4040-ab74-5f69d4640b11.jpg"
+    ],
+    "aliases": [],
+    "selectionId": "pp-crossover-unilateral-na-polia"
+  },
+  {
+    "id": "pp-flexao-com-pes-elevados",
+    "sourceId": "pp-flexao-com-pes-elevados",
+    "name": "Flexão com pés elevados",
+    "group": "Peito",
+    "equipment": "Peso corporal e banco",
+    "level": "Iniciante",
+    "instructions": [
+      "Trabalha: Peito, tríceps e ombros.",
+      "Apoie os pés em um banco estável e as mãos no chão. Desça o peito e empurre para subir, sem deixar o quadril cair."
+    ],
+    "images": [
+      "https://cms-toolkit-public-artifacts.artlist.io/content/video/video-thumbnails/generated-thumbnail-dd95bb01-e4ab-4d7f-a881-3560b6482a04.jpg"
+    ],
+    "aliases": [],
+    "selectionId": "pp-flexao-com-pes-elevados"
+  },
+  {
+    "id": "pp-supino-no-chao-com-halteres",
+    "sourceId": "pp-supino-no-chao-com-halteres",
+    "name": "Supino no chão com halteres",
+    "group": "Peito",
+    "equipment": "Halteres e colchonete",
+    "level": "Iniciante",
+    "instructions": [
+      "Trabalha: Peito e tríceps.",
+      "Deite no chão com joelhos dobrados. Empurre os halteres acima do peito e desça até os braços encostarem suavemente no solo."
+    ],
+    "images": [
+      "https://cms-toolkit-public-artifacts.artlist.io/content/video/video-thumbnails/generated-thumbnail-ef5e1b62-8a51-414a-9280-397de61c8c56.jpg"
+    ],
+    "aliases": [],
+    "selectionId": "pp-supino-no-chao-com-halteres"
+  },
+  {
+    "id": "pp-supino-declinado-com-halteres",
+    "sourceId": "pp-supino-declinado-com-halteres",
+    "name": "Supino declinado com halteres",
+    "group": "Peito",
+    "equipment": "Halteres e banco declinado",
+    "level": "Iniciante",
+    "instructions": [
+      "Trabalha: Peito, tríceps e frente dos ombros.",
+      "Deite no banco declinado, com as pernas presas ao apoio. Empurre os halteres acima do peito e abaixe com controle."
+    ],
+    "images": [
+      "https://cms-toolkit-public-artifacts.artlist.io/content/video/video-thumbnails/generated-thumbnail-710cd11f-45c0-4d38-ac34-845ac8d2d659.jpg"
+    ],
+    "aliases": [],
+    "selectionId": "pp-supino-declinado-com-halteres"
+  },
+  {
+    "id": "Leverage_Chest_Press",
+    "sourceId": "Leverage_Chest_Press",
+    "name": "Supino reto na máquina",
+    "group": "Peito",
+    "equipment": "Máquina de supino",
+    "level": "Iniciante",
+    "instructions": [
+      "Trabalha: Peito, tríceps e frente dos ombros.",
+      "Ajuste o banco para os pegadores ficarem na altura do peito. Empurre à frente e retorne devagar, com as costas apoiadas."
+    ],
+    "images": [
+      "https://raw.githubusercontent.com/yuhonas/free-exercise-db/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Leverage_Chest_Press/0.jpg",
+      "https://raw.githubusercontent.com/yuhonas/free-exercise-db/f00c92c7dcf1216a928a52c3706c7ce8e2f71ed5/exercises/Leverage_Chest_Press/1.jpg"
+    ],
+    "aliases": [],
+    "selectionId": "pp-supino-reto-na-maquina"
+  },
+  {
+    "id": "pp-swing-com-kettlebell",
+    "sourceId": "pp-swing-com-kettlebell",
+    "name": "Swing com kettlebell",
+    "group": "Cardio",
+    "equipment": "Kettlebell (opcional)",
+    "level": "Iniciante",
+    "instructions": [
+      "Trabalha: Glúteos, parte de trás das coxas e condicionamento.",
+      "Leve o quadril para trás com o kettlebell entre as pernas. Estenda o quadril para impulsionar o peso à frente, sem levantar só com os braços."
+    ],
+    "images": [
+      "https://cms-toolkit-public-artifacts.artlist.io/content/video/video-thumbnails/generated-thumbnail-0293d0b3-5aec-48fe-9318-4e77a4b1bcac.jpg"
+    ],
+    "aliases": [],
+    "selectionId": "pp-swing-com-kettlebell"
+  },
+  {
+    "id": "pp-remada-unilateral-com-halter-apoio-na-coxa",
+    "sourceId": "pp-remada-unilateral-com-halter-apoio-na-coxa",
+    "name": "Remada unilateral com halter — apoio na coxa",
+    "group": "Costas",
+    "equipment": "Halteres",
+    "level": "Iniciante",
+    "instructions": [
+      "Fique em pé com uma perna à frente e incline o tronco pelo quadril. Apoie a mão livre na coxa da frente.",
+      "Puxe o halter ao lado do tronco, levando o cotovelo para trás. Abaixe com controle e sem girar o tronco."
+    ],
+    "images": [
+      "https://cms-toolkit-public-artifacts.artlist.io/content/video/video-thumbnails/generated-thumbnail-1b70c9ad-f03b-4d27-b7a5-ea63446ac631.jpg"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "pp-crossover-na-polia-media",
+    "sourceId": "pp-crossover-na-polia-media",
+    "name": "Crossover na polia média",
+    "group": "Peito",
+    "equipment": "Cabo/polia",
+    "level": "Iniciante",
+    "instructions": [
+      "Ajuste as duas polias aproximadamente à altura do peito. Fique entre elas, com um pé à frente e o tronco estável.",
+      "Com os cotovelos levemente dobrados, traga as mãos em arco à frente do peito. Abra os braços devagar sem mudar a altura das polias."
+    ],
+    "images": [
+      "https://cms-toolkit-public-artifacts.artlist.io/content/video/video-thumbnails/generated-thumbnail-4ba64b0f-0142-4746-9c0d-a0b09481ea51.jpg"
+    ],
+    "aliases": []
   }
 ]

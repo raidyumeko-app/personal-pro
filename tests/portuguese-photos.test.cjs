@@ -3,15 +3,15 @@ const root=path.join(__dirname,'..'),html=fs.readFileSync(path.join(root,'index.
 const start=html.indexOf('const exerciseLibrary='),end=html.indexOf('function exerciseDose',start),ctx={};vm.createContext(ctx);vm.runInContext(html.slice(start,end)+';globalThis.original=exerciseLibrary;globalThis.links=portugueseExerciseSources;',ctx);
 const catalog=JSON.parse(fs.readFileSync(path.join(root,'exercise-library.json'))),translated=JSON.parse(fs.readFileSync(path.join(root,'exercise-instructions.pt.json')));
 const linked=ctx.enrichPortugueseExercises(catalog.map(item=>({...item,instructions:translated[item.id]})));
-assert.equal(linked.length,130);assert.equal(Object.keys(ctx.links).length,130);
+assert.equal(linked.length,141);assert.equal(Object.keys(ctx.links).length,141);
 assert.deepEqual(Array.from(linked,item=>item.name),Array.from(ctx.original,item=>item.name));
 assert.deepEqual(Array.from(linked,item=>item.group),Array.from(ctx.original,item=>item.group));
 for(const [name,id] of Object.entries(ctx.links)){const item=linked.find(x=>x.name===name);assert.equal(item.sourceId,id);assert.ok(Array.isArray(item.images),name);assert.ok(Array.isArray(item.instructions),name);assert.deepEqual(item.instructions,translated[id]);}
-assert.equal(linked.filter(item=>item.images?.length).length,92);
+assert.equal(linked.filter(item=>item.images?.length).length,103);
 assert.equal(linked.find(x=>x.name==='Bicicleta').sourceId,'Air_Bike');
 assert.equal(linked.find(x=>x.name==='Air bike'),undefined);
 assert.equal(linked.find(x=>x.name==='Supino reto com barra').sourceId,'Barbell_Bench_Press_-_Medium_Grip');
 assert.equal(linked.find(x=>x.name==='Supino reto com halteres').sourceId,'Dumbbell_Bench_Press');
 assert.equal(ctx.enrichPortugueseExercises([]).filter(x=>x.images).length,0);
 assert.ok(html.includes('Foto indisponível no momento.'));assert.ok(html.includes('Ainda não temos foto desta variação.'));
-console.log('PASS: 130 selected names; 92 exact photo matches; translated instructions preserved; absent source remains usable; cardio air bike never uses abdominal bicycle photos.');
+console.log('PASS: 141 selected names; 103 photo matches; translated instructions preserved; absent source remains usable; cardio air bike never uses abdominal bicycle photos.');

@@ -1,3 +1,5 @@
+> Estado mais recente, após as novas instruções do usuário: usar também outras referências, encaixar pelo movimento mostrado e deixar a revisão técnica final para completar os 220. Depois, o usuário exigiu que não houvesse vídeos repetidos. Resultado: **42 vídeos ativos para 42 exercícios, 6 excedentes repetidos guardados e 1 Superman sem correspondência**. O relatório atual é `video-assignments-2026-10-23.json`. Os estados abaixo ficam como histórico e não representam a configuração atual. Nenhum crédito novo foi gasto.
+
 > Atualização posterior na mesma data: os 49 clipes Artlist estão restritos à galeria, sem vínculos automáticos. O relatório `video-recheck-2026-10-23.json` registra hashes, tempos e observações do MP4. A puxada YMove de UUID `5971eaa2-5264-49cc-99c2-1310305c5342` é unilateral e foi retirada da puxada com triângulo. A remada YMove com apoio na coxa foi retirada da ficha que exige banco. Há 14 originais YMove no resolvedor de prioridade (12 anteriores + goblet com halter + puxada unilateral). Zero créditos gastos.
 
 # Personal Pro — auditoria de vídeos e correção de identidade (23/10/2026)

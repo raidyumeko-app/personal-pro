@@ -67,6 +67,11 @@
           )
         : null,
       key = ex?.id;
+    const videoVariants=original.video?.variants||{};
+    const selectedVideoVariant=videoVariants[videoVariant]?videoVariant:(original.video?.defaultVariant||Object.keys(videoVariants)[0]||videoVariant);
+    const selectedVideoPoster=original.video?.variantPosters?.[selectedVideoVariant]||original.poster;
+    const selectedReview=original.generatedVideoAssignments?.find(item=>item.id===selectedVideoVariant);
+
     R.useEffect(() => {
       if (!running || remaining <= 0) return;
       const until = Date.now() + remaining * 1000;
@@ -330,9 +335,9 @@
                             R.Fragment,
                             null,
                             h("video", {
-                              key: original.video.url + videoVariant,
-                              src: original.video.variants?.[videoVariant] || original.video.url,
-                              poster: media,
+                              key: original.video.url + selectedVideoVariant,
+                              src: videoVariants[selectedVideoVariant] || original.video.url,
+                              poster: selectedVideoPoster || media,
                               controls: true,
                               playsInline: true,
                               preload: "metadata",
@@ -378,7 +383,9 @@
                         ),
                     ),
                     original.video?.demonstrationVariant && h("p",{className:"pp-hint"},"Demonstração: "+original.video.demonstrationVariant),
-                    original.video?.variants && Object.keys(original.video.variants).length > 1 && h("label",{className:"pp-field"},"Demonstração",h("select",{"aria-label":"Modelo da demonstração",value:videoVariant,onChange:event=>{setVideoVariant(event.target.value);setVideoFailed(false);}},h("option",{value:"male"},"Masculino"),h("option",{value:"female"},"Feminino"))),
+                    original.video?.variants && Object.keys(videoVariants).length > 1 && h("label",{className:"pp-field"},"Demonstração",h("select",{"aria-label":"Modelo da demonstração",value:selectedVideoVariant,onChange:event=>{setVideoVariant(event.target.value);setVideoFailed(false);setPlaying(false);}},Object.keys(videoVariants).map(key=>h("option",{key,value:key},original.video.variantLabels?.[key]||(key==="male"?"Masculino":key==="female"?"Feminino":key))))),
+                    selectedReview && h("p",{className:"pp-hint"},"Vídeo vinculado · revisão final pendente"),
+                    selectedReview?.technicalFlags?.length>0 && h("details",{className:"pp-video-credit"},h("summary",null,"Notas para a revisão final"),selectedReview.technicalFlags.map((note,index)=>h("p",{key:index},note))),
                     original.video?.licensed && /^CC BY/.test(original.video.license || "") &&
                       h(
                         "details",

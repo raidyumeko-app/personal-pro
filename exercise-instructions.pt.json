@@ -124,7 +124,10 @@
     "Após um segundo de contração, aproxime as escápulas e retorne a barra lentamente até estender os braços e alongar os dorsais. Inspire durante o retorno.",
     "Repita este movimento para a quantidade prescrita de repetições."
   ],
-  "selected-puxada-fechada-na-polia": [],
+  "selected-puxada-fechada-na-polia": [
+    "Trabalha: Costas, com auxílio dos bíceps.",
+    "Sente com as coxas apoiadas e segure a barra por cima, com mãos mais próximas. Puxe à frente do peito e devolva devagar."
+  ],
   "Bent_Over_Barbell_Row": [
     "Segurando uma barra com uma pegada pronada (palmeiras viradas para baixo), dobre os joelhos ligeiramente e traga o tronco para a frente, dobrando-se na cintura, mantendo as costas retas até que esteja quase paralela ao chão. Dica: Certifique-se de manter a cabeça erguida. A barra deve ser pendurada diretamente na sua frente enquanto seus braços estão perpendiculares ao chão e ao tronco. Esta é a sua posição inicial.",
     "Agora, enquanto mantém o tronco parado, expire e levante a barra para você. Mantenha os cotovelos perto do corpo e use apenas os antebraços para manter o peso. Na posição superior contraída, esprema os músculos das costas e segure por uma breve pausa.",
@@ -186,7 +189,10 @@
     "Retraia as escápulas e flexione os cotovelos para remar os halteres ao seu lado.",
     "Pausar no topo do movimento e, em seguida, retornar à posição inicial."
   ],
-  "selected-puxada-unilateral-na-polia": [],
+  "selected-puxada-unilateral-na-polia": [
+    "Trabalha: Costas e bíceps.",
+    "Sente com o corpo estável e segure o puxador alto com uma mão. Traga o cotovelo para baixo e retorne com controle."
+  ],
   "Face_Pull": [
     "Enfrentando uma polia alta com uma corda ou alças duplas presas, puxe o peso diretamente em direção ao seu rosto, separando suas mãos enquanto faz isso. Mantenha seus braços paralelos ao chão."
   ],
@@ -401,7 +407,10 @@
     "Volte para a posição inicial usando o tríceps para levantar o haltere. expire para fora enquanto você realiza este passo.",
     "Repita a quantidade recomendada de repetições."
   ],
-  "selected-extensao-de-triceps-acima-da-cabeca": [],
+  "selected-extensao-de-triceps-acima-da-cabeca": [
+    "Trabalha: Tríceps.",
+    "De costas para a polia, segure a corda atrás da cabeça. Estenda os cotovelos para levar as mãos à frente e volte devagar."
+  ],
   "Cable_One_Arm_Tricep_Extension": [
     "Com a mão direita, agarre uma única alça presa à polia de alto cabo usando um punho supinado (de mãos dadas; palmas viradas para cima). Você deve estar em pé diretamente na frente da pilha de peso.",
     "Agora puxe a alça para baixo para que seu braço e cotovelo estejam presos ao lado do seu corpo. Seu braço e antebraço devem formar um ângulo agudo (menos de 90 graus). Você pode manter o outro braço pela cintura e você pode ter uma perna na frente de você e a outra de volta para um melhor equilíbrio. Esta será a sua posição inicial.",
@@ -652,5 +661,49 @@
     "Coloque o pé direito na plataforma elevada. Passo na plataforma, estendendo o quadril e o joelho da perna direita. Use o calcanhar principalmente para levantar o resto do seu corpo e coloque o pé da perna esquerda na plataforma também. expire enquanto executa a força necessária para subir.",
     "Desça com a perna esquerda flexionando o quadril e o joelho da perna direita enquanto inspira. Volte para a posição original em pé, colocando o pé direito de ao lado do pé esquerdo na posição inicial.",
     "Repita com a perna direita para a quantidade recomendada de repetições e, em seguida, executar com a perna esquerda."
+  ],
+  "pp-remada-sentada-na-maquina": [
+    "Trabalha: Costas e bíceps.",
+    "Ajuste o banco e os apoios da máquina. Puxe os pegadores para o tronco e volte devagar, mantendo o tronco estável."
+  ],
+  "pp-pulldown-com-bracos-estendidos": [
+    "Trabalha: Costas, principalmente dorsais.",
+    "Em pé diante da polia alta, mantenha os cotovelos levemente dobrados. Leve a barra até as coxas e retorne sem balançar."
+  ],
+  "pp-remada-unilateral-sentada-na-polia": [
+    "Trabalha: Costas, bíceps e estabilizadores do tronco.",
+    "Sente diante da polia baixa e segure com uma mão. Puxe o cotovelo para trás e volte, mantendo o tronco sem rotação."
+  ],
+  "pp-crossover-unilateral-na-polia": [
+    "Trabalha: Peito e estabilizadores do tronco.",
+    "Com a polia alta ao lado, traga o puxador à frente do peito em arco. Volte devagar, sem girar o corpo."
+  ],
+  "pp-flexao-com-pes-elevados": [
+    "Trabalha: Peito, tríceps e ombros.",
+    "Apoie os pés em um banco estável e as mãos no chão. Desça o peito e empurre para subir, sem deixar o quadril cair."
+  ],
+  "pp-supino-no-chao-com-halteres": [
+    "Trabalha: Peito e tríceps.",
+    "Deite no chão com joelhos dobrados. Empurre os halteres acima do peito e desça até os braços encostarem suavemente no solo."
+  ],
+  "pp-supino-declinado-com-halteres": [
+    "Trabalha: Peito, tríceps e frente dos ombros.",
+    "Deite no banco declinado, com as pernas presas ao apoio. Empurre os halteres acima do peito e abaixe com controle."
+  ],
+  "Leverage_Chest_Press": [
+    "Trabalha: Peito, tríceps e frente dos ombros.",
+    "Ajuste o banco para os pegadores ficarem na altura do peito. Empurre à frente e retorne devagar, com as costas apoiadas."
+  ],
+  "pp-swing-com-kettlebell": [
+    "Trabalha: Glúteos, parte de trás das coxas e condicionamento.",
+    "Leve o quadril para trás com o kettlebell entre as pernas. Estenda o quadril para impulsionar o peso à frente, sem levantar só com os braços."
+  ],
+  "pp-remada-unilateral-com-halter-apoio-na-coxa": [
+    "Fique em pé com uma perna à frente e incline o tronco pelo quadril. Apoie a mão livre na coxa da frente.",
+    "Puxe o halter ao lado do tronco, levando o cotovelo para trás. Abaixe com controle e sem girar o tronco."
+  ],
+  "pp-crossover-na-polia-media": [
+    "Ajuste as duas polias aproximadamente à altura do peito. Fique entre elas, com um pé à frente e o tronco estável.",
+    "Com os cotovelos levemente dobrados, traga as mãos em arco à frente do peito. Abra os braços devagar sem mudar a altura das polias."
   ]
 }
