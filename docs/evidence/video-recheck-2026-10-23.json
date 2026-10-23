@@ -1,0 +1,3003 @@
+{
+  "checkedAt": "2026-10-23",
+  "branch": "feature/premium-visual-preview",
+  "creditCost": 0,
+  "method": "All 49 Artlist MP4s decoded. Twelve evenly distributed frames extracted per clip; visual screening uses six distributed frames per clip, and all twelve for Superman and the seven inconclusive clips. This does not certify every intervening frame or professional technique. All 25 free YMove MP4s downloaded and decoded; the fourteen active overlay clips had twelve distributed frames visually inspected.",
+  "items": [
+    {
+      "generationId": "01a16723-7ac0-761c-b26c-99246804f8b8",
+      "attributedName": "Superman no solo",
+      "quality": "não aprovado",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 633081,
+      "sha256": "f096ad0d9da97b3e0f48f037b6dd37e93ff07db024a46b32b50cea752581e009",
+      "observation": "Corpo fica suspenso no ar com objetos nas mãos; não há apoio ventral no chão.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a16723-7ac0-74c5-a6f7-4ff5bd6c48e1",
+      "attributedName": "Remada sentada na máquina",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 719115,
+      "sha256": "27639b2b71bec6fd9d2fd473ea45511d5bee1e138c31f44357bb63ba6fd2159f",
+      "observation": "Puxada horizontal sentada em aparelho; a origem YMove e o modelo exato não foram comprovados.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a16723-7abf-7014-b631-18ed9a68467a",
+      "attributedName": "Pulldown com braços estendidos",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 818893,
+      "sha256": "99c9109adabeb11fb2fb9db6a48652e54981b1c58281fc71ecd9e4c8462aeae6",
+      "observation": "Braços levam puxador da frente do tronco até as coxas; referência YMove exata não comprovada.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a16723-7abb-7fd2-bf5e-3a09f5713a5f",
+      "attributedName": "Puxada frontal pegada supinada",
+      "quality": "não aprovado",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 864153,
+      "sha256": "94f2aa2d9849033115c78b3500360ee136a292528da3ca5ad82bdd532e65c9a0",
+      "observation": "Puxada bilateral com barra longa; a pegada supinada atribuída não foi confirmada.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a16723-7ab2-72bd-a8e4-98e73be7158e",
+      "attributedName": "Remada unilateral sentada na polia",
+      "quality": "verificação inconclusiva",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 827095,
+      "sha256": "d0f6c6b0bf63a0e362145cfab10f79bd598cac5397a9b41f4412aba0fdc2452d",
+      "observation": "Uma mão puxa cabo horizontal sentado no chão, sem banco ou plataforma para os pés.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a16721-51ac-74fb-b0d9-d99dc93f5df1",
+      "attributedName": "Remada curvada com dois halteres — pegada neutra",
+      "quality": "não aprovado",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 872159,
+      "sha256": "386ff0c4ddbe8ae7dbb49eef6f10b397b6078b50afc4c2ba8c4dc22e6cec5465",
+      "observation": "Animação com uma mão e um joelho apoiados no banco; não é remada curvada bilateral livre.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a16711-fe5e-73c1-8a30-444ec9d09499",
+      "attributedName": "Remada curvada com barra pegada supinada",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 871221,
+      "sha256": "cac1526eae08a35bb67aaadb1adab09da7021803d5f9b9ff3119fb454b640630",
+      "observation": "Remada com barra e tronco inclinado; pegada e referência YMove exata continuam sem confirmação.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a16711-fe2d-7fda-945a-d04eccdfc6b1",
+      "attributedName": "Hiperextensão lombar",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 982206,
+      "sha256": "697462e659b1adb549e3e825dfdff5f3e2bc7fe788b00b252c6a3a4323f2da7d",
+      "observation": "Tronco estende além da linha das pernas em banco inclinado; requer revisão da amplitude.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a16711-fe2c-74f3-ad7e-04f5e2470651",
+      "attributedName": "Remada com halteres e peito apoiado no banco inclinado",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 975119,
+      "sha256": "8b88b650e07e76e1aece8065b8bbcac7e16000b5ccd3d8def16a9fd14593f9ba",
+      "observation": "Peito apoiado em banco inclinado, remada com dois halteres; referência YMove exata não comprovada.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a16711-fe28-77b9-be65-df4bfc55084d",
+      "attributedName": "Remada invertida em barra fixa baixa",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 740435,
+      "sha256": "3f27794127f8de19d15d63ab32a6d3c7789bd6f8d58fdd7fcea388b6e70915e6",
+      "observation": "Corpo sob barra baixa com calcanhares apoiados; sobe em direção à barra; referência YMove não comprovada.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a16711-fe26-7349-9c06-4e5904c4c680",
+      "attributedName": "Puxada frontal na polia com triângulo — pegada neutra",
+      "quality": "não aprovado",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 1110498,
+      "sha256": "f210a47569d7a29e01792fb5cf33ab69c9cc654fa80ec6efd8a32163143f496b",
+      "observation": "Puxada bilateral com barra longa, sem triângulo.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a16711-fe21-718a-9136-cd207829a751",
+      "attributedName": "Puxada unilateral na polia",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 919957,
+      "sha256": "49ca021409250c301894e34e3e5eef5794a0f2ef93c58bc10caf50175899dd30",
+      "observation": "Puxada vertical sentada com um braço; substituir pela fonte original YMove do mesmo movimento.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166fc-f950-7e22-b0a8-823dd8c330fa",
+      "attributedName": "Remada cavalinho com barra apoiada e triângulo",
+      "quality": "não aprovado",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 1023020,
+      "sha256": "06a8a7cf1af3c7a3aa955f2b91dffa6cc24fbe5ce6530908360e37cff3e1c865",
+      "observation": "Barra landmine visível, sem o acessório triângulo exigido pelo exercício atribuído.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166fc-f94a-7993-ab1d-0422fdd9d7ab",
+      "attributedName": "Encolhimento com halter",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 948071,
+      "sha256": "89df21e51c0f889eed0c80264ce36b5b8b3b9cceb67fb39ca4e5e726aa94b3ee",
+      "observation": "Elevação e descida dos ombros segurando dois halteres; sem referência YMove comprovada.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166fc-f944-7ff8-a61d-43971aced830",
+      "attributedName": "Encolhimento com barra",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 929574,
+      "sha256": "88fa40d924a2e7669e087bb5f529c371703ac9a1d515d88f9fb521ef4575e97b",
+      "observation": "Elevação e descida dos ombros com barra à frente das coxas; sem referência YMove comprovada.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166fc-f93b-7bbc-a9c9-cfb6ad2412d0",
+      "attributedName": "Barra fixa pegada supinada (chin-up)",
+      "quality": "verificação inconclusiva",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 790218,
+      "sha256": "379aa651de7c677aa4f7f12119c7e7ed0abb8e90db07b06b5beec9578c8f8d6e",
+      "observation": "Subida na barra vista por trás; supinação não confirmada; não atribuir como chin-up.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166fc-f936-7912-a6cd-f655d1c9c3ac",
+      "attributedName": "Barra fixa (pull-up)",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 919249,
+      "sha256": "5bd683b677414f5a16a0c957c4c4429fcf9ad9f8b6829f5a32fc52cee5063216",
+      "observation": "Subida na barra vista por trás; referência YMove e pegada exata não comprovadas.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166fa-a70f-7535-8c29-3e1a73769c50",
+      "attributedName": "Remada baixa com triângulo na polia",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 742392,
+      "sha256": "095a351a1114c4581accb3a8e78910f9b44d5b6883b4a1ba0a45c9b2c92ae201",
+      "observation": "Puxada horizontal bilateral sentada; já existe original YMove para remada com barra V.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166e0-924e-74e5-afb8-94fb19cb211e",
+      "attributedName": "Remada curvada com barra — pegada pronada",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 752456,
+      "sha256": "3bfd80d0d546869b5a413fb3504c1e9b49897f90f062f0f5d9e23fdc3fce364b",
+      "observation": "Remada com barra e tronco inclinado; referência YMove exata não comprovada.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166e0-9224-70e9-9b26-f4e3733a4a06",
+      "attributedName": "Puxada frontal na polia — pegada pronada aberta",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 807571,
+      "sha256": "68ea76dfe195a989333e6e3013abbf8c6b74ee527580782b9c7bf8b04e7e77b4",
+      "observation": "Puxada vertical bilateral com barra longa; referência YMove exata não comprovada.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166e0-921d-79d3-b64b-88dbdb1ed267",
+      "attributedName": "Puxada frontal na polia — pegada pronada fechada",
+      "quality": "verificação inconclusiva",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 614116,
+      "sha256": "3559f098a2ad9ebf762ea621803d2052f1cf113b4887f08625ea42a026237fe4",
+      "observation": "Mãos próximas na barra longa durante puxada vertical; a supinação/pronação não pode ser garantida.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166e0-9212-77d6-9535-cf4ad239596d",
+      "attributedName": "Crossover unilateral na polia",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 580894,
+      "sha256": "410e16ddbd90623fd516be4e2b1b1fd1e56ada9414d277d1211a9cdfab5721ee",
+      "observation": "Um braço move cabo com tronco bastante inclinado; não há referência YMove exata confirmada.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166e0-9210-7f5e-a016-d4ede78793d6",
+      "attributedName": "Flexão com joelhos apoiados",
+      "quality": "não aprovado",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 722566,
+      "sha256": "0f520bd00b9cc7301e18a6005b2d9112e695f3edaca0d476b7037bc9e8c8fd62",
+      "observation": "Flexão com apoio nas pontas dos pés e joelhos fora do chão; variante atribuída incorreta.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166e0-920f-7ac8-a287-13c417812d00",
+      "attributedName": "Flexão com pés elevados",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 672838,
+      "sha256": "2bf72f7fc46b80dc639de26b04f6a8db26c2cf4eb33a90c30b3a88967e6c56e2",
+      "observation": "Flexão com pés sobre banco e mãos no chão; referência YMove exata não comprovada.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166dc-f177-7939-82d3-30bb48524c00",
+      "attributedName": "Supino no chão com halteres",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 685618,
+      "sha256": "8244d492bdfae2f4fba4e68af3c13df71eace16d39b766c74c348a83d4ea5cac",
+      "observation": "Dois halteres empurrados para cima com costas no chão; referência YMove exata não comprovada.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166dc-f14f-7a54-88dc-73c5ceb434a9",
+      "attributedName": "Pull-over com halter",
+      "quality": "verificação inconclusiva",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 755532,
+      "sha256": "58b94665046f855c3db4a099c279f1e40e207b7a03b47a1babff20d397fb2ccb",
+      "observation": "Um halter nas duas mãos descreve arco atrás da cabeça e retorna; movimento de pullover visível, sem referência YMove exata.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166dc-f142-7154-84b4-4d12e07cb9ae",
+      "attributedName": "Supino declinado com halteres",
+      "quality": "não aprovado",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 764266,
+      "sha256": "1447728401566f8da648a24a499985f37ac9c16f95321e24c748b5a09ac3b446",
+      "observation": "Tronco e cabeça aparecem fora do apoio do banco durante o supino declinado; preservar reprovação.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166dc-f142-7009-a00e-7dbe66d0ea5c",
+      "attributedName": "Supino reto na máquina",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 872335,
+      "sha256": "68c0e5d010527f9270627621c2d0fb8b4e14945b1219b57806854b7b548e4a64",
+      "observation": "Duas mãos empurram alavancas de máquina à frente do tronco; falta fonte YMove exata do aparelho.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166dc-f137-7e4b-be95-3d00cda05f1c",
+      "attributedName": "Crucifixo declinado com halteres",
+      "quality": "verificação inconclusiva",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 918544,
+      "sha256": "722a7676a3f39f3e3a385ced43f27ad0588460c8d8c5880975e510c25bf687db",
+      "observation": "Abertura lateral dos braços no banco declinado é visível; não aprovar amplitude/execução sem referência YMove.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166dc-f137-754f-937d-f5b5691893f8",
+      "attributedName": "Flexão diamante no solo",
+      "quality": "não aprovado",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 663376,
+      "sha256": "575b36cd9aaf3aa6799b19fb289fbb6414f8d990e13e73b8cc5f218e71424e34",
+      "observation": "Antebraços e cotovelos apoiados no chão; não é flexão diamante sobre as mãos.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166d5-f068-761b-a875-a78d72da2785",
+      "attributedName": "Flexão com mãos elevadas",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 873348,
+      "sha256": "f2a94e0ea65071f3fb1242520b264e8d0ccfaba85979507a51e0daf31bbdbe6e",
+      "observation": "Flexão com as mãos em caixa elevada; referência YMove exata não comprovada.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166d5-f02f-72fd-afec-85aa864d5418",
+      "attributedName": "Crucifixo reto com halteres",
+      "quality": "verificação inconclusiva",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 949669,
+      "sha256": "c3a1ebaed948ef317aba12f9921608905a1980de2bda0dc61145361d2055af56",
+      "observation": "Abertura lateral com halteres em banco plano é visível; falta referência YMove e revisão da amplitude.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166d5-f02d-7e29-bbdc-0d2d3691834f",
+      "attributedName": "Crucifixo inclinado com halteres",
+      "quality": "verificação inconclusiva",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 819893,
+      "sha256": "cfb530b8b727d47e48f121c261e16571ac89acb3823047db3bf0c12b24ae4359",
+      "observation": "Abertura lateral com halteres em banco inclinado é visível; falta referência YMove e revisão da amplitude.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166d5-f02b-7b0d-8d3f-9db0f5a65ff7",
+      "attributedName": "Crossover na polia alta",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 953909,
+      "sha256": "c3471d16a76d1afa914340d4623203a54b6641f5682ca503e19bd7ff50339c9c",
+      "observation": "Cabos partem aproximadamente da altura dos ombros e convergem para baixo; altura alta atribuída não confirmada.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166d5-f02b-7abe-8a60-0e7fc2419152",
+      "attributedName": "Flexão de braço",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 815913,
+      "sha256": "ff9b1a86f7d1ee6321118a96e32d2e031929c830048ca62ee7e4322fba7fdcca",
+      "observation": "Flexão no chão sobre mãos e pontas dos pés; referência YMove exata não comprovada.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166d5-f022-79a0-8fab-a281b5f2a6d5",
+      "attributedName": "Voador (peck deck)",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 1146367,
+      "sha256": "adedd477d8a6da85f008836624e57b753e6de8e32c4b0cd07341763ad3342999",
+      "observation": "Adução horizontal dos braços em máquina peck deck; referência YMove exata não comprovada.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166c8-6444-73ae-9f17-ce3c15411bfc",
+      "attributedName": "Supino reto com halteres",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 770819,
+      "sha256": "55bbb221a9a27e4d0bc3c9c81e5cee6bdf5d63eec6a322c7fbbb19a2558cf7fc",
+      "observation": "Supino com dois halteres em banco plano; sem referência YMove exata gratuita identificada.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166c8-6439-7f01-b681-1ead4b5fde55",
+      "attributedName": "Supino declinado com barra",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 892088,
+      "sha256": "cb4411e567c8c49d3204cd2de8518469a13cd7154f64fcba29d794184708f12e",
+      "observation": "Supino com barra em banco declinado; sem referência YMove exata comprovada.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166c8-6438-7300-b3ad-9757e611d7be",
+      "attributedName": "Supino inclinado com halteres",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 955671,
+      "sha256": "80fb596a5d4da8257b9abe5c314ec52424bb4c4f31e78ecabdcbb87c2be0406e",
+      "observation": "Supino com dois halteres em banco inclinado; sem referência YMove exata comprovada.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a166c7-58d5-7041-b976-a208282304f1",
+      "attributedName": "Supino inclinado com barra",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 923407,
+      "sha256": "9b144b07aa5dc6f0c18da7b4982c12e6bd79c035dbe6cff35c350d73ddcb406e",
+      "observation": "Supino com barra em banco inclinado; sem referência YMove exata comprovada.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a16683-0b0e-711e-9e10-3f4839fa171a",
+      "attributedName": "Swing com kettlebell",
+      "quality": "não aprovado",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 780808,
+      "sha256": "a2d6daf7fcde0b934e0812b0c28e2827287be66e0db087d297cab40ee2ce0125",
+      "observation": "Objeto azul durante balanço; não foi confirmado equipamento coerente em todos os quadros; reprovação preservada.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a16680-7438-70b7-b44a-20ac140fb7cd",
+      "attributedName": "Leg press 45 graus",
+      "quality": "não aprovado",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 1086290,
+      "sha256": "a9a0641e8f37bd615aacc8361aa170058c0b6cb75188deb4789821a297713d09",
+      "observation": "Pressão de plataforma com pernas na máquina; reprovação anterior preservada; usar original YMove.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a1667d-1927-7e41-a630-de71694deb23",
+      "attributedName": "Agachamento livre com barra",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 1026992,
+      "sha256": "4b0a90ab48d47fe2ba05383063625b274218c84db49a809a45875f73fd3c1f88",
+      "observation": "Agachamento com barra nas costas; usar original YMove do mesmo movimento.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a1664a-c5aa-7503-81a1-fc0e55909c89",
+      "attributedName": "Tríceps francês com corda na polia",
+      "quality": "não aprovado",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 961788,
+      "sha256": "12a93537cd8112b557e757bb3759b46ec0170b0a3c7cc8682db0e897f82216c9",
+      "observation": "Extensão de cotovelos acima da cabeça em cabo; reprovação original preservada, sem regeneração.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a16645-f0a3-7796-9ccb-37435abfd69d",
+      "attributedName": "Rosca martelo simultânea com halteres",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 674701,
+      "sha256": "8355b90a1c238bb4989478cbf817a4eb0ed4a3a32a2a6808136081823758bcc3",
+      "observation": "Rosca com dois halteres e pegada neutra; usar original YMove, sem homologar a geração.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a16641-4b2e-7d0e-97b8-57d1bed1bb50",
+      "attributedName": "Remada unilateral com halter — apoio na coxa",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 816355,
+      "sha256": "4a1fcfc4705228dd257952541a65f1eda7366f10ee8d9acbb6977b41b1b7a593",
+      "observation": "Remada unilateral com mão livre na coxa; não vincular à descrição com apoio de mão e joelho no banco.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a1663e-b770-7384-a42e-88afd3da5321",
+      "attributedName": "Crossover na polia média",
+      "quality": "não aprovado",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 1023683,
+      "sha256": "c143e06351dcec33aa7de8e8590d3ae24b7d24335427c7a268e0fce1a87acc72",
+      "observation": "Adução horizontal em duas polias médias; não vincular à ficha de crossover alto; reprovação original preservada.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a1663c-1b4b-7165-86f7-2900e96c1d1c",
+      "attributedName": "Supino reto com barra",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 756648,
+      "sha256": "f77e91234724827e2c27da3a8665b4149a1b45bcde1ea731cb0e779a137c87b7",
+      "observation": "Supino com barra em banco plano; usar original YMove.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    },
+    {
+      "generationId": "01a16635-f9ca-7a24-b34e-14d960a59ef2",
+      "attributedName": "Remada baixa com triângulo",
+      "quality": "revisão pendente",
+      "linkAllowed": false,
+      "decoded": true,
+      "durationSeconds": 4.041667,
+      "bytes": 986347,
+      "sha256": "2ba028897e6a8cd62859ddabb433596813d2cd4bf27a629ef8bbacf206cd9b75",
+      "observation": "Remada horizontal sentada com barra V; usar original YMove.",
+      "sampleBinsSeconds": [
+        [
+          0.0,
+          0.3368
+        ],
+        [
+          0.3368,
+          0.6736
+        ],
+        [
+          0.6736,
+          1.0104
+        ],
+        [
+          1.0104,
+          1.3472
+        ],
+        [
+          1.3472,
+          1.684
+        ],
+        [
+          1.684,
+          2.0208
+        ],
+        [
+          2.0208,
+          2.3576
+        ],
+        [
+          2.3576,
+          2.6944
+        ],
+        [
+          2.6944,
+          3.0313
+        ],
+        [
+          3.0313,
+          3.3681
+        ],
+        [
+          3.3681,
+          3.7049
+        ],
+        [
+          3.7049,
+          4.0417
+        ]
+      ]
+    }
+  ],
+  "validation": {
+    "automatedTests": 90,
+    "passed": 90,
+    "failed": 0,
+    "command": "TZ=America/Sao_Paulo node --test tests/*.test.cjs"
+  }
+}

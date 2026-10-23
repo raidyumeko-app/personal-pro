@@ -1,3 +1,5 @@
+> Atualização posterior na mesma data: os 49 clipes Artlist estão restritos à galeria, sem vínculos automáticos. O relatório `video-recheck-2026-10-23.json` registra hashes, tempos e observações do MP4. A puxada YMove de UUID `5971eaa2-5264-49cc-99c2-1310305c5342` é unilateral e foi retirada da puxada com triângulo. A remada YMove com apoio na coxa foi retirada da ficha que exige banco. Há 14 originais YMove no resolvedor de prioridade (12 anteriores + goblet com halter + puxada unilateral). Zero créditos gastos.
+
 # Personal Pro — auditoria de vídeos e correção de identidade (23/10/2026)
 ## Escopo e regras
 - Alteração exclusiva da branch `feature/premium-visual-preview`. Não publicou na branch `main` nem modificou dados dos alunos.
@@ -42,19 +44,19 @@
 | Remada unilateral sentada na polia | `01a16723-7ab2-72bd-a8e4-98e73be7158e` | verificação inconclusiva | Não | Pessoa sentada diretamente no chão puxando cabo com um braço; não confirmar variante sem sequência original. |
 | Remada curvada com dois halteres — pegada neutra | `01a16721-51ac-74fb-b0d9-d99dc93f5df1` | não aprovado | Não | Boneco anatômico com apoio no banco. Exercício pretendido: remada curvada bilateral com dois halteres, sem banco. |
 | Remada curvada com barra pegada supinada | `01a16711-fe5e-73c1-8a30-444ec9d09499` | revisão pendente | Não | Tronco inclinado com barra; imagem não permite confirmar supinação. |
-| Hiperextensão lombar | `01a16711-fe2d-7fda-945a-d04eccdfc6b1` | revisão pendente | Sim — vídeo ainda sujeito a revisão | Banco de hiperextensão e pés ancorados; conferir flexão/extensão do tronco. |
-| Remada com halteres e peito apoiado no banco inclinado | `01a16711-fe2c-74f3-ad7e-04f5e2470651` | revisão pendente | Sim — vídeo ainda sujeito a revisão | Peito no banco inclinado com halteres; apoio dos pés/ângulo precisam de revisão. |
-| Remada invertida em barra fixa baixa | `01a16711-fe28-77b9-be65-df4bfc55084d` | revisão pendente | Sim — vídeo ainda sujeito a revisão | Corpo sob barra baixa; conferir amplitude e apoio nos calcanhares. |
+| Hiperextensão lombar | `01a16711-fe2d-7fda-945a-d04eccdfc6b1` | revisão pendente | Não — somente na galeria | Banco de hiperextensão e pés ancorados; conferir flexão/extensão do tronco. |
+| Remada com halteres e peito apoiado no banco inclinado | `01a16711-fe2c-74f3-ad7e-04f5e2470651` | revisão pendente | Não — somente na galeria | Peito no banco inclinado com halteres; apoio dos pés/ângulo precisam de revisão. |
+| Remada invertida em barra fixa baixa | `01a16711-fe28-77b9-be65-df4bfc55084d` | revisão pendente | Não — somente na galeria | Corpo sob barra baixa; conferir amplitude e apoio nos calcanhares. |
 | Puxada frontal na polia com triângulo — pegada neutra | `01a16711-fe26-7349-9c06-4e5904c4c680` | não aprovado | Não | Barra longa no lugar de pegada triângulo; não confundir com puxada neutra. |
-| Puxada unilateral na polia | `01a16711-fe21-718a-9136-cd207829a751` | revisão pendente | Sim — vídeo ainda sujeito a revisão | Uma mão no puxador da polia alta; verificar trajeto e apoio. |
+| Puxada unilateral na polia | `01a16711-fe21-718a-9136-cd207829a751` | revisão pendente | Não — somente na galeria | Uma mão no puxador da polia alta; verificar trajeto e apoio. |
 | Remada cavalinho com barra apoiada e triângulo | `01a166fc-f950-7e22-b0a8-823dd8c330fa` | não aprovado | Não | A imagem mostra barra landmine sem a pegada triângulo exigida pela variante. Não usar como remada cavalinho com triângulo. |
-| Encolhimento com halter | `01a166fc-f94a-7993-ab1d-0422fdd9d7ab` | revisão pendente | Sim — vídeo ainda sujeito a revisão | Dois halteres ao lado do corpo; conferir movimento dos ombros. |
-| Encolhimento com barra | `01a166fc-f944-7ff8-a61d-43971aced830` | revisão pendente | Sim — vídeo ainda sujeito a revisão | Barra em pé à frente das coxas; conferir elevação dos ombros. |
+| Encolhimento com halter | `01a166fc-f94a-7993-ab1d-0422fdd9d7ab` | revisão pendente | Não — somente na galeria | Dois halteres ao lado do corpo; conferir movimento dos ombros. |
+| Encolhimento com barra | `01a166fc-f944-7ff8-a61d-43971aced830` | revisão pendente | Não — somente na galeria | Barra em pé à frente das coxas; conferir elevação dos ombros. |
 | Barra fixa pegada supinada (chin-up) | `01a166fc-f93b-7bbc-a9c9-cfb6ad2412d0` | verificação inconclusiva | Não | Câmera traseira não confirma pegada supinada. Não vincular como chin-up até examinar os quadros completos. |
-| Barra fixa (pull-up) | `01a166fc-f936-7912-a6cd-f655d1c9c3ac` | revisão pendente | Sim — vídeo ainda sujeito a revisão | Suspenso na barra com pegada pronada aparente; conferir repetição. |
+| Barra fixa (pull-up) | `01a166fc-f936-7912-a6cd-f655d1c9c3ac` | revisão pendente | Não — somente na galeria | Suspenso na barra com pegada pronada aparente; conferir repetição. |
 | Remada baixa com triângulo na polia | `01a166fa-a70f-7535-8c29-3e1a73769c50` | revisão pendente | Não | Pessoa sentada com triângulo na polia; já existe vídeo YMove da variante, preferir o anterior. |
-| Remada curvada com barra — pegada pronada | `01a166e0-924e-74e5-afb8-94fb19cb211e` | revisão pendente | Sim — vídeo ainda sujeito a revisão | Barra com tronco inclinado; confirmar pegada pronada e puxada ao tronco. |
-| Puxada frontal na polia — pegada pronada aberta | `01a166e0-9224-70e9-9b26-f4e3733a4a06` | revisão pendente | Sim — vídeo ainda sujeito a revisão | Barra longa e pegada aberta aparente; conferir trajetória para o peito. |
+| Remada curvada com barra — pegada pronada | `01a166e0-924e-74e5-afb8-94fb19cb211e` | revisão pendente | Não — somente na galeria | Barra com tronco inclinado; confirmar pegada pronada e puxada ao tronco. |
+| Puxada frontal na polia — pegada pronada aberta | `01a166e0-9224-70e9-9b26-f4e3733a4a06` | revisão pendente | Não — somente na galeria | Barra longa e pegada aberta aparente; conferir trajetória para o peito. |
 | Puxada frontal na polia — pegada pronada fechada | `01a166e0-921d-79d3-b64b-88dbdb1ed267` | verificação inconclusiva | Não | A largura da pegada e a barra no quadro não confirmam a variante pronada fechada. Manter fora da demonstração. |
 | Crossover unilateral na polia | `01a166e0-9212-77d6-9535-cf4ad239596d` | revisão pendente | Não | Um cabo acionado em posição incomum; confirmar unilateralidade e biomecânica. |
 | Flexão com joelhos apoiados | `01a166e0-9210-7f5e-a016-d4ede78793d6` | não aprovado | Não | Imagem mostra joelhos suspensos e pernas estendidas: não é flexão com joelhos apoiados. |
@@ -65,25 +67,25 @@
 | Supino reto na máquina | `01a166dc-f142-7009-a00e-7dbe66d0ea5c` | revisão pendente | Não | Máquina de supino reconhecível; confirmar movimento. |
 | Crucifixo declinado com halteres | `01a166dc-f137-7e4b-be95-3d00cda05f1c` | verificação inconclusiva | Não | Quadro mostra halteres acima do peito, mas não comprova movimento de crucifixo. Não vincular ainda. |
 | Flexão diamante no solo | `01a166dc-f137-754f-937d-f5b5691893f8` | não aprovado | Não | Imagem mostra prancha sobre antebraços, não flexão diamante com mãos juntas. |
-| Flexão com mãos elevadas | `01a166d5-f068-761b-a875-a78d72da2785` | revisão pendente | Sim — vídeo ainda sujeito a revisão | Apoio das mãos elevado; comparar amplitude da flexão no vídeo completo. |
+| Flexão com mãos elevadas | `01a166d5-f068-761b-a875-a78d72da2785` | revisão pendente | Não — somente na galeria | Apoio das mãos elevado; comparar amplitude da flexão no vídeo completo. |
 | Crucifixo reto com halteres | `01a166d5-f02f-72fd-afec-85aa864d5418` | verificação inconclusiva | Não | Imagem dos dois halteres estendidos não demonstra abertura lateral do crucifixo reto. |
 | Crucifixo inclinado com halteres | `01a166d5-f02d-7e29-bbdc-0d2d3691834f` | verificação inconclusiva | Não | Posição no banco inclinado não demonstra que é crucifixo; pode ter trajetória de supino. |
-| Crossover na polia alta | `01a166d5-f02b-7b0d-8d3f-9db0f5a65ff7` | revisão pendente | Sim — vídeo ainda sujeito a revisão | Pessoa com dois cabos; confirmar altura das polias e trajetória. |
-| Flexão de braço | `01a166d5-f02b-7abe-8a60-0e7fc2419152` | revisão pendente | Sim — vídeo ainda sujeito a revisão | Posição de prancha alta com mãos no chão; conferir movimento. |
-| Voador (peck deck) | `01a166d5-f022-79a0-8fab-a281b5f2a6d5` | revisão pendente | Sim — vídeo ainda sujeito a revisão | Máquina peck deck identificada; confirmar execução completa. |
-| Supino reto com halteres | `01a166c8-6444-73ae-9f17-ce3c15411bfc` | revisão pendente | Sim — vídeo ainda sujeito a revisão |  |
-| Supino declinado com barra | `01a166c8-6439-7f01-b681-1ead4b5fde55` | revisão pendente | Sim — vídeo ainda sujeito a revisão |  |
-| Supino inclinado com halteres | `01a166c8-6438-7300-b3ad-9757e611d7be` | revisão pendente | Sim — vídeo ainda sujeito a revisão |  |
-| Supino inclinado com barra | `01a166c7-58d5-7041-b976-a208282304f1` | revisão pendente | Sim — vídeo ainda sujeito a revisão |  |
+| Crossover na polia alta | `01a166d5-f02b-7b0d-8d3f-9db0f5a65ff7` | revisão pendente | Não — somente na galeria | Pessoa com dois cabos; confirmar altura das polias e trajetória. |
+| Flexão de braço | `01a166d5-f02b-7abe-8a60-0e7fc2419152` | revisão pendente | Não — somente na galeria | Posição de prancha alta com mãos no chão; conferir movimento. |
+| Voador (peck deck) | `01a166d5-f022-79a0-8fab-a281b5f2a6d5` | revisão pendente | Não — somente na galeria | Máquina peck deck identificada; confirmar execução completa. |
+| Supino reto com halteres | `01a166c8-6444-73ae-9f17-ce3c15411bfc` | revisão pendente | Não — somente na galeria |  |
+| Supino declinado com barra | `01a166c8-6439-7f01-b681-1ead4b5fde55` | revisão pendente | Não — somente na galeria |  |
+| Supino inclinado com halteres | `01a166c8-6438-7300-b3ad-9757e611d7be` | revisão pendente | Não — somente na galeria |  |
+| Supino inclinado com barra | `01a166c7-58d5-7041-b976-a208282304f1` | revisão pendente | Não — somente na galeria |  |
 | Swing com kettlebell | `01a16683-0b0e-711e-9e10-3f4839fa171a` | não aprovado | Não | A miniatura não mostra kettlebell reconhecível. Não usar como swing. |
 | Leg press 45 graus | `01a16680-7438-70b7-b44a-20ac140fb7cd` | não aprovado | Não | Video AI já não aprovado; referência YMove original está disponível no aplicativo para o Leg press. |
-| Agachamento livre com barra | `01a1667d-1927-7e41-a630-de71694deb23` | revisão pendente | Sim — vídeo ainda sujeito a revisão |  |
+| Agachamento livre com barra | `01a1667d-1927-7e41-a630-de71694deb23` | revisão pendente | Não — somente na galeria |  |
 | Tríceps francês com corda na polia | `01a1664a-c5aa-7503-81a1-fc0e55909c89` | não aprovado | Não |  |
-| Rosca martelo simultânea com halteres | `01a16645-f0a3-7796-9ccb-37435abfd69d` | revisão pendente | Sim — vídeo ainda sujeito a revisão |  |
+| Rosca martelo simultânea com halteres | `01a16645-f0a3-7796-9ccb-37435abfd69d` | revisão pendente | Não — somente na galeria |  |
 | Remada unilateral com halter — apoio na coxa | `01a16641-4b2e-7d0e-97b8-57d1bed1bb50` | revisão pendente | Não | Remada unilateral apoiada na coxa, diferente da ficha no catálogo que exige apoio no banco. Não vincular à variante do banco. |
 | Crossover na polia média | `01a1663e-b770-7384-a42e-88afd3da5321` | não aprovado | Não | Já reprovado na conferência original por repetições extras. Não substituir pela variante alta do catálogo. |
-| Supino reto com barra | `01a1663c-1b4b-7165-86f7-2900e96c1d1c` | revisão pendente | Sim — vídeo ainda sujeito a revisão |  |
-| Remada baixa com triângulo | `01a16635-f9ca-7a24-b34e-14d960a59ef2` | revisão pendente | Sim — vídeo ainda sujeito a revisão | Referência original YMove; pegada triângulo. Movimento ainda requer revisão técnica. |
+| Supino reto com barra | `01a1663c-1b4b-7165-86f7-2900e96c1d1c` | revisão pendente | Não — somente na galeria |  |
+| Remada baixa com triângulo | `01a16635-f9ca-7a24-b34e-14d960a59ef2` | revisão pendente | Não — somente na galeria | Referência original YMove; pegada triângulo. Movimento ainda requer revisão técnica. |
 
 ## Problemas que não devem se repetir
 1. Não confiar em resumo de lote sem persistir mapa `nome/sourceId/referência YMove/generationId`.
@@ -96,7 +98,7 @@
 8. Os vídeos originais YMove prevalecem onde identidade do exercício corresponde ao catálogo; os AI com erro ficam somente na galeria.
 
 ## Pendências técnicas objetivas
-- A execução temporal dos clipes AI não foi inspecionada quadro a quadro; os `reviewNotes` descrevem a imagem visível e não são laudo profissional.
+- A triagem posterior examinou quadros distribuídos pelo MP4 dos 49 clipes; os detalhes estão em `video-recheck-2026-10-23.json`. Isso não é revisão de todos os quadros nem homologação profissional. Os vídeos continuam sem aprovação de vínculo.
 - Os arquivos AI continuam hospedados na Artlist por links de download/visualização, não foram migrados para um storage próprio do Personal Pro.
 - Os demais exercícios do catálogo sem correspondência YMove gratuita necessitam da fonte/licença YMove apropriada para substituições; **não** utilizar WorkoutX/ExerciseDB como referência de novas gerações.
 - A prévia não substitui a homologação do app principal.

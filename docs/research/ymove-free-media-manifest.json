@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-20",
+  "checkedAt": "2026-10-23",
   "source": "https://ymove.app/free-exercise-videos",
   "delivery": "Official public YMove free media endpoints. Existing local videos retained. No standalone video-library redistribution.",
   "licenseSummary": "Commercial use inside apps is permitted; attribution optional; standalone resale or library redistribution prohibited.",
@@ -73,18 +73,19 @@
       "durationSeconds": 17.2
     },
     {
-      "sourceId": "V-Bar_Pulldown",
-      "exercise": "V-Bar Pulldown",
+      "sourceId": "selected-puxada-unilateral-na-polia",
+      "exercise": "Puxada unilateral na polia",
       "names": [
-        "Puxada frontal com pegada neutra",
-        "Puxada com triângulo"
+        "Puxada unilateral na polia"
       ],
       "providerTitle": "Lat Pulldown",
       "videoUrl": "https://ymove.app/api/free/5971eaa2-5264-49cc-99c2-1310305c5342",
       "thumbnailUrl": "https://ymove.app/api/free/5971eaa2-5264-49cc-99c2-1310305c5342?type=thumbnail",
       "sha256": "99a3bdac9f7a271eaaf64ddfddf3983b08c1397b0a4328403bece0ef3feed954",
       "bytes": 3013920,
-      "durationSeconds": 18.301
+      "durationSeconds": 18.301,
+      "previousIncorrectSourceId": "V-Bar_Pulldown",
+      "review": "12 frames distributed across 18.301 seconds: seated one-arm cable pulldown with single handle; not a two-handed neutral V-bar pulldown."
     },
     {
       "sourceId": "Leverage_Chest_Press",
@@ -210,13 +211,29 @@
       "bytes": 1074064,
       "durationSeconds": 12.84,
       "sha256": "66ecd9675d6d07657fdbc74b32155a20def240a2f235503cc1df0b283c586e6c",
-      "review": "Downloaded and decoded; frames at 0, 2 and 4 seconds inspected. One-arm dumbbell row standing with free hand supported on thigh; variant explicitly indicated in execution UI.",
+      "review": "Mapping withdrawn 2026-10-23. Twelve frames across 12.84 s show thigh support. App instructions require knee and hand on a flat bench. These variants must not share this clip.",
       "exercise": "Remada unilateral com halter",
       "names": [
         "Remada unilateral com halter",
         "Single Arm Dumbbell Row - Legs apart"
       ],
-      "providerTitle": "Single Arm Dumbbell Row - Legs apart"
+      "providerTitle": "Single Arm Dumbbell Row - Legs apart",
+      "linkAllowed": false
+    },
+    {
+      "sourceId": "Goblet_Squat",
+      "exercise": "Agachamento goblet com halter",
+      "names": [
+        "Agachamento goblet com halter"
+      ],
+      "providerTitle": "Dumbbell Goblet Squat",
+      "videoUrl": "https://ymove.app/api/free/a2a797d0-f6f6-436e-8616-6c1d93e73d67",
+      "thumbnailUrl": "https://ymove.app/api/free/a2a797d0-f6f6-436e-8616-6c1d93e73d67?type=thumbnail",
+      "sha256": "b904f193848260c75d89c56cccf00237cbcbca1d15b27136f698853a1e5f6536",
+      "bytes": 1875528,
+      "durationSeconds": 19.12,
+      "equipment": "dumbbell",
+      "review": "12 frames across 19.12 seconds show a dumbbell held at the chest, squat descent and return. Distinct from kettlebell goblet squat."
     }
   ]
 }

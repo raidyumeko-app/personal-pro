@@ -228,11 +228,9 @@
   },
   {
     "id": "ymove-lat-pulldown",
-    "sourceId": "V-Bar_Pulldown",
+    "sourceId": "selected-puxada-unilateral-na-polia",
     "names": [
-      "V-Bar Pulldown",
-      "Puxada frontal com pegada neutra",
-      "Puxada com triângulo"
+      "Puxada unilateral na polia"
     ],
     "poster": "https://ymove.app/api/free/5971eaa2-5264-49cc-99c2-1310305c5342?type=thumbnail",
     "video": {
@@ -408,25 +406,6 @@
     }
   }
 ]);
-  entries.push({
-  "id": "ymove-single-arm-dumbbell-row-legs-apart",
-  "sourceId": "One-Arm_Dumbbell_Row",
-  "names": [
-    "Remada unilateral com halter",
-    "Single Arm Dumbbell Row - Legs apart"
-  ],
-  "poster": "https://ymove.app/api/free/d3fece95-c7e2-4794-ba8f-65a5b3e30a28?type=thumbnail",
-  "video": {
-    "url": "https://ymove.app/api/free/d3fece95-c7e2-4794-ba8f-65a5b3e30a28",
-    "author": "YMove / Your Move",
-    "license": "Uso comercial autorizado — pacote gratuito YMove",
-    "licenseUrl": "https://ymove.app/free-exercise-videos",
-    "source": "https://ymove.app/free-exercise-videos",
-    "originalUrl": "https://ymove.app/api/free/d3fece95-c7e2-4794-ba8f-65a5b3e30a28",
-    "licensed": true,
-    "demonstrationVariant": "Em pé, com a mão apoiada na perna"
-  }
-});
   const previewEntries = [
   {
     "id": "free-preview-0025",
@@ -2250,7 +2229,7 @@
     const own = /kettlebell/i.test(String(ex.name || "") + " " + String(ex.equipment || "")) ? [] : personalProEntries;
     const allowed = previewEnabled() ? [...own,...entries,...previewEntries] : [...own,...entries];
     const item = allowed.find(item => item.sourceId === identity) ||
-      allowed.find(item => item.names.includes(ex.name));
+      (!identity ? allowed.find(item => item.names.includes(ex.name)) : undefined);
     return item
       ? {
           ...ex,
