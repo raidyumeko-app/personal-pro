@@ -240,12 +240,13 @@
         "outputIndex": 0
       },
       "prompt": "Personal Pro exercise demonstration: diamond push-up / flexao diamante no solo. Follow the supplied real-human execution reference precisely. One real adult athlete, no equipment. Palms on floor directly under chest; both index fingers and thumbs touch to visibly form a diamond shape throughout. Legs extended, body supported on hands and toes, knees never touch the floor. Start with arms extended, lower chest toward the diamond by bending elbows, then press back to starting position, one complete controlled repetition in four seconds. Keep trunk aligned from shoulders through hips to ankles. Use the reference's elevated frontal three-quarter camera view so the diamond hand position, elbows, full body and toe support can be seen. Fixed camera. Only exercise execution, no preparation, no intro, no talking, no titles, no anatomical figures, no camera cuts. Four-second silent square video.",
-      "status": "generated_identity_matched_final_review_pending",
+      "status": "superseded_due_to_visible_MuscleWiki_mark",
       "linkAllowed": false,
       "library": {
         "output": "libfile_cf1fc32ade348191aed2ecd21daa6660",
         "executionReference": "libfile_16af09af73d88191962250f66d39cd63"
-      }
+      },
+      "supersededBy": "01a16982-0150-7fef-8b37-e59444c6d80c"
     }
   ],
   "remaining": [
@@ -257,5 +258,6 @@
       "generationRequested": false
     }
   ],
-  "repeatedGenerationRequests": 0
+  "repeatedGenerationRequests": 0,
+  "supersededByReview": "chest-redo-and-audit-2026-10-23.json"
 }

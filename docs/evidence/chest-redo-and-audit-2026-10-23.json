@@ -1,0 +1,235 @@
+{
+  "date": "2026-10-23",
+  "authorizedNewGenerationsOnly": [
+    "Diamond_Push-Up",
+    "Low_Cable_Crossover"
+  ],
+  "creditsSpentThisTurn": 400,
+  "diamondRedo": {
+    "generation": {
+      "status": "queued",
+      "generationId": "01a16982-0150-7fef-8b37-e59444c6d80c",
+      "sessionId": "01a16635-f9a6-776d-b049-a9bdd812cdc4",
+      "modelId": 2462,
+      "modelGroupId": 416,
+      "price": 200,
+      "resolvedSettings": {
+        "aspect_ratio": "1:1",
+        "duration": 4,
+        "resolution": "480p",
+        "generation_mode": "references",
+        "generate_audio": false,
+        "user_inputs_metadata": {
+          "video_urls": [
+            {
+              "duration": 2.1
+            }
+          ]
+        }
+      },
+      "feature": "multi-to-video",
+      "inputSettingKey": "video_urls",
+      "message": "Poll for completion: call get_generation_status with this generationId immediately. Each call blocks until the generation finishes or times out; if status is \"pending\", call again immediately — do not sleep between calls. Video typically completes in 60-300 s; if pending persists past 540 s, surface the generationId to the user — the generation may still complete and is retrievable via list_generations."
+    },
+    "args": {
+      "modelGroupId": 416,
+      "input": {
+        "assetId": "50801d69-d61e-4388-86dc-6a0819e1a4c4"
+      },
+      "settings": {
+        "duration": 4,
+        "resolution": "480p",
+        "aspect_ratio": "1:1",
+        "generate_audio": false
+      },
+      "prompt": "Create a clean Personal Pro exercise video of a REAL adult athlete performing one diamond push-up. The supplied video is ONLY a reference for biomechanics and hand position. Re-stage the movement in a new plain studio with a blank light grey wall and an unbranded dark exercise mat, wearing a plain dark blue T-shirt and charcoal shorts. There must be ZERO visible writing, ZERO logos, ZERO watermarks, ZERO brand names, ZERO subtitles anywhere in any frame, including corners, wall, mat and clothing. Do not recreate any source branding or graphics. Athlete's index fingertips and thumbs stay together in a visible diamond on the floor under the chest. Arms extend at the top; bend elbows to lower chest toward hands; press up to complete ONE full controlled repetition over the four seconds. Legs remain straight with support on toes; knees stay off floor; torso stays aligned. Fixed elevated frontal three-quarter camera, framing the complete athlete, hands, elbows and feet. Continuous execution only from first frame to last. No preparation, no talking, no anatomical figures, no scene changes, no camera cuts. Photorealistic real human, silent 1:1 square video."
+    },
+    "output": {
+      "assetUrl": "https://cms-toolkit-artifacts.artlist.io/content/-m-u-l-t-i_-t-o_-v-i-d-e-o-v1/media__8/-m-u-l-t-i_-t-o_-v-i-d-e-o-6ad8cb23-dc06-4c20-b507-6c42881bc240.mp4?Expires=2108131594&Key-Pair-Id=K2ZDLYDZI2R1DF&Signature=TsQwisGiIOtGusqv7Lg3zqY3wzQQKDUE-L2Aq28TwTqZ0~DzxSHvv408aLvGKSRTl1AY-bLkxNIU2me9qfVwfdaZ16EVT2XMp7pprPIMbxKMsrKM42Ju-7SSd-q-51C57wfJCvd1ZWrxdPtruw3YI3G8ZrmrKtmi0Spg9Ytg7c5AC718Qhv~0xKH3rov4eCV-JvdrbB4an12cvieUH5-A6gbYyoV0G-vlVmsN1wLF55ZdXkByFD4vespdcG5JIlJBqi-EsZRuUWg5BQldoRKOTa2uw~OKa0JmI5Xdol3LsLqGeYqX8qTUnc19T2~Q9fwCCLL1AR6LIDZheRnq~RpPA__",
+      "generationId": "01a16982-0150-7fef-8b37-e59444c6d80c",
+      "kind": "video",
+      "modelName": "Seedance 2.0 Mini",
+      "aspectRatio": "1:1",
+      "durationLabel": "4s",
+      "downloadUrl": "https://mcp.artlist.io/mcp/download?u=https%3A%2F%2Fcms-toolkit-artifacts.artlist.io%2Fcontent%2F-m-u-l-t-i_-t-o_-v-i-d-e-o-v1%2Fmedia__8%2F-m-u-l-t-i_-t-o_-v-i-d-e-o-6ad8cb23-dc06-4c20-b507-6c42881bc240.mp4%3FExpires%3D2108131594%26Key-Pair-Id%3DK2ZDLYDZI2R1DF%26Signature%3DTsQwisGiIOtGusqv7Lg3zqY3wzQQKDUE-L2Aq28TwTqZ0~DzxSHvv408aLvGKSRTl1AY-bLkxNIU2me9qfVwfdaZ16EVT2XMp7pprPIMbxKMsrKM42Ju-7SSd-q-51C57wfJCvd1ZWrxdPtruw3YI3G8ZrmrKtmi0Spg9Ytg7c5AC718Qhv~0xKH3rov4eCV-JvdrbB4an12cvieUH5-A6gbYyoV0G-vlVmsN1wLF55ZdXkByFD4vespdcG5JIlJBqi-EsZRuUWg5BQldoRKOTa2uw~OKa0JmI5Xdol3LsLqGeYqX8qTUnc19T2~Q9fwCCLL1AR6LIDZheRnq~RpPA__&name=-m-u-l-t-i_-t-o_-v-i-d-e-o-6ad8cb23-dc06-4c20-b507-6c42881bc240.mp4",
+      "thumbnailUrl": "https://cms-toolkit-public-artifacts.artlist.io/content/video/video-thumbnails/generated-thumbnail-b56158f4-8e5d-4fa4-8699-253cd6743b55.jpg",
+      "outputIndex": 0
+    },
+    "deliveryFile": "flexao-diamante-final.mp4",
+    "edits": "Crop 620x620 removes tiny residual symbol from mat corner; take first complete 2-second repetition and retime to four seconds.",
+    "supersedes": "01a16968-1048-7a78-a9ed-229c6c578678",
+    "visualReview": "Aproveitável após recorte e edição: mãos em diamante, pernas estendidas, uma descida e subida, sem marca visível nos quadros conferidos.",
+    "linkAllowed": false
+  },
+  "lowCable": {
+    "generation": {
+      "status": "queued",
+      "generationId": "01a16989-6027-7214-bf23-a73e53a9660c",
+      "sessionId": "01a16635-f9a6-776d-b049-a9bdd812cdc4",
+      "modelId": 2462,
+      "modelGroupId": 416,
+      "price": 200,
+      "resolvedSettings": {
+        "aspect_ratio": "1:1",
+        "duration": 4,
+        "resolution": "480p",
+        "generation_mode": "references",
+        "generate_audio": false,
+        "user_inputs_metadata": {
+          "video_urls": [
+            {
+              "duration": 2.1
+            }
+          ]
+        }
+      },
+      "feature": "multi-to-video",
+      "inputSettingKey": "video_urls",
+      "message": "Poll for completion: call get_generation_status with this generationId immediately. Each call blocks until the generation finishes or times out; if status is \"pending\", call again immediately — do not sleep between calls. Video typically completes in 60-300 s; if pending persists past 540 s, surface the generationId to the user — the generation may still complete and is retrievable via list_generations."
+    },
+    "args": {
+      "modelGroupId": 416,
+      "input": {
+        "assetId": "985cd5b5-8ed5-467f-86c1-0d11ab758f26"
+      },
+      "settings": {
+        "duration": 4,
+        "resolution": "480p",
+        "aspect_ratio": "1:1",
+        "generate_audio": false
+      },
+      "prompt": "Personal Pro exercise demonstration: standing bilateral LOW-TO-HIGH CABLE CHEST FLY / crucifixo na polia baixa. Use the supplied real-human execution clip ONLY as the reference for the exercise movement, hand path and slight elbow bend. Re-stage it with one real adult athlete in a plain grey T-shirt, dark shorts and trainers, in a clean gym with blank walls and an unbranded cable crossover machine. BOTH pulley outlets must be LOW near the ankles, visibly below the knees throughout. One D-handle in each hand. Start with hands down and apart beside hips, palms facing forward/upward and elbows softly bent. Sweep BOTH handles together in an upward and inward arc until hands almost meet in front of the upper chest at chest height; then return along the same arc to the starting low-and-apart position. Keep elbow bend nearly constant: this is a chest FLY, not a curl or a chest press. Exactly ONE complete controlled repetition across four seconds. Torso upright and stable, feet planted. Fixed frontal three-quarter camera showing entire athlete, both hands, cables and both low pulley outlets. ZERO writing, ZERO logos, ZERO watermarks, ZERO labels or diagrams on walls, clothing or equipment anywhere in the frame. Do not copy the source person, background, machine panel text or branding. Only execution, no setup, no introduction, no talking, no anatomical animation, no camera cuts. Photorealistic human; silent square four-second video."
+    },
+    "output": {
+      "assetUrl": "https://cms-toolkit-artifacts.artlist.io/content/-m-u-l-t-i_-t-o_-v-i-d-e-o-v1/media__2/-m-u-l-t-i_-t-o_-v-i-d-e-o-51de5c78-bc7b-41ee-956b-172841bc69de.mp4?Expires=2108132111&Key-Pair-Id=K2ZDLYDZI2R1DF&Signature=wOnkPCJUsw7a6UDL4yMIN2mi7nJH1llyaj7TeAhY-IjJlmxwzjyUIhAjAAbUcGFaBpf6cwROPHwukGcfHXLJijpeUbZ32c09NDOwWV8zNjhKQHR2hjznOeWiJgMz8oNZ83uwZe6fwx4dd93PRWck79UAsUy0bLYt9MrkNFkF99qClCkNbTrP6g3sfTbMWWLJ6tePwExMwO8yzLK-Lwwh-FdU~FSI~iz0Ld8orkYBMbZQhH2icGfxfFk5CVxa9SDlur-TRdc0SJw09Rq0~6tMfqTRYnTKvYVgL5VH1rm2Thu2kDGxwuLdbhhBbGLDIvrRpVyxCyVz7nLmW3m5DWJQOQ__",
+      "generationId": "01a16989-6027-7214-bf23-a73e53a9660c",
+      "kind": "video",
+      "modelName": "Seedance 2.0 Mini",
+      "aspectRatio": "1:1",
+      "durationLabel": "4s",
+      "downloadUrl": "https://mcp.artlist.io/mcp/download?u=https%3A%2F%2Fcms-toolkit-artifacts.artlist.io%2Fcontent%2F-m-u-l-t-i_-t-o_-v-i-d-e-o-v1%2Fmedia__2%2F-m-u-l-t-i_-t-o_-v-i-d-e-o-51de5c78-bc7b-41ee-956b-172841bc69de.mp4%3FExpires%3D2108132111%26Key-Pair-Id%3DK2ZDLYDZI2R1DF%26Signature%3DwOnkPCJUsw7a6UDL4yMIN2mi7nJH1llyaj7TeAhY-IjJlmxwzjyUIhAjAAbUcGFaBpf6cwROPHwukGcfHXLJijpeUbZ32c09NDOwWV8zNjhKQHR2hjznOeWiJgMz8oNZ83uwZe6fwx4dd93PRWck79UAsUy0bLYt9MrkNFkF99qClCkNbTrP6g3sfTbMWWLJ6tePwExMwO8yzLK-Lwwh-FdU~FSI~iz0Ld8orkYBMbZQhH2icGfxfFk5CVxa9SDlur-TRdc0SJw09Rq0~6tMfqTRYnTKvYVgL5VH1rm2Thu2kDGxwuLdbhhBbGLDIvrRpVyxCyVz7nLmW3m5DWJQOQ__&name=-m-u-l-t-i_-t-o_-v-i-d-e-o-51de5c78-bc7b-41ee-956b-172841bc69de.mp4",
+      "thumbnailUrl": "https://cms-toolkit-public-artifacts.artlist.io/content/video/video-thumbnails/generated-thumbnail-f16f62c2-dd5f-4676-87f6-ffe446369e94.jpg",
+      "outputIndex": 0
+    },
+    "sourcePage": "https://www.barbellmedicine.com/blog/best-cable-chest-exercises/",
+    "sourceMedia": "https://www.barbellmedicine.com/wp-content/uploads/2025/07/lowtohighcableflye.gif",
+    "referenceTrim": {
+      "start": 0.8,
+      "duration": 2.1
+    },
+    "visualReview": "Reprovado: grande flexão dos cotovelos durante a subida; movimento mistura fly e rosca. Painel da máquina conserva escrita.",
+    "deliveryFile": "tentativa-polia-baixa-nao-aprovada.mp4",
+    "linkAllowed": false
+  },
+  "appChanged": false,
+  "otherGenerationsRequested": 0,
+  "reviewDecisions": {
+    "1": [
+      "manter",
+      "Banco reto, barra, descida e subida identificadas."
+    ],
+    "2": [
+      "manter",
+      "Banco inclinado com barra; ciclo de descida e subida identificado."
+    ],
+    "3": [
+      "refazer",
+      "O vídeo usa banco inclinado, apesar do vínculo ao supino declinado com barra."
+    ],
+    "4": [
+      "refazer",
+      "A subida termina antes de retornar à extensão mostrada no início; repetição incompleta."
+    ],
+    "5": [
+      "refazer",
+      "Mostra principalmente a subida a partir da posição baixa, sem completar o retorno à posição inicial."
+    ],
+    "6": [
+      "conferir",
+      "Abertura muito ampla e mudança visível na flexão dos cotovelos na volta; conferir trajetória antes de aprovar."
+    ],
+    "7": [
+      "conferir",
+      "Rever amplitude de abertura e constância dos cotovelos; não tratar como execução aprovada."
+    ],
+    "8": [
+      "refazer",
+      "Fecha os braços e termina com as mãos juntas; não demonstra a volta à abertura inicial."
+    ],
+    "9": [
+      "manter",
+      "Peck deck com fechamento e reabertura identificados."
+    ],
+    "10": [
+      "refazer",
+      "Mostra descida e início da subida, mas termina antes de voltar à posição alta inicial."
+    ],
+    "11": [
+      "manter",
+      "Mãos na caixa elevada, corpo alinhado e volta à posição alta identificadas."
+    ],
+    "12": [
+      "refazer",
+      "Tentativa nova: cotovelos dobram bastante durante a subida, misturando crucifixo com rosca; painel da máquina ainda tem escrita. Reprovado nesta revisão e não vinculado."
+    ],
+    "13": [
+      "manter",
+      "Banco reto e pegada neutra preservados; há mudança de enquadramento, ajustável por edição se desejado."
+    ],
+    "14": [
+      "corrigido",
+      "Nova geração sem MuscleWiki; recorte do canto residual e edição para uma repetição completa em 4 segundos."
+    ],
+    "15": [
+      "conferir",
+      "Banco declinado e arco identificados; conferir amplitude e flexão dos cotovelos antes de aprovar."
+    ],
+    "16": [
+      "manter",
+      "Um halter nas duas mãos, arco atrás da cabeça e retorno identificados."
+    ],
+    "17": [
+      "manter",
+      "Máquina de chest press, duas mãos, ida e volta visíveis; cadência pode ser padronizada na edição."
+    ],
+    "18": [
+      "refazer",
+      "Cabeça e parte do tronco ficam sem apoio adequado no banco durante o movimento."
+    ],
+    "19": [
+      "refazer",
+      "Os dois braços trabalham fora de sincronia e começam em alturas diferentes; não corresponde à demonstração bilateral uniforme descrita."
+    ],
+    "20": [
+      "manter",
+      "Um halter e um braço no banco reto; movimento identificado. Há mudança de enquadramento e duas repetições; edição opcional."
+    ],
+    "21": [
+      "editar",
+      "Marca StrengthLog grande na parede. Movimento de joelhos identificado; propor recorte/reenquadramento sem nova geração."
+    ],
+    "22": [
+      "refazer",
+      "Mostra a descida com os pés no banco, mas termina na posição baixa sem a subida."
+    ],
+    "23": [
+      "refazer",
+      "Não mostra a volta à abertura; tronco muda de posição durante a puxada e mistura movimento de agachamento."
+    ]
+  },
+  "reviewMethod": "12 quadros distribuídos nos 18 vídeos originais de peito; detalhe dos últimos 0,6 s em sete suspeitos; 12-24 quadros nos novos. Comparação com descrições do catálogo de 23 exercícios. Revisão visual de identificação e apresentação; não homologação biomecânica quadro a quadro.",
+  "reviewTotals": {
+    "keepOrCorrected": 9,
+    "correctionsForDecision": 10,
+    "technicalChecksForDecision": 3,
+    "editingWithoutNewGeneration": 1,
+    "total": 23
+  },
+  "library": {
+    "diamondFinal": "libfile_e9701eec981c81918993400f35904205",
+    "lowCableRejected": "libfile_50dca9e80a948191bd47ce6255ce64fa",
+    "review": "libfile_68cee3afaa1c81918182b34413e7ea39",
+    "diamondReference": "libfile_bb8531d63948819196c7251adc5a636d",
+    "lowCableReference": "libfile_43f33b4e6a588191820162d593681103"
+  }
+}

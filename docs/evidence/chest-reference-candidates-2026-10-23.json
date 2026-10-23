@@ -40,7 +40,9 @@
       "executionReferenceLibraryFileId": "libfile_16af09af73d88191962250f66d39cd63",
       "visualReview": "real human and expected movement confirmed in sampled sequence",
       "generationId": "01a16968-1048-7a78-a9ed-229c6c578678",
-      "finalTechnicalReview": "pending"
+      "finalTechnicalReview": "pending",
+      "generationStatus": "superseded_due_to_MuscleWiki_mark",
+      "replacementGenerationId": "01a16982-0150-7fef-8b37-e59444c6d80c"
     }
   ],
   "remaining": [
@@ -51,5 +53,12 @@
       "reason": "Não aprovar JEFIT 1059 (amplitude termina na cintura), nem MuscleWiki standing incline (polias na altura dos ombros; mãos sobem acima da cabeça). Vídeo M&S específico identificado, mas arquivo de execução ainda não acessível.",
       "generationRequested": false
     }
-  ]
+  ],
+  "supersededByReview": "chest-redo-and-audit-2026-10-23.json",
+  "currentLowCableReference": {
+    "sourcePage": "https://www.barbellmedicine.com/blog/best-cable-chest-exercises/",
+    "sourceMedia": "https://www.barbellmedicine.com/wp-content/uploads/2025/07/lowtohighcableflye.gif",
+    "generationId": "01a16989-6027-7214-bf23-a73e53a9660c",
+    "generationResult": "reprovado; não vincular"
+  }
 }
