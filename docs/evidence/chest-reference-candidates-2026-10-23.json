@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-23",
+  "status": "Four execution-only real-human references visually checked and used; low cable crossover reference still pending.",
+  "items": [
+    {
+      "selectionId": "pp-flexao-com-joelhos-apoiados",
+      "name": "Flexão com joelhos apoiados",
+      "sourcePage": "https://www.strengthlog.com/kneeling-push-up/",
+      "videoUrl": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/02/Kneeling-push-ups.gif?resize=600%2C600&ssl=1",
+      "executionReferenceLibraryFileId": "libfile_c56b42be002c81918a0cd7d4c24040a7",
+      "visualReview": "real human and expected movement confirmed in sampled sequence",
+      "generationId": "01a1695c-8768-7377-a25a-95841ceb42aa",
+      "finalTechnicalReview": "pending"
+    },
+    {
+      "selectionId": "pp-supino-unilateral-com-halter",
+      "name": "Supino unilateral com halter",
+      "sourcePage": "https://www.jefit.com/exercises/169/dumbbell-one-arm-bench-press",
+      "videoUrl": "https://cdn.jefit.com/assets/img/exercises/gifs/169.gif",
+      "executionReferenceLibraryFileId": "libfile_382b770e27408191973d35c119899d9e",
+      "visualReview": "real human and expected movement confirmed in sampled sequence",
+      "generationId": "01a16960-607c-7efe-ab7a-c079b4d0afd4",
+      "finalTechnicalReview": "pending"
+    },
+    {
+      "selectionId": "pp-supino-reto-com-halteres-pegada-neutra",
+      "name": "Supino reto com halteres — pegada neutra",
+      "sourcePage": "https://www.jefit.com/exercises/1064/dumbbell-bench-press-palms-in",
+      "videoUrl": "https://cdn.jefit.com/assets/img/exercises/gifs/1064.gif",
+      "executionReferenceLibraryFileId": "libfile_c9517735cfdc8191b98267bafef03670",
+      "visualReview": "real human and expected movement confirmed in sampled sequence",
+      "generationId": "01a16963-662e-75cd-8fdf-52c9f422e2d9",
+      "finalTechnicalReview": "pending"
+    },
+    {
+      "selectionId": "pp-flexao-diamante-no-solo",
+      "name": "Flexão diamante no solo",
+      "sourcePage": "https://musclewiki.com/exercise/diamond-push-ups",
+      "videoUrl": "https://musclewiki.com/api-next/videos/male-Bodyweight-diamond-push-ups-front.mp4",
+      "executionReferenceLibraryFileId": "libfile_16af09af73d88191962250f66d39cd63",
+      "visualReview": "real human and expected movement confirmed in sampled sequence",
+      "generationId": "01a16968-1048-7a78-a9ed-229c6c578678",
+      "finalTechnicalReview": "pending"
+    }
+  ],
+  "remaining": [
+    {
+      "selectionId": "pp-crucifixo-na-polia-baixa",
+      "catalogId": "Low_Cable_Crossover",
+      "status": "reference_pending",
+      "reason": "Não aprovar JEFIT 1059 (amplitude termina na cintura), nem MuscleWiki standing incline (polias na altura dos ombros; mãos sobem acima da cabeça). Vídeo M&S específico identificado, mas arquivo de execução ainda não acessível.",
+      "generationRequested": false
+    }
+  ]
+}
