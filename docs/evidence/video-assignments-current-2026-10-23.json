@@ -1,0 +1,816 @@
+{
+  "date": "2026-10-23",
+  "generatedTotal": 70,
+  "assignedTotal": 46,
+  "duplicateTotal": 6,
+  "newCreditsSpent": 3000,
+  "pendingCorrections": [
+    {
+      "sourceId": "Low_Cable_Crossover",
+      "name": "Crucifixo na polia baixa",
+      "reason": "Vídeo em correção: as tentativas dobram excessivamente os cotovelos ou ultrapassam a amplitude prevista. Nenhuma foi aprovada."
+    }
+  ],
+  "items": [
+    {
+      "index": 0,
+      "generationId": "01a16723-7ac0-761c-b26c-99246804f8b8",
+      "sourceId": null,
+      "assignedName": null,
+      "linkAllowed": false,
+      "sha256": "f096ad0d9da97b3e0f48f037b6dd37e93ff07db024a46b32b50cea752581e009",
+      "status": "sem correspondência de movimento",
+      "supersededBy": null,
+      "technicalFlags": [
+        "Corpo suspenso no ar; não corresponde ao Superman no solo."
+      ]
+    },
+    {
+      "index": 1,
+      "generationId": "01a16723-7ac0-74c5-a6f7-4ff5bd6c48e1",
+      "sourceId": "pp-remada-sentada-na-maquina",
+      "assignedName": "Remada sentada na máquina",
+      "linkAllowed": true,
+      "sha256": "27639b2b71bec6fd9d2fd473ea45511d5bee1e138c31f44357bb63ba6fd2159f",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 2,
+      "generationId": "01a16723-7abf-7014-b631-18ed9a68467a",
+      "sourceId": "pp-pulldown-com-bracos-estendidos",
+      "assignedName": "Pulldown com braços estendidos",
+      "linkAllowed": true,
+      "sha256": "99c9109adabeb11fb2fb9db6a48652e54981b1c58281fc71ecd9e4c8462aeae6",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 3,
+      "generationId": "01a16723-7abb-7fd2-bf5e-3a09f5713a5f",
+      "sourceId": "Wide-Grip_Lat_Pulldown",
+      "assignedName": "Puxada frontal na polia",
+      "linkAllowed": false,
+      "sha256": "94f2aa2d9849033115c78b3500360ee136a292528da3ca5ad82bdd532e65c9a0",
+      "status": "excedente repetido — fora do aplicativo",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 4,
+      "generationId": "01a16723-7ab2-72bd-a8e4-98e73be7158e",
+      "sourceId": "pp-remada-unilateral-sentada-na-polia",
+      "assignedName": "Remada unilateral sentada na polia",
+      "linkAllowed": true,
+      "sha256": "d0f6c6b0bf63a0e362145cfab10f79bd598cac5397a9b41f4412aba0fdc2452d",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 5,
+      "generationId": "01a16721-51ac-74fb-b0d9-d99dc93f5df1",
+      "sourceId": "One-Arm_Dumbbell_Row",
+      "assignedName": "Remada unilateral com halter",
+      "linkAllowed": true,
+      "sha256": "386ff0c4ddbe8ae7dbb49eef6f10b397b6078b50afc4c2ba8c4dc22e6cec5465",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 6,
+      "generationId": "01a16711-fe5e-73c1-8a30-444ec9d09499",
+      "sourceId": "Bent_Over_Barbell_Row",
+      "assignedName": "Remada curvada com barra",
+      "linkAllowed": false,
+      "sha256": "cac1526eae08a35bb67aaadb1adab09da7021803d5f9b9ff3119fb454b640630",
+      "status": "excedente repetido — fora do aplicativo",
+      "supersededBy": null,
+      "technicalFlags": [
+        "Confirmar a pegada no fechamento da revisão."
+      ]
+    },
+    {
+      "index": 7,
+      "generationId": "01a16711-fe2d-7fda-945a-d04eccdfc6b1",
+      "sourceId": "Hyperextensions_Back_Extensions",
+      "assignedName": "Hiperextensão lombar",
+      "linkAllowed": true,
+      "sha256": "697462e659b1adb549e3e825dfdff5f3e2bc7fe788b00b252c6a3a4323f2da7d",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": [
+        "Rever a amplitude: o tronco ultrapassa o alinhamento com as pernas."
+      ]
+    },
+    {
+      "index": 8,
+      "generationId": "01a16711-fe2c-74f3-ad7e-04f5e2470651",
+      "sourceId": "Dumbbell_Incline_Row",
+      "assignedName": "Remada inclinada com halteres",
+      "linkAllowed": true,
+      "sha256": "8b88b650e07e76e1aece8065b8bbcac7e16000b5ccd3d8def16a9fd14593f9ba",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 9,
+      "generationId": "01a16711-fe28-77b9-be65-df4bfc55084d",
+      "sourceId": "Inverted_Row",
+      "assignedName": "Remada invertida",
+      "linkAllowed": true,
+      "sha256": "3f27794127f8de19d15d63ab32a6d3c7789bd6f8d58fdd7fcea388b6e70915e6",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 10,
+      "generationId": "01a16711-fe26-7349-9c06-4e5904c4c680",
+      "sourceId": "Wide-Grip_Lat_Pulldown",
+      "assignedName": "Puxada frontal na polia",
+      "linkAllowed": false,
+      "sha256": "f210a47569d7a29e01792fb5cf33ab69c9cc654fa80ec6efd8a32163143f496b",
+      "status": "excedente repetido — fora do aplicativo",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 11,
+      "generationId": "01a16711-fe21-718a-9136-cd207829a751",
+      "sourceId": "selected-puxada-unilateral-na-polia",
+      "assignedName": "Puxada unilateral na polia",
+      "linkAllowed": true,
+      "sha256": "49ca021409250c301894e34e3e5eef5794a0f2ef93c58bc10caf50175899dd30",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 12,
+      "generationId": "01a166fc-f950-7e22-b0a8-823dd8c330fa",
+      "sourceId": "T-Bar_Row_with_Handle",
+      "assignedName": "Remada cavalinho",
+      "linkAllowed": true,
+      "sha256": "06a8a7cf1af3c7a3aa955f2b91dffa6cc24fbe5ce6530908360e37cff3e1c865",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": [
+        "Confirmar o acessório e a ancoragem da barra na revisão final."
+      ]
+    },
+    {
+      "index": 13,
+      "generationId": "01a166fc-f94a-7993-ab1d-0422fdd9d7ab",
+      "sourceId": "Dumbbell_Shrug",
+      "assignedName": "Encolhimento com halter",
+      "linkAllowed": true,
+      "sha256": "89df21e51c0f889eed0c80264ce36b5b8b3b9cceb67fb39ca4e5e726aa94b3ee",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 14,
+      "generationId": "01a166fc-f944-7ff8-a61d-43971aced830",
+      "sourceId": "Barbell_Shrug",
+      "assignedName": "Encolhimento com barra",
+      "linkAllowed": true,
+      "sha256": "88fa40d924a2e7669e087bb5f529c371703ac9a1d515d88f9fb521ef4575e97b",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 15,
+      "generationId": "01a166fc-f93b-7bbc-a9c9-cfb6ad2412d0",
+      "sourceId": "Pullups",
+      "assignedName": "Barra fixa (pull-up)",
+      "linkAllowed": false,
+      "sha256": "379aa651de7c677aa4f7f12119c7e7ed0abb8e90db07b06b5beec9578c8f8d6e",
+      "status": "excedente repetido — fora do aplicativo",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 16,
+      "generationId": "01a166fc-f936-7912-a6cd-f655d1c9c3ac",
+      "sourceId": "Pullups",
+      "assignedName": "Barra fixa (pull-up)",
+      "linkAllowed": true,
+      "sha256": "5bd683b677414f5a16a0c957c4c4429fcf9ad9f8b6829f5a32fc52cee5063216",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 17,
+      "generationId": "01a166fa-a70f-7535-8c29-3e1a73769c50",
+      "sourceId": "Seated_Cable_Rows",
+      "assignedName": "Remada sentada na polia",
+      "linkAllowed": false,
+      "sha256": "095a351a1114c4581accb3a8e78910f9b44d5b6883b4a1ba0a45c9b2c92ae201",
+      "status": "excedente repetido — fora do aplicativo",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 18,
+      "generationId": "01a166e0-924e-74e5-afb8-94fb19cb211e",
+      "sourceId": "Bent_Over_Barbell_Row",
+      "assignedName": "Remada curvada com barra",
+      "linkAllowed": true,
+      "sha256": "3bfd80d0d546869b5a413fb3504c1e9b49897f90f062f0f5d9e23fdc3fce364b",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 19,
+      "generationId": "01a166e0-9224-70e9-9b26-f4e3733a4a06",
+      "sourceId": "Wide-Grip_Lat_Pulldown",
+      "assignedName": "Puxada frontal na polia",
+      "linkAllowed": true,
+      "sha256": "68ea76dfe195a989333e6e3013abbf8c6b74ee527580782b9c7bf8b04e7e77b4",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 20,
+      "generationId": "01a166e0-921d-79d3-b64b-88dbdb1ed267",
+      "sourceId": "selected-puxada-fechada-na-polia",
+      "assignedName": "Puxada fechada na polia",
+      "linkAllowed": true,
+      "sha256": "3559f098a2ad9ebf762ea621803d2052f1cf113b4887f08625ea42a026237fe4",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 21,
+      "generationId": "01a166e0-9212-77d6-9535-cf4ad239596d",
+      "sourceId": "pp-crossover-unilateral-na-polia",
+      "assignedName": "Crossover unilateral na polia",
+      "linkAllowed": false,
+      "sha256": "410e16ddbd90623fd516be4e2b1b1fd1e56ada9414d277d1211a9cdfab5721ee",
+      "status": "substituído na correção de peito",
+      "supersededBy": "01a169e2-3677-7d3a-82fc-bc6455537485",
+      "technicalFlags": [
+        "Rever a estabilidade do tronco durante o movimento."
+      ]
+    },
+    {
+      "index": 22,
+      "generationId": "01a166e0-9210-7f5e-a016-d4ede78793d6",
+      "sourceId": "Pushups",
+      "assignedName": "Flexão de braço",
+      "linkAllowed": false,
+      "sha256": "0f520bd00b9cc7301e18a6005b2d9112e695f3edaca0d476b7037bc9e8c8fd62",
+      "status": "excedente repetido — fora do aplicativo",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 23,
+      "generationId": "01a166e0-920f-7ac8-a287-13c417812d00",
+      "sourceId": "pp-flexao-com-pes-elevados",
+      "assignedName": "Flexão com pés elevados",
+      "linkAllowed": false,
+      "sha256": "2bf72f7fc46b80dc639de26b04f6a8db26c2cf4eb33a90c30b3a88967e6c56e2",
+      "status": "substituído na correção de peito",
+      "supersededBy": "01a169db-3f20-7cdc-a7c7-5aaeb2e8399b",
+      "technicalFlags": []
+    },
+    {
+      "index": 24,
+      "generationId": "01a166dc-f177-7939-82d3-30bb48524c00",
+      "sourceId": "pp-supino-no-chao-com-halteres",
+      "assignedName": "Supino no chão com halteres",
+      "linkAllowed": false,
+      "sha256": "8244d492bdfae2f4fba4e68af3c13df71eace16d39b766c74c348a83d4ea5cac",
+      "status": "substituído na correção de peito",
+      "supersededBy": "01a169d8-7824-716f-a61d-60c873f41eda",
+      "technicalFlags": []
+    },
+    {
+      "index": 25,
+      "generationId": "01a166dc-f14f-7a54-88dc-73c5ceb434a9",
+      "sourceId": "Bent-Arm_Dumbbell_Pullover",
+      "assignedName": "Pull-over com halter",
+      "linkAllowed": true,
+      "sha256": "58b94665046f855c3db4a099c279f1e40e207b7a03b47a1babff20d397fb2ccb",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 26,
+      "generationId": "01a166dc-f142-7154-84b4-4d12e07cb9ae",
+      "sourceId": "pp-supino-declinado-com-halteres",
+      "assignedName": "Supino declinado com halteres",
+      "linkAllowed": false,
+      "sha256": "1447728401566f8da648a24a499985f37ac9c16f95321e24c748b5a09ac3b446",
+      "status": "substituído na correção de peito",
+      "supersededBy": "01a169d3-1d79-7805-b72f-ab90cbc55107",
+      "technicalFlags": [
+        "Rever o apoio da cabeça e do tronco no banco."
+      ]
+    },
+    {
+      "index": 27,
+      "generationId": "01a166dc-f142-7009-a00e-7dbe66d0ea5c",
+      "sourceId": "Leverage_Chest_Press",
+      "assignedName": "Supino reto na máquina",
+      "linkAllowed": true,
+      "sha256": "68c0e5d010527f9270627621c2d0fb8b4e14945b1219b57806854b7b548e4a64",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 28,
+      "generationId": "01a166dc-f137-7e4b-be95-3d00cda05f1c",
+      "sourceId": "Decline_Dumbbell_Flyes",
+      "assignedName": "Crucifixo declinado com halteres",
+      "linkAllowed": false,
+      "sha256": "722a7676a3f39f3e3a385ced43f27ad0588460c8d8c5880975e510c25bf687db",
+      "status": "substituído na correção de peito",
+      "supersededBy": "01a169ef-c5ba-76ab-9113-eb3e66e7bccc",
+      "technicalFlags": [
+        "Rever a amplitude da abertura."
+      ]
+    },
+    {
+      "index": 29,
+      "generationId": "01a166dc-f137-754f-937d-f5b5691893f8",
+      "sourceId": "Plank",
+      "assignedName": "Prancha frontal",
+      "linkAllowed": true,
+      "sha256": "575b36cd9aaf3aa6799b19fb289fbb6414f8d990e13e73b8cc5f218e71424e34",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 30,
+      "generationId": "01a166d5-f068-761b-a875-a78d72da2785",
+      "sourceId": "Incline_Push-Up_Medium",
+      "assignedName": "Flexão inclinada",
+      "linkAllowed": true,
+      "sha256": "f2a94e0ea65071f3fb1242520b264e8d0ccfaba85979507a51e0daf31bbdbe6e",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 31,
+      "generationId": "01a166d5-f02f-72fd-afec-85aa864d5418",
+      "sourceId": "Dumbbell_Flyes",
+      "assignedName": "Crucifixo com halteres",
+      "linkAllowed": false,
+      "sha256": "c3a1ebaed948ef317aba12f9921608905a1980de2bda0dc61145361d2055af56",
+      "status": "substituído na correção de peito",
+      "supersededBy": "01a169ec-c6cf-7ad5-9983-5e8d805c2ef3",
+      "technicalFlags": [
+        "Rever a amplitude da abertura."
+      ]
+    },
+    {
+      "index": 32,
+      "generationId": "01a166d5-f02d-7e29-bbdc-0d2d3691834f",
+      "sourceId": "Incline_Dumbbell_Flyes",
+      "assignedName": "Crucifixo inclinado com halteres",
+      "linkAllowed": true,
+      "sha256": "cfb530b8b727d47e48f121c261e16571ac89acb3823047db3bf0c12b24ae4359",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": [
+        "Rever a amplitude da abertura."
+      ]
+    },
+    {
+      "index": 33,
+      "generationId": "01a166d5-f02b-7b0d-8d3f-9db0f5a65ff7",
+      "sourceId": "Cable_Crossover",
+      "assignedName": "Crossover na polia",
+      "linkAllowed": false,
+      "sha256": "c3471d16a76d1afa914340d4623203a54b6641f5682ca503e19bd7ff50339c9c",
+      "status": "substituído na correção de peito",
+      "supersededBy": "01a169dd-a770-72d4-9b16-5982e6a907a6",
+      "technicalFlags": []
+    },
+    {
+      "index": 34,
+      "generationId": "01a166d5-f02b-7abe-8a60-0e7fc2419152",
+      "sourceId": "Pushups",
+      "assignedName": "Flexão de braço",
+      "linkAllowed": false,
+      "sha256": "ff9b1a86f7d1ee6321118a96e32d2e031929c830048ca62ee7e4322fba7fdcca",
+      "status": "substituído na correção de peito",
+      "supersededBy": "01a169d5-dce4-74da-ae5d-90ff7265d730",
+      "technicalFlags": []
+    },
+    {
+      "index": 35,
+      "generationId": "01a166d5-f022-79a0-8fab-a281b5f2a6d5",
+      "sourceId": "Butterfly",
+      "assignedName": "Voador (Pec Deck)",
+      "linkAllowed": true,
+      "sha256": "adedd477d8a6da85f008836624e57b753e6de8e32c4b0cd07341763ad3342999",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 36,
+      "generationId": "01a166c8-6444-73ae-9f17-ce3c15411bfc",
+      "sourceId": "Dumbbell_Bench_Press",
+      "assignedName": "Supino reto com halteres",
+      "linkAllowed": false,
+      "sha256": "55bbb221a9a27e4d0bc3c9c81e5cee6bdf5d63eec6a322c7fbbb19a2558cf7fc",
+      "status": "substituído na correção de peito",
+      "supersededBy": "01a169c6-e4f2-79e0-8a6d-1bd0e59894b5",
+      "technicalFlags": []
+    },
+    {
+      "index": 37,
+      "generationId": "01a166c8-6439-7f01-b681-1ead4b5fde55",
+      "sourceId": "Decline_Barbell_Bench_Press",
+      "assignedName": "Supino declinado com barra",
+      "linkAllowed": false,
+      "sha256": "cb4411e567c8c49d3204cd2de8518469a13cd7154f64fcba29d794184708f12e",
+      "status": "substituído na correção de peito",
+      "supersededBy": "01a169ca-cf0d-74fe-adc0-46dd59f69ef6",
+      "technicalFlags": []
+    },
+    {
+      "index": 38,
+      "generationId": "01a166c8-6438-7300-b3ad-9757e611d7be",
+      "sourceId": "Incline_Dumbbell_Press",
+      "assignedName": "Supino inclinado com halteres",
+      "linkAllowed": false,
+      "sha256": "80fb596a5d4da8257b9abe5c314ec52424bb4c4f31e78ecabdcbb87c2be0406e",
+      "status": "substituído na correção de peito",
+      "supersededBy": "01a169d0-831b-7033-a7a0-334b9c4751c4",
+      "technicalFlags": []
+    },
+    {
+      "index": 39,
+      "generationId": "01a166c7-58d5-7041-b976-a208282304f1",
+      "sourceId": "Barbell_Incline_Bench_Press_-_Medium_Grip",
+      "assignedName": "Supino inclinado com barra",
+      "linkAllowed": true,
+      "sha256": "9b144b07aa5dc6f0c18da7b4982c12e6bd79c035dbe6cff35c350d73ddcb406e",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 40,
+      "generationId": "01a16683-0b0e-711e-9e10-3f4839fa171a",
+      "sourceId": "pp-swing-com-kettlebell",
+      "assignedName": "Swing com kettlebell",
+      "linkAllowed": true,
+      "sha256": "a2d6daf7fcde0b934e0812b0c28e2827287be66e0db087d297cab40ee2ce0125",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": [
+        "Confirmar a consistência visual do kettlebell durante todo o movimento."
+      ]
+    },
+    {
+      "index": 41,
+      "generationId": "01a16680-7438-70b7-b44a-20ac140fb7cd",
+      "sourceId": "Leg_Press",
+      "assignedName": "Leg press",
+      "linkAllowed": true,
+      "sha256": "a9a0641e8f37bd615aacc8361aa170058c0b6cb75188deb4789821a297713d09",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": [
+        "Reprovação anterior preservada no histórico; execução final ainda será revista."
+      ]
+    },
+    {
+      "index": 42,
+      "generationId": "01a1667d-1927-7e41-a630-de71694deb23",
+      "sourceId": "Barbell_Squat",
+      "assignedName": "Agachamento livre com barra",
+      "linkAllowed": true,
+      "sha256": "4b0a90ab48d47fe2ba05383063625b274218c84db49a809a45875f73fd3c1f88",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 43,
+      "generationId": "01a1664a-c5aa-7503-81a1-fc0e55909c89",
+      "sourceId": "selected-extensao-de-triceps-acima-da-cabeca",
+      "assignedName": "Extensão de tríceps acima da cabeça",
+      "linkAllowed": true,
+      "sha256": "12a93537cd8112b557e757bb3759b46ec0170b0a3c7cc8682db0e897f82216c9",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": [
+        "Reprovação anterior preservada no histórico; execução final ainda será revista."
+      ]
+    },
+    {
+      "index": 44,
+      "generationId": "01a16645-f0a3-7796-9ccb-37435abfd69d",
+      "sourceId": "Hammer_Curls",
+      "assignedName": "Rosca martelo",
+      "linkAllowed": true,
+      "sha256": "8355b90a1c238bb4989478cbf817a4eb0ed4a3a32a2a6808136081823758bcc3",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 45,
+      "generationId": "01a16641-4b2e-7d0e-97b8-57d1bed1bb50",
+      "sourceId": "pp-remada-unilateral-com-halter-apoio-na-coxa",
+      "assignedName": "Remada unilateral com halter — apoio na coxa",
+      "linkAllowed": true,
+      "sha256": "4a1fcfc4705228dd257952541a65f1eda7366f10ee8d9acbb6977b41b1b7a593",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 46,
+      "generationId": "01a1663e-b770-7384-a42e-88afd3da5321",
+      "sourceId": "pp-crossover-na-polia-media",
+      "assignedName": "Crossover na polia média",
+      "linkAllowed": true,
+      "sha256": "c143e06351dcec33aa7de8e8590d3ae24b7d24335427c7a268e0fce1a87acc72",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": [
+        "Rever cadência e quantidade de repetições; o destino é polia média, sem trocar por alta."
+      ]
+    },
+    {
+      "index": 47,
+      "generationId": "01a1663c-1b4b-7165-86f7-2900e96c1d1c",
+      "sourceId": "Barbell_Bench_Press_-_Medium_Grip",
+      "assignedName": "Supino reto com barra",
+      "linkAllowed": true,
+      "sha256": "f77e91234724827e2c27da3a8665b4149a1b45bcde1ea731cb0e779a137c87b7",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 48,
+      "generationId": "01a16635-f9ca-7a24-b34e-14d960a59ef2",
+      "sourceId": "Seated_Cable_Rows",
+      "assignedName": "Remada sentada na polia",
+      "linkAllowed": true,
+      "sha256": "2ba028897e6a8cd62859ddabb433596813d2cd4bf27a629ef8bbacf206cd9b75",
+      "status": "vinculado para revisão final",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 49,
+      "generationId": "01a1695c-8768-7377-a25a-95841ceb42aa",
+      "sourceId": "pp-flexao-com-joelhos-apoiados",
+      "assignedName": "Flexão com joelhos apoiados",
+      "linkAllowed": true,
+      "sha256": "c481b15c8daf183734a2aedbb2b7741b2b12f2a6675ad9bf4eb9d337d96b8f46",
+      "status": "approved",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 50,
+      "generationId": "01a16960-607c-7efe-ab7a-c079b4d0afd4",
+      "sourceId": "pp-supino-unilateral-com-halter",
+      "assignedName": "Supino unilateral com halter",
+      "linkAllowed": true,
+      "sha256": "7526f4a2274ccf342cd4086a44d652870c6c7b202e7643cf9e673da1b99a4aeb",
+      "status": "approved",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 51,
+      "generationId": "01a16963-662e-75cd-8fdf-52c9f422e2d9",
+      "sourceId": "Dumbbell_Bench_Press_with_Neutral_Grip",
+      "assignedName": "Supino com halteres pegada neutra",
+      "linkAllowed": true,
+      "sha256": "c2a9ae22afa9dd27061b55356c2832ccf295837912983b21a6403e96557267ea",
+      "status": "approved",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 52,
+      "generationId": "01a16968-1048-7a78-a9ed-229c6c578678",
+      "sourceId": "Diamond_Push-Up",
+      "assignedName": "Flexão diamante",
+      "linkAllowed": false,
+      "sha256": null,
+      "status": "rejected",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 53,
+      "generationId": "01a16982-0150-7fef-8b37-e59444c6d80c",
+      "sourceId": "Diamond_Push-Up",
+      "assignedName": "Flexão diamante",
+      "linkAllowed": true,
+      "sha256": "03bfd65d7a724ecf93d1209add289e3ba1022717449ba020293690ea2e8e74b7",
+      "status": "approved",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 54,
+      "generationId": "01a16989-6027-7214-bf23-a73e53a9660c",
+      "sourceId": "Low_Cable_Crossover",
+      "assignedName": "Crucifixo na polia baixa",
+      "linkAllowed": false,
+      "sha256": null,
+      "status": "rejected",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 55,
+      "generationId": "01a169c6-e4f2-79e0-8a6d-1bd0e59894b5",
+      "sourceId": "Dumbbell_Bench_Press",
+      "assignedName": "Supino reto com halteres",
+      "linkAllowed": true,
+      "sha256": "6910745be7fc9bccc416e730d64b43fbe98d8417b54b336a2e2dffaa723bc92c",
+      "status": "approved",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 56,
+      "generationId": "01a169ca-cf0d-74fe-adc0-46dd59f69ef6",
+      "sourceId": "Decline_Barbell_Bench_Press",
+      "assignedName": "Supino declinado com barra",
+      "linkAllowed": true,
+      "sha256": "1f396cd12c5bcac817122798f7f767eac494cec7538d2574329ea6863d52bf8f",
+      "status": "approved",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 57,
+      "generationId": "01a169d0-831b-7033-a7a0-334b9c4751c4",
+      "sourceId": "Incline_Dumbbell_Press",
+      "assignedName": "Supino inclinado com halteres",
+      "linkAllowed": true,
+      "sha256": "282ff8f7ca7bbfb461611214af350ad5d82996edeba4f679f1c7753077a4e9db",
+      "status": "approved",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 58,
+      "generationId": "01a169d3-1d79-7805-b72f-ab90cbc55107",
+      "sourceId": "pp-supino-declinado-com-halteres",
+      "assignedName": "Supino declinado com halteres",
+      "linkAllowed": true,
+      "sha256": "de97fc490b6f7b48b2c7cfc1ee5566857e87a13f945b7bdd52f38d02415b7a8e",
+      "status": "approved",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 59,
+      "generationId": "01a169d5-dce4-74da-ae5d-90ff7265d730",
+      "sourceId": "Pushups",
+      "assignedName": "Flexão de braço",
+      "linkAllowed": true,
+      "sha256": "868bc23611c135a1d6125e2b1e067237d7b78bf961065370e6b51a4a7fc50d31",
+      "status": "approved",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 60,
+      "generationId": "01a169d8-7824-716f-a61d-60c873f41eda",
+      "sourceId": "pp-supino-no-chao-com-halteres",
+      "assignedName": "Supino no chão com halteres",
+      "linkAllowed": true,
+      "sha256": "88a071049a224bbc8a3228138db8f3789cd476901e26f95b5e2d491c9064a670",
+      "status": "approved",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 61,
+      "generationId": "01a169db-3f20-7cdc-a7c7-5aaeb2e8399b",
+      "sourceId": "pp-flexao-com-pes-elevados",
+      "assignedName": "Flexão com pés elevados",
+      "linkAllowed": true,
+      "sha256": "7d6a5fe894646d17510428e72a38853e9a88909153ed50ebd855deb10bd96006",
+      "status": "approved",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 62,
+      "generationId": "01a169dd-a770-72d4-9b16-5982e6a907a6",
+      "sourceId": "Cable_Crossover",
+      "assignedName": "Crossover na polia",
+      "linkAllowed": true,
+      "sha256": "317186ff016166bdc905f690e73bd394f568b2bfb532fe504acbd8756e3dd48a",
+      "status": "approved",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 63,
+      "generationId": "01a169e0-3222-7b45-a974-9deaa141c1e9",
+      "sourceId": "Low_Cable_Crossover",
+      "assignedName": "Crucifixo na polia baixa",
+      "linkAllowed": false,
+      "sha256": null,
+      "status": "rejected",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 64,
+      "generationId": "01a169e2-3677-7d3a-82fc-bc6455537485",
+      "sourceId": "pp-crossover-unilateral-na-polia",
+      "assignedName": "Crossover unilateral na polia",
+      "linkAllowed": true,
+      "sha256": "a5503bc9ad66e79751609745d000f36e243f62ff741247ed1b73474d515b5a30",
+      "status": "approved",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 65,
+      "generationId": "01a169e4-abeb-70b1-bfff-28c421925fd4",
+      "sourceId": "Dumbbell_Flyes",
+      "assignedName": "Crucifixo com halteres",
+      "linkAllowed": false,
+      "sha256": null,
+      "status": "inconclusive",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 66,
+      "generationId": "01a169e7-ed7d-76da-bf66-aae97511925b",
+      "sourceId": "Decline_Dumbbell_Flyes",
+      "assignedName": "Crucifixo declinado com halteres",
+      "linkAllowed": false,
+      "sha256": null,
+      "status": "inconclusive",
+      "supersededBy": null,
+      "technicalFlags": []
+    },
+    {
+      "index": 67,
+      "generationId": "01a169ec-c6cf-7ad5-9983-5e8d805c2ef3",
+      "sourceId": "Dumbbell_Flyes",
+      "assignedName": "Crucifixo com halteres",
+      "linkAllowed": true,
+      "sha256": "0875a4df4f6a0d097731686132abdf76d3086f2b7cd2ee831288e46f8200a46e",
+      "status": "approved",
+      "supersededBy": null,
+      "technicalFlags": [
+        "Revisão final: conferir amplitude do fechamento; os halteres terminam afastados acima do peito."
+      ]
+    },
+    {
+      "index": 68,
+      "generationId": "01a169ef-c5ba-76ab-9113-eb3e66e7bccc",
+      "sourceId": "Decline_Dumbbell_Flyes",
+      "assignedName": "Crucifixo declinado com halteres",
+      "linkAllowed": true,
+      "sha256": "3b5609e1fa1b9e0fe646d807fa10bd641414c43c1dc528af25c4a5366510ff0e",
+      "status": "selected_with_technical_review_pending",
+      "supersededBy": null,
+      "technicalFlags": [
+        "Conferir ângulo dos cotovelos e arco na volta; a nova tomada não resolveu esta dúvida."
+      ]
+    },
+    {
+      "index": 69,
+      "generationId": "01a169f2-e3ec-7fa7-8cf9-da1901f98a0b",
+      "sourceId": "Low_Cable_Crossover",
+      "assignedName": "Crucifixo na polia baixa",
+      "linkAllowed": false,
+      "sha256": null,
+      "status": "rejected",
+      "supersededBy": null,
+      "technicalFlags": []
+    }
+  ]
+}

@@ -313,7 +313,10 @@
     "group": "Peito",
     "equipment": "Conforme prescrição",
     "level": "Conforme orientação",
-    "instructions": [],
+    "instructions": [
+      "Apoie as mãos no chão sob o peito. Aproxime os polegares e indicadores, formando um diamante. Sustente o corpo nas mãos e pontas dos pés, mantendo cabeça, tronco e quadril alinhados.",
+      "Flexione os cotovelos para baixar o peito em direção às mãos, preservando o alinhamento do corpo. Empurre o chão e retorne à posição inicial."
+    ],
     "images": [],
     "aliases": [],
     "sourceId": "Diamond_Push-Up"
@@ -2479,5 +2482,39 @@
       "https://cms-toolkit-public-artifacts.artlist.io/content/video/video-thumbnails/generated-thumbnail-4ba64b0f-0142-4746-9c0d-a0b09481ea51.jpg"
     ],
     "aliases": []
+  },
+  {
+    "id": "pp-supino-unilateral-com-halter",
+    "sourceId": "pp-supino-unilateral-com-halter",
+    "name": "Supino unilateral com halter",
+    "group": "Peito",
+    "equipment": "Halter e banco",
+    "level": "Iniciante",
+    "instructions": [
+      "Trabalha: Peito, tríceps e estabilizadores do tronco.",
+      "Deite no banco e segure um halter ao lado do peito. Empurre para cima e volte devagar, sem girar o tronco."
+    ],
+    "images": [
+      "/assets/videos/chest/onearm.jpg"
+    ],
+    "aliases": [],
+    "selectionId": "pp-supino-unilateral-com-halter"
+  },
+  {
+    "id": "pp-flexao-com-joelhos-apoiados",
+    "sourceId": "pp-flexao-com-joelhos-apoiados",
+    "name": "Flexão com joelhos apoiados",
+    "group": "Peito",
+    "equipment": "Peso corporal e colchonete",
+    "level": "Iniciante",
+    "instructions": [
+      "Trabalha: Peito, tríceps e ombros.",
+      "Apoie mãos e joelhos no chão, mantendo o tronco alinhado com as coxas. Aproxime o peito do solo e empurre para subir."
+    ],
+    "images": [
+      "/assets/videos/chest/knee.jpg"
+    ],
+    "aliases": [],
+    "selectionId": "pp-flexao-com-joelhos-apoiados"
   }
 ]

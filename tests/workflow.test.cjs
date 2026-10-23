@@ -49,7 +49,7 @@ assert.ok(html.includes('children:"Enviar texto"'),'WhatsApp workout sharing rem
 console.log('PASS: Today action; duplicate-safe manual recording; disabled confirmation; student record; date accessibility; future-date rejection; WhatsApp sharing retained; student portal removed.');
 
 if(html.includes('const exerciseLibrary=')) {
- assert.equal(vm.runInContext('exerciseLibrary.length',ctx),141);
+ assert.equal(vm.runInContext('exerciseLibrary.length',ctx),143);
  const find=(role,label)=>nodes(tree).find(n=>n.type===role&&n.props?.['aria-label']===label);
  nodes(tree).find(n=>n.props?.['aria-label']==='Voltar à ficha').props.onClick();tree=render();
 const openTraining=nodes(tree).find(n=>n.type==='button'&&text(n)==='Abrir treino');assert.ok(openTraining);openTraining.props.onClick();tree=render();
@@ -112,11 +112,11 @@ const clickLabel=label=>{const el=nodes(tree).find(n=>n.type==='button'&&text(n)
  // Catalogue pagination, metadata filters, details and selection.
  clickLabel('Adicionar exercício da biblioteca');
  assert.ok(!nodes(tree).some(n=>n.props?.['aria-label']==='Escolher catálogo'));
- assert.ok(text(tree).includes('141 exercícios selecionados'));
+ assert.ok(text(tree).includes('143 exercícios selecionados'));
  assert.ok(!/licença comercial|aprovação técnica|Verificação técnica da biblioteca/.test(text(tree)));
  const catalog=JSON.parse(fs.readFileSync(require('node:path').join(__dirname,'../exercise-library.json'),'utf8'));
- assert.equal(catalog.length,141);assert.equal(new Set(catalog.map(x=>x.id)).size,141);
- for(const item of catalog){assert.ok(item.name&&item.group&&item.equipment&&item.level);assert.ok(Array.isArray(item.instructions));assert.ok(item.images.every(url=>url.startsWith('https://raw.githubusercontent.com/yuhonas/free-exercise-db/')||url==='/media/exercises/personal-pro-goblet-halter.jpg'||url.startsWith('https://cms-toolkit-public-artifacts.artlist.io/content/video/video-thumbnails/')));}
+ assert.equal(catalog.length,143);assert.equal(new Set(catalog.map(x=>x.id)).size,143);
+ for(const item of catalog){assert.ok(item.name&&item.group&&item.equipment&&item.level);assert.ok(Array.isArray(item.instructions));assert.ok(item.images.every(url=>url.startsWith('https://raw.githubusercontent.com/yuhonas/free-exercise-db/')||url==='/media/exercises/personal-pro-goblet-halter.jpg'||url.startsWith('https://cms-toolkit-public-artifacts.artlist.io/content/video/video-thumbnails/')||url.startsWith('/assets/videos/chest/')));}
  const dataState=states.findIndex((value,i)=>value===null && states[i+1]==='' && states[i+2]===0 && states[i+3]===40);
  assert.ok(dataState>=0);states[dataState]=catalog;tree=render();
  assert.equal(nodes(tree).filter(n=>n.type==='button'&&n.props?.['aria-label']?.startsWith('Selecionar ')).length,40);
@@ -130,7 +130,7 @@ const clickLabel=label=>{const el=nodes(tree).find(n=>n.type==='button'&&text(n)
  assert.ok(!videoChoices.some(n=>n.props['aria-label']==='Selecionar Ponte de glúteo'));
  assert.ok(text(tree).includes('87 exercícios com vídeo · filtro ativo'));
  clickLabel('Mostrar todos os exercícios');
- assert.ok(text(tree).includes('141 exercícios encontrados'));
+ assert.ok(text(tree).includes('143 exercícios encontrados'));
 
  clickLabel('Mostrar mais exercícios');
  assert.equal(nodes(tree).filter(n=>n.type==='button'&&n.props?.['aria-label']?.startsWith('Selecionar ')).length,80);
@@ -140,7 +140,7 @@ const clickLabel=label=>{const el=nodes(tree).find(n=>n.type==='button'&&text(n)
  matching[0].props.onClick();tree=render();assert.ok(nodes(tree).some(n=>n.type==='section'&&n.props['aria-label']==='Detalhes do exercício'));assert.ok(nodes(tree).some(n=>n.type==='img'));
  set('Filtrar por equipamento','Peso corporal');
  assert.ok(nodes(tree).filter(n=>n.type==='button'&&n.props?.['aria-label']?.startsWith('Selecionar ')).every(n=>text(n).length>0));
- console.log('PASS: 141 selected choices; preview video filter; archived compatibility only; search/filter/pagination; illustrated instructions; add/edit independent series/repetitions/load/rest; previous load; legacy 3x12 and duration compatibility; custom exercise; zero rest; cancel.');
+ console.log('PASS: 143 selected choices; preview video filter; archived compatibility only; search/filter/pagination; illustrated instructions; add/edit independent series/repetitions/load/rest; previous load; legacy 3x12 and duration compatibility; custom exercise; zero rest; cancel.');
 }
 
 async function verifyPDFControls() {

@@ -5,11 +5,17 @@ function boot(host='localhost'){
  for(const file of ['exercise-media.js','personal-pro-ymove-verified.js','personal-pro-generated-videos.js'])vm.runInNewContext(fs.readFileSync(file,'utf8'),{window});
  return window;
 }
-test('42 distinct generations are reachable under 42 exercise identities; six duplicates and impossible Superman stay out',()=>{
+test('46 chosen generations are reachable under distinct exercise identities; rejected and superseded takes stay out',()=>{
  const root=boot(),api=root.PersonalProGeneratedVideos,ids=new Set();
- assert.equal(api.items.length,49);assert.equal(api.linkedCount,42);
+ assert.equal(api.items.length,70);assert.equal(api.linkedCount,46);
  for(const item of api.items){
-  if(!item.linkAllowed){if(item.duplicateOf){assert.ok(api.items.some(chosen=>chosen.id===item.duplicateOf&&chosen.linkAllowed));}else{assert.match(item.requestedName,/Superman/);assert.equal(item.sourceId,null);}continue;}
+  if(!item.linkAllowed){
+   if(item.duplicateOf){assert.ok(api.items.some(original=>original.id===item.duplicateOf));assert.ok(api.items.some(chosen=>chosen.sourceId===item.sourceId&&chosen.linkAllowed));}
+   else if(item.supersededBy){assert.ok(api.items.some(chosen=>chosen.id===item.supersededBy&&chosen.linkAllowed));}
+   else if(item.sourceId===null){assert.match(item.requestedName,/Superman/);}
+   else{assert.ok(item.rejectionReason);assert.equal(api.forExercise(item.sourceId).some(chosen=>chosen.id===item.id),false);}
+   continue;
+  }
   ids.add(item.sourceId);const ex=catalog.find(ex=>ex.id===item.sourceId);assert.ok(ex,item.name);
   const result=root.PersonalProMedia.resolve({...ex,preferredGeneratedVideoId:item.id,series:'4',rest:90});
   assert.equal(result.video.url,item.url,item.id);assert.equal(result.video.variants,undefined);
@@ -17,7 +23,7 @@ test('42 distinct generations are reachable under 42 exercise identities; six du
   assert.equal(result.series,'4');assert.equal(result.rest,90);assert.ok(item.matchedDescription.length>0);
   assert.equal(item.appName,ex.name);assert.equal(result.images[0],item.poster);
  }
- assert.equal(ids.size,42);
+ assert.equal(ids.size,46);
  for(const ex of catalog){const result=root.PersonalProMedia.resolve(ex);assert.ok(!/01a16723-7ac0-761c/.test(result.video?.generationId||''));}
 });
 test('incorrect original labels are reassigned by visible movement rather than copied into matching labels',()=>{
@@ -71,8 +77,19 @@ test('execution offers exactly one chosen clip and still permits recording after
  assert.equal(ex.rest,60);assert.equal(ex.series,'3');
 });
 test('no selected file or content hash is reused, and no active catalog exercises share a video URL',()=>{
- const root=boot(),items=root.PersonalProGeneratedVideos.items.filter(item=>item.linkAllowed),report=JSON.parse(fs.readFileSync('docs/evidence/video-assignments-2026-10-23.json'));
- assert.equal(items.length,42);assert.equal(new Set(items.map(x=>x.sourceId)).size,42);assert.equal(new Set(items.map(x=>x.url)).size,42);
- const active=report.items.filter(x=>x.linkAllowed);assert.equal(active.length,42);assert.equal(new Set(active.map(x=>x.sha256)).size,42);
+ const root=boot(),items=root.PersonalProGeneratedVideos.items.filter(item=>item.linkAllowed),report=JSON.parse(fs.readFileSync('docs/evidence/video-assignments-current-2026-10-23.json'));
+ assert.equal(items.length,46);assert.equal(new Set(items.map(x=>x.sourceId)).size,46);assert.equal(new Set(items.map(x=>x.url)).size,46);
+ const active=report.items.filter(x=>x.linkAllowed);assert.equal(active.length,46);assert.equal(new Set(active.map(x=>x.sha256)).size,46);
+ const hash=require('node:crypto');
+ for(const item of items.filter(x=>x.url.startsWith('/assets/videos/chest/'))){assert.equal(hash.createHash('sha256').update(fs.readFileSync('.'+item.url)).digest('hex'),item.sha256);assert.ok(fs.existsSync('.'+item.poster));}
  const urls=catalog.map(ex=>root.PersonalProMedia.resolve(ex).video?.url).filter(Boolean);assert.equal(new Set(urls).size,urls.length);
+});
+test('low cable fly remains visibly pending and cannot fall back to an incorrect demonstration',()=>{
+ for(const host of ['localhost','personal-123456789-raidyumeko-9261.vercel.app','personalpro.app']){
+  const root=boot(host),ex=catalog.find(x=>x.id==='Low_Cable_Crossover');
+  const result=root.PersonalProMedia.resolve({...ex,name:'Supino reto com barra',preferredGeneratedVideoId:'01a169f2-e3ec-7fa7-8cf9-da1901f98a0b',series:'3',rest:90});
+  assert.equal(result.video,undefined);assert.equal(result.poster,null);assert.equal(result.images.length,0);assert.match(result.mediaWarning,/Vídeo em correção/);assert.equal(result.series,'3');assert.equal(result.rest,90);assert.equal(root.PersonalProGeneratedVideos.forExercise(ex.id).length,0);
+ }
+ const api=boot().PersonalProGeneratedVideos;assert.equal(api.chestReview.linkedCount,22);assert.equal(api.chestReview.complete,false);assert.equal(api.duplicateCount,6);
+ for(const id of ['Dumbbell_Flyes','Decline_Dumbbell_Flyes'])assert.ok(api.forExercise(id)[0].technicalFlags.length);
 });

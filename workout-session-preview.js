@@ -382,6 +382,7 @@
                             : "Sem mídia demonstrativa disponível",
                         ),
                     ),
+                    original.mediaWarning && h("p",{role:"status",className:"pp-hint"},original.mediaWarning),
                     original.video?.demonstrationVariant && h("p",{className:"pp-hint"},"Demonstração: "+original.video.demonstrationVariant),
                     original.video?.variants && Object.keys(videoVariants).length > 1 && h("label",{className:"pp-field"},"Demonstração",h("select",{"aria-label":"Modelo da demonstração",value:selectedVideoVariant,onChange:event=>{setVideoVariant(event.target.value);setVideoFailed(false);setPlaying(false);}},Object.keys(videoVariants).map(key=>h("option",{key,value:key},original.video.variantLabels?.[key]||(key==="male"?"Masculino":key==="female"?"Feminino":key))))),
                     selectedReview && h("p",{className:"pp-hint"},"Vídeo vinculado · revisão final pendente"),

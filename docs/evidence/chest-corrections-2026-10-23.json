@@ -1,0 +1,1417 @@
+{
+  "date": "2026-10-23",
+  "generatedThisRound": 15,
+  "creditsSpentThisRound": 3000,
+  "settings": {
+    "model": "Seedance 2.0 Mini",
+    "duration": 4,
+    "resolution": "480p",
+    "aspect_ratio": "1:1",
+    "generate_audio": false
+  },
+  "appChanged": true,
+  "technicalApprovalComplete": false,
+  "pendingCorrections": [
+    {
+      "sourceId": "Low_Cable_Crossover",
+      "name": "Crucifixo na polia baixa",
+      "reason": "Vídeo em correção: as tentativas dobram excessivamente os cotovelos ou ultrapassam a amplitude prevista. Nenhuma foi aprovada."
+    }
+  ],
+  "canonicalSourceOverrides": {
+    "pp-supino-reto-na-maquina": "Leverage_Chest_Press"
+  },
+  "items": [
+    {
+      "key": "knee",
+      "name": "Flexão com joelhos apoiados",
+      "selectionId": "pp-flexao-com-joelhos-apoiados",
+      "catalogId": null,
+      "sourcePage": "https://www.strengthlog.com/kneeling-push-up/",
+      "sourceMedia": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/02/Kneeling-push-ups.gif?resize=600%2C600&ssl=1",
+      "referenceFile": "knee-execution.mp4",
+      "outputFile": "flexao-joelhos-gerado.mp4",
+      "observations": [
+        "Joelhos permanecem no solo; mãos e joelhos sustentam o corpo.",
+        "O vídeo gerado contém duas repetições; o pedido era uma. Não regenerado.",
+        "Marca da fonte permanece visível no cenário."
+      ],
+      "generation": {
+        "status": "queued",
+        "generationId": "01a1695c-8768-7377-a25a-95841ceb42aa",
+        "sessionId": "01a16635-f9a6-776d-b049-a9bdd812cdc4",
+        "modelId": 2462,
+        "modelGroupId": 416,
+        "price": 200,
+        "resolvedSettings": {
+          "aspect_ratio": "1:1",
+          "duration": 4,
+          "resolution": "480p",
+          "generation_mode": "references",
+          "generate_audio": false,
+          "user_inputs_metadata": {
+            "video_urls": [
+              {
+                "duration": 2.4
+              }
+            ]
+          }
+        },
+        "feature": "multi-to-video",
+        "inputSettingKey": "video_urls",
+        "message": "Poll for completion: call get_generation_status with this generationId immediately. Each call blocks until the generation finishes or times out; if status is \"pending\", call again immediately — do not sleep between calls. Video typically completes in 60-300 s; if pending persists past 540 s, surface the generationId to the user — the generation may still complete and is retrievable via list_generations."
+      },
+      "output": {
+        "assetUrl": "https://cms-toolkit-artifacts.artlist.io/content/-m-u-l-t-i_-t-o_-v-i-d-e-o-v1/media__6/-m-u-l-t-i_-t-o_-v-i-d-e-o-a3a6706d-9c26-42b2-a762-ef762b62bcbf.mp4?Expires=2108129131&Key-Pair-Id=K2ZDLYDZI2R1DF&Signature=O0njYenMCuG9SZH2jTah1MDnvFckXU5YKJmAmMp6EKXBs~raVMZqPxPtUx3Gi4JCOQ8zymtsSMZAsMGrVetUeMFgAjhFf3MnQI6XtXnq9~fgh19A0YJJpgIEMkdvyrBamTJa3Gk3ZKdP~wpbG3~ULB0Xv9rvIimS6yAkNa~pYDBOVblUv3djttGrB9QwPqJ1BakzzVEL72YyV8rv8hM8FGuQYLYK~K~-xMoAjLhENfJuktp8745wiS1v7BAX3D7IZuMNleTImejJbFD8VUN51vTrKjVtN8Cuiba2owuUdj6xsC~HC1T~lsbA~hQ4zcECd1P2bFmlqjBuT2kaO7eXyw__",
+        "generationId": "01a1695c-8768-7377-a25a-95841ceb42aa",
+        "kind": "video",
+        "modelName": "Seedance 2.0 Mini",
+        "aspectRatio": "1:1",
+        "durationLabel": "4s",
+        "downloadUrl": "https://mcp.artlist.io/mcp/download?u=https%3A%2F%2Fcms-toolkit-artifacts.artlist.io%2Fcontent%2F-m-u-l-t-i_-t-o_-v-i-d-e-o-v1%2Fmedia__6%2F-m-u-l-t-i_-t-o_-v-i-d-e-o-a3a6706d-9c26-42b2-a762-ef762b62bcbf.mp4%3FExpires%3D2108129131%26Key-Pair-Id%3DK2ZDLYDZI2R1DF%26Signature%3DO0njYenMCuG9SZH2jTah1MDnvFckXU5YKJmAmMp6EKXBs~raVMZqPxPtUx3Gi4JCOQ8zymtsSMZAsMGrVetUeMFgAjhFf3MnQI6XtXnq9~fgh19A0YJJpgIEMkdvyrBamTJa3Gk3ZKdP~wpbG3~ULB0Xv9rvIimS6yAkNa~pYDBOVblUv3djttGrB9QwPqJ1BakzzVEL72YyV8rv8hM8FGuQYLYK~K~-xMoAjLhENfJuktp8745wiS1v7BAX3D7IZuMNleTImejJbFD8VUN51vTrKjVtN8Cuiba2owuUdj6xsC~HC1T~lsbA~hQ4zcECd1P2bFmlqjBuT2kaO7eXyw__&name=-m-u-l-t-i_-t-o_-v-i-d-e-o-a3a6706d-9c26-42b2-a762-ef762b62bcbf.mp4",
+        "thumbnailUrl": "https://cms-toolkit-public-artifacts.artlist.io/content/video/video-thumbnails/generated-thumbnail-07b8c2d0-2430-4954-b693-a1074204027b.jpg",
+        "outputIndex": 0
+      },
+      "prompt": "Personal Pro exercise demonstration: kneeling push-up / flexao com joelhos apoiados. Use the supplied real-human execution clip as the movement reference. Show one real adult athlete performing exactly one complete controlled kneeling push-up: both knees remain planted on the floor for the entire video; palms on floor slightly wider than shoulders; a straight line from head through hips to knees. Start at the top, lower chest toward floor by bending elbows, then press back to the same top position. The feet and toes do not support body weight. Match the demonstrated equipment-free movement and support points precisely. Fixed three-quarter side view showing hands, elbows, torso and both knees throughout. Natural human proportions and realistic gym setting. Only exercise execution from first to final frame, no introduction, no talking, no setup, no camera cuts, no graphics or anatomical rendering. Silent square 4-second clip.",
+      "status": "approved",
+      "linkAllowed": false,
+      "library": {
+        "output": "libfile_552b1aea7c508191a175683881e7034d",
+        "executionReference": "libfile_c56b42be002c81918a0cd7d4c24040a7"
+      },
+      "sourceId": "pp-flexao-com-joelhos-apoiados",
+      "finalFile": "knee-final.mp4",
+      "edits": "Marca na parede retirada por edição; primeiro ciclo ajustado para 4 s, sem novos créditos.",
+      "url": "/assets/videos/chest/knee.mp4",
+      "poster": "/assets/videos/chest/knee.jpg",
+      "sha256": "c481b15c8daf183734a2aedbb2b7741b2b12f2a6675ad9bf4eb9d337d96b8f46"
+    },
+    {
+      "key": "onearm",
+      "name": "Supino unilateral com halter",
+      "selectionId": "pp-supino-unilateral-com-halter",
+      "catalogId": null,
+      "sourcePage": "https://www.jefit.com/exercises/169/dumbbell-one-arm-bench-press",
+      "sourceMedia": "https://cdn.jefit.com/assets/img/exercises/gifs/169.gif",
+      "referenceFile": "onearm-execution.mp4",
+      "outputFile": "supino-unilateral-gerado.mp4",
+      "observations": [
+        "Banco reto, um halter e apenas um braço trabalhando.",
+        "O resultado apresenta duas repetições e mudança de enquadramento. Não regenerado."
+      ],
+      "generation": {
+        "status": "queued",
+        "generationId": "01a16960-607c-7efe-ab7a-c079b4d0afd4",
+        "sessionId": "01a16635-f9a6-776d-b049-a9bdd812cdc4",
+        "modelId": 2462,
+        "modelGroupId": 416,
+        "price": 200,
+        "resolvedSettings": {
+          "aspect_ratio": "1:1",
+          "duration": 4,
+          "resolution": "480p",
+          "generation_mode": "references",
+          "generate_audio": false,
+          "user_inputs_metadata": {
+            "video_urls": [
+              {
+                "duration": 2
+              }
+            ]
+          }
+        },
+        "feature": "multi-to-video",
+        "inputSettingKey": "video_urls",
+        "message": "Poll for completion: call get_generation_status with this generationId immediately. Each call blocks until the generation finishes or times out; if status is \"pending\", call again immediately — do not sleep between calls. Video typically completes in 60-300 s; if pending persists past 540 s, surface the generationId to the user — the generation may still complete and is retrievable via list_generations."
+      },
+      "output": {
+        "assetUrl": "https://cms-toolkit-artifacts.artlist.io/content/-m-u-l-t-i_-t-o_-v-i-d-e-o-v1/media__8/-m-u-l-t-i_-t-o_-v-i-d-e-o-aa8d1888-4db4-4972-874b-68ef4333cbe9.mp4?Expires=2108129422&Key-Pair-Id=K2ZDLYDZI2R1DF&Signature=Fa5DU9zixIhrqU1AaB2fo6yFbGx30vJI0BJEe0B8FvcORntkE-AfO84lhFAhVw7eRqpfgI9tOXRKxUt5zHKuQeyRUzo5E-QQdLl5903frHHixCbctMov8214IrdR-cyJPjypjiciVwlsZiJ-QZeaZdxeq~ZQtYCWY4iSriVlwLcPFlZCicThzgA6a~OOs4tk32WDi9UXu-EdKCvU~9DCRDN7CtSJelcnxJk5VdXguMEskWJsnOenA~z30bGGxGkK15n4aMSTrwCrDgET1AI1AXai3oQzhyHhOg1tsvOjlOihJIZjcWQU3-QZiZ3p5opnkvE5Fd6VXfcFY~ZwTjgvDg__",
+        "generationId": "01a16960-607c-7efe-ab7a-c079b4d0afd4",
+        "kind": "video",
+        "modelName": "Seedance 2.0 Mini",
+        "aspectRatio": "1:1",
+        "durationLabel": "4s",
+        "downloadUrl": "https://mcp.artlist.io/mcp/download?u=https%3A%2F%2Fcms-toolkit-artifacts.artlist.io%2Fcontent%2F-m-u-l-t-i_-t-o_-v-i-d-e-o-v1%2Fmedia__8%2F-m-u-l-t-i_-t-o_-v-i-d-e-o-aa8d1888-4db4-4972-874b-68ef4333cbe9.mp4%3FExpires%3D2108129422%26Key-Pair-Id%3DK2ZDLYDZI2R1DF%26Signature%3DFa5DU9zixIhrqU1AaB2fo6yFbGx30vJI0BJEe0B8FvcORntkE-AfO84lhFAhVw7eRqpfgI9tOXRKxUt5zHKuQeyRUzo5E-QQdLl5903frHHixCbctMov8214IrdR-cyJPjypjiciVwlsZiJ-QZeaZdxeq~ZQtYCWY4iSriVlwLcPFlZCicThzgA6a~OOs4tk32WDi9UXu-EdKCvU~9DCRDN7CtSJelcnxJk5VdXguMEskWJsnOenA~z30bGGxGkK15n4aMSTrwCrDgET1AI1AXai3oQzhyHhOg1tsvOjlOihJIZjcWQU3-QZiZ3p5opnkvE5Fd6VXfcFY~ZwTjgvDg__&name=-m-u-l-t-i_-t-o_-v-i-d-e-o-aa8d1888-4db4-4972-874b-68ef4333cbe9.mp4",
+        "thumbnailUrl": "https://cms-toolkit-public-artifacts.artlist.io/content/video/video-thumbnails/generated-thumbnail-6483bf7e-28de-44e8-a381-7269616b1436.jpg",
+        "outputIndex": 0
+      },
+      "prompt": "Personal Pro exercise demonstration: one-arm dumbbell bench press on a flat bench / supino unilateral com halter. Follow the supplied real-human execution clip exactly for the exercise, equipment and support points. One adult human, one dumbbell, only one working arm; the free hand rests naturally and never holds a second dumbbell. Body remains lying on a horizontal flat bench, both feet planted, shoulders and hips stable. Begin with the dumbbell above the chest, lower it under control beside the chest with elbow bending, then press back above the chest to complete exactly one repetition in four seconds. Fixed three-quarter view showing the full flat bench, one dumbbell, both hands and both feet. Natural proportions and realistic gym. Only the execution, no setup, no introduction, no speech, no titles, no anatomy model, no camera cuts. Silent square video.",
+      "status": "approved",
+      "linkAllowed": false,
+      "library": {
+        "output": "libfile_d9df36352c288191ade9c0f50ae3ae3f",
+        "executionReference": "libfile_382b770e27408191973d35c119899d9e"
+      },
+      "sourceId": "pp-supino-unilateral-com-halter",
+      "finalFile": "onearm-final.mp4",
+      "edits": "Primeira repetição completa selecionada e ajustada para 4 s.",
+      "url": "/assets/videos/chest/onearm.mp4",
+      "poster": "/assets/videos/chest/onearm.jpg",
+      "sha256": "7526f4a2274ccf342cd4086a44d652870c6c7b202e7643cf9e673da1b99a4aeb"
+    },
+    {
+      "key": "neutral",
+      "name": "Supino reto com halteres — pegada neutra",
+      "selectionId": "pp-supino-reto-com-halteres-pegada-neutra",
+      "catalogId": "Dumbbell_Bench_Press_with_Neutral_Grip",
+      "sourcePage": "https://www.jefit.com/exercises/1064/dumbbell-bench-press-palms-in",
+      "sourceMedia": "https://cdn.jefit.com/assets/img/exercises/gifs/1064.gif",
+      "referenceFile": "neutral-execution.mp4",
+      "outputFile": "supino-neutro-gerado.mp4",
+      "observations": [
+        "Banco reto, dois halteres, palmas voltadas uma para a outra.",
+        "Uma repetição completa identificada; há mudança de enquadramento."
+      ],
+      "generation": {
+        "status": "queued",
+        "generationId": "01a16963-662e-75cd-8fdf-52c9f422e2d9",
+        "sessionId": "01a16635-f9a6-776d-b049-a9bdd812cdc4",
+        "modelId": 2462,
+        "modelGroupId": 416,
+        "price": 200,
+        "resolvedSettings": {
+          "aspect_ratio": "1:1",
+          "duration": 4,
+          "resolution": "480p",
+          "generation_mode": "references",
+          "generate_audio": false,
+          "user_inputs_metadata": {
+            "video_urls": [
+              {
+                "duration": 2
+              }
+            ]
+          }
+        },
+        "feature": "multi-to-video",
+        "inputSettingKey": "video_urls",
+        "message": "Poll for completion: call get_generation_status with this generationId immediately. Each call blocks until the generation finishes or times out; if status is \"pending\", call again immediately — do not sleep between calls. Video typically completes in 60-300 s; if pending persists past 540 s, surface the generationId to the user — the generation may still complete and is retrievable via list_generations."
+      },
+      "output": {
+        "assetUrl": "https://cms-toolkit-artifacts.artlist.io/content/-m-u-l-t-i_-t-o_-v-i-d-e-o-v1/media__7/-m-u-l-t-i_-t-o_-v-i-d-e-o-61ab924f-f8d0-4754-8d26-61fb12cf2d3c.mp4?Expires=2108129632&Key-Pair-Id=K2ZDLYDZI2R1DF&Signature=pC8XrC-wq2rLhBDje3BVMkJmvoHZyx6UI4AqoTU3shp9lfqwmv3yJryf468CBKsC30UwR4CtV2Tl5IHZuPvEypxCqB4AqJpPXnmoLPbVWYNX5xMmT~rHLWMyMZyEutue2RbJI8XfCT6rm4x-pTHZ6uuSeQmjiKVbgfQ5SjEAggYfHp4ntdhlUpfrGiFrbwWv2XCMZ5CRkMUQyjjfpjCXqDuG8y8nyVpNfF~jZL1ws1QmmMdzoWNxlmkH-6I7E71xXzo8XcZ0VzWWeiVZoYCS94GRZ8-dUa-cUm1grMnlYnURG-cfDoYirRwkNyb-Am1vhGXC4bIcxIK0rgsZ5pBlSQ__",
+        "generationId": "01a16963-662e-75cd-8fdf-52c9f422e2d9",
+        "kind": "video",
+        "modelName": "Seedance 2.0 Mini",
+        "aspectRatio": "1:1",
+        "durationLabel": "4s",
+        "downloadUrl": "https://mcp.artlist.io/mcp/download?u=https%3A%2F%2Fcms-toolkit-artifacts.artlist.io%2Fcontent%2F-m-u-l-t-i_-t-o_-v-i-d-e-o-v1%2Fmedia__7%2F-m-u-l-t-i_-t-o_-v-i-d-e-o-61ab924f-f8d0-4754-8d26-61fb12cf2d3c.mp4%3FExpires%3D2108129632%26Key-Pair-Id%3DK2ZDLYDZI2R1DF%26Signature%3DpC8XrC-wq2rLhBDje3BVMkJmvoHZyx6UI4AqoTU3shp9lfqwmv3yJryf468CBKsC30UwR4CtV2Tl5IHZuPvEypxCqB4AqJpPXnmoLPbVWYNX5xMmT~rHLWMyMZyEutue2RbJI8XfCT6rm4x-pTHZ6uuSeQmjiKVbgfQ5SjEAggYfHp4ntdhlUpfrGiFrbwWv2XCMZ5CRkMUQyjjfpjCXqDuG8y8nyVpNfF~jZL1ws1QmmMdzoWNxlmkH-6I7E71xXzo8XcZ0VzWWeiVZoYCS94GRZ8-dUa-cUm1grMnlYnURG-cfDoYirRwkNyb-Am1vhGXC4bIcxIK0rgsZ5pBlSQ__&name=-m-u-l-t-i_-t-o_-v-i-d-e-o-61ab924f-f8d0-4754-8d26-61fb12cf2d3c.mp4",
+        "thumbnailUrl": "https://cms-toolkit-public-artifacts.artlist.io/content/video/video-thumbnails/generated-thumbnail-5d095543-54ba-43b6-8477-14806aa17827.jpg",
+        "outputIndex": 0
+      },
+      "prompt": "Personal Pro exercise demonstration: flat dumbbell bench press with neutral grip / supino reto com halteres pegada neutra. Follow the supplied real-human execution reference for the exact movement and equipment. One real adult athlete lying on a horizontal flat bench, one dumbbell in each hand, palms facing each other throughout every phase, wrists never rotating into a pronated grip. Feet stay on floor, head shoulders and hips supported on bench. Start above the chest, lower both dumbbells simultaneously beside the chest with elbows tucked moderately, then press both together upward to complete one full controlled repetition in four seconds. Hands and dumbbells remain distinct and do not collide. Fixed three-quarter side view showing full flat bench, both dumbbells, hands and feet. Realistic human anatomy and gym. Only exercise execution; no setup, introduction, talking, overlays, anatomy models, camera cuts or incline bench. Silent square four-second clip.",
+      "status": "approved",
+      "linkAllowed": false,
+      "library": {
+        "output": "libfile_8181964a3bd08191a3ede5595948c3aa",
+        "executionReference": "libfile_c9517735cfdc8191b98267bafef03670"
+      },
+      "sourceId": "Dumbbell_Bench_Press_with_Neutral_Grip",
+      "finalFile": "neutral-final.mp4",
+      "edits": "Ciclo completo com pegada neutra; mudança de enquadramento preservada.",
+      "url": "/assets/videos/chest/neutral.mp4",
+      "poster": "/assets/videos/chest/neutral.jpg",
+      "sha256": "c2a9ae22afa9dd27061b55356c2832ccf295837912983b21a6403e96557267ea"
+    },
+    {
+      "key": "diamond",
+      "name": "Flexão diamante no solo",
+      "selectionId": "pp-flexao-diamante-no-solo",
+      "catalogId": "Diamond_Push-Up",
+      "sourcePage": "https://musclewiki.com/exercise/diamond-push-ups",
+      "sourceMedia": "https://musclewiki.com/api-next/videos/male-Bodyweight-diamond-push-ups-front.mp4",
+      "referenceFile": "diamond-execution.mp4",
+      "outputFile": "flexao-diamante-gerado.mp4",
+      "trim": {
+        "start": 0,
+        "end": 2.1,
+        "fullSourceDuration": 6.25
+      },
+      "observations": [
+        "Polegares e indicadores formam diamante, pernas estendidas.",
+        "O resultado contém duas repetições; não regenerado.",
+        "Ângulo frontal oculta parte dos apoios em algumas fases."
+      ],
+      "generation": {
+        "status": "queued",
+        "generationId": "01a16968-1048-7a78-a9ed-229c6c578678",
+        "sessionId": "01a16635-f9a6-776d-b049-a9bdd812cdc4",
+        "modelId": 2462,
+        "modelGroupId": 416,
+        "price": 200,
+        "resolvedSettings": {
+          "aspect_ratio": "1:1",
+          "duration": 4,
+          "resolution": "480p",
+          "generation_mode": "references",
+          "generate_audio": false,
+          "user_inputs_metadata": {
+            "video_urls": [
+              {
+                "duration": 2.1
+              }
+            ]
+          }
+        },
+        "feature": "multi-to-video",
+        "inputSettingKey": "video_urls",
+        "message": "Poll for completion: call get_generation_status with this generationId immediately. Each call blocks until the generation finishes or times out; if status is \"pending\", call again immediately — do not sleep between calls. Video typically completes in 60-300 s; if pending persists past 540 s, surface the generationId to the user — the generation may still complete and is retrievable via list_generations."
+      },
+      "output": {
+        "assetUrl": "https://cms-toolkit-artifacts.artlist.io/content/-m-u-l-t-i_-t-o_-v-i-d-e-o-v1/media__5/-m-u-l-t-i_-t-o_-v-i-d-e-o-0e970433-ba08-4ac9-b51c-8bb3f28fea6d.mp4?Expires=2108129942&Key-Pair-Id=K2ZDLYDZI2R1DF&Signature=MRKJ31fS5uKH9TP7lbV6tKPVErJL20a~lxRi2v5qy9L7pXL0YHsehXLWBXpydVK6TR5kKukmxaq56mXfxHJcnNFHF5noO3T94kWay03av7xJVsnEQ5NeBna5PBFQB-pYbR~CtLC5T235QrsRcUDgYsFl6x6sACTas77wEbh2gu6GSgSHb1vp3rlYLnYm-lGxnYPtDu0SyvWjHiIHW1xaA~XhzyZ-dKTsF3i2BD-iJ2ENC61hvIMugeuiRItKdlHePH5TrUMiDRCMfpxgsnuMPqH-~W9y6eD6hMm1uUwsBcKAPAYp3H2OS0rZvlqD~u8A4JlZTCtoXmO40~oiRIxS0g__",
+        "generationId": "01a16968-1048-7a78-a9ed-229c6c578678",
+        "kind": "video",
+        "modelName": "Seedance 2.0 Mini",
+        "aspectRatio": "1:1",
+        "durationLabel": "4s",
+        "downloadUrl": "https://mcp.artlist.io/mcp/download?u=https%3A%2F%2Fcms-toolkit-artifacts.artlist.io%2Fcontent%2F-m-u-l-t-i_-t-o_-v-i-d-e-o-v1%2Fmedia__5%2F-m-u-l-t-i_-t-o_-v-i-d-e-o-0e970433-ba08-4ac9-b51c-8bb3f28fea6d.mp4%3FExpires%3D2108129942%26Key-Pair-Id%3DK2ZDLYDZI2R1DF%26Signature%3DMRKJ31fS5uKH9TP7lbV6tKPVErJL20a~lxRi2v5qy9L7pXL0YHsehXLWBXpydVK6TR5kKukmxaq56mXfxHJcnNFHF5noO3T94kWay03av7xJVsnEQ5NeBna5PBFQB-pYbR~CtLC5T235QrsRcUDgYsFl6x6sACTas77wEbh2gu6GSgSHb1vp3rlYLnYm-lGxnYPtDu0SyvWjHiIHW1xaA~XhzyZ-dKTsF3i2BD-iJ2ENC61hvIMugeuiRItKdlHePH5TrUMiDRCMfpxgsnuMPqH-~W9y6eD6hMm1uUwsBcKAPAYp3H2OS0rZvlqD~u8A4JlZTCtoXmO40~oiRIxS0g__&name=-m-u-l-t-i_-t-o_-v-i-d-e-o-0e970433-ba08-4ac9-b51c-8bb3f28fea6d.mp4",
+        "thumbnailUrl": "https://cms-toolkit-public-artifacts.artlist.io/content/video/video-thumbnails/generated-thumbnail-10b5c058-3efe-4a2d-bec2-5b43f28c1a35.jpg",
+        "outputIndex": 0
+      },
+      "prompt": "Personal Pro exercise demonstration: diamond push-up / flexao diamante no solo. Follow the supplied real-human execution reference precisely. One real adult athlete, no equipment. Palms on floor directly under chest; both index fingers and thumbs touch to visibly form a diamond shape throughout. Legs extended, body supported on hands and toes, knees never touch the floor. Start with arms extended, lower chest toward the diamond by bending elbows, then press back to starting position, one complete controlled repetition in four seconds. Keep trunk aligned from shoulders through hips to ankles. Use the reference's elevated frontal three-quarter camera view so the diamond hand position, elbows, full body and toe support can be seen. Fixed camera. Only exercise execution, no preparation, no intro, no talking, no titles, no anatomical figures, no camera cuts. Four-second silent square video.",
+      "status": "rejected",
+      "linkAllowed": false,
+      "library": {
+        "output": "libfile_cf1fc32ade348191aed2ecd21daa6660",
+        "executionReference": "libfile_16af09af73d88191962250f66d39cd63"
+      },
+      "supersededBy": "01a16982-0150-7fef-8b37-e59444c6d80c",
+      "sourceId": "Diamond_Push-Up",
+      "reviewNotes": "Marca da fonte copiada; substituído pela flexão diamante revisada."
+    },
+    {
+      "generation": {
+        "status": "queued",
+        "generationId": "01a16982-0150-7fef-8b37-e59444c6d80c",
+        "sessionId": "01a16635-f9a6-776d-b049-a9bdd812cdc4",
+        "modelId": 2462,
+        "modelGroupId": 416,
+        "price": 200,
+        "resolvedSettings": {
+          "aspect_ratio": "1:1",
+          "duration": 4,
+          "resolution": "480p",
+          "generation_mode": "references",
+          "generate_audio": false,
+          "user_inputs_metadata": {
+            "video_urls": [
+              {
+                "duration": 2.1
+              }
+            ]
+          }
+        },
+        "feature": "multi-to-video",
+        "inputSettingKey": "video_urls",
+        "message": "Poll for completion: call get_generation_status with this generationId immediately. Each call blocks until the generation finishes or times out; if status is \"pending\", call again immediately — do not sleep between calls. Video typically completes in 60-300 s; if pending persists past 540 s, surface the generationId to the user — the generation may still complete and is retrievable via list_generations."
+      },
+      "args": {
+        "modelGroupId": 416,
+        "input": {
+          "assetId": "50801d69-d61e-4388-86dc-6a0819e1a4c4"
+        },
+        "settings": {
+          "duration": 4,
+          "resolution": "480p",
+          "aspect_ratio": "1:1",
+          "generate_audio": false
+        },
+        "prompt": "Create a clean Personal Pro exercise video of a REAL adult athlete performing one diamond push-up. The supplied video is ONLY a reference for biomechanics and hand position. Re-stage the movement in a new plain studio with a blank light grey wall and an unbranded dark exercise mat, wearing a plain dark blue T-shirt and charcoal shorts. There must be ZERO visible writing, ZERO logos, ZERO watermarks, ZERO brand names, ZERO subtitles anywhere in any frame, including corners, wall, mat and clothing. Do not recreate any source branding or graphics. Athlete's index fingertips and thumbs stay together in a visible diamond on the floor under the chest. Arms extend at the top; bend elbows to lower chest toward hands; press up to complete ONE full controlled repetition over the four seconds. Legs remain straight with support on toes; knees stay off floor; torso stays aligned. Fixed elevated frontal three-quarter camera, framing the complete athlete, hands, elbows and feet. Continuous execution only from first frame to last. No preparation, no talking, no anatomical figures, no scene changes, no camera cuts. Photorealistic real human, silent 1:1 square video."
+      },
+      "output": {
+        "assetUrl": "https://cms-toolkit-artifacts.artlist.io/content/-m-u-l-t-i_-t-o_-v-i-d-e-o-v1/media__8/-m-u-l-t-i_-t-o_-v-i-d-e-o-6ad8cb23-dc06-4c20-b507-6c42881bc240.mp4?Expires=2108131594&Key-Pair-Id=K2ZDLYDZI2R1DF&Signature=TsQwisGiIOtGusqv7Lg3zqY3wzQQKDUE-L2Aq28TwTqZ0~DzxSHvv408aLvGKSRTl1AY-bLkxNIU2me9qfVwfdaZ16EVT2XMp7pprPIMbxKMsrKM42Ju-7SSd-q-51C57wfJCvd1ZWrxdPtruw3YI3G8ZrmrKtmi0Spg9Ytg7c5AC718Qhv~0xKH3rov4eCV-JvdrbB4an12cvieUH5-A6gbYyoV0G-vlVmsN1wLF55ZdXkByFD4vespdcG5JIlJBqi-EsZRuUWg5BQldoRKOTa2uw~OKa0JmI5Xdol3LsLqGeYqX8qTUnc19T2~Q9fwCCLL1AR6LIDZheRnq~RpPA__",
+        "generationId": "01a16982-0150-7fef-8b37-e59444c6d80c",
+        "kind": "video",
+        "modelName": "Seedance 2.0 Mini",
+        "aspectRatio": "1:1",
+        "durationLabel": "4s",
+        "downloadUrl": "https://mcp.artlist.io/mcp/download?u=https%3A%2F%2Fcms-toolkit-artifacts.artlist.io%2Fcontent%2F-m-u-l-t-i_-t-o_-v-i-d-e-o-v1%2Fmedia__8%2F-m-u-l-t-i_-t-o_-v-i-d-e-o-6ad8cb23-dc06-4c20-b507-6c42881bc240.mp4%3FExpires%3D2108131594%26Key-Pair-Id%3DK2ZDLYDZI2R1DF%26Signature%3DTsQwisGiIOtGusqv7Lg3zqY3wzQQKDUE-L2Aq28TwTqZ0~DzxSHvv408aLvGKSRTl1AY-bLkxNIU2me9qfVwfdaZ16EVT2XMp7pprPIMbxKMsrKM42Ju-7SSd-q-51C57wfJCvd1ZWrxdPtruw3YI3G8ZrmrKtmi0Spg9Ytg7c5AC718Qhv~0xKH3rov4eCV-JvdrbB4an12cvieUH5-A6gbYyoV0G-vlVmsN1wLF55ZdXkByFD4vespdcG5JIlJBqi-EsZRuUWg5BQldoRKOTa2uw~OKa0JmI5Xdol3LsLqGeYqX8qTUnc19T2~Q9fwCCLL1AR6LIDZheRnq~RpPA__&name=-m-u-l-t-i_-t-o_-v-i-d-e-o-6ad8cb23-dc06-4c20-b507-6c42881bc240.mp4",
+        "thumbnailUrl": "https://cms-toolkit-public-artifacts.artlist.io/content/video/video-thumbnails/generated-thumbnail-b56158f4-8e5d-4fa4-8699-253cd6743b55.jpg",
+        "outputIndex": 0
+      },
+      "deliveryFile": "flexao-diamante-final.mp4",
+      "edits": "Trecho com uma repetição; duração ajustada para 4 s e símbolo do canto removido por recorte.",
+      "supersedes": "01a16968-1048-7a78-a9ed-229c6c578678",
+      "visualReview": "Aproveitável após recorte e edição: mãos em diamante, pernas estendidas, uma descida e subida, sem marca visível nos quadros conferidos.",
+      "linkAllowed": false,
+      "key": "diamond-final",
+      "name": "Flexão diamante",
+      "sourceId": "Diamond_Push-Up",
+      "status": "approved",
+      "finalFile": "diamond-final.mp4",
+      "sourcePage": "https://musclewiki.com/exercise/diamond-push-ups",
+      "url": "/assets/videos/chest/diamond-final.mp4",
+      "poster": "/assets/videos/chest/diamond-final.jpg",
+      "sha256": "03bfd65d7a724ecf93d1209add289e3ba1022717449ba020293690ea2e8e74b7"
+    },
+    {
+      "generation": {
+        "status": "queued",
+        "generationId": "01a16989-6027-7214-bf23-a73e53a9660c",
+        "sessionId": "01a16635-f9a6-776d-b049-a9bdd812cdc4",
+        "modelId": 2462,
+        "modelGroupId": 416,
+        "price": 200,
+        "resolvedSettings": {
+          "aspect_ratio": "1:1",
+          "duration": 4,
+          "resolution": "480p",
+          "generation_mode": "references",
+          "generate_audio": false,
+          "user_inputs_metadata": {
+            "video_urls": [
+              {
+                "duration": 2.1
+              }
+            ]
+          }
+        },
+        "feature": "multi-to-video",
+        "inputSettingKey": "video_urls",
+        "message": "Poll for completion: call get_generation_status with this generationId immediately. Each call blocks until the generation finishes or times out; if status is \"pending\", call again immediately — do not sleep between calls. Video typically completes in 60-300 s; if pending persists past 540 s, surface the generationId to the user — the generation may still complete and is retrievable via list_generations."
+      },
+      "args": {
+        "modelGroupId": 416,
+        "input": {
+          "assetId": "985cd5b5-8ed5-467f-86c1-0d11ab758f26"
+        },
+        "settings": {
+          "duration": 4,
+          "resolution": "480p",
+          "aspect_ratio": "1:1",
+          "generate_audio": false
+        },
+        "prompt": "Personal Pro exercise demonstration: standing bilateral LOW-TO-HIGH CABLE CHEST FLY / crucifixo na polia baixa. Use the supplied real-human execution clip ONLY as the reference for the exercise movement, hand path and slight elbow bend. Re-stage it with one real adult athlete in a plain grey T-shirt, dark shorts and trainers, in a clean gym with blank walls and an unbranded cable crossover machine. BOTH pulley outlets must be LOW near the ankles, visibly below the knees throughout. One D-handle in each hand. Start with hands down and apart beside hips, palms facing forward/upward and elbows softly bent. Sweep BOTH handles together in an upward and inward arc until hands almost meet in front of the upper chest at chest height; then return along the same arc to the starting low-and-apart position. Keep elbow bend nearly constant: this is a chest FLY, not a curl or a chest press. Exactly ONE complete controlled repetition across four seconds. Torso upright and stable, feet planted. Fixed frontal three-quarter camera showing entire athlete, both hands, cables and both low pulley outlets. ZERO writing, ZERO logos, ZERO watermarks, ZERO labels or diagrams on walls, clothing or equipment anywhere in the frame. Do not copy the source person, background, machine panel text or branding. Only execution, no setup, no introduction, no talking, no anatomical animation, no camera cuts. Photorealistic human; silent square four-second video."
+      },
+      "output": {
+        "assetUrl": "https://cms-toolkit-artifacts.artlist.io/content/-m-u-l-t-i_-t-o_-v-i-d-e-o-v1/media__2/-m-u-l-t-i_-t-o_-v-i-d-e-o-51de5c78-bc7b-41ee-956b-172841bc69de.mp4?Expires=2108132111&Key-Pair-Id=K2ZDLYDZI2R1DF&Signature=wOnkPCJUsw7a6UDL4yMIN2mi7nJH1llyaj7TeAhY-IjJlmxwzjyUIhAjAAbUcGFaBpf6cwROPHwukGcfHXLJijpeUbZ32c09NDOwWV8zNjhKQHR2hjznOeWiJgMz8oNZ83uwZe6fwx4dd93PRWck79UAsUy0bLYt9MrkNFkF99qClCkNbTrP6g3sfTbMWWLJ6tePwExMwO8yzLK-Lwwh-FdU~FSI~iz0Ld8orkYBMbZQhH2icGfxfFk5CVxa9SDlur-TRdc0SJw09Rq0~6tMfqTRYnTKvYVgL5VH1rm2Thu2kDGxwuLdbhhBbGLDIvrRpVyxCyVz7nLmW3m5DWJQOQ__",
+        "generationId": "01a16989-6027-7214-bf23-a73e53a9660c",
+        "kind": "video",
+        "modelName": "Seedance 2.0 Mini",
+        "aspectRatio": "1:1",
+        "durationLabel": "4s",
+        "downloadUrl": "https://mcp.artlist.io/mcp/download?u=https%3A%2F%2Fcms-toolkit-artifacts.artlist.io%2Fcontent%2F-m-u-l-t-i_-t-o_-v-i-d-e-o-v1%2Fmedia__2%2F-m-u-l-t-i_-t-o_-v-i-d-e-o-51de5c78-bc7b-41ee-956b-172841bc69de.mp4%3FExpires%3D2108132111%26Key-Pair-Id%3DK2ZDLYDZI2R1DF%26Signature%3DwOnkPCJUsw7a6UDL4yMIN2mi7nJH1llyaj7TeAhY-IjJlmxwzjyUIhAjAAbUcGFaBpf6cwROPHwukGcfHXLJijpeUbZ32c09NDOwWV8zNjhKQHR2hjznOeWiJgMz8oNZ83uwZe6fwx4dd93PRWck79UAsUy0bLYt9MrkNFkF99qClCkNbTrP6g3sfTbMWWLJ6tePwExMwO8yzLK-Lwwh-FdU~FSI~iz0Ld8orkYBMbZQhH2icGfxfFk5CVxa9SDlur-TRdc0SJw09Rq0~6tMfqTRYnTKvYVgL5VH1rm2Thu2kDGxwuLdbhhBbGLDIvrRpVyxCyVz7nLmW3m5DWJQOQ__&name=-m-u-l-t-i_-t-o_-v-i-d-e-o-51de5c78-bc7b-41ee-956b-172841bc69de.mp4",
+        "thumbnailUrl": "https://cms-toolkit-public-artifacts.artlist.io/content/video/video-thumbnails/generated-thumbnail-f16f62c2-dd5f-4676-87f6-ffe446369e94.jpg",
+        "outputIndex": 0
+      },
+      "sourcePage": "https://www.barbellmedicine.com/blog/best-cable-chest-exercises/",
+      "sourceMedia": "https://www.barbellmedicine.com/wp-content/uploads/2025/07/lowtohighcableflye.gif",
+      "referenceTrim": {
+        "start": 0.8,
+        "duration": 2.1
+      },
+      "visualReview": "Reprovado: grande flexão dos cotovelos durante a subida; movimento mistura fly e rosca. Painel da máquina conserva escrita.",
+      "deliveryFile": "tentativa-polia-baixa-nao-aprovada.mp4",
+      "linkAllowed": false,
+      "key": "low-cable-prior-rejected",
+      "name": "Crucifixo na polia baixa",
+      "sourceId": "Low_Cable_Crossover",
+      "status": "rejected",
+      "reviewNotes": "Excesso de flexão dos cotovelos; tentativa anterior não aprovada."
+    },
+    {
+      "key": "flat-dumbbell",
+      "sourceId": "Dumbbell_Bench_Press",
+      "name": "Supino reto com halteres",
+      "sourcePage": "https://www.jefit.com/exercises/26/dumbbell-bench-press",
+      "sourceMedia": "https://cdn.jefit.com/assets/img/exercises/gifs/26.gif",
+      "referenceFile": "flat-dumbbell-ref.mp4",
+      "args": {
+        "modelGroupId": 416,
+        "input": {
+          "assetId": "64e21183-8e3c-4405-93be-f05d85d963e4"
+        },
+        "settings": {
+          "duration": 4,
+          "resolution": "480p",
+          "aspect_ratio": "1:1",
+          "generate_audio": false
+        },
+        "prompt": "Personal Pro: flat dumbbell bench press, supino reto com halteres. Follow this real-human reference precisely: flat horizontal bench, two dumbbells, both arms moving simultaneously, palms facing forward as shown. Head, shoulders and hips supported on bench, both feet stay on floor. Start with arms extended above chest; spend the first TWO seconds lowering both dumbbells together beside chest; spend the final TWO seconds pressing both back to the SAME extended starting position. One complete slow repetition, with BOTH descent and ascent visibly finished. Keep both dumbbells separate and elbows controlled. Fixed full-body three-quarter side view showing bench, both hands and feet; no camera cuts or changing angle. Real adult human, plain unbranded clothing, blank studio wall, no writing, logos, watermarks or graphics anywhere. Execute immediately from first frame; no introduction or setup. No incline bench, no alternating arms, no talking or anatomical figures. Silent square four-second video."
+      },
+      "generation": {
+        "status": "queued",
+        "generationId": "01a169c6-e4f2-79e0-8a6d-1bd0e59894b5",
+        "sessionId": "01a16635-f9a6-776d-b049-a9bdd812cdc4",
+        "modelId": 2462,
+        "modelGroupId": 416,
+        "price": 200,
+        "resolvedSettings": {
+          "aspect_ratio": "1:1",
+          "duration": 4,
+          "resolution": "480p",
+          "generation_mode": "references",
+          "generate_audio": false,
+          "user_inputs_metadata": {
+            "video_urls": [
+              {
+                "duration": 2
+              }
+            ]
+          }
+        },
+        "feature": "multi-to-video",
+        "inputSettingKey": "video_urls",
+        "message": "Poll for completion: call get_generation_status with this generationId immediately. Each call blocks until the generation finishes or times out; if status is \"pending\", call again immediately — do not sleep between calls. Video typically completes in 60-300 s; if pending persists past 540 s, surface the generationId to the user — the generation may still complete and is retrievable via list_generations."
+      },
+      "status": "approved",
+      "output": {
+        "assetUrl": "https://cms-toolkit-artifacts.artlist.io/content/-m-u-l-t-i_-t-o_-v-i-d-e-o-v1/media__1/-m-u-l-t-i_-t-o_-v-i-d-e-o-895580c2-9691-4f4a-bc67-397ace783172.mp4?Expires=2108136125&Key-Pair-Id=K2ZDLYDZI2R1DF&Signature=Q74H0YD2RGR~UNU1MeDpvPZXOa9Y3L83wMq~68-PfUVmIJGvWfhuBl5H5OwT18Q6E4C797fFfrhMXhHLRw~wI1I2BIKtUOKl5yxwFK296p~5AyOGWU8n0zqht9JFQh5QtiMmt9P2LQWQ7xXnshkwQD0C2Ju~1TSfA11Wofxg86D-k6jideieGIZWKNvbA4oMZHAacG3Tn8klMmkG1xcRkUiT-ShThbB3Lafl-6LP91O6kTpVDpfPcKokLR70PGXT1rqmsIAiZPU7u0rLwN2KCVztrL1-DRUwMMuy2hkNF-tCeOm50WbtBlau4cbGWbCZOgf588RA9QeOQkNJR36dpg__",
+        "generationId": "01a169c6-e4f2-79e0-8a6d-1bd0e59894b5",
+        "kind": "video",
+        "modelName": "Seedance 2.0 Mini",
+        "aspectRatio": "1:1",
+        "durationLabel": "4s",
+        "downloadUrl": "https://mcp.artlist.io/mcp/download?u=https%3A%2F%2Fcms-toolkit-artifacts.artlist.io%2Fcontent%2F-m-u-l-t-i_-t-o_-v-i-d-e-o-v1%2Fmedia__1%2F-m-u-l-t-i_-t-o_-v-i-d-e-o-895580c2-9691-4f4a-bc67-397ace783172.mp4%3FExpires%3D2108136125%26Key-Pair-Id%3DK2ZDLYDZI2R1DF%26Signature%3DQ74H0YD2RGR~UNU1MeDpvPZXOa9Y3L83wMq~68-PfUVmIJGvWfhuBl5H5OwT18Q6E4C797fFfrhMXhHLRw~wI1I2BIKtUOKl5yxwFK296p~5AyOGWU8n0zqht9JFQh5QtiMmt9P2LQWQ7xXnshkwQD0C2Ju~1TSfA11Wofxg86D-k6jideieGIZWKNvbA4oMZHAacG3Tn8klMmkG1xcRkUiT-ShThbB3Lafl-6LP91O6kTpVDpfPcKokLR70PGXT1rqmsIAiZPU7u0rLwN2KCVztrL1-DRUwMMuy2hkNF-tCeOm50WbtBlau4cbGWbCZOgf588RA9QeOQkNJR36dpg__&name=-m-u-l-t-i_-t-o_-v-i-d-e-o-895580c2-9691-4f4a-bc67-397ace783172.mp4",
+        "thumbnailUrl": "https://cms-toolkit-public-artifacts.artlist.io/content/video/video-thumbnails/generated-thumbnail-cba7060b-0034-42fc-a50d-c2c6315c8355.jpg",
+        "outputIndex": 0
+      },
+      "finalFile": "flat-dumbbell-final.mp4",
+      "edits": "Primeira repetição completa, 0–2 s, ajustada para 4 s; as duas fases e a volta ao topo foram conferidas.",
+      "url": "/assets/videos/chest/flat-dumbbell.mp4",
+      "poster": "/assets/videos/chest/flat-dumbbell.jpg",
+      "sha256": "6910745be7fc9bccc416e730d64b43fbe98d8417b54b336a2e2dffaa723bc92c"
+    },
+    {
+      "key": "decline-bar",
+      "sourceId": "Decline_Barbell_Bench_Press",
+      "name": "Supino declinado com barra",
+      "sourcePage": "https://www.jefit.com/exercises/5/barbell-decline-bench-press",
+      "sourceMedia": "https://cdn.jefit.com/assets/img/exercises/gifs/5.gif",
+      "referenceFile": "decline-bar-ref.mp4",
+      "args": {
+        "modelGroupId": 416,
+        "input": {
+          "assetId": "fd7a5db4-e76b-47f7-8ddd-9dda48aeba72"
+        },
+        "settings": {
+          "duration": 4,
+          "resolution": "480p",
+          "aspect_ratio": "1:1",
+          "generate_audio": false
+        },
+        "prompt": "Personal Pro exercise demonstration: BARBELL DECLINE BENCH PRESS / supino DECLINADO com barra. Follow the real-human reference for a genuinely DECLINED bench: the athlete's HEAD AND SHOULDERS are LOWER than his HIPS and his feet are secured at the HIGHER end in padded leg rollers. This MUST NOT be an incline bench. Head, shoulders, torso and hips remain fully supported by the declined pad. One real adult holding one straight barbell with a medium overhand grip; both hands remain evenly spaced. Begin with arms extended above lower chest, slowly lower the bar toward lower chest, then press it back to the same extended position. ONE complete controlled descent and ascent over four seconds, returning fully to the start. Keep bench angle and body supports constant. Frame the entire declined bench, head, hips, leg rollers and bar so its downward slope toward the head is evident. Fixed three-quarter side view, no cuts. Clean gym or studio, plain unbranded clothing and equipment, ZERO text/logos/watermarks/diagrams. Execution only, no setup, no speech or anatomical rendering. Silent square video."
+      },
+      "generation": {
+        "status": "queued",
+        "generationId": "01a169ca-cf0d-74fe-adc0-46dd59f69ef6",
+        "sessionId": "01a16635-f9a6-776d-b049-a9bdd812cdc4",
+        "modelId": 2462,
+        "modelGroupId": 416,
+        "price": 200,
+        "resolvedSettings": {
+          "aspect_ratio": "1:1",
+          "duration": 4,
+          "resolution": "480p",
+          "generation_mode": "references",
+          "generate_audio": false,
+          "user_inputs_metadata": {
+            "video_urls": [
+              {
+                "duration": 2
+              }
+            ]
+          }
+        },
+        "feature": "multi-to-video",
+        "inputSettingKey": "video_urls",
+        "message": "Poll for completion: call get_generation_status with this generationId immediately. Each call blocks until the generation finishes or times out; if status is \"pending\", call again immediately — do not sleep between calls. Video typically completes in 60-300 s; if pending persists past 540 s, surface the generationId to the user — the generation may still complete and is retrievable via list_generations."
+      },
+      "status": "approved",
+      "finalFile": "decline-bar-final.mp4",
+      "edits": "Banco declinado, apoio e ciclo completo conferidos; vídeo integral de 4 s.",
+      "url": "/assets/videos/chest/decline-bar.mp4",
+      "poster": "/assets/videos/chest/decline-bar.jpg",
+      "sha256": "1f396cd12c5bcac817122798f7f767eac494cec7538d2574329ea6863d52bf8f"
+    },
+    {
+      "key": "incline-dumbbell",
+      "sourceId": "Incline_Dumbbell_Press",
+      "name": "Supino inclinado com halteres",
+      "sourcePage": "https://www.jefit.com/exercises/31/dumbbell-incline-bench-press",
+      "sourceMedia": "https://cdn.jefit.com/assets/img/exercises/gifs/31.gif",
+      "referenceFile": "incline-dumbbell-ref.mp4",
+      "args": {
+        "modelGroupId": 416,
+        "input": {
+          "assetId": "24b75551-a269-48c5-bf26-c76b15dd5bb4"
+        },
+        "settings": {
+          "duration": 4,
+          "resolution": "480p",
+          "aspect_ratio": "1:1",
+          "generate_audio": false
+        },
+        "prompt": "Personal Pro exercise: INCLINE DUMBBELL BENCH PRESS / supino inclinado com halteres. Precisely follow the real human reference: an inclined bench about 30 degrees with HEAD HIGHER than hips, head/back/hips supported, feet fixed on floor. Two separate dumbbells, overhand palms forward, both arms synchronized. One complete repetition: begin arms extended above upper chest, lower both weights to sides of upper chest in TWO seconds, press both up in TWO seconds back to the SAME starting position. Finish the entire ascent before the last frame. Keep elbows under weights; no alternating arms or twisting grip. Fixed full body three-quarter side view showing bench angle, both hands and feet. Real adult human, unbranded clothing, blank wall and equipment; absolutely no words, logos, watermark, overlay, anatomical figures or speech. Execute immediately, no setup or introduction. Four seconds square silent video."
+      },
+      "generation": {
+        "status": "queued",
+        "generationId": "01a169d0-831b-7033-a7a0-334b9c4751c4",
+        "sessionId": "01a16635-f9a6-776d-b049-a9bdd812cdc4",
+        "modelId": 2462,
+        "modelGroupId": 416,
+        "price": 200,
+        "resolvedSettings": {
+          "aspect_ratio": "1:1",
+          "duration": 4,
+          "resolution": "480p",
+          "generation_mode": "references",
+          "generate_audio": false,
+          "user_inputs_metadata": {
+            "video_urls": [
+              {
+                "duration": 2
+              }
+            ]
+          }
+        },
+        "feature": "multi-to-video",
+        "inputSettingKey": "video_urls",
+        "message": "Poll for completion: call get_generation_status with this generationId immediately. Each call blocks until the generation finishes or times out; if status is \"pending\", call again immediately — do not sleep between calls. Video typically completes in 60-300 s; if pending persists past 540 s, surface the generationId to the user — the generation may still complete and is retrievable via list_generations."
+      },
+      "status": "approved",
+      "finalFile": "incline-dumbbell-final.mp4",
+      "edits": "Primeiro ciclo completo de 2 s ajustado para 4 s.",
+      "url": "/assets/videos/chest/incline-dumbbell.mp4",
+      "poster": "/assets/videos/chest/incline-dumbbell.jpg",
+      "sha256": "282ff8f7ca7bbfb461611214af350ad5d82996edeba4f679f1c7753077a4e9db"
+    },
+    {
+      "key": "decline-dumbbell",
+      "sourceId": "pp-supino-declinado-com-halteres",
+      "name": "Supino declinado com halteres",
+      "sourcePage": "https://www.jefit.com/exercises/39/dumbbell-decline-bench-press",
+      "sourceMedia": "https://cdn.jefit.com/assets/img/exercises/gifs/39.gif",
+      "referenceFile": "decline-dumbbell-ref.mp4",
+      "args": {
+        "modelGroupId": 416,
+        "input": {
+          "assetId": "72cd687b-8007-42b4-a09c-04c0d99e55bb"
+        },
+        "settings": {
+          "duration": 4,
+          "resolution": "480p",
+          "aspect_ratio": "1:1",
+          "generate_audio": false
+        },
+        "prompt": "Personal Pro: DECLINE DUMBBELL BENCH PRESS / supino declinado com halteres. Copy the exact real human movement reference. Declined bench has HEAD AND SHOULDERS LOWER than hips; feet secured at upper end. Head, full torso and hips stay supported by bench pad throughout. Two dumbbells, both palms forward, both arms move together. Start arms extended over lower chest. Lower both dumbbells together to sides of lower chest for TWO seconds, press both back up for TWO seconds to the identical extended starting position. One COMPLETE slow repetition, visibly finish ascent. Fixed full-body three-quarter SIDE view shows the downward slope toward head, both separate dumbbells, hips and leg supports. No unsupported head or floating torso; no inclined bench; no alternating arms. Real adult human, plain unbranded clothes and bench, blank studio. No text, logos, watermarks, graphics, talking or anatomical mannequins. Execution only, square silent four-second video."
+      },
+      "generation": {
+        "status": "queued",
+        "generationId": "01a169d3-1d79-7805-b72f-ab90cbc55107",
+        "sessionId": "01a16635-f9a6-776d-b049-a9bdd812cdc4",
+        "modelId": 2462,
+        "modelGroupId": 416,
+        "price": 200,
+        "resolvedSettings": {
+          "aspect_ratio": "1:1",
+          "duration": 4,
+          "resolution": "480p",
+          "generation_mode": "references",
+          "generate_audio": false,
+          "user_inputs_metadata": {
+            "video_urls": [
+              {
+                "duration": 2
+              }
+            ]
+          }
+        },
+        "feature": "multi-to-video",
+        "inputSettingKey": "video_urls",
+        "message": "Poll for completion: call get_generation_status with this generationId immediately. Each call blocks until the generation finishes or times out; if status is \"pending\", call again immediately — do not sleep between calls. Video typically completes in 60-300 s; if pending persists past 540 s, surface the generationId to the user — the generation may still complete and is retrievable via list_generations."
+      },
+      "status": "approved",
+      "finalFile": "decline-dumbbell-final.mp4",
+      "edits": "Vídeo integral: banco declinado, corpo apoiado e ciclo completo conferidos.",
+      "url": "/assets/videos/chest/decline-dumbbell.mp4",
+      "poster": "/assets/videos/chest/decline-dumbbell.jpg",
+      "sha256": "de97fc490b6f7b48b2c7cfc1ee5566857e87a13f945b7bdd52f38d02415b7a8e"
+    },
+    {
+      "key": "pushup",
+      "name": "Flexão de braços",
+      "sourceId": "Pushups",
+      "sourcePage": "https://www.jefit.com/exercises/47/push-up",
+      "sourceMedia": "https://cdn.jefit.com/assets/img/exercises/gifs/47.gif",
+      "referenceFile": "pushup-ref.mp4",
+      "args": {
+        "modelGroupId": 416,
+        "input": {
+          "assetId": "ea8c4c12-a66d-417e-b1a7-da2478acd2f0"
+        },
+        "settings": {
+          "duration": 4,
+          "resolution": "480p",
+          "aspect_ratio": "1:1",
+          "generate_audio": false
+        },
+        "prompt": "Personal Pro standard PUSH-UP / flexão de braços tradicional. Precisely follow the real-human reference, on toes and palms on flat floor. Hands about shoulder width or slightly wider, fingers forward, elbows angle back around 45 degrees. Head, trunk, hips and legs stay in a straight plank; knees off floor throughout. Start at TOP with elbows extended, lower chest close to floor for TWO seconds, then press up for TWO seconds until elbows are extended at SAME top starting position. One FULL slow down-and-up repetition, visibly finish top before last frame. Fixed full-body side three-quarter view with all hands, head, feet visible. Real adult person in plain unbranded clothes, clean blank studio and mat. No writing, logos, watermarks, cut, overlay, talking or anatomical figures. Execution only, silent square four second video."
+      },
+      "generation": {
+        "status": "queued",
+        "generationId": "01a169d5-dce4-74da-ae5d-90ff7265d730",
+        "sessionId": "01a16635-f9a6-776d-b049-a9bdd812cdc4",
+        "modelId": 2462,
+        "modelGroupId": 416,
+        "price": 200,
+        "resolvedSettings": {
+          "aspect_ratio": "1:1",
+          "duration": 4,
+          "resolution": "480p",
+          "generation_mode": "references",
+          "generate_audio": false,
+          "user_inputs_metadata": {
+            "video_urls": [
+              {
+                "duration": 2
+              }
+            ]
+          }
+        },
+        "feature": "multi-to-video",
+        "inputSettingKey": "video_urls",
+        "message": "Poll for completion: call get_generation_status with this generationId immediately. Each call blocks until the generation finishes or times out; if status is \"pending\", call again immediately — do not sleep between calls. Video typically completes in 60-300 s; if pending persists past 540 s, surface the generationId to the user — the generation may still complete and is retrievable via list_generations."
+      },
+      "status": "approved",
+      "finalFile": "pushup-final.mp4",
+      "edits": "Primeira repetição completa selecionada e ajustada para 4 s.",
+      "url": "/assets/videos/chest/pushup.mp4",
+      "poster": "/assets/videos/chest/pushup.jpg",
+      "sha256": "868bc23611c135a1d6125e2b1e067237d7b78bf961065370e6b51a4a7fc50d31"
+    },
+    {
+      "key": "floor-dumbbell",
+      "sourceId": "pp-supino-no-chao-com-halteres",
+      "name": "Supino no chão com halteres",
+      "sourcePage": "https://www.strengthlog.com/dumbbell-floor-press/",
+      "sourceMedia": "https://www.strengthlog.com/wp-content/uploads/2022/09/dumbbell-floor-press.gif",
+      "referenceFile": "floor-dumbbell-clean-ref.mp4",
+      "args": {
+        "modelGroupId": 416,
+        "input": {
+          "assetId": "03228efc-8012-4d5a-8f8d-f19f5b289cdf"
+        },
+        "settings": {
+          "duration": 4,
+          "resolution": "480p",
+          "aspect_ratio": "1:1",
+          "generate_audio": false
+        },
+        "prompt": "Personal Pro: DUMBBELL FLOOR PRESS / supino no chão com halteres. Exactly match real human reference: lie on floor, head shoulders back hips flat supported, knees bent and feet planted. Two dumbbells palms forward. BOTH arms move simultaneously through ONE full controlled repetition: begin arms extended over chest, lower both for two seconds until upper arms gently contact floor, then press both together for two seconds back to the SAME extended starting position. Finish full ascent. Elbows stop at floor, do not pass through it. Do not alternate arms. Fixed full-body three-quarter side view, hands weights and floor contact clearly visible. Real adult human, blank studio and plain clothes/equipment. ZERO writing, logo, watermark, overlay, speech or anatomical figure. Execution only, four seconds square silent video."
+      },
+      "generation": {
+        "status": "queued",
+        "generationId": "01a169d8-7824-716f-a61d-60c873f41eda",
+        "sessionId": "01a16635-f9a6-776d-b049-a9bdd812cdc4",
+        "modelId": 2462,
+        "modelGroupId": 416,
+        "price": 200,
+        "resolvedSettings": {
+          "aspect_ratio": "1:1",
+          "duration": 4,
+          "resolution": "480p",
+          "generation_mode": "references",
+          "generate_audio": false,
+          "user_inputs_metadata": {
+            "video_urls": [
+              {
+                "duration": 2.417
+              }
+            ]
+          }
+        },
+        "feature": "multi-to-video",
+        "inputSettingKey": "video_urls",
+        "message": "Poll for completion: call get_generation_status with this generationId immediately. Each call blocks until the generation finishes or times out; if status is \"pending\", call again immediately — do not sleep between calls. Video typically completes in 60-300 s; if pending persists past 540 s, surface the generationId to the user — the generation may still complete and is retrievable via list_generations."
+      },
+      "status": "approved",
+      "finalFile": "floor-dumbbell-final.mp4",
+      "edits": "Ciclo integral conferido até o último quadro, que retorna à extensão dos dois braços.",
+      "url": "/assets/videos/chest/floor-dumbbell.mp4",
+      "poster": "/assets/videos/chest/floor-dumbbell.jpg",
+      "sha256": "88a071049a224bbc8a3228138db8f3789cd476901e26f95b5e2d491c9064a670"
+    },
+    {
+      "key": "feet-push",
+      "name": "Flexão com pés elevados",
+      "sourceId": "pp-flexao-com-pes-elevados",
+      "sourcePage": "https://www.strengthlog.com/decline-push-up/",
+      "sourceMedia": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2024/05/Decline-push-up.gif?resize=600%2C600&ssl=1",
+      "referenceFile": "feet-push-clean-ref.mp4",
+      "args": {
+        "modelGroupId": 416,
+        "input": {
+          "assetId": "d8a69e99-6aea-4287-a955-d162516dc09e"
+        },
+        "settings": {
+          "duration": 4,
+          "resolution": "480p",
+          "aspect_ratio": "1:1",
+          "generate_audio": false
+        },
+        "prompt": "Personal Pro DECLINE PUSH-UP / flexão com os pés elevados. Copy this real-human reference: both toes supported on a stable low box or bench, BOTH hands on FLOOR, feet higher than hands, straight plank from head through hips to heels. Keep feet on the support, knees off floor. ONE complete controlled repetition: start elbows extended, lower chest close to floor for two seconds, then press up for two seconds to the SAME fully extended starting position. Finish the entire ascent. No pike, hip sagging, knee push-up or hands on bench. Fixed full-body side view showing the foot support, both hands, chest and full body. Plain unbranded clothes and equipment, blank studio wall. Absolutely no text, logos, watermarks or anatomy mannequins, cuts or speech. Execution only. Four seconds square silent video."
+      },
+      "generation": {
+        "status": "queued",
+        "generationId": "01a169db-3f20-7cdc-a7c7-5aaeb2e8399b",
+        "sessionId": "01a16635-f9a6-776d-b049-a9bdd812cdc4",
+        "modelId": 2462,
+        "modelGroupId": 416,
+        "price": 200,
+        "resolvedSettings": {
+          "aspect_ratio": "1:1",
+          "duration": 4,
+          "resolution": "480p",
+          "generation_mode": "references",
+          "generate_audio": false,
+          "user_inputs_metadata": {
+            "video_urls": [
+              {
+                "duration": 2.083
+              }
+            ]
+          }
+        },
+        "feature": "multi-to-video",
+        "inputSettingKey": "video_urls",
+        "message": "Poll for completion: call get_generation_status with this generationId immediately. Each call blocks until the generation finishes or times out; if status is \"pending\", call again immediately — do not sleep between calls. Video typically completes in 60-300 s; if pending persists past 540 s, surface the generationId to the user — the generation may still complete and is retrievable via list_generations."
+      },
+      "status": "approved",
+      "finalFile": "feet-push-final.mp4",
+      "edits": "Primeiro ciclo completo selecionado e ajustado para 4 s; parede limpa na referência.",
+      "url": "/assets/videos/chest/feet-push.mp4",
+      "poster": "/assets/videos/chest/feet-push.jpg",
+      "sha256": "7d6a5fe894646d17510428e72a38853e9a88909153ed50ebd855deb10bd96006"
+    },
+    {
+      "key": "high-cable",
+      "name": "Crossover na polia alta",
+      "sourceId": "Cable_Crossover",
+      "sourcePage": "https://musclewiki.com/pt-br/exercise/cable-decline-internally-rotated-chest-fly",
+      "sourceMedia": "https://musclewiki.com/api-next/videos/male-Cables-cable-decline-internally-rotated-chest-fly-front.mp4",
+      "referenceFile": "high-cable-clean-ref.mp4",
+      "args": {
+        "modelGroupId": 416,
+        "input": {
+          "assetId": "f95b9f98-23dc-4470-9818-31aaf2757516"
+        },
+        "settings": {
+          "duration": 4,
+          "resolution": "480p",
+          "aspect_ratio": "1:1",
+          "generate_audio": false
+        },
+        "prompt": "Personal Pro HIGH CABLE CROSSOVER / crossover na polia ALTA. Match real human video reference, two HIGH pulleys well above shoulder height, one handle per hand, staggered stance. Torso stays stationary with slight forward lean. Keep elbows softly bent at a CONSTANT angle. Begin arms open high to sides; sweep hands forward and DOWN in wide arcs to meet in front of lower chest/upper abdomen, then smoothly reopen along SAME arcs to exact high starting position. ONE COMPLETE closing AND reopening cycle in four seconds. No elbow pumping, curl, triceps pushdown, press or squat. Both cables remain connected to HIGH pulleys and taut. Fixed full-body front three-quarter view shows hands, pulleys, stance and entire movement. Real adult human, plain clothing, clean blank gym, ZERO text/logos/watermarks/anatomy figures/camera cuts/speech. Execution only, square four-second silent video."
+      },
+      "generation": {
+        "status": "queued",
+        "generationId": "01a169dd-a770-72d4-9b16-5982e6a907a6",
+        "sessionId": "01a16635-f9a6-776d-b049-a9bdd812cdc4",
+        "modelId": 2462,
+        "modelGroupId": 416,
+        "price": 200,
+        "resolvedSettings": {
+          "aspect_ratio": "1:1",
+          "duration": 4,
+          "resolution": "480p",
+          "generation_mode": "references",
+          "generate_audio": false,
+          "user_inputs_metadata": {
+            "video_urls": [
+              {
+                "duration": 3
+              }
+            ]
+          }
+        },
+        "feature": "multi-to-video",
+        "inputSettingKey": "video_urls",
+        "message": "Poll for completion: call get_generation_status with this generationId immediately. Each call blocks until the generation finishes or times out; if status is \"pending\", call again immediately — do not sleep between calls. Video typically completes in 60-300 s; if pending persists past 540 s, surface the generationId to the user — the generation may still complete and is retrievable via list_generations."
+      },
+      "status": "approved",
+      "finalFile": "high-cable-final.mp4",
+      "edits": "Primeiro ciclo completo 0–3 s ajustado para 4 s; fechamento e reabertura conferidos.",
+      "url": "/assets/videos/chest/high-cable.mp4",
+      "poster": "/assets/videos/chest/high-cable.jpg",
+      "sha256": "317186ff016166bdc905f690e73bd394f568b2bfb532fe504acbd8756e3dd48a"
+    },
+    {
+      "key": "low-cable",
+      "name": "Crucifixo na polia baixa",
+      "sourceId": "Low_Cable_Crossover",
+      "sourcePage": "https://learn.athleanx.com/articles/cable-chest-workout",
+      "sourceMedia": "https://cfvideo.athleanx.com/2019/12/U7hhaKL2V9Zi5RraRl.mp4",
+      "referenceFile": "low-cable-clean-ref.mp4",
+      "args": {
+        "modelGroupId": 416,
+        "input": {
+          "assetId": "881d1d7e-8494-4a07-940b-4a34af7af251"
+        },
+        "settings": {
+          "duration": 4,
+          "resolution": "480p",
+          "aspect_ratio": "1:1",
+          "generate_audio": false
+        },
+        "prompt": "Personal Pro LOW-TO-HIGH CABLE CHEST FLY / crucifixo na polia BAIXA. Follow this real athlete's wide sweeping chest-fly arc, with two LOW pulleys close to FLOOR, two handles, palms upward/inward. Staggered stance and stable torso. Hands begin low and wide beside hips, elbows softly bent and keep the SAME gentle bend throughout. Sweep both mostly-extended arms upward AND inward in wide arcs, hands meeting in front of UPPER CHEST; then reopen downward/outward to the identical low starting position. ONE complete close-and-reopen cycle, 2 seconds each phase, four seconds total. Essential: shoulder adduction drives the movement; do NOT flex elbows into a biceps CURL, do not pull handles toward shoulders with elbows pinned to ribs. Do not turn into chest PRESS. Finish at upper chest, not over head. Show both low pulley anchors, handles, full arms and entire body with fixed front three-quarter camera. Real adult human and plain unbranded clean studio, ZERO text/logo/watermark/graphics/anatomical models, cuts or speech. Execution only. Four second square silent video."
+      },
+      "generation": {
+        "status": "queued",
+        "generationId": "01a169e0-3222-7b45-a974-9deaa141c1e9",
+        "sessionId": "01a16635-f9a6-776d-b049-a9bdd812cdc4",
+        "modelId": 2462,
+        "modelGroupId": 416,
+        "price": 200,
+        "resolvedSettings": {
+          "aspect_ratio": "1:1",
+          "duration": 4,
+          "resolution": "480p",
+          "generation_mode": "references",
+          "generate_audio": false,
+          "user_inputs_metadata": {
+            "video_urls": [
+              {
+                "duration": 4.083
+              }
+            ]
+          }
+        },
+        "feature": "multi-to-video",
+        "inputSettingKey": "video_urls",
+        "message": "Poll for completion: call get_generation_status with this generationId immediately. Each call blocks until the generation finishes or times out; if status is \"pending\", call again immediately — do not sleep between calls. Video typically completes in 60-300 s; if pending persists past 540 s, surface the generationId to the user — the generation may still complete and is retrievable via list_generations."
+      },
+      "status": "rejected",
+      "reviewNotes": "Polias baixas e arco visíveis, mas finaliza acima da cabeça em vez do peito superior; não vincular."
+    },
+    {
+      "key": "single-high-cable",
+      "name": "Crossover unilateral na polia",
+      "sourceId": "pp-crossover-unilateral-na-polia",
+      "sourcePage": "https://musclewiki.com/pt-br/exercise/cable-standing-single-arm-chest-fly",
+      "sourceMedia": "https://musclewiki.com/api-next/videos/male-Cables-cable-standing-single-arm-chest-fly-front.mp4",
+      "referenceFile": "single-arm-clean-ref.mp4",
+      "additionalReference": {
+        "file": "high-cable-clean-ref.mp4",
+        "purpose": "Altura da polia e trajetória descendente; a primeira referência isolada usa altura média."
+      },
+      "args": {
+        "modelGroupId": 416,
+        "input": [
+          {
+            "assetId": "6a7c4ab6-f129-4bce-8a97-5348408160e0"
+          },
+          {
+            "assetId": "f95b9f98-23dc-4470-9818-31aaf2757516"
+          }
+        ],
+        "settings": {
+          "duration": 4,
+          "resolution": "480p",
+          "aspect_ratio": "1:1",
+          "generate_audio": false
+        },
+        "prompt": "Personal Pro STANDING SINGLE-ARM HIGH CABLE CHEST FLY / crossover UNILATERAL na polia alta. Two real-human motion references: FIRST video provides the single-arm fly arc and stationary torso; SECOND video provides the HIGH pulley position and downward chest-fly trajectory. Produce one adult doing the SINGLE ARM version from a HIGH pulley above shoulder level. One hand holds one cable handle; the other hand braces on machine or stays still on torso. Staggered stance, slight forward lean, torso stationary. Start working arm open to side, elbow softly bent at a constant angle. Sweep working hand DOWN and ACROSS in an arc toward front of lower chest, then slowly return to exact open starting position. One complete close-and-reopen repetition over four seconds, visibly finish return. Keep cable connected high and taut. NO torso rotation, squat, biceps curl, elbow pumping, two-handed fly or bench. Fixed full-body three-quarter front view shows high cable anchor, full working arm and both feet. Real human, plain unbranded outfit/equipment and blank wall. No text, watermark, logo, graphics, camera cuts, speech or anatomy figures. Execution only, silent square four second video."
+      },
+      "generation": {
+        "status": "queued",
+        "generationId": "01a169e2-3677-7d3a-82fc-bc6455537485",
+        "sessionId": "01a16635-f9a6-776d-b049-a9bdd812cdc4",
+        "modelId": 2462,
+        "modelGroupId": 416,
+        "price": 200,
+        "resolvedSettings": {
+          "aspect_ratio": "1:1",
+          "duration": 4,
+          "resolution": "480p",
+          "generation_mode": "references",
+          "generate_audio": false,
+          "user_inputs_metadata": {
+            "video_urls": [
+              {
+                "duration": 2.5
+              },
+              {
+                "duration": 3
+              }
+            ]
+          }
+        },
+        "feature": "multi-to-video",
+        "inputSettingKey": "video_urls",
+        "referenceCount": 2,
+        "message": "Poll for completion: call get_generation_status with this generationId immediately. Each call blocks until the generation finishes or times out; if status is \"pending\", call again immediately — do not sleep between calls. Video typically completes in 60-300 s; if pending persists past 540 s, surface the generationId to the user — the generation may still complete and is retrievable via list_generations."
+      },
+      "status": "approved",
+      "finalFile": "single-high-cable-final.mp4",
+      "edits": "Primeiro ciclo 0–3.2 s ajustado para 4 s, polia alta, um braço e tronco estável conferidos.",
+      "url": "/assets/videos/chest/single-high-cable.mp4",
+      "poster": "/assets/videos/chest/single-high-cable.jpg",
+      "sha256": "a5503bc9ad66e79751609745d000f36e243f62ff741247ed1b73474d515b5a30"
+    },
+    {
+      "key": "flat-fly",
+      "name": "Crucifixo reto com halteres",
+      "sourceId": "Dumbbell_Flyes",
+      "sourcePage": "https://www.jefit.com/exercises/41/dumbbell-fly",
+      "sourceMedia": "https://cdn.jefit.com/assets/img/exercises/gifs/41.gif",
+      "referenceFile": "flat-fly-ref.mp4",
+      "args": {
+        "modelGroupId": 416,
+        "input": {
+          "assetId": "b0c37626-ffb2-495c-918a-ba4b7e9bc9de"
+        },
+        "settings": {
+          "duration": 4,
+          "resolution": "480p",
+          "aspect_ratio": "1:1",
+          "generate_audio": false
+        },
+        "prompt": "Personal Pro FLAT DUMBBELL CHEST FLY / crucifixo reto com halteres. Precisely follow this real human fly demonstration on a horizontal bench. Two dumbbells, palms face EACH OTHER, elbows gently bent about 20-30 degrees and this elbow bend stays CONSTANT. Start hands together over center chest. For two seconds open BOTH arms in wide lateral arcs until upper arms roughly in line with torso, then for two seconds bring hands back together in SAME wide arcs to exact starting position. ONE full controlled opening-and-closing repetition. Critical: this is a FLY, not a BENCH PRESS; never fold elbows to 90 degrees or bring weights beside shoulders on return. Never overextend elbows. Head/back/hips supported, both feet stay on floor. Fixed full body three-quarter side view with both arms visible. Real adult person, plain clothes and equipment, blank studio, no logos/text/watermark/graphics/cuts/speech/anatomical figure. Execution only, square four second silent video."
+      },
+      "generation": {
+        "status": "queued",
+        "generationId": "01a169e4-abeb-70b1-bfff-28c421925fd4",
+        "sessionId": "01a16635-f9a6-776d-b049-a9bdd812cdc4",
+        "modelId": 2462,
+        "modelGroupId": 416,
+        "price": 200,
+        "resolvedSettings": {
+          "aspect_ratio": "1:1",
+          "duration": 4,
+          "resolution": "480p",
+          "generation_mode": "references",
+          "generate_audio": false,
+          "user_inputs_metadata": {
+            "video_urls": [
+              {
+                "duration": 2
+              }
+            ]
+          }
+        },
+        "feature": "multi-to-video",
+        "inputSettingKey": "video_urls",
+        "message": "Poll for completion: call get_generation_status with this generationId immediately. Each call blocks until the generation finishes or times out; if status is \"pending\", call again immediately — do not sleep between calls. Video typically completes in 60-300 s; if pending persists past 540 s, surface the generationId to the user — the generation may still complete and is retrievable via list_generations."
+      },
+      "status": "inconclusive",
+      "reviewNotes": "Ângulo lateral oculta a abertura; não permite comprovar crucifixo em vez de supino. Não vincular como aprovado."
+    },
+    {
+      "key": "decline-fly",
+      "name": "Crucifixo declinado com halteres",
+      "sourceId": "Decline_Dumbbell_Flyes",
+      "sourcePage": "https://www.jefit.com/exercises/40/dumbbell-decline-fly",
+      "sourceMedia": "https://cdn.jefit.com/assets/img/exercises/gifs/40.gif",
+      "referenceFile": "decline-fly-valid-ref.mp4",
+      "args": {
+        "modelGroupId": 416,
+        "input": {
+          "assetId": "c71ee751-039e-46eb-b74b-cc3256bd4764"
+        },
+        "settings": {
+          "duration": 4,
+          "resolution": "480p",
+          "aspect_ratio": "1:1",
+          "generate_audio": false
+        },
+        "prompt": "Personal Pro DECLINE DUMBBELL CHEST FLY / crucifixo declinado com halteres. Precisely follow the real human reference: declined bench, HEAD AND SHOULDERS LOWER than hips, legs secured at higher end, head/back/hips supported. Two dumbbells palms facing EACH OTHER, both elbows softly bent 20-30 degrees and keep this bend CONSTANT. Start hands together above lower chest, open both arms laterally in broad arcs for TWO seconds, then bring both back in SAME broad arcs for TWO seconds to original hands-together position. ONE COMPLETE controlled opening-and-closing repetition. Do not bend elbows into a bench PRESS, do not pull weights toward shoulders, do not lock/hyperextend elbows. Entire body and decline bench visible, fixed three-quarter side camera. Real adult person and plain unbranded outfit/equipment, blank studio. No text, logos, watermarks, overlays, anatomical figures, camera cuts or speech. Execution only, silent square four second video."
+      },
+      "generation": {
+        "status": "queued",
+        "generationId": "01a169e7-ed7d-76da-bf66-aae97511925b",
+        "sessionId": "01a16635-f9a6-776d-b049-a9bdd812cdc4",
+        "modelId": 2462,
+        "modelGroupId": 416,
+        "price": 200,
+        "resolvedSettings": {
+          "aspect_ratio": "1:1",
+          "duration": 4,
+          "resolution": "480p",
+          "generation_mode": "references",
+          "generate_audio": false,
+          "user_inputs_metadata": {
+            "video_urls": [
+              {
+                "duration": 2
+              }
+            ]
+          }
+        },
+        "feature": "multi-to-video",
+        "inputSettingKey": "video_urls",
+        "message": "Poll for completion: call get_generation_status with this generationId immediately. Each call blocks until the generation finishes or times out; if status is \"pending\", call again immediately — do not sleep between calls. Video typically completes in 60-300 s; if pending persists past 540 s, surface the generationId to the user — the generation may still complete and is retrievable via list_generations."
+      },
+      "status": "inconclusive",
+      "reviewNotes": "Ciclo completo, mas dobra do cotovelo e retorno ainda exigem conferência frontal. Não vincular como aprovado."
+    },
+    {
+      "key": "flat-fly-front",
+      "name": "Crucifixo reto com halteres",
+      "sourceId": "Dumbbell_Flyes",
+      "sourcePage": "https://musclewiki.com/pt-br/exercise/dumbbell-chest-fly",
+      "sourceMedia": "https://musclewiki.com/api-next/videos/male-dumbbell-chest-fly-front.mp4",
+      "referenceFile": "flat-fly-front-ref.mp4",
+      "args": {
+        "modelGroupId": 416,
+        "input": {
+          "assetId": "77532777-eb05-41da-b939-8bf1655b31dd"
+        },
+        "settings": {
+          "duration": 4,
+          "resolution": "480p",
+          "aspect_ratio": "1:1",
+          "generate_audio": false
+        },
+        "prompt": "Match the exact WIDE-ARM DUMBBELL CHEST FLY motion and FRONT-OF-BENCH CAMERA in this video. Personal Pro crucifixo reto com halteres, FLAT horizontal bench. Camera at FOOT END facing toward head, slightly elevated, so the TWO ARMS OPENING LEFT AND RIGHT are unmistakably visible. Do NOT use a pure side view. Adult real human supine on flat bench, feet on floor, two dumbbells with neutral palms facing each other. Elbows remain almost straight with fixed soft 20-degree bend. Start weights together above chest. Open arms widely to LEFT and RIGHT like opening wings in 2 seconds; then close the same wings in 2 seconds bringing weights together over chest. FULL completed opening and closing. Hands always move in WIDE SIDE ARCS; elbow angle never folds, never turns into a press. Frame all of both arms and the dumbbells at the widest point. Head/back/hips stay supported by bench. Plain blank studio and unbranded clothes, equipment and shoes. ZERO text, logos or watermarks anywhere. Fixed camera, no cut, no setup, no talking, no overlays or anatomical figures. Four seconds square silent video."
+      },
+      "generation": {
+        "status": "queued",
+        "generationId": "01a169ec-c6cf-7ad5-9983-5e8d805c2ef3",
+        "sessionId": "01a16635-f9a6-776d-b049-a9bdd812cdc4",
+        "modelId": 2462,
+        "modelGroupId": 416,
+        "price": 200,
+        "resolvedSettings": {
+          "aspect_ratio": "1:1",
+          "duration": 4,
+          "resolution": "480p",
+          "generation_mode": "references",
+          "generate_audio": false,
+          "user_inputs_metadata": {
+            "video_urls": [
+              {
+                "duration": 6
+              }
+            ]
+          }
+        },
+        "feature": "multi-to-video",
+        "inputSettingKey": "video_urls",
+        "message": "Poll for completion: call get_generation_status with this generationId immediately. Each call blocks until the generation finishes or times out; if status is \"pending\", call again immediately — do not sleep between calls. Video typically completes in 60-300 s; if pending persists past 540 s, surface the generationId to the user — the generation may still complete and is retrievable via list_generations."
+      },
+      "status": "approved",
+      "correctionReason": "Novo enquadramento frontal para tornar verificável o arco lateral; tentativa anterior inconclusiva.",
+      "finalFile": "flat-fly-front-final.mp4",
+      "edits": "Ciclo integral; vista frontal confirma arco lateral. O fechamento termina acima do peito com halteres afastados.",
+      "technicalFlags": [
+        "Revisão final: conferir amplitude do fechamento; os halteres terminam afastados acima do peito."
+      ],
+      "url": "/assets/videos/chest/flat-fly-front.mp4",
+      "poster": "/assets/videos/chest/flat-fly-front.jpg",
+      "sha256": "0875a4df4f6a0d097731686132abdf76d3086f2b7cd2ee831288e46f8200a46e"
+    },
+    {
+      "key": "decline-fly-front",
+      "name": "Crucifixo declinado com halteres",
+      "sourceId": "Decline_Dumbbell_Flyes",
+      "sourcePage": "https://www.jefit.com/exercises/40/dumbbell-decline-fly",
+      "sourceMedia": "https://cdn.jefit.com/assets/img/exercises/gifs/40.gif",
+      "referenceFile": "decline-fly-valid-ref.mp4",
+      "additionalReference": {
+        "file": "flat-fly-front-ref.mp4",
+        "purpose": "Arco lateral e enquadramento frontal; banco declinado exigido pela primeira referência."
+      },
+      "args": {
+        "modelGroupId": 416,
+        "input": [
+          {
+            "assetId": "c71ee751-039e-46eb-b74b-cc3256bd4764"
+          },
+          {
+            "assetId": "77532777-eb05-41da-b939-8bf1655b31dd"
+          }
+        ],
+        "settings": {
+          "duration": 4,
+          "resolution": "480p",
+          "aspect_ratio": "1:1",
+          "generate_audio": false
+        },
+        "prompt": "Personal Pro DECLINE DUMBBELL CHEST FLY / crucifixo DECLINADO com halteres. FIRST real-human video specifies the DECLINED bench: head LOWER than hips, supported full torso, legs secured at higher end. SECOND real-human video specifies the unmistakable WIDE LATERAL ARM ARCS and FOOT-END FRONT CAMERA. Show the fly on that declined bench, filmed facing athlete from FOOT END slightly diagonally/elevated so BOTH arms opening LEFT/RIGHT and decline angle are clear; no pure side view. Start two dumbbells together above lower chest, palms face each other. Elbows stay gently bent at SAME 20-30 degree angle. Open both arms like WIDE WINGS left/right for two seconds, then close SAME wings to exact starting hands-together position for two seconds. One COMPLETE opening and closing. Never fold elbows into a pressing motion; hands must sweep WIDE rather than lower beside shoulders. Head/back/hips remain fully supported. All hands and full arms visible throughout. Real adult, plain unbranded outfit and bench, blank studio wall, no text/logos/watermarks/anatomical figures/cuts/talking. Execution only, silent square four seconds."
+      },
+      "generation": {
+        "status": "queued",
+        "generationId": "01a169ef-c5ba-76ab-9113-eb3e66e7bccc",
+        "sessionId": "01a16635-f9a6-776d-b049-a9bdd812cdc4",
+        "modelId": 2462,
+        "modelGroupId": 416,
+        "price": 200,
+        "resolvedSettings": {
+          "aspect_ratio": "1:1",
+          "duration": 4,
+          "resolution": "480p",
+          "generation_mode": "references",
+          "generate_audio": false,
+          "user_inputs_metadata": {
+            "video_urls": [
+              {
+                "duration": 2
+              },
+              {
+                "duration": 6
+              }
+            ]
+          }
+        },
+        "feature": "multi-to-video",
+        "inputSettingKey": "video_urls",
+        "referenceCount": 2,
+        "message": "Poll for completion: call get_generation_status with this generationId immediately. Each call blocks until the generation finishes or times out; if status is \"pending\", call again immediately — do not sleep between calls. Video typically completes in 60-300 s; if pending persists past 540 s, surface the generationId to the user — the generation may still complete and is retrievable via list_generations."
+      },
+      "status": "selected_with_technical_review_pending",
+      "correctionReason": "Conferência do movimento exigiu enquadramento frontal.",
+      "finalFile": "decline-fly-front-final.mp4",
+      "edits": "Ciclo integral em banco declinado. Identidade da variante preservada; aprovação técnica pendente.",
+      "technicalFlags": [
+        "Conferir ângulo dos cotovelos e arco na volta; a nova tomada não resolveu esta dúvida."
+      ],
+      "url": "/assets/videos/chest/decline-fly-front.mp4",
+      "poster": "/assets/videos/chest/decline-fly-front.jpg",
+      "sha256": "3b5609e1fa1b9e0fe646d807fa10bd641414c43c1dc528af25c4a5366510ff0e"
+    },
+    {
+      "key": "low-cable-exact",
+      "name": "Crucifixo na polia baixa",
+      "sourceId": "Low_Cable_Crossover",
+      "sourcePage": "https://giphy.com/gifs/low-cable-chest-flyes-805ogYsTFygrUVEK90",
+      "sourceMedia": "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDV1NXF5dHNrNTRldjZlMndkeWFleHF4NnhsdnlzcmFuZnI3anU4YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/805ogYsTFygrUVEK90/giphy.mp4",
+      "referenceFile": "low-cable-exact-ref.mp4",
+      "args": {
+        "modelGroupId": 416,
+        "input": {
+          "assetId": "dec6b12f-ffcd-423c-9d8d-f9f9894e9c1a"
+        },
+        "settings": {
+          "duration": 4,
+          "resolution": "480p",
+          "aspect_ratio": "1:1",
+          "generate_audio": false
+        },
+        "prompt": "Personal Pro LOW CABLE CROSSOVER / crucifixo na polia baixa. Match this real standing man's EXACT motion and terminal height: two LOW pulleys at floor, staggered stance, both hands travel UP and INWARD from low open position beside hips, meet directly in front of the CHEST (sternum, BELOW chin), then return DOWN and OUT to same low open starting position. One COMPLETE slow close-and-reopen repetition over four seconds. Arms stay mostly straight with small constant elbow bend, wide shoulder-driven arcs; no biceps curl. CRITICAL: match reference CHEST-HEIGHT finish, hands never reach face, forehead or above head. Torso stays stable, feet planted, shoulders down. Show the entire body, both hands and both low cable anchors, fixed front three-quarter view as reference. Use a DIFFERENT adult with plain GREY T-SHIRT and black shorts, completely unbranded, no writing or symbols on shirt. Clean neutral studio with two low cable towers, blank walls, no posters, logos, watermarks or overlays. Execution only, no setup, talking, cuts, anatomy models. Four second square silent video."
+      },
+      "generation": {
+        "status": "queued",
+        "generationId": "01a169f2-e3ec-7fa7-8cf9-da1901f98a0b",
+        "sessionId": "01a16635-f9a6-776d-b049-a9bdd812cdc4",
+        "modelId": 2462,
+        "modelGroupId": 416,
+        "price": 200,
+        "resolvedSettings": {
+          "aspect_ratio": "1:1",
+          "duration": 4,
+          "resolution": "480p",
+          "generation_mode": "references",
+          "generate_audio": false,
+          "user_inputs_metadata": {
+            "video_urls": [
+              {
+                "duration": 3
+              }
+            ]
+          }
+        },
+        "feature": "multi-to-video",
+        "inputSettingKey": "video_urls",
+        "message": "Poll for completion: call get_generation_status with this generationId immediately. Each call blocks until the generation finishes or times out; if status is \"pending\", call again immediately — do not sleep between calls. Video typically completes in 60-300 s; if pending persists past 540 s, surface the generationId to the user — the generation may still complete and is retrievable via list_generations."
+      },
+      "status": "rejected",
+      "correctionReason": "Referência anterior finalizava acima da cabeça; nova referência real em pé termina no peito.",
+      "reviewNotes": "Cotovelos flexionam acentuadamente; aproxima-se de rosca e finaliza perto do rosto. Não vincular ao crucifixo na polia baixa."
+    }
+  ],
+  "chest": [
+    {
+      "number": 1,
+      "name": "Supino reto com barra",
+      "sourceId": "Barbell_Bench_Press_-_Medium_Grip",
+      "generationId": "01a1663c-1b4b-7165-86f7-2900e96c1d1c",
+      "status": "vinculado; revisão final pendente",
+      "technicalFlags": []
+    },
+    {
+      "number": 2,
+      "name": "Supino inclinado com barra",
+      "sourceId": "Barbell_Incline_Bench_Press_-_Medium_Grip",
+      "generationId": "01a166c7-58d5-7041-b976-a208282304f1",
+      "status": "vinculado; revisão final pendente",
+      "technicalFlags": []
+    },
+    {
+      "number": 3,
+      "name": "Supino declinado com barra",
+      "sourceId": "Decline_Barbell_Bench_Press",
+      "generationId": "01a169ca-cf0d-74fe-adc0-46dd59f69ef6",
+      "status": "vinculado; revisão final pendente",
+      "technicalFlags": []
+    },
+    {
+      "number": 4,
+      "name": "Supino reto com halteres",
+      "sourceId": "Dumbbell_Bench_Press",
+      "generationId": "01a169c6-e4f2-79e0-8a6d-1bd0e59894b5",
+      "status": "vinculado; revisão final pendente",
+      "technicalFlags": []
+    },
+    {
+      "number": 5,
+      "name": "Supino inclinado com halteres",
+      "sourceId": "Incline_Dumbbell_Press",
+      "generationId": "01a169d0-831b-7033-a7a0-334b9c4751c4",
+      "status": "vinculado; revisão final pendente",
+      "technicalFlags": []
+    },
+    {
+      "number": 6,
+      "name": "Crucifixo reto com halteres",
+      "sourceId": "Dumbbell_Flyes",
+      "generationId": "01a169ec-c6cf-7ad5-9983-5e8d805c2ef3",
+      "status": "vinculado; revisão técnica pendente",
+      "technicalFlags": [
+        "Revisão final: conferir amplitude do fechamento; os halteres terminam afastados acima do peito."
+      ]
+    },
+    {
+      "number": 7,
+      "name": "Crucifixo inclinado com halteres",
+      "sourceId": "Incline_Dumbbell_Flyes",
+      "generationId": "01a166d5-f02d-7e29-bbdc-0d2d3691834f",
+      "status": "vinculado; revisão técnica pendente",
+      "technicalFlags": [
+        "Rever a amplitude da abertura."
+      ]
+    },
+    {
+      "number": 8,
+      "name": "Crossover na polia alta",
+      "sourceId": "Cable_Crossover",
+      "generationId": "01a169dd-a770-72d4-9b16-5982e6a907a6",
+      "status": "vinculado; revisão final pendente",
+      "technicalFlags": []
+    },
+    {
+      "number": 9,
+      "name": "Voador (peck deck)",
+      "sourceId": "Butterfly",
+      "generationId": "01a166d5-f022-79a0-8fab-a281b5f2a6d5",
+      "status": "vinculado; revisão final pendente",
+      "technicalFlags": []
+    },
+    {
+      "number": 10,
+      "name": "Flexão de braço",
+      "sourceId": "Pushups",
+      "generationId": "01a169d5-dce4-74da-ae5d-90ff7265d730",
+      "status": "vinculado; revisão final pendente",
+      "technicalFlags": []
+    },
+    {
+      "number": 11,
+      "name": "Flexão com mãos elevadas",
+      "sourceId": "Incline_Push-Up_Medium",
+      "generationId": "01a166d5-f068-761b-a875-a78d72da2785",
+      "status": "vinculado; revisão final pendente",
+      "technicalFlags": []
+    },
+    {
+      "number": 12,
+      "name": "Crucifixo na polia baixa",
+      "sourceId": "Low_Cable_Crossover",
+      "generationId": null,
+      "status": "vídeo em correção; sem vínculo",
+      "technicalFlags": [
+        "Vídeo em correção: as tentativas dobram excessivamente os cotovelos ou ultrapassam a amplitude prevista. Nenhuma foi aprovada."
+      ]
+    },
+    {
+      "number": 13,
+      "name": "Supino reto com halteres — pegada neutra",
+      "sourceId": "Dumbbell_Bench_Press_with_Neutral_Grip",
+      "generationId": "01a16963-662e-75cd-8fdf-52c9f422e2d9",
+      "status": "vinculado; revisão final pendente",
+      "technicalFlags": []
+    },
+    {
+      "number": 14,
+      "name": "Flexão diamante no solo",
+      "sourceId": "Diamond_Push-Up",
+      "generationId": "01a16982-0150-7fef-8b37-e59444c6d80c",
+      "status": "vinculado; revisão final pendente",
+      "technicalFlags": []
+    },
+    {
+      "number": 15,
+      "name": "Crucifixo declinado com halteres",
+      "sourceId": "Decline_Dumbbell_Flyes",
+      "generationId": "01a169ef-c5ba-76ab-9113-eb3e66e7bccc",
+      "status": "vinculado; revisão técnica pendente",
+      "technicalFlags": [
+        "Conferir ângulo dos cotovelos e arco na volta; a nova tomada não resolveu esta dúvida."
+      ]
+    },
+    {
+      "number": 16,
+      "name": "Pull-over com halter",
+      "sourceId": "Bent-Arm_Dumbbell_Pullover",
+      "generationId": "01a166dc-f14f-7a54-88dc-73c5ceb434a9",
+      "status": "vinculado; revisão final pendente",
+      "technicalFlags": []
+    },
+    {
+      "number": 17,
+      "name": "Supino reto na máquina",
+      "sourceId": "Leverage_Chest_Press",
+      "generationId": "01a166dc-f142-7009-a00e-7dbe66d0ea5c",
+      "status": "vinculado; revisão final pendente",
+      "technicalFlags": []
+    },
+    {
+      "number": 18,
+      "name": "Supino declinado com halteres",
+      "sourceId": "pp-supino-declinado-com-halteres",
+      "generationId": "01a169d3-1d79-7805-b72f-ab90cbc55107",
+      "status": "vinculado; revisão final pendente",
+      "technicalFlags": []
+    },
+    {
+      "number": 19,
+      "name": "Supino no chão com halteres",
+      "sourceId": "pp-supino-no-chao-com-halteres",
+      "generationId": "01a169d8-7824-716f-a61d-60c873f41eda",
+      "status": "vinculado; revisão final pendente",
+      "technicalFlags": []
+    },
+    {
+      "number": 20,
+      "name": "Supino unilateral com halter",
+      "sourceId": "pp-supino-unilateral-com-halter",
+      "generationId": "01a16960-607c-7efe-ab7a-c079b4d0afd4",
+      "status": "vinculado; revisão final pendente",
+      "technicalFlags": []
+    },
+    {
+      "number": 21,
+      "name": "Flexão com joelhos apoiados",
+      "sourceId": "pp-flexao-com-joelhos-apoiados",
+      "generationId": "01a1695c-8768-7377-a25a-95841ceb42aa",
+      "status": "vinculado; revisão final pendente",
+      "technicalFlags": []
+    },
+    {
+      "number": 22,
+      "name": "Flexão com pés elevados",
+      "sourceId": "pp-flexao-com-pes-elevados",
+      "generationId": "01a169db-3f20-7cdc-a7c7-5aaeb2e8399b",
+      "status": "vinculado; revisão final pendente",
+      "technicalFlags": []
+    },
+    {
+      "number": 23,
+      "name": "Crossover unilateral na polia",
+      "sourceId": "pp-crossover-unilateral-na-polia",
+      "generationId": "01a169e2-3677-7d3a-82fc-bc6455537485",
+      "status": "vinculado; revisão final pendente",
+      "technicalFlags": []
+    }
+  ],
+  "chestLinkedCount": 22
+}
