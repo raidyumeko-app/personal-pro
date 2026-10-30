@@ -5,8 +5,8 @@ Escopo: 17 vídeos gerados já vinculados ao Personal Pro. Avaliação fornecida
 ## Resultado consolidado
 
 - 13 aprovados sem ressalva.
-- 1 marcado como aprovado, mas com ressalva de realismo: **Remada unilateral sentada na polia**. Não considerar aprovação final até esclarecer/corrigir.
-- 2 reprovados: **Remada unilateral com halter** (não é realista); **Remada unilateral com apoio na coxa** (pegada invertida).
+- 0 aprovados com ressalva. Wagner confirmou a reprovação da **Remada unilateral sentada na polia** por falta de realismo.
+- 3 reprovados: **Remada unilateral sentada na polia** (não é realista); **Remada unilateral com halter** (não é realista); **Remada unilateral com apoio na coxa** (pegada invertida).
 - 1 não revisado: **Puxada fechada na polia**.
 - 17 de 17 respostas recebidas; 16 vídeos avaliados e 1 não revisado.
 - Nenhum dos 17 vínculos foi apagado nesta rodada. Evitar promover vídeos reprovados como corretos; preparar correção/quarentena em etapa posterior sem afetar prescrições salvas.
@@ -18,7 +18,7 @@ Escopo: 17 vídeos gerados já vinculados ao Personal Pro. Avaliação fornecida
 |---:|---|---|---|
 | 1 | Remada sentada na máquina | Aprovado | Aprovado |
 | 2 | Pulldown com braços estendidos | Aprovado | Aprovado |
-| 3 | Remada unilateral sentada na polia | Aprovado; “não é realista” | Aprovado com ressalva; não fechar até resolver contradição |
+| 3 | Remada unilateral sentada na polia | Reprovado em confirmação posterior de Wagner: “não é realista” | Reprovado; precisa de correção ou substituição, sem novo gasto autorizado |
 | 4 | Remada unilateral com halter | Reprovado; “não é realista” | Reprovado; revisar referência ou substituir |
 | 5 | Hiperextensão lombar | Aprovado | Aprovado; observação técnica antiga sobre amplitude preservada no histórico |
 | 6 | Remada inclinada com halteres | Aprovado | Aprovado |
@@ -36,9 +36,13 @@ Escopo: 17 vídeos gerados já vinculados ao Personal Pro. Avaliação fornecida
 
 ## Próximas correções sem créditos
 
-1. Conferir com Wagner se o vídeo nº 3 deve ser reprovado por falta de realismo; por segurança não considerá-lo concluído.
+1. Vídeo nº 3 confirmado como reprovado por Wagner. Procurar alternativa correta, sem gerar novos vídeos ou gastar créditos sem autorização.
 2. Identificar vídeo de referência correto para nº 4, com movimento realista, mantendo a variante prescrita.
 3. Identificar pegada desejada para nº 16 e conferir se o vídeo mostra uma variante diferente; não renomear para forçar correspondência.
 4. Solicitar revisão do nº 15.
 5. Cruzar os exercícios ainda sem vídeos entre os 23 previstos, evitando duplicações.
 6. Não alterar registros de alunos e não gerar novos vídeos sem autorização específica.
+
+## Confirmação posterior
+
+Wagner confirmou expressamente a reprovação do item 3. Resultado final da rodada: **13 aprovados, 3 reprovados, 1 pendente**. Esta alteração atualiza a auditoria, não remove vídeos nem modifica vínculos/prescrições. Nenhum crédito consumido.
