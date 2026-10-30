@@ -1,6 +1,6 @@
 # Correções de peito — 23/10/2026
 
-22 dos 23 exercícios de peito possuem vídeo gerado vinculado, sem repetir arquivos. A polia baixa continua sem vídeo aprovado. O grupo não está fechado.
+Atualização de 30/10/2026: o usuário aprovou visualmente os vídeos de crucifixo reto e crucifixo declinado com halteres. O crucifixo na polia baixa foi retirado da seleção de novos treinos, preservando o catálogo de origem e as fichas antigas. Assim, os 22 exercícios ativos de peito têm vídeos vinculados sem repetição. A revisão da seleção ativa está encerrada por aprovação do usuário; não foi feita homologação biomecânica independente nem novo teste em Android.
 
 Foram feitas 15 gerações nesta rodada, de 200 créditos cada: 3.000 créditos. Onze foram selecionadas, duas delas com observações técnicas; quatro foram excluídas por execução ou enquadramento inconclusivo. Os quatro vídeos de famílias novas já gerados anteriormente também foram integrados, com edição gratuita da marca na flexão com joelhos. A flexão diamante usa a versão limpa revisada.
 
@@ -13,16 +13,16 @@ Há 70 gerações no histórico completo, 46 vinculadas a exercícios distintos 
 | 3 | Supino declinado com barra | vinculado; revisão final pendente |
 | 4 | Supino reto com halteres | vinculado; revisão final pendente |
 | 5 | Supino inclinado com halteres | vinculado; revisão final pendente |
-| 6 | Crucifixo reto com halteres | vinculado; revisão técnica pendente — Revisão final: conferir amplitude do fechamento; os halteres terminam afastados acima do peito. |
+| 6 | Crucifixo reto com halteres | vinculado; aprovado pelo usuário em 30/10/2026. |
 | 7 | Crucifixo inclinado com halteres | vinculado; revisão final pendente — comparação com JEFIT 165 concluída. |
 | 8 | Crossover na polia alta | vinculado; revisão final pendente |
 | 9 | Voador (peck deck) | vinculado; revisão final pendente |
 | 10 | Flexão de braço | vinculado; revisão final pendente |
 | 11 | Flexão com mãos elevadas | vinculado; revisão final pendente |
-| 12 | Crucifixo na polia baixa | vídeo em correção; sem vínculo — Vídeo em correção: as tentativas dobram excessivamente os cotovelos ou ultrapassam a amplitude prevista. Nenhuma foi aprovada. |
+| 12 | Crucifixo na polia baixa | retirado da seleção de novos treinos em 30/10/2026; sem vídeo aprovado; registros antigos preservados. |
 | 13 | Supino reto com halteres — pegada neutra | vinculado; revisão final pendente |
 | 14 | Flexão diamante no solo | vinculado; revisão final pendente |
-| 15 | Crucifixo declinado com halteres | vinculado; revisão técnica pendente — Conferir ângulo dos cotovelos e arco na volta; a nova tomada não resolveu esta dúvida. |
+| 15 | Crucifixo declinado com halteres | vinculado; aprovado pelo usuário em 30/10/2026. |
 | 16 | Pull-over com halter | vinculado; revisão final pendente |
 | 17 | Supino reto na máquina | vinculado; revisão final pendente |
 | 18 | Supino declinado com halteres | vinculado; revisão final pendente |
@@ -34,7 +34,7 @@ Há 70 gerações no histórico completo, 46 vinculadas a exercícios distintos 
 
 ## Limites da revisão
 
-Os arquivos foram decodificados e comparados em quadros distribuídos e quadros finais. Exercício, equipamento, pegada e fases do movimento foram conferidos visualmente. Isso não representa homologação técnica profissional. Os crucifixos reto e declinado conservam observações visíveis sobre amplitude e cotovelos. A polia baixa fica sem vídeo e sem imagem de demonstração para evitar uma correspondência incorreta. Não foi testada reprodução em um aparelho Android.
+Os arquivos foram decodificados e comparados em quadros distribuídos e quadros finais. Exercício, equipamento, pegada e fases do movimento foram conferidos visualmente. Isso não representa homologação técnica profissional. As ressalvas dos crucifixos reto e declinado foram encerradas por aprovação visual explícita do usuário em 30/10/2026; a revisão original permanece documentada no histórico do GitHub. A polia baixa fica sem vídeo e sem imagem de demonstração para evitar uma correspondência incorreta. Não foi testada reprodução em um aparelho Android.
 
 ## Verificação
 
