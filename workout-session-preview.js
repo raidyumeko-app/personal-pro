@@ -450,6 +450,7 @@
                           "small",
                           null,
                           "Prescrita: " + (original.load || "A definir"),
+                          props.previousSessions?.length > 0 && " · ",
                           props.previousSessions?.length > 0 &&
                             h(
                               "small",
@@ -462,7 +463,7 @@
                                 );
                                 return v === null
                                   ? "Sem carga anterior registrada"
-                                  : "Última carga registrada: " + v + " kg";
+                                  : "Última carga registrada: " + Number(v).toLocaleString("pt-BR", { maximumFractionDigits: 2 }) + " kg";
                               })(),
                             ),
                         ),

@@ -308,6 +308,20 @@
       btn("Sair", () => root.PersonalProCloud.signOut()),
     );
   }
+  const decimal = (value) => {
+    const n = Number(value);
+    return Number.isFinite(n) ? n.toLocaleString("pt-BR", { maximumFractionDigits: 2 }) : String(value ?? "");
+  };
+  const localDay = (value) => {
+    if (/^\d{4}-\d{2}-\d{2}$/.test(String(value || ""))) return String(value);
+    const d = new Date(value);
+    if (Number.isNaN(d.getTime())) return "";
+    return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+  };
+  const shortDate = (value) => {
+    const day = localDay(value);
+    return day ? day.slice(8, 10) + "/" + day.slice(5, 7) : "";
+  };
   function Spark({ values, label, unit = "" }) {
     const list = values.filter((v) => Number.isFinite(Number(v.value)));
     if (!list.length)
@@ -323,7 +337,7 @@
       el(
         "strong",
         { className: "portal-metric" },
-        list.at(-1).value + " " + unit,
+        decimal(list.at(-1).value) + " " + unit,
       ),
       el(
         "svg",
@@ -331,7 +345,7 @@
           viewBox: "0 0 340 152",
           role: "img",
           "aria-label":
-            label + ": " + list.map((v) => v.value + " " + unit).join(", "),
+            label + ": " + list.map((v) => decimal(v.value) + " " + unit).join("; "),
         },
         el("path", {
           d: "M24 30H316M24 75H316M24 120H316",
@@ -363,9 +377,7 @@
                 fill: "var(--text-dim)",
                 fontSize: 10,
               },
-              v.date
-                ? String(v.date).slice(5, 10).replace("-", "/")
-                : "#" + (i + 1),
+              v.date ? shortDate(v.date) : "#" + (i + 1),
             ),
           ),
         ),
@@ -383,7 +395,7 @@
               { key: i },
               (v.date ? date(v.date) : "Registro sem data") +
                 " · " +
-                v.value +
+                decimal(v.value) +
                 " " +
                 unit,
             ),
@@ -441,7 +453,7 @@
       thigh: "Coxa",
       calf: "Panturrilha",
     };
-    if(!plus)return el('section',null,title('SEUS REGISTROS','Minha Evolução'),el('section',{className:'portal-card'},el('h2',null,'Seus dados básicos'),weights.length?el('p',null,'Último peso registrado: '+weights.at(-1).value+' kg'):el('p',null,'Nenhum peso registrado.'),Object.entries(student.measures||{}).filter(([,v])=>v!==''&&Number(v)>0).map(([key,value])=>el('p',{key},(names[key]||key)+': '+value+' cm')),el('p',{className:'portal-caption'},'Valores registrados pelo seu personal. Seus dados permanecem disponíveis mesmo sem assinatura.')),el('section',{className:'portal-card'},el('h2',null,'Personal Pro+'),el('p',null,'Nutrição e Evolução por R$ 9,90/mês: silhueta corporal, histórico, comparações e gráficos reais, além da sua nutrição privada.'),btn('Conhecer o Personal Pro+',onUpgrade,true)));
+    if(!plus)return el('section',null,title('SEUS REGISTROS','Minha Evolução'),el('section',{className:'portal-card'},el('h2',null,'Seus dados básicos'),weights.length?el('p',null,'Último peso registrado: '+decimal(weights.at(-1).value)+' kg'):el('p',null,'Nenhum peso registrado.'),Object.entries(student.measures||{}).filter(([,v])=>v!==''&&Number(v)>0).map(([key,value])=>el('p',{key},(names[key]||key)+': '+decimal(value)+' cm')),el('p',{className:'portal-caption'},'Valores registrados pelo seu personal. Seus dados permanecem disponíveis mesmo sem assinatura.')),el('section',{className:'portal-card'},el('h2',null,'Personal Pro+'),el('p',null,'Nutrição e Evolução por R$ 9,90/mês: silhueta corporal, histórico, comparações e gráficos reais, além da sua nutrição privada.'),btn('Conhecer o Personal Pro+',onUpgrade,true)));
     return el(
       "section",
       null,
@@ -749,6 +761,8 @@
                       const d = new Date();
                       d.setDate(d.getDate() - ((d.getDay() + 6) % 7) + i);
                       const weekday = d.getDay(),
+                        dayKey = localDay(d),
+                        done = completed.filter((x) => localDay(x.completedAt) === dayKey),
                         assigned = Object.entries(
                           student.workoutWeekdays || {},
                         ).filter(([, values]) =>
@@ -767,10 +781,12 @@
                         ),
                         el(
                           "strong",
-                          null,
-                          assigned.length
-                            ? assigned.map(([k]) => "Treino " + k).join(" · ")
-                            : "Sem treino programado",
+                          done.length ? { className: "portal-week-done" } : null,
+                          done.length
+                            ? "✓ " + [...new Set(done.map((x) => "Treino " + x.workoutId))].join(" · ") + " concluído"
+                            : assigned.length
+                              ? assigned.map(([k]) => "Treino " + k).join(" · ")
+                              : "Sem treino programado",
                         ),
                       );
                     }),
@@ -781,6 +797,8 @@
                       el(root.PersonalProFeedback.Status, {React:R,seenAt:s.feedbackSeenAt}),
                     ),
                   ),
+                  root.PersonalProAccountDeletion &&
+                    el(root.PersonalProAccountDeletion.Panel, { React: R, role: "student" }),
                 ),
               tab === "evolution" && el(R.Fragment, null, el(root.PersonalProParQ.Panel,{React:R,role:"student",linkId:data.linkId,trainerName:data.trainerName}),el(Evolution, { student, sessions, plus,onUpgrade:()=>setTab('nutrition') })),
               tab === "history" &&
