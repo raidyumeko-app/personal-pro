@@ -40,4 +40,4 @@ body,html{background:var(--bg)!important}button,input,select,textarea{font-famil
 /* Auditoria 11/2026: a tela de execução não pode passar da largura do celular (video-preview.html não tem o reset do app). */
 .pp-execution-inner,.pp-execution-inner *{box-sizing:border-box}.pp-execution-inner{max-width:100%}.pp-execution-header{min-width:0;flex-wrap:wrap}.pp-execution-header h2{min-width:0;overflow-wrap:anywhere}
 .pp-account-delete{margin-top:18px}.pp-account-delete summary{cursor:pointer;font-weight:700;color:var(--red,#ff6b6b)}.pp-account-delete ul{margin:8px 0 12px 18px;list-style:disc}.pp-danger{min-height:44px;border-radius:999px;border:1px solid #ff6b6b;background:transparent;color:#ff8a8a;font-weight:700;padding:10px 16px;margin-top:10px}.pp-danger:disabled{opacity:.45}.pp-account-delete-error{color:#ff8a8a;margin-top:8px}
-.pp-legal-links{display:flex;flex-wrap:wrap;gap:6px 0;margin:12px 0 0;font-size:13px}.pp-legal-links a{color:var(--lime)}
+.pp-legal-links{display:flex;flex-wrap:wrap;gap:6px 6px;margin:12px 0 0;font-size:13px}.pp-legal-links a{color:var(--lime);text-decoration:underline;text-underline-offset:2px}

@@ -205,7 +205,7 @@
                 "p",
                 null,
                 exercises.length +
-                  " exercícios · " +
+                  (exercises.length === 1 ? " exercício · " : " exercícios · ") +
                   exercises.reduce((n, e) => n + e.sets, 0) +
                   " séries",
               ),
@@ -449,7 +449,7 @@
                         h(
                           "small",
                           null,
-                          "Prescrita: " + (original.load || "A definir"),
+                          "Prescrita: " + (String(original.load || "").replace(/(\d)\.(\d)/g, "$1,$2") || "A definir"),
                           props.previousSessions?.length > 0 && " · ",
                           props.previousSessions?.length > 0 &&
                             h(
@@ -541,7 +541,7 @@
                               "pp-set-table-row" + (log ? " done" : ""),
                           },
                           h("strong", null, String(i + 1).padStart(2, "0")),
-                          h("span", null, log ? log.weightKg + " kg" : "—"),
+                          h("span", null, log ? Number(log.weightKg).toLocaleString("pt-BR", { maximumFractionDigits: 2 }) + " kg" : "—"),
                           h("span", null, log ? log.reps : ex.reps),
                           h(
                             "button",

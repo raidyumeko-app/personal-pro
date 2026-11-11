@@ -140,11 +140,26 @@
         "https://lnlwkjsfcpeofhajqesh.supabase.co/storage/v1" + r.signedURL
       );
     },
-    async removeEntry(id) {
-      return cloud().request(
+    async removeFile(path) {
+      // Só o dono apaga: o caminho começa pelo id do usuário (mesma regra da política pp_nutrition_files_delete).
+      if (!path) return;
+      if (path.split("/")[0] !== uid()) throw Error("Arquivo de outra conta.");
+      await cloud().request("/storage/v1/object/pp-nutrition", {
+        method: "DELETE",
+        body: JSON.stringify({ prefixes: [path] }),
+      });
+    },
+    async removeEntry(id, filePath = null) {
+      const result = await cloud().request(
         "/rest/v1/pp_nutrition_entries?id=eq." + encodeURIComponent(id),
         { method: "DELETE" },
       );
+      // O registro sai primeiro; o arquivo vai junto para não sobrar foto ou PDF guardado.
+      if (filePath) {
+        try { await this.removeFile(filePath); }
+        catch (error) { error.message = "Registro excluído, mas o arquivo não pôde ser apagado agora: " + error.message; throw error; }
+      }
+      return result;
     },
     async compress(file) {
       if (!["image/jpeg", "image/png", "image/webp"].includes(file.type))

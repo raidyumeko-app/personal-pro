@@ -7,7 +7,8 @@ const path = require('node:path');
 const root = path.join(__dirname, '..');
 const out = path.join(root, 'dist');
 const PUBLIC_EXTENSIONS = new Set(['.html', '.js', '.css', '.json', '.svg', '.webmanifest']);
-const PRIVATE_ROOT_FILES = new Set(['vercel.json', 'package.json', 'package-lock.json', 'schema.sql']);
+// parq-preview.html é só prévia interna do questionário (não tem link no app).
+const PRIVATE_ROOT_FILES = new Set(['vercel.json', 'package.json', 'package-lock.json', 'schema.sql', 'parq-preview.html']);
 const PUBLIC_DIRS = ['assets', 'media', 'vendor', 'docs/compatibility'];
 const PUBLIC_EXTRA = ['THIRD_PARTY_NOTICES.md'];
 

@@ -174,7 +174,7 @@
                     h(
                       "small",
                       null,
-                      (s.workout?.length || 0) + " exercícios na ficha",
+                      ((s.workout?.length || 0) === 1 ? "1 exercício" : (s.workout?.length || 0) + " exercícios") + " na ficha",
                     ),
                   ),
                   "→",

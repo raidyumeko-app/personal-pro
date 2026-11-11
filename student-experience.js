@@ -161,7 +161,7 @@
             {
               viewBox: "0 0 340 155",
               role: "img",
-              "aria-label": "Evolução de peso: " + weights.join(", ") + " kg",
+              "aria-label": "Evolução de peso: " + weights.map((w) => Number(w).toLocaleString("pt-BR", { maximumFractionDigits: 2 })).join("; ") + " kg",
             },
             h("path", {
               d: "M22 26H318 M22 76H318 M22 126H318",
@@ -551,7 +551,7 @@
                               "p",
                               null,
                               list.length +
-                                " exercícios · " +
+                                (list.length === 1 ? " exercício · " : " exercícios · ") +
                                 (student.workoutDurations?.[key] ||
                                   "duração a definir") +
                                 (student.workoutDurations?.[key] ? " min" : ""),

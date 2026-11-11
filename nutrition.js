@@ -573,12 +573,17 @@
                 b(entry.kind === "plan" ? "Ver PDF" : "Ver fotografia", () =>
                   openFile(entry.file_path),
                 ),
-              b("Excluir registro", () =>
-                run(async () => {
-                  await API.removeEntry(entry.id);
-                  await load();
-                }),
-              ),
+              b("Excluir registro", () => {
+                const what = entry.file_path
+                  ? (entry.kind === "plan" ? " e o PDF anexado" : " e a fotografia anexada")
+                  : "";
+                if (typeof root.confirm === "function" && !root.confirm("Excluir este registro" + what + "? Esta ação não pode ser desfeita."))
+                  return;
+                return run(async () => {
+                  try { await API.removeEntry(entry.id, entry.file_path || null); }
+                  finally { await load(); }
+                });
+              }),
             ),
           )
         : h("p", null, "Seus registros aparecerão aqui."),

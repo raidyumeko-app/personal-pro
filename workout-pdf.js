@@ -27,6 +27,9 @@
   function guidance(exercise, options) {
     return [...(technique(exercise)?['Técnica: '+technique(exercise)]:[]),...(exercise.notes?['Orientações: '+exercise.notes]:[]),...(exercise.alternatives?.length?['Substituições: '+exercise.alternatives.join('; ')]:[]),...(options.includeInstructions?(options.instructions?.get(exercise.name)?.map((step,index)=>'Execução '+(index+1)+': '+step)||['Instruções de execução indisponíveis nesta fonte.']):[])];
   }
+  // Identidade do app: preto #0b0f0c e verde-limão #c4f36b.
+  const INK = [11, 15, 12], LIME = [196, 243, 107], LIME_SOFT = [241, 252, 222];
+  const brLoad = value => String(value ?? '').replace(/(\d)\.(\d)/g, '$1,$2');
   function drawCoachLogo(doc,coach,x,y,width,height){
     const logo=coach.pdfLogo;
     if(typeof logo!=='string'||logo.length>500000||!/^data:image\/(jpeg|png);base64,/.test(logo))return;
@@ -54,18 +57,18 @@
       return doc.splitTextToSize(clean(value) || '-', cellWidth);
     };
     function tableHeader() {
-      doc.setFillColor(26, 36, 49); doc.rect(left, y, width, 10, 'F');
+      doc.setFillColor(...INK); doc.rect(left, y, width, 10, 'F');
       let x = left;
       ['#', 'Exercício', 'Séries', 'Repetições / tempo', 'Carga / intensidade', 'Descanso'].forEach((title, i) => {
-        text(title, x + (i === 0 ? 2 : padding), y + 6.3, 8, true, [255, 255, 255]); x += columns[i];
+        text(title, x + (i === 0 ? 2 : padding), y + 6.3, 8, true, LIME); x += columns[i];
       });
       y += 10;
     }
     function startPage(first) {
       if (!first) doc.addPage();
-      doc.setFillColor(24, 63, 49); doc.rect(0, 0, 210, first ? 33 : 23, 'F');
-      doc.setFillColor(177, 224, 195); doc.rect(left, first ? 27 : 18, 20, 1.4, 'F');
-      text('PERSONAL PRO', left, 12, 9, true, [177, 224, 195]);
+      doc.setFillColor(...INK); doc.rect(0, 0, 210, first ? 33 : 23, 'F');
+      doc.setFillColor(...LIME); doc.rect(left, first ? 27 : 18, 20, 1.4, 'F');
+      text('PERSONAL PRO', left, 12, 9, true, LIME);
       if(first)drawCoachLogo(doc,coach,169,7,26,17);
       text(first ? 'Ficha de treino' : 'Ficha de treino - continuação', left, first ? 23 : 17, first ? 21 : 11, true, [255, 255, 255]);
       y = first ? 43 : 32;
@@ -78,7 +81,7 @@
           }
           y += 4;
         }
-        text('Emitido em ' + dateLabel + '  |  ' + student.workout.length + ' exercícios', left, y, 9, false, [97, 108, 120]);
+        text('Emitido em ' + dateLabel + '  |  ' + student.workout.length + (student.workout.length === 1 ? ' exercício' : ' exercícios'), left, y, 9, false, [97, 108, 120]);
         y += 8;
       } else {
         text(lines(name, 120, 9)[0], left, y, 9, true);
@@ -94,13 +97,13 @@
     ordered.forEach((exercise, index) => {
       if (previousDay !== dayOf(exercise)) {
         if (y + 25 > bottom) startPage(false);
-        doc.setFillColor(232, 244, 236); doc.rect(left, y, width, 9, 'F');
-        text(dayLabel(student,dayOf(exercise)), left + 3, y + 6, 9, true, [23, 107, 82]);
+        doc.setFillColor(...LIME_SOFT); doc.rect(left, y, width, 9, 'F'); doc.setFillColor(...LIME); doc.rect(left, y, 1.6, 9, 'F');
+        text(dayLabel(student,dayOf(exercise)), left + 4, y + 6, 9, true, INK);
         y += 9; previousDay = dayOf(exercise); dayIndex=0;
       }
       const [series, repetitions] = dose(exercise);
       const rest = Number(exercise.rest);
-      const cells = [String(++dayIndex), exercise.name, series, repetitions, exercise.load,
+      const cells = [String(++dayIndex), exercise.name, series, repetitions, brLoad(exercise.load),
         exercise.rest !== undefined && exercise.rest !== '' && Number.isFinite(rest) ? Math.max(0, rest) + ' s' : '-'];
       const wrapped = cells.map((value, i) => lines(value, columns[i] - (i === 0 ? 2 : padding * 2), 9.5, i === 1));
       const count = Math.max(...wrapped.map(value => value.length));
@@ -131,7 +134,7 @@
         const noteLines = lines(detailText, width - 8, 9);
         for (const line of noteLines) {
           if (y + 8 > bottom) startPage(false);
-          text(line, left + 4, y + 5, 9, false, [42, 86, 66]); y += 4.7;
+          text(line, left + 4, y + 5, 9, false, [52, 60, 56]); y += 4.7;
         }
         y += 3;
       }
@@ -173,21 +176,30 @@
   function makeMobileDocument(student,coach,date,options) {
     const doc=new root.jspdf.jsPDF({unit:'mm',format:'a5',compress:true});
     const left=12,width=124,bottom=190;let y=0;
-    const text=(value,x,baseline,size=12,bold=false)=>{doc.setFont('helvetica',bold?'bold':'normal');doc.setFontSize(size);doc.setTextColor(24,52,42);doc.text(clean(value),x,baseline)};
-    function page(first=false){if(!first)doc.addPage();doc.setFillColor(24,63,49);doc.rect(0,0,148,23,'F');doc.setTextColor(255,255,255);doc.setFont('helvetica','bold');doc.setFontSize(12);doc.text('PERSONAL PRO',left,13);if(first)drawCoachLogo(doc,coach,109,5,26,13);y=32;if(!first){doc.setFont('helvetica','bold');doc.setFontSize(10);const headerLines=doc.splitTextToSize(clean(student.name),width);text(headerLines[0]||'Aluno',left,y,10,true);y+=8}}
-    function para(value,size=12,bold=false){doc.setFont('helvetica',bold?'bold':'normal');doc.setFontSize(size);for(const line of doc.splitTextToSize(clean(value),width)){if(y+6>bottom)page();text(line,left,y,size,bold);y+=size*.48}y+=3}
-    page(true);para('Ficha de treino',21,true);para(student.name,17,true);para('Personal: '+(coach.name||'Personal'),11);if(coach.studio)para(coach.studio,11);if(coach.pdfContact??coach.whatsapp)para('Contato: '+(coach.pdfContact??coach.whatsapp),11);para(date.toLocaleDateString('pt-BR'),10);y+=3;
+    const text=(value,x,baseline,size=12,bold=false,color=[20,24,22])=>{doc.setFont('helvetica',bold?'bold':'normal');doc.setFontSize(size);doc.setTextColor(...color);doc.text(clean(value),x,baseline)};
+    const wrap=(value,size,bold=false)=>{doc.setFont('helvetica',bold?'bold':'normal');doc.setFontSize(size);return doc.splitTextToSize(clean(value),width)};
+    // Cabeçalho preto com detalhe verde-limão; a 1ª página já traz aluno e personal dentro da faixa.
+    function page(first=false){if(!first)doc.addPage();doc.setFillColor(...INK);doc.rect(0,0,148,first?38:20,'F');doc.setFillColor(...LIME);doc.rect(left,first?33:16,16,1.2,'F');
+      text('PERSONAL PRO',left,10,9,true,LIME);if(first){drawCoachLogo(doc,coach,109,5,26,13);text('Ficha de treino',left,19,16,true,[255,255,255]);text(wrap(student.name,12,true)[0]||'Aluno',left,27,12,true,[255,255,255]);y=46}
+      else{text(wrap(student.name,10,true)[0]||'Aluno',left,30,10,true);y=38}}
+    function para(value,size=12,bold=false,color){for(const line of wrap(value,size,bold)){if(y+6>bottom)page();text(line,left,y,size,bold,color);y+=size*.48}y+=3}
+    page(true);
+    const info=['Personal: '+(coach.name||'Personal')+(coach.studio?' · '+coach.studio:''),[(coach.pdfContact??coach.whatsapp)?'Contato: '+(coach.pdfContact??coach.whatsapp):'','Emitido em '+date.toLocaleDateString('pt-BR')].filter(Boolean).join('  |  ')];
+    for(const line of info)para(line,10,false,[70,78,74]);y+=1;
+    // Altura real do bloco (nome + 2 linhas de dose + separador) em vez de um valor fixo, para não sobrar página vazia.
+    const blockHeight=(exercise,index)=>wrap((index+1)+'. '+exercise.name,14,true).length*14*.48+3+2*(11*.48+3)+8;
     for(const day of ['A','B','C']){
       const exercises=student.workout.filter(ex=>dayOf(ex)===day);if(!exercises.length)continue;
-      if(y+60>bottom)page();para(dayLabel(student,day),13,true);
+      if(y+12+blockHeight(exercises[0],0)>bottom)page();
+      doc.setFillColor(...INK);doc.roundedRect(left,y-5,width,9,1.5,1.5,'F');text(dayLabel(student,day),left+3,y+1,11,true,LIME);y+=10;
       exercises.forEach((exercise,index)=>{
-        if(y+45>bottom)page();para((index+1)+'. '+exercise.name,15,true);
+        if(y+blockHeight(exercise,index)>bottom)page();para((index+1)+'. '+exercise.name,14,true);
         const [series,reps]=dose(exercise);
-        para('Séries: '+(series||'-')+'  |  Repetições / tempo: '+(reps||'-'),12);
-        para('Carga: '+(exercise.load||'-'),12);para('Descanso: '+(exercise.rest??'-')+' s',12);
-        for(const detail of guidance(exercise,options))para(detail,12);
+        para('Séries: '+(series||'-')+'  |  Repetições / tempo: '+(reps||'-'),11);
+        para('Carga: '+(brLoad(exercise.load)||'-')+'  |  Descanso: '+(exercise.rest??'-')+' s',11);
+        for(const detail of guidance(exercise,options))para(detail,11);
         if(options.illustrated){const photos=options.photos?.get(exercise.name)||[];if(photos.length){if(y+49>bottom){page();para(exercise.name+' - fotos',13,true)}photos.forEach((bytes,position)=>{try{const props=doc.getImageProperties(bytes),scale=Math.min(58/props.width,39/props.height),w=props.width*scale,h=props.height*scale;doc.addImage(bytes,'JPEG',left+position*63+(58-w)/2,y,w,h);text('Posição '+(position+1),left+position*63,y+43,9)}catch{text('Foto indisponível',left+position*63,y+12,9)}});y+=49}else para('Foto não disponível para esta variação.',10)}
-        if(y+5>bottom)page();doc.setDrawColor(210,224,215);doc.line(left,y,left+width,y);y+=9;
+        if(y+5>bottom)page();doc.setDrawColor(220,226,222);doc.line(left,y-1,left+width,y-1);y+=5;
       });
     }
     const total=doc.getNumberOfPages();for(let i=1;i<=total;i++){doc.setPage(i);text(i+' / '+total,122,201,9)}

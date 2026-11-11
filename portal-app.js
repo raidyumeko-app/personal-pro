@@ -84,20 +84,20 @@
       { className: "portal-auth" },
       el(
         "section",
-        { className: "portal-auth-art", "aria-hidden": true },
+        { className: "portal-auth-art" },
         el(
           "div",
-          { className: "portal-brand" },
+          { className: "portal-brand", "aria-hidden": true },
           "P",
           el("span", null, "PERSONAL PRO"),
         ),
         el(
           "div",
           { className: "portal-auth-statement" },
-          el("small", null, "MOVIMENTO COM PROPÓSITO"),
+          el("small", { "aria-hidden": true }, "MOVIMENTO COM PROPÓSITO"),
           el(
             "strong",
-            null,
+            { "aria-hidden": true },
             "Seu próximo ",
             el("br"),
             "nível começa",
@@ -582,7 +582,10 @@
       return()=>{disposed=true;clearInterval(timer);root.removeEventListener('focus',sync)};
     },[!!data,pendingReceiptIds]);
     const student = data?.student;
+    const [staleSeen, setStaleSeen] = R.useState("");
+    const sessionEngine = root.PersonalProWorkoutSession;
     const active = sessions.find((s) => !s.completedAt),
+      staleActive = active && staleSeen !== active.id && sessionEngine?.isStale?.(active) ? active : null,
       prescription = active?.prescription || student?.workout || [];
     const exercises = prescription
       .filter((ex) => (ex.day || "A") === (active?.workoutId || day))
@@ -685,19 +688,16 @@
                       el(
                         "p",
                         null,
-                        summary.logs.length +
-                          " séries · " +
-                          new Set(summary.logs.map((l) => l.exerciseId)).size +
-                          " exercícios · " +
-                          Math.max(
-                            1,
-                            Math.round(
-                              (Date.parse(summary.completedAt) -
-                                Date.parse(summary.startedAt)) /
-                                60000,
-                            ),
-                          ) +
-                          " min",
+                        (() => {
+                          const sets = summary.logs.length,
+                            count = new Set(summary.logs.map((l) => l.exerciseId)).size,
+                            minutes = sessionEngine?.durationMinutes?.(summary);
+                          return (
+                            sets + (sets === 1 ? " série · " : " séries · ") +
+                            count + (count === 1 ? " exercício" : " exercícios") +
+                            (minutes ? " · " + minutes + " min" : "")
+                          );
+                        })(),
                       ),
                       summary.effort &&
                         el("p", null, "Seu esforço: " + summary.effort),
@@ -748,12 +748,31 @@
                         },
                         onFinish: finish,
                       }),
-                  active &&
-                    el(
-                      "p",
-                      { className: "portal-notice" },
-                      "Há um treino em andamento. Toque em Começar treino para retomar.",
-                    ),
+                  staleActive
+                    ? el(
+                        "section",
+                        { className: "portal-card portal-stale-session", role: "alert", "aria-label": "Treino antigo em aberto" },
+                        el("p", null,
+                          "Você começou o Treino " + staleActive.workoutId + " em " +
+                            new Date(staleActive.startedAt).toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" }) + " às " +
+                            new Date(staleActive.startedAt).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }) +
+                            " e não concluiu. Quer recomeçar do zero ou continuar de onde parou?"),
+                        el("div", { className: "portal-actions" },
+                          btn("Recomeçar do zero", () =>
+                            act.run(async () => {
+                              const saved = await API().save({ ...staleActive, logs: [] }, false, null, "");
+                              setSessions((list) => [saved, ...list.filter((x) => x.id !== saved.id)]);
+                              setStaleSeen(staleActive.id);
+                            }), true, { disabled: act.busy }),
+                          btn("Continuar de onde parei", () => setStaleSeen(staleActive.id), false, { disabled: act.busy }),
+                        ),
+                      )
+                    : active &&
+                      el(
+                        "p",
+                        { className: "portal-notice" },
+                        "Há um treino em andamento. Toque em Começar treino para retomar.",
+                      ),
                   el(
                     "section",
                     { className: "portal-card" },
@@ -845,7 +864,7 @@
                                   " · " +
                                   l.reps +
                                   " repetições · " +
-                                  l.weightKg +
+                                  decimal(l.weightKg) +
                                   " kg",
                               ),
                             ),
@@ -894,7 +913,27 @@
   function TrainerTools({ React, studentId }) {
     const [token, setToken] = React.useState(""),
       [error, setError] = React.useState(""),
-      [busy, setBusy] = React.useState(false);
+      [busy, setBusy] = React.useState(false),
+      // "checking" | "linked" | "unlinked" | "unknown": aluno já vinculado não recebe novo convite.
+      [link, setLink] = React.useState("checking");
+    React.useEffect(() => {
+      let alive = true;
+      setLink("checking");
+      const owner = API()?.uid?.();
+      if (!owner || !studentId) { setLink("unknown"); return; }
+      API()
+        .rows("pp_links", "select=student_user_id&trainer_id=eq." + encodeURIComponent(owner) + "&legacy_student_id=eq." + encodeURIComponent(studentId) + "&limit=1")
+        .then((list) => { if (alive) setLink(list?.[0]?.student_user_id ? "linked" : "unlinked"); })
+        .catch(() => { if (alive) setLink("unknown"); });
+      return () => { alive = false; };
+    }, [studentId]);
+    if (link === "linked")
+      return React.createElement(
+        "section",
+        { className: "portal-invite" },
+        React.createElement("h4", null, "Acesso do aluno"),
+        React.createElement("p", { role: "status" }, "✓ Aluno vinculado: ele já entra no aplicativo com a própria conta."),
+      );
     return React.createElement(
       "section",
       { className: "portal-invite" },
@@ -904,7 +943,7 @@
         null,
         "O aluno cria a própria conta e usa este convite. O código vale por 7 dias e só pode ser usado uma vez.",
       ),
-      React.createElement(
+      link === "checking" ? React.createElement("p", { role: "status" }, "Verificando acesso do aluno…") : React.createElement(
         "button",
         {
           type: "button",
