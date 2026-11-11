@@ -1,8 +1,9 @@
 -- Regra do proprietário (11/11/2026): o aluno usa treino, ficha, execução, histórico,
 -- evolução, PAR-Q e vínculo de graça, para sempre. Só a nutrição extra é paga
 -- (Personal Pro+: 30 dias grátis e depois R$ 4,90/mês). Nenhum dado é apagado:
--- leitura dos registros de nutrição já salvos continua liberada; criar, alterar,
--- excluir e enviar arquivos de nutrição exige período gratuito ou assinatura ativa.
+-- leitura dos registros de nutrição já salvos continua liberada; excluir o próprio
+-- registro também é livre. Criar, alterar e enviar arquivos de nutrição exige
+-- período gratuito ou assinatura ativa.
 begin;
 
 -- Status do Personal Pro+ (somente nutrição extra). Mesmo formato de antes para o cliente;
@@ -101,12 +102,21 @@ alter policy pp_parq_participant on public.pp_parq_responses
 -- pp_private.submit_parq continua chamando student_allowed(), que agora só exige conta de aluno.
 
 -- Nutrição: consultar o que já foi salvo é livre (dados preservados);
--- gravar, alterar, excluir registros e enviar arquivos exige período gratuito ou Personal Pro+.
+-- excluir o próprio registro também é livre (só o dono, auth.uid(); o personal
+-- vinculado e outros usuários não apagam a linha do aluno).
+-- Criar, alterar e enviar arquivos exige período gratuito ou Personal Pro+.
 -- (A exclusão de arquivos próprios continua como antes, sem exigir assinatura.)
 alter policy pp_nutrition_settings_read on public.pp_nutrition_settings using(user_id=(select auth.uid()));
 alter policy pp_nutrition_entries_read on public.pp_nutrition_entries using(user_id=(select auth.uid()));
 alter policy pp_nutrition_settings_write on public.pp_nutrition_settings using(user_id=(select auth.uid()) and (select pp_private.nutrition_allowed())) with check(user_id=(select auth.uid()) and (select pp_private.nutrition_allowed()));
-alter policy pp_nutrition_entries_write on public.pp_nutrition_entries using(user_id=(select auth.uid()) and (select pp_private.nutrition_allowed())) with check(user_id=(select auth.uid()) and (select pp_private.nutrition_allowed()));
+drop policy if exists pp_nutrition_entries_write on public.pp_nutrition_entries;
+create policy pp_nutrition_entries_insert on public.pp_nutrition_entries for insert to authenticated
+ with check(user_id=(select auth.uid()) and (select pp_private.nutrition_allowed()));
+create policy pp_nutrition_entries_update on public.pp_nutrition_entries for update to authenticated
+ using(user_id=(select auth.uid()) and (select pp_private.nutrition_allowed()))
+ with check(user_id=(select auth.uid()) and (select pp_private.nutrition_allowed()));
+create policy pp_nutrition_entries_delete on public.pp_nutrition_entries for delete to authenticated
+ using(user_id=(select auth.uid()));
 alter policy pp_nutrition_files_read on storage.objects using(bucket_id='pp-nutrition' and (storage.foldername(name))[1]=(select auth.uid())::text);
 alter policy pp_nutrition_files_insert on storage.objects with check(bucket_id='pp-nutrition' and (storage.foldername(name))[1]=(select auth.uid())::text and (select pp_private.nutrition_allowed()));
 notify pgrst,'reload schema';

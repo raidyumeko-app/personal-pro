@@ -573,13 +573,12 @@
                 b(entry.kind === "plan" ? "Ver PDF" : "Ver fotografia", () =>
                   openFile(entry.file_path),
                 ),
-              paid &&
-                b("Excluir registro", () =>
-                  run(async () => {
-                    await API.removeEntry(entry.id);
-                    await load();
-                  }),
-                ),
+              b("Excluir registro", () =>
+                run(async () => {
+                  await API.removeEntry(entry.id);
+                  await load();
+                }),
+              ),
             ),
           )
         : h("p", null, "Seus registros aparecerão aqui."),
