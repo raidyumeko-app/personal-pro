@@ -222,7 +222,7 @@
         el(
           "p",
           { className: "portal-caption" },
-          "Profissional: 30 dias grátis. Depois, R$ 29,90/mês ou continuar grátis com anúncios. Aluno: 30 dias grátis; depois, R$ 9,90/mês para continuar, sem opção com anúncios.",
+          "Profissional: 30 dias grátis. Depois, R$ 29,90/mês ou continuar grátis com anúncios. Aluno: treinos, ficha, histórico, evolução e PAR-Q grátis para sempre. Nutrição extra (Personal Pro+): 30 dias grátis; depois, R$ 4,90/mês.",
         ),
       ),
     );
@@ -296,7 +296,7 @@
           "p",
           { className: "portal-caption" },
           role === "student"
-            ? "Você tem 30 dias grátis. Depois, R$ 9,90/mês para continuar, sem anúncios. Após o cadastro, insira o convite do seu personal. O gênero declarado orienta apenas ilustrações."
+            ? "Seus treinos, ficha, histórico e evolução são grátis para sempre. A nutrição extra (diário com foto, água e importação do PDF do nutricionista) tem 30 dias grátis e depois custa R$ 4,90/mês. Após o cadastro, insira o convite do seu personal. O gênero declarado orienta apenas ilustrações."
             : "Seu período gratuito começa ao cadastrar o perfil profissional. No dia 31 não trava.",
         ),
         btn("Continuar", undefined, true, {
@@ -391,7 +391,7 @@
       ),
     );
   }
-  function Evolution({ student, sessions, plus=false, onUpgrade }) {
+  function Evolution({ student, sessions }) {
     const [part, setPart] = R.useState("summary"),
       [region, setRegion] = R.useState("waist"),
       [exerciseId, setExerciseId] = R.useState("");
@@ -441,7 +441,6 @@
       thigh: "Coxa",
       calf: "Panturrilha",
     };
-    if(!plus)return el('section',null,title('SEUS REGISTROS','Minha Evolução'),el('section',{className:'portal-card'},el('h2',null,'Seus dados básicos'),weights.length?el('p',null,'Último peso registrado: '+weights.at(-1).value+' kg'):el('p',null,'Nenhum peso registrado.'),Object.entries(student.measures||{}).filter(([,v])=>v!==''&&Number(v)>0).map(([key,value])=>el('p',{key},(names[key]||key)+': '+value+' cm')),el('p',{className:'portal-caption'},'Valores registrados pelo seu personal. Seus dados permanecem disponíveis mesmo sem assinatura.')),el('section',{className:'portal-card'},el('h2',null,'Personal Pro+'),el('p',null,'Nutrição e Evolução por R$ 9,90/mês: silhueta corporal, histórico, comparações e gráficos reais, além da sua nutrição privada.'),btn('Conhecer o Personal Pro+',onUpgrade,true)));
     return el(
       "section",
       null,
@@ -505,8 +504,7 @@
     );
   }
   function Student({ member }) {
-    const [data, setData] = R.useState(null), [plus,setPlus]=R.useState(false),
-      [access, setAccess] = R.useState(null),
+    const [data, setData] = R.useState(null),
       [sessions, setSessions] = R.useState([]),
       [catalog, setCatalog] = R.useState([]),
       [tab, setTab] = R.useState("home"),
@@ -515,19 +513,18 @@
         new URLSearchParams(location.search).get("invite") || "",
       ),
       [loaded, setLoaded] = R.useState(false),
+      [failed, setFailed] = R.useState(false),
       [summary, setSummary] = R.useState(null),
       [more, setMore] = R.useState(true),
       act = useAction();
     async function refresh() {
-      let status;
-      try { status = await API().studentAccess(); }
-      catch(error) { setAccess(null); setLoaded(true); throw error; }
-      setAccess(status);
-      if (!status.active) { setData(null); setSessions([]); setPlus(false); setLoaded(true); return null; }
-      const [d, s] = await Promise.all([API().studentData(), API().sessions()]);
-      setPlus(true);
+      // Treino, ficha, histórico e evolução são gratuitos para o aluno: não há bloqueio por prazo.
+      let d, s;
+      try { [d, s] = await Promise.all([API().studentData(), API().sessions()]); }
+      catch(error) { setFailed(true); setLoaded(true); throw error; }
+      setFailed(false);
       setData(d);
-      Promise.all([fetch("/exercise-library.json").then(r=>r.json()),fetch("/exercise-instructions.pt.json").then(r=>r.json())]).then(([items,steps])=>root.PersonalProExerciseCompatibility?root.PersonalProExerciseCompatibility.forWorkouts(items,steps,d.student?.workout||[]):{catalog:items,translations:steps}).then(resolved=>setCatalog(resolved.catalog.map(item=>({...item,instructions:resolved.translations[item.id]||item.instructions})))).catch(()=>{});
+      Promise.all([fetch("/exercise-library.json").then(r=>r.json()),fetch("/exercise-instructions.pt.json").then(r=>r.json())]).then(([items,steps])=>root.PersonalProExerciseCompatibility?root.PersonalProExerciseCompatibility.forWorkouts(items,steps,d?.student?.workout||[]):{catalog:items,translations:steps}).then(resolved=>setCatalog(resolved.catalog.map(item=>({...item,instructions:resolved.translations[item.id]||item.instructions})))).catch(()=>{});
       setSessions(s);
       setMore(s.length === 30);
       setLoaded(true);
@@ -537,17 +534,9 @@
       act.run(refresh);
 
     }, []);
-    R.useEffect(() => {
-      if (!access?.active) return;
-      const recheck = () => { setAccess(null); act.run(refresh); };
-      const delay = Math.max(0, Date.parse(access.expiresAt) - Date.parse(access.serverNow));
-      const timer = setTimeout(recheck, Math.min(delay, 2147483647));
-      root.addEventListener('focus', recheck);
-      return () => { clearTimeout(timer); root.removeEventListener('focus', recheck); };
-    }, [access]);
     const pendingReceiptIds = sessions.filter(s=>s.completedAt&&!s.feedbackSeenAt).map(s=>s.id).join(',');
     R.useEffect(() => {
-      if (!access?.active || !pendingReceiptIds || !API().feedbackReceipts) return;
+      if (!data || !pendingReceiptIds || !API().feedbackReceipts) return;
       let disposed=false, pending=false;
       const sync=async()=>{
         if(pending) return;
@@ -564,14 +553,7 @@
       const timer=setInterval(sync,15000);
       root.addEventListener('focus',sync);
       return()=>{disposed=true;clearInterval(timer);root.removeEventListener('focus',sync)};
-    },[access?.active,pendingReceiptIds]);
-    if (!access?.active) return el('main',{className:'portal-auth'},el('section',{className:'portal-card'},
-      title('PERSONAL PRO', !loaded ? 'Conferindo seu acesso…' : access ? 'Seu período gratuito terminou.' : 'Não foi possível conferir seu acesso.'),
-      loaded && el('p',null,'O aluno tem 30 dias grátis. Depois, a assinatura de R$ 9,90/mês libera treinos, nutrição e evolução. Não há opção com anúncios. Seus dados e o vínculo com o personal são preservados.'),
-      el(Notice,{action:act}),
-      loaded && btn('Assinar por R$ 9,90/mês',()=>act.setMessage('A contratação pelo Google Play ainda não está disponível nesta prévia. Nenhuma cobrança foi feita.'),true),
-      loaded && btn('Verificar acesso novamente',()=>act.run(refresh),false,{disabled:act.busy}),
-      btn('Sair',()=>root.PersonalProCloud.signOut())));
+    },[!!data,pendingReceiptIds]);
     const student = data?.student;
     const active = sessions.find((s) => !s.completedAt),
       prescription = active?.prescription || student?.workout || [];
@@ -605,6 +587,10 @@
       el(Notice, { action: act }),
       !loaded
         ? el("p", { role: "status" }, "Carregando seus treinos…")
+        : failed && !data
+          ? el("section", { className: "portal-card" },
+              el("p", null, "Não foi possível carregar seus treinos agora. Seus dados continuam guardados."),
+              btn("Tentar novamente", () => act.run(refresh), true, { disabled: act.busy }))
         : !student
           ? el(
               "section",
@@ -782,7 +768,7 @@
                     ),
                   ),
                 ),
-              tab === "evolution" && el(R.Fragment, null, el(root.PersonalProParQ.Panel,{React:R,role:"student",linkId:data.linkId,trainerName:data.trainerName}),el(Evolution, { student, sessions, plus,onUpgrade:()=>setTab('nutrition') })),
+              tab === "evolution" && el(R.Fragment, null, el(root.PersonalProParQ.Panel,{React:R,role:"student",linkId:data.linkId,trainerName:data.trainerName}),el(Evolution, { student, sessions })),
               tab === "history" &&
                 el(
                   "section",
@@ -974,7 +960,7 @@
       e(
         "p",
         null,
-        "Para o profissional, no dia 31 não trava: você pode continuar com anúncios. O aluno tem 30 dias grátis e, depois, assinatura de R$ 9,90/mês, sem opção com anúncios.",
+        "Para o profissional, no dia 31 não trava: você pode continuar com anúncios. Para o aluno, o treino é sempre grátis; só a nutrição extra (Personal Pro+) custa R$ 4,90/mês depois de 30 dias.",
       ),
       !paid &&
         e(

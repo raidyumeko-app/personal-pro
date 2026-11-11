@@ -153,17 +153,18 @@ Verificação: `node --test tests/*.test.cjs`. Os testes cobrem o PDF real, acen
 - O status Pro é restaurado a partir de `user.app_metadata.personal_pro_subscription`, retornado pelo endpoint autenticado `/auth/v1/user`. O contrato usa `status: active` e `current_period_end` em ISO 8601 no futuro. Apenas infraestrutura administrativa/servidor deve definir esse metadado após validar o pagamento.
 - Perfil, `user_metadata`, cliques e armazenamento local não concedem assinatura Pro. Assinatura vencida, cancelada ou com validade inválida não é reconhecida como ativa.
 - Assinante ativo não recebe a opção/aviso de demonstração dentro da conta. Ao sair, o status em memória é limpo para não passar à conta seguinte.
-- O botão **Assinar R$ 19,90** não simula mais uma ativação. O checkout e o servidor que confirma pagamentos e atualiza esse status ainda precisam ser integrados. Este ajuste cobre a apresentação do estado, não implementa cobrança ou autorização de recursos pagos no backend.
+- O botão **Assinar R$ 29,90** não simula mais uma ativação. O checkout e o servidor que confirma pagamentos e atualiza esse status ainda precisam ser integrados. Este ajuste cobre a apresentação do estado, não implementa cobrança ou autorização de recursos pagos no backend.
 
 Validação: `node --test tests/*.test.cjs`, incluindo login/restauração com assinatura ativa simulada no retorno da API, saída da demonstração, troca de conta e rejeição de metadados editáveis. Não foi executado um pagamento real.
 
 ## Modelo comercial do Personal Pro
 
-Regras atualizadas pelo proprietário em 19/10/2026. Esta seção trata do pagamento pelo uso do aplicativo, separado do financeiro do personal.
+Regras atualizadas pelo proprietário em 19/10/2026; regra do aluno revista em 11/11/2026. Esta seção trata do pagamento pelo uso do aplicativo, separado do financeiro do personal.
 
 - **Período gratuito:** os primeiros 30 dias são grátis.
 - **Profissional:** depois do período gratuito, R$ 29,90/mês ou continuar gratuitamente com anúncios. Para o profissional: “No dia 31 não trava.”
-- **Aluno:** 30 dias grátis com todas as áreas de aluno. Depois, R$ 9,90/mês para continuar usando treinos, nutrição e evolução. Sem assinatura válida, bloquear o acesso; não há opção de anúncios para aluno. Dados e vínculos são preservados. Um único produto, sem cobrança separada de Nutrição/Evolução.
+- **Aluno:** treinos, ficha, execução e registro do treino, histórico, evolução, PAR-Q e vínculo com o personal são grátis para sempre, sem bloqueio depois de 30 dias.
+- **Personal Pro+ (aluno, só nutrição extra):** diário com foto das refeições, registro de água, importação do PDF do nutricionista e demais extras de nutrição. 30 dias grátis e, depois, R$ 4,90/mês, sem opção de anúncios. Sem assinatura, o plano alimentar e os registros já salvos continuam visíveis; novos registros, fotos e importações ficam bloqueados, com aviso apenas dentro da Nutrição. Nenhum dado é apagado.
 - **Programa de indicação de profissionais:** após pagamento confirmado, oferecer “Indique um amigo”.
 - **Condição da recompensa:** indicar ou cadastrar um amigo não basta. O usuário que indicou recebe o benefício quando esse amigo também pagar pelo aplicativo.
 - **Recompensa:** cada indicação válida concede 3 dias de benefício. A aplicação deve respeitar as regras do Google Play Billing, sem alterar datas de renovação arbitrariamente.
@@ -171,7 +172,7 @@ Regras atualizadas pelo proprietário em 19/10/2026. Esta seção trata do pagam
 
 ### Estado da implementação
 
-Na branch de prévia, o servidor valida o prazo de 30 dias e o direito do aluno, bloqueando sessões e nutrição após expiração. O endpoint de validação Google Play e o registro de indicações existem, mas as credenciais, integração nativa e aplicação dos benefícios pelo provedor permanecem pendentes. O botão de assinatura informa a indisponibilidade e não ativa um pagamento fictício. Anúncios reais ainda dependem do provedor.
+Na branch de prévia, o servidor libera a área de treino do aluno sem prazo e valida o período de 30 dias e o Personal Pro+ apenas para gravar nutrição e enviar arquivos (migração `20261111120000_student_free_core_nutrition_plus.sql`). O endpoint de validação Google Play e o registro de indicações existem, mas as credenciais, integração nativa e aplicação dos benefícios pelo provedor permanecem pendentes. O botão de assinatura informa a indisponibilidade e não ativa um pagamento fictício. Anúncios reais ainda dependem do provedor.
 
 ## Limitações existentes
 
