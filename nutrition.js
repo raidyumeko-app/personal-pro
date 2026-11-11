@@ -107,6 +107,8 @@
       [draft, setDraft] = R.useState(null),
       [pdf, setPdf] = R.useState(null),
       [reminder, setReminder] = R.useState("09:00");
+    // Declared last so existing hook order (and tests that read it) stay stable.
+    const [plusInfo, setPlusInfo] = R.useState(null);
     const b = (label, fn, primary = false, extra = {}) =>
       h(
         "button",
@@ -153,6 +155,7 @@
         API.nutrition(),
       ]);
       setPaid(ent.active === true);
+      setPlusInfo(ent);
       setSettings(
         info[0][0] || { goal_ml: 2500, portion_ml: 240, reminders: [] },
       );
@@ -604,14 +607,14 @@
             null,
             !paid &&
               card(
-                "Uma rotina mais organizada.",
+                "Nutrição extra · Personal Pro+",
                 h(
                   "p",
                   null,
-                  "Personal Pro — 30 dias grátis para o aluno. Depois, R$ 9,90/mês para continuar com treinos, nutrição e evolução, sem anúncios.",
+                  "Seu treino continua grátis. O diário com foto das refeições, o registro de água e a importação do PDF do nutricionista fazem parte do Personal Pro+, por R$ 4,90/mês, sem anúncios.",
                 ),
                 b(
-                  "Assinar Personal Pro+ · R$ 9,90/mês",
+                  "Assinar Personal Pro+ · R$ 4,90/mês",
                   () =>
                     setMessage(
                       "A contratação pelo Google Play ainda não está disponível nesta prévia. Nenhuma assinatura foi ativada.",
@@ -621,8 +624,14 @@
                 h(
                   "p",
                   { className: "portal-caption" },
-                  "Registros anteriores permanecem disponíveis para consulta. Novos registros exigem assinatura confirmada.",
+                  "Seu plano alimentar e seus registros anteriores continuam disponíveis para consulta. Novos registros, fotos e importações exigem o Personal Pro+.",
                 ),
+              ),
+            paid && plusInfo?.status === "trial" && plusInfo.trialUntil &&
+              h(
+                "p",
+                { className: "portal-caption" },
+                "Nutrição extra grátis até " + new Date(plusInfo.trialUntil).toLocaleDateString("pt-BR") + ". Depois, R$ 4,90/mês. Seu treino continua grátis.",
               ),
             h('nav',{className:'portal-nutrition-tabs','aria-label':'Áreas da nutrição'},...[['plan','Plano'],['diary','Diário'],['water','Água'],['import','Importar']].map(([key,label])=>b(label,()=>setArea(key),false,{key,'aria-pressed':area===key}))),
             area==='water'&&paid&&hydration,

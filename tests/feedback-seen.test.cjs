@@ -39,6 +39,6 @@ test('open student screen receives the green receipt on refresh tick without los
  vm.runInNewContext(fs.readFileSync('portal-app.js','utf8'),{window:root,Date,URLSearchParams,location:{search:''},fetch:async()=>({json:async()=>[]}),setTimeout(){},clearTimeout(){},setInterval:fn=>{tick=fn;return 1},clearInterval(){}});
  root.PersonalProPortal.Shell({React:R,Legacy:()=>{}});states=[];
  const render=()=>{i=0;effects=[];return root.PersonalProPortal.Student({member:{name:'QA',user_id:'qa'}})};
- render();effects[0]();await new Promise(r=>setImmediate(r));assert.match(text(render()),/Enviado · Ainda não visto/);const cleanup=effects[2]();
+ render();effects[0]();await new Promise(r=>setImmediate(r));assert.match(text(render()),/Enviado · Ainda não visto/);const cleanup=effects[1](); // effect 0 loads data; effect 1 syncs receipts (no paid-access recheck since 2026-11-11)
  fail=true;await tick();assert.ok(!JSON.stringify(render()).includes('is-seen'));fail=false;seen=true;await tick();const tree=render();assert.match(text(tree),/Seu personal viu/);assert.match(JSON.stringify(tree),/is-seen/);assert.ok(!text(tree).includes('Parabéns'));cleanup();
 });

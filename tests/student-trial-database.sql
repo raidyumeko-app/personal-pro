@@ -1,4 +1,6 @@
 -- Isolated fixtures only. Every change, including time travel, is rolled back.
+-- Regra de 11/11/2026: treino, ficha, histórico e PAR-Q do aluno são grátis para sempre;
+-- só a nutrição extra (Personal Pro+, R$ 4,90/mês) depende de período gratuito ou assinatura.
 begin;
 insert into auth.users(id) values ('d4000000-0000-4000-8000-000000000001'),('d4000000-0000-4000-8000-000000000002');
 insert into public.pp_members(user_id,role,name,created_at) values
@@ -11,6 +13,8 @@ select set_config('request.jwt.claim.sub','d4000000-0000-4000-8000-000000000002'
 do $$begin
  if public.pp_student_access()->>'status'<>'trial' or not (public.pp_student_access()->>'active')::boolean then raise exception 'FAIL: last trial second';end if;
  if public.pp_student_access()->>'adsAllowed'<>'false' then raise exception 'FAIL: student ads';end if;
+ if (public.pp_student_access()->>'monthlyPriceBRL')::numeric<>4.90 then raise exception 'FAIL: Personal Pro+ price must be R$ 4,90';end if;
+ if public.pp_student_access()->>'scope'<>'nutrition' then raise exception 'FAIL: paid scope must be nutrition only';end if;
  perform public.pp_start_session('d4000000-0000-4000-8000-000000000010','A');
  insert into public.pp_nutrition_entries(user_id,kind,text) values(auth.uid(),'meal','QA trial meal');
 end $$;
@@ -24,20 +28,40 @@ end $$;
 reset role;
 update public.pp_members set created_at=now()-interval '30 days' where user_id='d4000000-0000-4000-8000-000000000002';
 set local role authenticated;
-do $$declare denied boolean=false;begin
- if (public.pp_student_access()->>'active')::boolean then raise exception 'FAIL: exact boundary not blocked';end if;
- begin perform public.pp_student_data();exception when insufficient_privilege then denied=true;end;
- if not denied then raise exception 'FAIL: expired projection';end if;
- denied=false;begin perform public.pp_start_session(gen_random_uuid(),'A');exception when insufficient_privilege then denied=true;end;
- if not denied then raise exception 'FAIL: expired start';end if;
- denied=false;begin perform public.pp_save_session('d4000000-0000-4000-8000-000000000010',0,'[]',false,null,'');exception when insufficient_privilege then denied=true;end;
- if not denied then raise exception 'FAIL: expired save';end if;
- if exists(select 1 from public.pp_sessions_v2) or exists(select 1 from public.pp_nutrition_entries) then raise exception 'FAIL: expired REST read';end if;
- if exists(select 1 from storage.objects where bucket_id='pp-nutrition') then raise exception 'FAIL: expired file access';end if;
- denied=false;begin insert into public.pp_nutrition_entries(user_id,kind,text) values(auth.uid(),'meal','blocked');exception when insufficient_privilege then denied=true;end;
+do $$declare denied boolean=false;d jsonb;s jsonb;begin
+ if (public.pp_student_access()->>'active')::boolean then raise exception 'FAIL: exact boundary must end the nutrition trial';end if;
+ if public.pp_student_access()->>'status'<>'expired' then raise exception 'FAIL: expired Plus status';end if;
+ -- Área de treino continua livre depois dos 30 dias.
+ d=public.pp_student_data();
+ if d is null or d->'student'->'workout'->0->>'name'<>'QA exercise' then raise exception 'FAIL: workout sheet must stay free after 30 days';end if;
+ s=public.pp_start_session(gen_random_uuid(),'A');
+ if s->>'id'<>'d4000000-0000-4000-8000-000000000010' then raise exception 'FAIL: start must resume the open session after 30 days';end if;
+ s=public.pp_save_session('d4000000-0000-4000-8000-000000000010',0,'[{"exerciseId":"ex-0","setNumber":1,"reps":10,"weightKg":20}]',true,'Na medida','');
+ if s->>'completed_at' is null then raise exception 'FAIL: workout logging must stay free after 30 days';end if;
+ if (select count(*) from public.pp_sessions_v2)<>1 then raise exception 'FAIL: history must stay readable after 30 days';end if;
+ -- Nutrição: o que já foi salvo continua visível; gravar e enviar arquivos exige Personal Pro+.
+ if (select count(*) from public.pp_nutrition_entries)<>1 then raise exception 'FAIL: saved nutrition must stay visible';end if;
+ if (select count(*) from storage.objects where bucket_id='pp-nutrition')<>1 then raise exception 'FAIL: saved nutrition files must stay visible';end if;
+ begin insert into public.pp_nutrition_entries(user_id,kind,text) values(auth.uid(),'meal','blocked');exception when insufficient_privilege then denied=true;end;
  if not denied then raise exception 'FAIL: expired nutrition write';end if;
+ denied=false;begin update public.pp_nutrition_entries set text='changed' where user_id=auth.uid();
+  if found then raise exception 'FAIL: expired nutrition update';end if;
+ exception when insufficient_privilege then denied=true;end;
+ if (select text from public.pp_nutrition_entries where user_id=auth.uid())<>'QA trial meal' then raise exception 'FAIL: expired nutrition update changed data';end if;
+ denied=false;begin insert into public.pp_nutrition_settings(user_id) values(auth.uid());exception when insufficient_privilege then denied=true;end;
+ if not denied then raise exception 'FAIL: expired nutrition settings write';end if;
+ denied=false;begin insert into storage.objects(bucket_id,name) values('pp-nutrition',auth.uid()::text||'/after-expiry.jpg');exception when insufficient_privilege then denied=true;end;
+ if not denied then raise exception 'FAIL: expired photo/PDF upload';end if;
  denied=false;begin update public.pp_members set created_at=now() where user_id=auth.uid();exception when insufficient_privilege then denied=true;end;
  if not denied then raise exception 'FAIL: trial can be reset by client';end if;
+end $$;
+-- Assinatura confirmada pelo servidor reabre a nutrição extra.
+reset role;
+insert into public.pp_entitlements(user_id,product,valid_until) values('d4000000-0000-4000-8000-000000000002','personal_pro_plus',now()+interval '30 days');
+set local role authenticated;
+do $$begin
+ if public.pp_student_access()->>'status'<>'paid' or not (public.pp_student_access()->>'active')::boolean then raise exception 'FAIL: paid Plus status';end if;
+ insert into public.pp_nutrition_entries(user_id,kind,amount_ml) values(auth.uid(),'water',250);
 end $$;
 select set_config('request.jwt.claim.sub','d4000000-0000-4000-8000-000000000001',true);
 select public.pp_choose_free();
@@ -49,7 +73,7 @@ do $$begin
 end $$;
 reset role;
 do $$begin
- if (select count(*) from public.pp_nutrition_entries where user_id='d4000000-0000-4000-8000-000000000002')<>1 then raise exception 'FAIL: expired data erased';end if;
+ if (select count(*) from public.pp_nutrition_entries where user_id='d4000000-0000-4000-8000-000000000002')<>2 then raise exception 'FAIL: student data erased';end if;
 end $$;
-select 'PASS: exact 30-day boundary, private file metadata RLS, blocked reads/writes, no client trial reset, preserved student data and trainer ads' as result;
+select 'PASS: workout, sheet, logging and history free after 30 days; nutrition trial boundary; saved nutrition visible; writes/uploads need Personal Pro+ (R$ 4,90); no client trial reset; trainer ads and privacy' as result;
 rollback;

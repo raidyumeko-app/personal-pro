@@ -12,9 +12,11 @@ function status(user,now=Date.now()){
 }
 function fromEntitlements(rows,now=Date.now()){return Boolean(Array.isArray(rows)&&rows.some(row=>row.product===PRODUCT&&Number.isFinite(Date.parse(row.valid_until))&&Date.parse(row.valid_until)>now));}
 function isAllowed(user,feature,now){
+  // Regra de 11/11/2026: a área de treino do aluno é gratuita; só a nutrição extra é Personal Pro+.
   // The current portal gets trial/paid access from pp_student_access, never client metadata.
-  if(['training','basic-assessment','own-data','nutrition','body-silhouette','measurement-comparison','evolution-charts'].includes(feature))return status(user,now).active;
+  if(['training','workout-session','history','parq','basic-assessment','own-data','body-silhouette','measurement-comparison','evolution-charts','nutrition-view'].includes(feature))return Boolean(user&&user.id);
+  if(['nutrition','nutrition-diary','nutrition-photos','nutrition-water','nutrition-import'].includes(feature))return status(user,now).active;
   return false;
 }
-root.PersonalProPlus=Object.freeze({status,isAllowed,fromEntitlements,monthlyPriceBRL:9.90,product:PRODUCT});
+root.PersonalProPlus=Object.freeze({status,isAllowed,fromEntitlements,monthlyPriceBRL:4.90,product:PRODUCT});
 })(window);
