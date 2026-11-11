@@ -181,7 +181,15 @@
                 checked: consent,
                 onChange: (e) => setConsent(e.target.checked),
               }),
-              "Li como meus dados são usados e concordo com o cadastro.",
+              el(
+                "span",
+                null,
+                "Ao criar conta você concorda com os ",
+                el("a", { href: "/termos.html", target: "_blank", rel: "noopener noreferrer" }, "Termos de Uso"),
+                " e a ",
+                el("a", { href: "/privacidade.html", target: "_blank", rel: "noopener noreferrer" }, "Política de Privacidade"),
+                ".",
+              ),
             ),
           btn(
             act.busy
@@ -217,6 +225,13 @@
             "p",
             null,
             "Usamos seu e-mail para autenticação e recuperação. Treinos e avaliações ficam restritos ao aluno e ao profissional vinculado. Fotos e dietas são privadas do aluno. Não há publicação social. Solicitações sobre seus dados podem ser enviadas pelo suporte configurado no seu perfil.",
+          ),
+          el(
+            "p",
+            { className: "portal-legal-links" },
+            el("a", { href: "/privacidade.html", target: "_blank", rel: "noopener noreferrer" }, "Política de Privacidade"),
+            " · ",
+            el("a", { href: "/termos.html", target: "_blank", rel: "noopener noreferrer" }, "Termos de Uso"),
           ),
         ),
         el(
@@ -796,6 +811,13 @@
                       el("small", null, "Treino " + s.workoutId + " · " + date(s.completedAt)),
                       el(root.PersonalProFeedback.Status, {React:R,seenAt:s.feedbackSeenAt}),
                     ),
+                  ),
+                  el(
+                    "p",
+                    { className: "portal-legal-links" },
+                    el("a", { href: "/privacidade.html", target: "_blank", rel: "noopener noreferrer" }, "Política de Privacidade"),
+                    " · ",
+                    el("a", { href: "/termos.html", target: "_blank", rel: "noopener noreferrer" }, "Termos de Uso"),
                   ),
                   root.PersonalProAccountDeletion &&
                     el(root.PersonalProAccountDeletion.Panel, { React: R, role: "student" }),

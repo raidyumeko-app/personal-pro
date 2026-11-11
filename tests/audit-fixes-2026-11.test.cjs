@@ -99,3 +99,39 @@ test('exclusão de conta: prévia, arquivos do Storage e depois a função',asyn
  const sql=read('supabase/pending/20261110220000_account_self_deletion.sql');
  assert.match(sql,/security definer/);assert.match(sql,/set search_path = ''/);assert.match(sql,/storage_files_pending/);assert.match(sql,/delete from auth\.users where id = me/);
 });
+
+test('páginas de privacidade e termos entram no dist e estão ligadas no cadastro e no perfil',()=>{
+ const {build}=require('../scripts/build-public.cjs');build();
+ const dist=path.join(base,'dist');
+ for(const f of ['privacidade.html','termos.html','legal-contact.js','legal.css'])assert.ok(fs.existsSync(path.join(dist,f)),f);
+ const privacy=read('privacidade.html'),terms=read('termos.html');
+ assert.equal(privacy,fs.readFileSync(path.join(dist,'privacidade.html'),'utf8'));
+ assert.equal(terms,fs.readFileSync(path.join(dist,'termos.html'),'utf8'));
+ assert.match(privacy,/Política de Privacidade/);
+ assert.match(terms,/Termos de Uso/);
+ assert.match(privacy,/data-legal="controllerName"/);
+ assert.match(privacy,/data-legal="contactEmail"/);
+ assert.match(terms,/data-legal="forum"/);
+ assert.match(privacy,/legal-placeholder/);
+ assert.ok(!/Data de nascimento/i.test(privacy+terms));
+ assert.ok(!/Foto de perfil/i.test(privacy+terms));
+ assert.ok(!/vídeos de exercícios, se enviados/i.test(privacy+terms));
+ assert.ok(!/nas configurações do app/.test(privacy+terms));
+ assert.match(privacy,/destinado a maiores de 18 anos/);
+ assert.match(privacy,/a cada envio|naquele envio/);
+ assert.match(privacy,/personal trainer exporta uma cópia no app/);
+ assert.match(privacy,/aluno solicita a cópia pelo e-mail/);
+ assert.match(privacy+terms,/cobrança ainda não está ativa/);
+ assert.match(terms,/Google Play/);
+ assert.ok(!/vídeos de exercícios, fotos de refeições/.test(terms));
+ const legal=read('legal-contact.js');
+ assert.match(legal,/\[NOME\/CNPJ\]/);
+ assert.match(legal,/\[E-MAIL DE CONTATO\]/);
+ assert.match(legal,/\[CIDADE\/ESTADO DO CONTROLADOR\]/);
+ for(const src of [read('index.html'),read('portal-app.js'),read('app-ui.js')]){
+  assert.match(src,/\/privacidade\.html/);
+  assert.match(src,/\/termos\.html/);
+ }
+ assert.match(read('index.html'),/Ao criar conta você concorda/);
+ assert.match(read('portal-app.js'),/Ao criar conta você concorda/);
+});
