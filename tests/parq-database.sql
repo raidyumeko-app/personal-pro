@@ -46,16 +46,16 @@ reset role;
 update public.pp_members set created_at=now()-interval '31 days' where user_id='d6000000-0000-4000-8000-000000000002';
 set local role authenticated;
 select set_config('request.jwt.claim.sub','d6000000-0000-4000-8000-000000000002',true);
-do $$declare denied boolean=false;l uuid;begin
+do $$declare l uuid;begin
+ -- Regra de 11/11/2026: PAR-Q do aluno continua livre depois dos 30 dias.
  select id into l from public.pp_links where student_user_id=auth.uid();
- if (select count(*) from public.pp_parq_responses)<>0 then raise exception 'FAIL: expired student read';end if;
- begin perform public.pp_submit_parq(gen_random_uuid(),l,'[false,false,false,false,false,false,false]',true);exception when insufficient_privilege then denied=true;end;
- if not denied then raise exception 'FAIL: expired student submission';end if;
+ if (select count(*) from public.pp_parq_responses)<>2 then raise exception 'FAIL: student after 30 days must still read own PAR-Q';end if;
+ perform public.pp_submit_parq('d6000000-0000-4000-8000-000000000012',l,'[false,false,false,false,false,false,false]',true);
 end $$;
 reset role;
 do $$begin
  if has_table_privilege('anon','public.pp_parq_responses','select') or has_function_privilege('anon','public.pp_submit_parq(uuid,uuid,jsonb,boolean)','execute') then raise exception 'FAIL: anonymous access';end if;
- if (select count(*) from public.pp_parq_responses where student_user_id='d6000000-0000-4000-8000-000000000002')<>2 then raise exception 'FAIL: records lost';end if;
+ if (select count(*) from public.pp_parq_responses where student_user_id='d6000000-0000-4000-8000-000000000002')<>3 then raise exception 'FAIL: records lost';end if;
 end $$;
-select 'PASS: complete boolean answers, explicit consent, source snapshot, replay idempotency, immutable history/review, linked read, role/isolation/expiry/anonymous restrictions' as result;
+select 'PASS: complete boolean answers, explicit consent, source snapshot, replay idempotency, immutable history/review, linked read, role/isolation/anonymous restrictions; PAR-Q free after 30 days' as result;
 rollback;

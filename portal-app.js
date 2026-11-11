@@ -84,20 +84,20 @@
       { className: "portal-auth" },
       el(
         "section",
-        { className: "portal-auth-art", "aria-hidden": true },
+        { className: "portal-auth-art" },
         el(
           "div",
-          { className: "portal-brand" },
+          { className: "portal-brand", "aria-hidden": true },
           "P",
           el("span", null, "PERSONAL PRO"),
         ),
         el(
           "div",
           { className: "portal-auth-statement" },
-          el("small", null, "MOVIMENTO COM PROPÓSITO"),
+          el("small", { "aria-hidden": true }, "MOVIMENTO COM PROPÓSITO"),
           el(
             "strong",
-            null,
+            { "aria-hidden": true },
             "Seu próximo ",
             el("br"),
             "nível começa",
@@ -181,7 +181,15 @@
                 checked: consent,
                 onChange: (e) => setConsent(e.target.checked),
               }),
-              "Li como meus dados são usados e concordo com o cadastro.",
+              el(
+                "span",
+                null,
+                "Ao criar conta você concorda com os ",
+                el("a", { href: "/termos.html", target: "_blank", rel: "noopener noreferrer" }, "Termos de Uso"),
+                " e a ",
+                el("a", { href: "/privacidade.html", target: "_blank", rel: "noopener noreferrer" }, "Política de Privacidade"),
+                ".",
+              ),
             ),
           btn(
             act.busy
@@ -218,11 +226,18 @@
             null,
             "Usamos seu e-mail para autenticação e recuperação. Treinos e avaliações ficam restritos ao aluno e ao profissional vinculado. Fotos e dietas são privadas do aluno. Não há publicação social. Solicitações sobre seus dados podem ser enviadas pelo suporte configurado no seu perfil.",
           ),
+          el(
+            "p",
+            { className: "portal-legal-links" },
+            el("a", { href: "/privacidade.html", target: "_blank", rel: "noopener noreferrer" }, "Política de Privacidade"),
+            " · ",
+            el("a", { href: "/termos.html", target: "_blank", rel: "noopener noreferrer" }, "Termos de Uso"),
+          ),
         ),
         el(
           "p",
           { className: "portal-caption" },
-          "Profissional: 30 dias grátis. Depois, R$ 29,90/mês ou continuar grátis com anúncios. Aluno: 30 dias grátis; depois, R$ 9,90/mês para continuar, sem opção com anúncios.",
+          "Profissional: 30 dias grátis. Depois, R$ 29,90/mês ou continuar grátis com anúncios. Aluno: treinos, ficha, histórico, evolução e PAR-Q grátis para sempre. Nutrição extra (Personal Pro+): 30 dias grátis; depois, R$ 4,90/mês.",
         ),
       ),
     );
@@ -296,7 +311,7 @@
           "p",
           { className: "portal-caption" },
           role === "student"
-            ? "Você tem 30 dias grátis. Depois, R$ 9,90/mês para continuar, sem anúncios. Após o cadastro, insira o convite do seu personal. O gênero declarado orienta apenas ilustrações."
+            ? "Seus treinos, ficha, histórico e evolução são grátis para sempre. A nutrição extra (diário com foto, água e importação do PDF do nutricionista) tem 30 dias grátis e depois custa R$ 4,90/mês. Após o cadastro, insira o convite do seu personal. O gênero declarado orienta apenas ilustrações."
             : "Seu período gratuito começa ao cadastrar o perfil profissional. No dia 31 não trava.",
         ),
         btn("Continuar", undefined, true, {
@@ -308,6 +323,20 @@
       btn("Sair", () => root.PersonalProCloud.signOut()),
     );
   }
+  const decimal = (value) => {
+    const n = Number(value);
+    return Number.isFinite(n) ? n.toLocaleString("pt-BR", { maximumFractionDigits: 2 }) : String(value ?? "");
+  };
+  const localDay = (value) => {
+    if (/^\d{4}-\d{2}-\d{2}$/.test(String(value || ""))) return String(value);
+    const d = new Date(value);
+    if (Number.isNaN(d.getTime())) return "";
+    return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+  };
+  const shortDate = (value) => {
+    const day = localDay(value);
+    return day ? day.slice(8, 10) + "/" + day.slice(5, 7) : "";
+  };
   function Spark({ values, label, unit = "" }) {
     const list = values.filter((v) => Number.isFinite(Number(v.value)));
     if (!list.length)
@@ -323,7 +352,7 @@
       el(
         "strong",
         { className: "portal-metric" },
-        list.at(-1).value + " " + unit,
+        decimal(list.at(-1).value) + " " + unit,
       ),
       el(
         "svg",
@@ -331,7 +360,7 @@
           viewBox: "0 0 340 152",
           role: "img",
           "aria-label":
-            label + ": " + list.map((v) => v.value + " " + unit).join(", "),
+            label + ": " + list.map((v) => decimal(v.value) + " " + unit).join("; "),
         },
         el("path", {
           d: "M24 30H316M24 75H316M24 120H316",
@@ -363,9 +392,7 @@
                 fill: "var(--text-dim)",
                 fontSize: 10,
               },
-              v.date
-                ? String(v.date).slice(5, 10).replace("-", "/")
-                : "#" + (i + 1),
+              v.date ? shortDate(v.date) : "#" + (i + 1),
             ),
           ),
         ),
@@ -383,7 +410,7 @@
               { key: i },
               (v.date ? date(v.date) : "Registro sem data") +
                 " · " +
-                v.value +
+                decimal(v.value) +
                 " " +
                 unit,
             ),
@@ -391,7 +418,7 @@
       ),
     );
   }
-  function Evolution({ student, sessions, plus=false, onUpgrade }) {
+  function Evolution({ student, sessions }) {
     const [part, setPart] = R.useState("summary"),
       [region, setRegion] = R.useState("waist"),
       [exerciseId, setExerciseId] = R.useState("");
@@ -441,7 +468,6 @@
       thigh: "Coxa",
       calf: "Panturrilha",
     };
-    if(!plus)return el('section',null,title('SEUS REGISTROS','Minha Evolução'),el('section',{className:'portal-card'},el('h2',null,'Seus dados básicos'),weights.length?el('p',null,'Último peso registrado: '+weights.at(-1).value+' kg'):el('p',null,'Nenhum peso registrado.'),Object.entries(student.measures||{}).filter(([,v])=>v!==''&&Number(v)>0).map(([key,value])=>el('p',{key},(names[key]||key)+': '+value+' cm')),el('p',{className:'portal-caption'},'Valores registrados pelo seu personal. Seus dados permanecem disponíveis mesmo sem assinatura.')),el('section',{className:'portal-card'},el('h2',null,'Personal Pro+'),el('p',null,'Nutrição e Evolução por R$ 9,90/mês: silhueta corporal, histórico, comparações e gráficos reais, além da sua nutrição privada.'),btn('Conhecer o Personal Pro+',onUpgrade,true)));
     return el(
       "section",
       null,
@@ -505,8 +531,7 @@
     );
   }
   function Student({ member }) {
-    const [data, setData] = R.useState(null), [plus,setPlus]=R.useState(false),
-      [access, setAccess] = R.useState(null),
+    const [data, setData] = R.useState(null),
       [sessions, setSessions] = R.useState([]),
       [catalog, setCatalog] = R.useState([]),
       [tab, setTab] = R.useState("home"),
@@ -515,19 +540,18 @@
         new URLSearchParams(location.search).get("invite") || "",
       ),
       [loaded, setLoaded] = R.useState(false),
+      [failed, setFailed] = R.useState(false),
       [summary, setSummary] = R.useState(null),
       [more, setMore] = R.useState(true),
       act = useAction();
     async function refresh() {
-      let status;
-      try { status = await API().studentAccess(); }
-      catch(error) { setAccess(null); setLoaded(true); throw error; }
-      setAccess(status);
-      if (!status.active) { setData(null); setSessions([]); setPlus(false); setLoaded(true); return null; }
-      const [d, s] = await Promise.all([API().studentData(), API().sessions()]);
-      setPlus(true);
+      // Treino, ficha, histórico e evolução são gratuitos para o aluno: não há bloqueio por prazo.
+      let d, s;
+      try { [d, s] = await Promise.all([API().studentData(), API().sessions()]); }
+      catch(error) { setFailed(true); setLoaded(true); throw error; }
+      setFailed(false);
       setData(d);
-      Promise.all([fetch("/exercise-library.json").then(r=>r.json()),fetch("/exercise-instructions.pt.json").then(r=>r.json())]).then(([items,steps])=>root.PersonalProExerciseCompatibility?root.PersonalProExerciseCompatibility.forWorkouts(items,steps,d.student?.workout||[]):{catalog:items,translations:steps}).then(resolved=>setCatalog(resolved.catalog.map(item=>({...item,instructions:resolved.translations[item.id]||item.instructions})))).catch(()=>{});
+      Promise.all([fetch("/exercise-library.json").then(r=>r.json()),fetch("/exercise-instructions.pt.json").then(r=>r.json())]).then(([items,steps])=>root.PersonalProExerciseCompatibility?root.PersonalProExerciseCompatibility.forWorkouts(items,steps,d?.student?.workout||[]):{catalog:items,translations:steps}).then(resolved=>setCatalog(resolved.catalog.map(item=>({...item,instructions:resolved.translations[item.id]||item.instructions})))).catch(()=>{});
       setSessions(s);
       setMore(s.length === 30);
       setLoaded(true);
@@ -537,17 +561,9 @@
       act.run(refresh);
 
     }, []);
-    R.useEffect(() => {
-      if (!access?.active) return;
-      const recheck = () => { setAccess(null); act.run(refresh); };
-      const delay = Math.max(0, Date.parse(access.expiresAt) - Date.parse(access.serverNow));
-      const timer = setTimeout(recheck, Math.min(delay, 2147483647));
-      root.addEventListener('focus', recheck);
-      return () => { clearTimeout(timer); root.removeEventListener('focus', recheck); };
-    }, [access]);
     const pendingReceiptIds = sessions.filter(s=>s.completedAt&&!s.feedbackSeenAt).map(s=>s.id).join(',');
     R.useEffect(() => {
-      if (!access?.active || !pendingReceiptIds || !API().feedbackReceipts) return;
+      if (!data || !pendingReceiptIds || !API().feedbackReceipts) return;
       let disposed=false, pending=false;
       const sync=async()=>{
         if(pending) return;
@@ -564,16 +580,12 @@
       const timer=setInterval(sync,15000);
       root.addEventListener('focus',sync);
       return()=>{disposed=true;clearInterval(timer);root.removeEventListener('focus',sync)};
-    },[access?.active,pendingReceiptIds]);
-    if (!access?.active) return el('main',{className:'portal-auth'},el('section',{className:'portal-card'},
-      title('PERSONAL PRO', !loaded ? 'Conferindo seu acesso…' : access ? 'Seu período gratuito terminou.' : 'Não foi possível conferir seu acesso.'),
-      loaded && el('p',null,'O aluno tem 30 dias grátis. Depois, a assinatura de R$ 9,90/mês libera treinos, nutrição e evolução. Não há opção com anúncios. Seus dados e o vínculo com o personal são preservados.'),
-      el(Notice,{action:act}),
-      loaded && btn('Assinar por R$ 9,90/mês',()=>act.setMessage('A contratação pelo Google Play ainda não está disponível nesta prévia. Nenhuma cobrança foi feita.'),true),
-      loaded && btn('Verificar acesso novamente',()=>act.run(refresh),false,{disabled:act.busy}),
-      btn('Sair',()=>root.PersonalProCloud.signOut())));
+    },[!!data,pendingReceiptIds]);
     const student = data?.student;
+    const [staleSeen, setStaleSeen] = R.useState("");
+    const sessionEngine = root.PersonalProWorkoutSession;
     const active = sessions.find((s) => !s.completedAt),
+      staleActive = active && staleSeen !== active.id && sessionEngine?.isStale?.(active) ? active : null,
       prescription = active?.prescription || student?.workout || [];
     const exercises = prescription
       .filter((ex) => (ex.day || "A") === (active?.workoutId || day))
@@ -605,6 +617,10 @@
       el(Notice, { action: act }),
       !loaded
         ? el("p", { role: "status" }, "Carregando seus treinos…")
+        : failed && !data
+          ? el("section", { className: "portal-card" },
+              el("p", null, "Não foi possível carregar seus treinos agora. Seus dados continuam guardados."),
+              btn("Tentar novamente", () => act.run(refresh), true, { disabled: act.busy }))
         : !student
           ? el(
               "section",
@@ -672,19 +688,16 @@
                       el(
                         "p",
                         null,
-                        summary.logs.length +
-                          " séries · " +
-                          new Set(summary.logs.map((l) => l.exerciseId)).size +
-                          " exercícios · " +
-                          Math.max(
-                            1,
-                            Math.round(
-                              (Date.parse(summary.completedAt) -
-                                Date.parse(summary.startedAt)) /
-                                60000,
-                            ),
-                          ) +
-                          " min",
+                        (() => {
+                          const sets = summary.logs.length,
+                            count = new Set(summary.logs.map((l) => l.exerciseId)).size,
+                            minutes = sessionEngine?.durationMinutes?.(summary);
+                          return (
+                            sets + (sets === 1 ? " série · " : " séries · ") +
+                            count + (count === 1 ? " exercício" : " exercícios") +
+                            (minutes ? " · " + minutes + " min" : "")
+                          );
+                        })(),
                       ),
                       summary.effort &&
                         el("p", null, "Seu esforço: " + summary.effort),
@@ -735,12 +748,31 @@
                         },
                         onFinish: finish,
                       }),
-                  active &&
-                    el(
-                      "p",
-                      { className: "portal-notice" },
-                      "Há um treino em andamento. Toque em Começar treino para retomar.",
-                    ),
+                  staleActive
+                    ? el(
+                        "section",
+                        { className: "portal-card portal-stale-session", role: "alert", "aria-label": "Treino antigo em aberto" },
+                        el("p", null,
+                          "Você começou o Treino " + staleActive.workoutId + " em " +
+                            new Date(staleActive.startedAt).toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" }) + " às " +
+                            new Date(staleActive.startedAt).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }) +
+                            " e não concluiu. Quer recomeçar do zero ou continuar de onde parou?"),
+                        el("div", { className: "portal-actions" },
+                          btn("Recomeçar do zero", () =>
+                            act.run(async () => {
+                              const saved = await API().save({ ...staleActive, logs: [] }, false, null, "");
+                              setSessions((list) => [saved, ...list.filter((x) => x.id !== saved.id)]);
+                              setStaleSeen(staleActive.id);
+                            }), true, { disabled: act.busy }),
+                          btn("Continuar de onde parei", () => setStaleSeen(staleActive.id), false, { disabled: act.busy }),
+                        ),
+                      )
+                    : active &&
+                      el(
+                        "p",
+                        { className: "portal-notice" },
+                        "Há um treino em andamento. Toque em Começar treino para retomar.",
+                      ),
                   el(
                     "section",
                     { className: "portal-card" },
@@ -749,6 +781,8 @@
                       const d = new Date();
                       d.setDate(d.getDate() - ((d.getDay() + 6) % 7) + i);
                       const weekday = d.getDay(),
+                        dayKey = localDay(d),
+                        done = completed.filter((x) => localDay(x.completedAt) === dayKey),
                         assigned = Object.entries(
                           student.workoutWeekdays || {},
                         ).filter(([, values]) =>
@@ -767,10 +801,12 @@
                         ),
                         el(
                           "strong",
-                          null,
-                          assigned.length
-                            ? assigned.map(([k]) => "Treino " + k).join(" · ")
-                            : "Sem treino programado",
+                          done.length ? { className: "portal-week-done" } : null,
+                          done.length
+                            ? "✓ " + [...new Set(done.map((x) => "Treino " + x.workoutId))].join(" · ") + " concluído"
+                            : assigned.length
+                              ? assigned.map(([k]) => "Treino " + k).join(" · ")
+                              : "Sem treino programado",
                         ),
                       );
                     }),
@@ -781,8 +817,17 @@
                       el(root.PersonalProFeedback.Status, {React:R,seenAt:s.feedbackSeenAt}),
                     ),
                   ),
+                  el(
+                    "p",
+                    { className: "portal-legal-links" },
+                    el("a", { href: "/privacidade.html", target: "_blank", rel: "noopener noreferrer" }, "Política de Privacidade"),
+                    " · ",
+                    el("a", { href: "/termos.html", target: "_blank", rel: "noopener noreferrer" }, "Termos de Uso"),
+                  ),
+                  root.PersonalProAccountDeletion &&
+                    el(root.PersonalProAccountDeletion.Panel, { React: R, role: "student" }),
                 ),
-              tab === "evolution" && el(R.Fragment, null, el(root.PersonalProParQ.Panel,{React:R,role:"student",linkId:data.linkId,trainerName:data.trainerName}),el(Evolution, { student, sessions, plus,onUpgrade:()=>setTab('nutrition') })),
+              tab === "evolution" && el(R.Fragment, null, el(root.PersonalProParQ.Panel,{React:R,role:"student",linkId:data.linkId,trainerName:data.trainerName}),el(Evolution, { student, sessions })),
               tab === "history" &&
                 el(
                   "section",
@@ -819,7 +864,7 @@
                                   " · " +
                                   l.reps +
                                   " repetições · " +
-                                  l.weightKg +
+                                  decimal(l.weightKg) +
                                   " kg",
                               ),
                             ),
@@ -868,7 +913,27 @@
   function TrainerTools({ React, studentId }) {
     const [token, setToken] = React.useState(""),
       [error, setError] = React.useState(""),
-      [busy, setBusy] = React.useState(false);
+      [busy, setBusy] = React.useState(false),
+      // "checking" | "linked" | "unlinked" | "unknown": aluno já vinculado não recebe novo convite.
+      [link, setLink] = React.useState("checking");
+    React.useEffect(() => {
+      let alive = true;
+      setLink("checking");
+      const owner = API()?.uid?.();
+      if (!owner || !studentId) { setLink("unknown"); return; }
+      API()
+        .rows("pp_links", "select=student_user_id&trainer_id=eq." + encodeURIComponent(owner) + "&legacy_student_id=eq." + encodeURIComponent(studentId) + "&limit=1")
+        .then((list) => { if (alive) setLink(list?.[0]?.student_user_id ? "linked" : "unlinked"); })
+        .catch(() => { if (alive) setLink("unknown"); });
+      return () => { alive = false; };
+    }, [studentId]);
+    if (link === "linked")
+      return React.createElement(
+        "section",
+        { className: "portal-invite" },
+        React.createElement("h4", null, "Acesso do aluno"),
+        React.createElement("p", { role: "status" }, "✓ Aluno vinculado: ele já entra no aplicativo com a própria conta."),
+      );
     return React.createElement(
       "section",
       { className: "portal-invite" },
@@ -878,7 +943,7 @@
         null,
         "O aluno cria a própria conta e usa este convite. O código vale por 7 dias e só pode ser usado uma vez.",
       ),
-      React.createElement(
+      link === "checking" ? React.createElement("p", { role: "status" }, "Verificando acesso do aluno…") : React.createElement(
         "button",
         {
           type: "button",
@@ -974,7 +1039,7 @@
       e(
         "p",
         null,
-        "Para o profissional, no dia 31 não trava: você pode continuar com anúncios. O aluno tem 30 dias grátis e, depois, assinatura de R$ 9,90/mês, sem opção com anúncios.",
+        "Para o profissional, no dia 31 não trava: você pode continuar com anúncios. Para o aluno, o treino é sempre grátis; só a nutrição extra (Personal Pro+) custa R$ 4,90/mês depois de 30 dias.",
       ),
       !paid &&
         e(

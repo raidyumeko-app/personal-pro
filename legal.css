@@ -1,0 +1,46 @@
+:root{
+  color-scheme:dark;
+  --bg:#0b1117;
+  --surface:#141d25;
+  --surface-2:#1b2630;
+  --border:#29353f;
+  --text:#f1f4f5;
+  --text-dim:#a3afb9;
+  --lime:#c4f533;
+  --lime-soft:#26371d;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+body{min-height:100vh;line-height:1.65;font-size:16px}
+a{color:var(--lime)}
+a:hover{text-decoration-thickness:2px}
+.legal-wrap{max-width:720px;margin:0 auto;padding:24px 18px 64px}
+.legal-brand{color:var(--lime);font-weight:800;letter-spacing:2px;font-size:12px}
+.legal-wrap h1{font-size:clamp(1.6rem,4vw,2rem);letter-spacing:-.03em;line-height:1.15;margin:10px 0 8px}
+.legal-updated{color:var(--text-dim);margin:0 0 28px}
+.legal-wrap h2{font-size:1.15rem;margin:32px 0 10px;color:var(--text)}
+.legal-wrap h3{font-size:1rem;margin:20px 0 8px}
+.legal-wrap p,.legal-wrap li{color:var(--text)}
+.legal-wrap ul{padding-left:1.2em;margin:8px 0 16px}
+.legal-wrap li{margin:6px 0}
+.legal-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0 20px;border:1px solid var(--border);border-radius:14px;background:var(--surface)}
+.legal-wrap table{width:100%;border-collapse:collapse;min-width:520px;font-size:.95rem}
+.legal-wrap th,.legal-wrap td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--border)}
+.legal-wrap th{background:var(--surface-2);color:var(--lime);font-weight:700}
+.legal-wrap tr:last-child td{border-bottom:0}
+.legal-placeholder{
+  display:inline;
+  background:var(--lime-soft);
+  color:var(--lime);
+  border:1px dashed var(--lime);
+  border-radius:4px;
+  padding:0 6px;
+  font-weight:700;
+  white-space:nowrap;
+}
+.legal-nav{display:flex;flex-wrap:wrap;gap:8px 16px;margin:8px 0 20px;font-size:14px}
+.legal-foot{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);color:var(--text-dim);font-size:14px}
+@media (max-width:480px){
+  .legal-wrap{padding:20px 14px 48px}
+  .legal-wrap table{min-width:460px}
+}

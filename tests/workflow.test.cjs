@@ -49,7 +49,7 @@ assert.ok(html.includes('children:"Enviar texto"'),'WhatsApp workout sharing rem
 console.log('PASS: Today action; duplicate-safe manual recording; disabled confirmation; student record; date accessibility; future-date rejection; WhatsApp sharing retained; student portal removed.');
 
 if(html.includes('const exerciseLibrary=')) {
- assert.equal(vm.runInContext('exerciseLibrary.length',ctx),143);
+ assert.equal(vm.runInContext('exerciseLibrary.length',ctx),142);
  const find=(role,label)=>nodes(tree).find(n=>n.type===role&&n.props?.['aria-label']===label);
  nodes(tree).find(n=>n.props?.['aria-label']==='Voltar à ficha').props.onClick();tree=render();
 const openTraining=nodes(tree).find(n=>n.type==='button'&&text(n)==='Abrir treino');assert.ok(openTraining);openTraining.props.onClick();tree=render();
@@ -112,7 +112,7 @@ const clickLabel=label=>{const el=nodes(tree).find(n=>n.type==='button'&&text(n)
  // Catalogue pagination, metadata filters, details and selection.
  clickLabel('Adicionar exercício da biblioteca');
  assert.ok(!nodes(tree).some(n=>n.props?.['aria-label']==='Escolher catálogo'));
- assert.ok(text(tree).includes('143 exercícios selecionados'));
+ assert.ok(text(tree).includes('142 exercícios selecionados'));
  assert.ok(!/licença comercial|aprovação técnica|Verificação técnica da biblioteca/.test(text(tree)));
  const catalog=JSON.parse(fs.readFileSync(require('node:path').join(__dirname,'../exercise-library.json'),'utf8'));
  assert.equal(catalog.length,143);assert.equal(new Set(catalog.map(x=>x.id)).size,143);
@@ -124,13 +124,13 @@ const clickLabel=label=>{const el=nodes(tree).find(n=>n.type==='button'&&text(n)
  clickLabel('Ver exercícios com vídeo');
  const videoChoices=nodes(tree).filter(n=>n.type==='button'&&n.props?.['aria-label']?.startsWith('Selecionar '));
  assert.equal(videoChoices.length,40);
- assert.ok(text(tree).includes("87 exercícios encontrados"));
+ assert.ok(text(tree).includes("83 exercícios encontrados"));
  assert.ok(videoChoices.some(n=>n.props['aria-label']==='Selecionar Supino declinado com barra'));
  assert.ok(videoChoices.some(n=>n.props['aria-label']==='Selecionar Crucifixo com halteres'));
  assert.ok(!videoChoices.some(n=>n.props['aria-label']==='Selecionar Ponte de glúteo'));
- assert.ok(text(tree).includes('87 exercícios com vídeo · filtro ativo'));
+ assert.ok(text(tree).includes('83 exercícios com vídeo · filtro ativo'));
  clickLabel('Mostrar todos os exercícios');
- assert.ok(text(tree).includes('143 exercícios encontrados'));
+ assert.ok(text(tree).includes('142 exercícios encontrados'));
 
  clickLabel('Mostrar mais exercícios');
  assert.equal(nodes(tree).filter(n=>n.type==='button'&&n.props?.['aria-label']?.startsWith('Selecionar ')).length,80);
@@ -140,7 +140,7 @@ const clickLabel=label=>{const el=nodes(tree).find(n=>n.type==='button'&&text(n)
  matching[0].props.onClick();tree=render();assert.ok(nodes(tree).some(n=>n.type==='section'&&n.props['aria-label']==='Detalhes do exercício'));assert.ok(nodes(tree).some(n=>n.type==='img'));
  set('Filtrar por equipamento','Peso corporal');
  assert.ok(nodes(tree).filter(n=>n.type==='button'&&n.props?.['aria-label']?.startsWith('Selecionar ')).every(n=>text(n).length>0));
- console.log('PASS: 143 selected choices; preview video filter; archived compatibility only; search/filter/pagination; illustrated instructions; add/edit independent series/repetitions/load/rest; previous load; legacy 3x12 and duration compatibility; custom exercise; zero rest; cancel.');
+ console.log('PASS: 142 selected choices (143 in catalog); preview video filter; archived compatibility only; search/filter/pagination; illustrated instructions; add/edit independent series/repetitions/load/rest; previous load; legacy 3x12 and duration compatibility; custom exercise; zero rest; cancel.');
 }
 
 async function verifyPDFControls() {

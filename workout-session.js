@@ -14,4 +14,14 @@ return {...session,logs:[...session.logs.filter(l=>!(l.exerciseId===exerciseId&&
 function progress(session){const expected=session.exercises.reduce((s,e)=>s+e.sets,0);return {done:session.logs.length,expected,percent:Math.round(session.logs.length/expected*100)};}
 function finish(session,at=new Date().toISOString()){if(session.completedAt)throw Error('Treino já encerrado');if(!session.logs.length)throw Error('Registre ao menos uma série');return {...session,completedAt:at};}
 function previousLoad(sessions,studentId,exerciseId){const logs=(sessions||[]).filter(s=>s.studentId===studentId).flatMap(s=>(s.logs||[]).filter(l=>l.exerciseId===exerciseId));return logs.length?logs.sort((a,b)=>String(b.at).localeCompare(String(a.at)))[0].weightKg:null;}
-return {normalizeExercise,createSession,logSet,progress,finish,previousLoad};});
+const STALE_MS=3*60*60*1000,MAX_MINUTES=180,GAP_MS=60*60*1000;
+const ms=v=>{const t=Date.parse(v);return Number.isFinite(t)?t:null;};
+const sameLocalDay=(a,b)=>{const x=new Date(a),y=new Date(b);return x.getFullYear()===y.getFullYear()&&x.getMonth()===y.getMonth()&&x.getDate()===y.getDate();};
+/* Treino aberto há mais de 3 h ou iniciado em outro dia: o app pergunta se o aluno quer recomeçar. */
+function isStale(session,now=Date.now()){if(!session||session.completedAt)return false;const start=ms(session.startedAt);if(start===null)return false;return now-start>STALE_MS||!sameLocalDay(start,now);}
+/* Duração realista: se o treino ficou aberto por horas, conta só o último bloco contínuo de séries
+   (intervalos de até 60 min) e nunca passa de 180 min. Sem dado confiável, devolve null. */
+function durationMinutes(session){if(!session)return null;const start=ms(session.startedAt),end=ms(session.completedAt);if(start===null||end===null||end<start)return null;
+let from=start;if(end-start>STALE_MS||!sameLocalDay(start,end)){const times=(session.logs||[]).map(l=>ms(l&&l.at)).filter(t=>t!==null&&t<=end).sort((a,b)=>a-b);if(!times.length)return null;from=times[times.length-1];for(let i=times.length-1;i>0&&times[i]-times[i-1]<=GAP_MS;i--)from=times[i-1];if(end-from>GAP_MS*3)return null;}
+return Math.min(MAX_MINUTES,Math.max(1,Math.round((end-from)/60000)));}
+return {normalizeExercise,createSession,logSet,progress,finish,previousLoad,isStale,durationMinutes};});
