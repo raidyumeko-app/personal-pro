@@ -123,6 +123,12 @@ test('páginas de privacidade e termos entram no dist e estão ligadas no cadast
  assert.match(privacy,/aluno solicita a cópia pelo e-mail/);
  assert.match(privacy+terms,/cobrança ainda não está ativa/);
  assert.match(terms,/Google Play/);
+ assert.ok(!/R\$ 9,90/.test(privacy+terms),'textos legais não cobram R$ 9,90 do aluno');
+ assert.match(terms,/grátis para sempre/);
+ assert.match(terms,/Personal Pro\+/);
+ assert.match(terms,/R\$ 4,90/);
+ assert.match(privacy,/R\$ 4,90/);
+ assert.match(terms,/plano já salvo continua visível|plano alimentar já salvo continua visível/);
  assert.ok(!/vídeos de exercícios, fotos de refeições/.test(terms));
  const legal=read('legal-contact.js');
  assert.match(legal,/\[NOME\/CNPJ\]/);
@@ -134,4 +140,12 @@ test('páginas de privacidade e termos entram no dist e estão ligadas no cadast
  }
  assert.match(read('index.html'),/Ao criar conta você concorda/);
  assert.match(read('portal-app.js'),/Ao criar conta você concorda/);
+});
+
+test('textos vigentes não cobram R$ 9,90 do aluno',()=>{
+ for(const f of ['termos.html','privacidade.html','portal-app.js','nutrition.js','personal-pro-plus.js','index.html','README.md']){
+  const src=read(f);
+  assert.ok(!/R\$ 9,90/.test(src),f+' ainda cita R$ 9,90');
+  assert.ok(!/R\$9,90/.test(src),f);
+ }
 });
