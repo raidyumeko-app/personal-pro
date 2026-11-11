@@ -105,10 +105,22 @@
       catch (error) { if (error.code==='PGRST202'||error.status===404) { const unavailable=new Error('A exclusão automática ainda não foi ativada no servidor. Nada foi apagado.'); unavailable.code='deletion_unavailable'; throw unavailable; } throw error; }
       if (!confirm) return preview;
       await writeQueue.catch(()=>{});
-      const files=await request('/storage/v1/object/list/pp-nutrition',{method:'POST',body:JSON.stringify({prefix:owner,limit:1000,offset:0})},true).catch(()=>[]);
-      const paths=(Array.isArray(files)?files:[]).filter(item=>item&&item.name&&item.id).map(item=>owner+'/'+item.name);
-      if (paths.length) await request('/storage/v1/object/pp-nutrition',{method:'DELETE',body:JSON.stringify({prefixes:paths})},true);
-      const result=await request('/rest/v1/rpc/pp_delete_my_account',{method:'POST',body:JSON.stringify({dry_run:false})},true);
+      // Arquivos de nutrição (fotos e PDFs) ficam na pasta auth.uid() do bucket pp-nutrition.
+      // Precisam sair antes: o servidor recusa a exclusão se sobrar arquivo.
+      const storageFailure=(text,cause)=>{const e=new Error(text+' Sua conta não foi excluída; tente de novo em instantes.');e.code='storage_cleanup_failed';e.cause=cause;return e};
+      const listFiles=async()=>{const all=[];for(let offset=0;;offset+=1000){let page;
+        try{page=await request('/storage/v1/object/list/pp-nutrition',{method:'POST',body:JSON.stringify({prefix:owner,limit:1000,offset})},true)}
+        catch(error){throw storageFailure('Não foi possível conferir suas fotos e PDFs de nutrição.',error)}
+        const items=(Array.isArray(page)?page:[]).filter(item=>item&&item.name&&item.id);all.push(...items.map(item=>owner+'/'+item.name));if(!Array.isArray(page)||page.length<1000)return all}};
+      const paths=await listFiles();
+      for(let i=0;i<paths.length;i+=100){
+        try{await request('/storage/v1/object/pp-nutrition',{method:'DELETE',body:JSON.stringify({prefixes:paths.slice(i,i+100)})},true)}
+        catch(error){throw storageFailure('Não foi possível apagar suas fotos e PDFs de nutrição.',error)}
+      }
+      if(paths.length&&(await listFiles()).length)throw storageFailure('Algumas fotos ou PDFs de nutrição não foram apagados.');
+      let result;
+      try{result=await request('/rest/v1/rpc/pp_delete_my_account',{method:'POST',body:JSON.stringify({dry_run:false})},true)}
+      catch(error){if(/storage_files_pending/.test(String(error.message||'')+String(error.details||'')+String(error.hint||''))){const e=new Error('Ainda há fotos ou PDFs de nutrição na sua conta. Tente excluir de novo em instantes.');e.code='storage_files_pending';throw e}throw error}
       removeDraft(owner);remember(null);announce('idle','Conta excluída');window.dispatchEvent?.(new Event('personal-pro-signout'));
       return result;
     },

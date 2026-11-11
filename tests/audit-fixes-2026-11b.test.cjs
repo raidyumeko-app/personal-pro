@@ -123,3 +123,35 @@ test('build não publica a prévia interna do PAR-Q',()=>{
  assert.ok(!fs.existsSync(path.join(base,'dist','parq-preview.html')));
  for(const f of ['index.html','format-br.js','manifest.webmanifest','assets/icons/icon-512.png','assets/icons/icon-maskable-512.png'])assert.ok(fs.existsSync(path.join(base,'dist',f)),f);
 });
+
+// Exclusão de conta (personal e aluno usam a mesma tela e o mesmo PersonalProCloud.deleteAccount).
+function cloudHarness(handler){const calls=[];const memory=new Map();const ctx={window:{dispatchEvent(){}},Event:class{},AbortSignal,Date,JSON,URLSearchParams,location:{hash:'',origin:'https://preview.example',pathname:'/',search:''},history:{replaceState(){}},
+ sessionStorage:{getItem:k=>memory.get(k)||null,setItem:(k,v)=>memory.set(k,v),removeItem:k=>memory.delete(k)},localStorage:{getItem:()=>null,setItem(){},removeItem(){}},
+ fetch:async(url,options={})=>{calls.push({url,method:options.method||'GET',body:options.body});const [status,data]=await handler(url,options,calls);return {ok:status<400,status,text:async()=>JSON.stringify(data)}}};
+ vm.runInNewContext(read('cloud.js'),ctx);return {api:ctx.window.PersonalProCloud,calls};}
+const owner={id:'22222222-2222-4222-8222-222222222222'},tok={user:owner,access_token:'t',refresh_token:'r',expires_in:3600};
+function deletion({list,del,rpc}){return cloudHarness(async(url,o,calls)=>{if(url.includes('/token'))return [200,tok];if(url.endsWith('/user'))return [200,owner];if(url.includes('personal_pro_accounts'))return [200,[]];
+ if(url.includes('pp_delete_my_account'))return JSON.parse(o.body).dry_run?[200,{deleted:false}]:(rpc?rpc():[200,{deleted:true}]);
+ if(url.includes('/object/list/'))return list(JSON.parse(o.body),calls);if(url.includes('/storage/'))return del?del(JSON.parse(o.body)):[200,[]];return [200,[]]});}
+const finalCall=calls=>calls.some(c=>c.url.includes('pp_delete_my_account')&&c.body==='{"dry_run":false}');
+test('exclusão de conta apaga todos os arquivos da pasta do próprio usuário (com paginação) antes da função',async()=>{
+ let gone=false;const deleted=[];
+ const files=Array.from({length:1203},(_,i)=>({name:'f'+i+'.jpg',id:String(i)}));
+ const {api,calls}=deletion({list:b=>{assert.equal(b.prefix,owner.id);return [200,gone?[]:files.slice(b.offset,b.offset+b.limit)]},del:b=>{deleted.push(...b.prefixes);if(deleted.length===files.length)gone=true;return [200,[]]}});
+ await api.signIn('a@b.com','x');const r=await api.deleteAccount({confirm:true});assert.equal(r.deleted,true);
+ assert.equal(deleted.length,1203);assert.ok(deleted.every(p=>p.startsWith(owner.id+'/')),'só a pasta auth.uid()');
+ const lastDelete=calls.map(c=>c.url).lastIndexOf(calls.filter(c=>c.method==='DELETE').at(-1).url),rpcIndex=calls.findIndex(c=>c.url.includes('pp_delete_my_account')&&c.body==='{"dry_run":false}');
+ assert.ok(lastDelete<rpcIndex,'arquivos saem antes da função');
+});
+test('falhas no Storage param a exclusão com mensagem em português',async()=>{
+ for(const [label,opts,pattern] of [
+  ['listar',{list:()=>[500,{message:'boom'}]},/Não foi possível conferir suas fotos e PDFs de nutrição\. Sua conta não foi excluída/],
+  ['apagar',{list:()=>[200,[{name:'a.jpg',id:'1'}]],del:()=>[500,{message:'boom'}]},/Não foi possível apagar suas fotos e PDFs de nutrição\. Sua conta não foi excluída/],
+  ['sobrou arquivo',{list:()=>[200,[{name:'a.jpg',id:'1'}]]},/Algumas fotos ou PDFs de nutrição não foram apagados/],
+  ['servidor recusou',{list:()=>[200,[]],rpc:()=>[400,{code:'P0001',message:'storage_files_pending',hint:'Apague os arquivos'}]},/Ainda há fotos ou PDFs de nutrição na sua conta/]]){
+  const {api,calls}=deletion(opts);await api.signIn('a@b.com','x');
+  await assert.rejects(api.deleteAccount({confirm:true}),pattern,label);
+  if(label!=='servidor recusou')assert.ok(!finalCall(calls),label+': função de exclusão não chamada');
+  assert.ok(api.userId(),label+': sessão continua ativa');
+ }
+});

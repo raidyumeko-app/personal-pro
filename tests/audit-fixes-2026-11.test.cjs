@@ -87,14 +87,15 @@ test('exclusão de conta: sem a função no servidor nada é apagado',async()=>{
 });
 
 test('exclusão de conta: prévia, arquivos do Storage e depois a função',async()=>{
+ let removed=false;
  const {api,calls}=cloud(async(url,o)=>{if(url.includes('/token'))return [200,token];if(url.endsWith('/user'))return [200,user];if(url.includes('personal_pro_accounts'))return [200,[]];
   if(url.includes('pp_delete_my_account'))return [200,{deleted:JSON.parse(o.body).dry_run===false}];
-  if(url.includes('/object/list/'))return [200,[{name:'a.jpg',id:'1'},{name:'b.pdf',id:'2'}]];if(url.includes('/storage/'))return [200,[]];return [200,[]]});
+  if(url.includes('/object/list/'))return [200,removed?[]:[{name:'a.jpg',id:'1'},{name:'b.pdf',id:'2'}]];if(url.includes('/storage/')){removed=true;return [200,[]]}return [200,[]]});
  await api.signIn('a@b.com','x');
  const preview=await api.deleteAccount();assert.equal(preview.deleted,false);assert.ok(!calls.some(c=>c.url.includes('/storage/')));
  const result=await api.deleteAccount({confirm:true});assert.equal(result.deleted,true);
  const order=calls.filter(c=>/pp_delete_my_account|storage/.test(c.url)).map(c=>c.url.replace(/^.*\/(rest|storage)\/v1/,'$1')+' '+(c.body||''));
- assert.deepEqual(order.slice(1),['rest/rpc/pp_delete_my_account {"dry_run":true}','storage/object/list/pp-nutrition {"prefix":"'+user.id+'","limit":1000,"offset":0}','storage/object/pp-nutrition {"prefixes":["'+user.id+'/a.jpg","'+user.id+'/b.pdf"]}','rest/rpc/pp_delete_my_account {"dry_run":false}']);
+ assert.deepEqual(order.slice(1),['rest/rpc/pp_delete_my_account {"dry_run":true}','storage/object/list/pp-nutrition {"prefix":"'+user.id+'","limit":1000,"offset":0}','storage/object/pp-nutrition {"prefixes":["'+user.id+'/a.jpg","'+user.id+'/b.pdf"]}','storage/object/list/pp-nutrition {"prefix":"'+user.id+'","limit":1000,"offset":0}','rest/rpc/pp_delete_my_account {"dry_run":false}']);
  assert.equal(api.userId(),undefined,'sessão encerrada');
  const sql=read('supabase/migrations/20261111160000_account_self_deletion.sql');
  assert.match(sql,/security definer/);assert.match(sql,/set search_path = ''/);assert.match(sql,/storage_files_pending/);assert.match(sql,/delete from auth\.users where id = me/);
