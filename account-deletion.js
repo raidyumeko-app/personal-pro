@@ -1,5 +1,5 @@
 /* LGPD: o titular pode excluir a própria conta. A exclusão no servidor depende da
-   função pp_delete_my_account (supabase/pending/20261110220000_account_self_deletion.sql). */
+   função pp_delete_my_account (supabase/migrations/20261111160000_account_self_deletion.sql). */
 (function (root) {
   'use strict';
   const WORD = 'EXCLUIR';
@@ -26,6 +26,7 @@
       h('summary', null, 'Excluir minha conta'),
       h('p', null, 'A exclusão é definitiva e apaga:'),
       h('ul', null, items.map((text) => h('li', { key: text }, text))),
+      h('p', { className: 'pp-hint' }, 'Recibos de compra de assinatura ficam guardados sem seus dados pessoais, por obrigação fiscal.'),
       role === 'trainer' && h('p', { className: 'pp-hint' }, 'Antes, use "Exportar cópia dos dados" se quiser guardar uma cópia.'),
       h('label', { className: 'pp-field' }, 'Para confirmar, digite ' + WORD,
         h('input', { value: typed, autoComplete: 'off', 'aria-label': 'Digite ' + WORD + ' para confirmar', disabled: busy || state.status === 'done', onChange: (e) => setTyped(e.target.value) })),

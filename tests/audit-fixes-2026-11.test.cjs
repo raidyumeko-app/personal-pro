@@ -96,7 +96,7 @@ test('exclusão de conta: prévia, arquivos do Storage e depois a função',asyn
  const order=calls.filter(c=>/pp_delete_my_account|storage/.test(c.url)).map(c=>c.url.replace(/^.*\/(rest|storage)\/v1/,'$1')+' '+(c.body||''));
  assert.deepEqual(order.slice(1),['rest/rpc/pp_delete_my_account {"dry_run":true}','storage/object/list/pp-nutrition {"prefix":"'+user.id+'","limit":1000,"offset":0}','storage/object/pp-nutrition {"prefixes":["'+user.id+'/a.jpg","'+user.id+'/b.pdf"]}','rest/rpc/pp_delete_my_account {"dry_run":false}']);
  assert.equal(api.userId(),undefined,'sessão encerrada');
- const sql=read('supabase/pending/20261110220000_account_self_deletion.sql');
+ const sql=read('supabase/migrations/20261111160000_account_self_deletion.sql');
  assert.match(sql,/security definer/);assert.match(sql,/set search_path = ''/);assert.match(sql,/storage_files_pending/);assert.match(sql,/delete from auth\.users where id = me/);
 });
 
